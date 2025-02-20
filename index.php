@@ -27,17 +27,23 @@
     <script src="main.js"></script>   
 </header>
 <body>
-    <div class="titulo">
-        <h1>Protegendo as Abelhas</h1>
-        <h1>Cuidando do futuro</h1>
-    </div>
-    <div class="descricao">
-        <h4>Junte-se à nós para conscientizar, preservar e transformar o mundo das abelhas.
-            Descubra como você pode ajudar!
-        </h4>
-    </div>
-    <div class="botao">
-        <button type="submit">Saiba mais</button>
+    <div style="display: flex;">
+        <div>
+            <div class="titulo">
+                <h1>Protegendo as <a style="background-color: rgb(255, 191, 0);">Abelhas</a></h1>
+                <h1>Cuidando do futuro</h1>
+                <hr>
+            </div>
+            <div class="descricao">
+                <h4>Junte-se à nós para conscientizar, preservar e transformar o mundo das abelhas.
+                    Descubra como você pode ajudar!
+                </h4>
+            </div>
+            <div class="botao">
+                <button type="submit">Saiba mais</button>
+            </div>
+        </div>
+        <img style="width: 30%; height: 30%;" src="./img/Capturar.PNG" alt="">
     </div>
 </body>
 </html>
