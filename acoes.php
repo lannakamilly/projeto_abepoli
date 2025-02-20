@@ -16,12 +16,12 @@
             <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
         </div>
         <ul>
-            <li><a href="index.html" class="active">Início</a></li>
-            <li><a href="registros.html">Registros</a></li>
-            <li><a href="produtos.html">Produtos</a></li>
-            <li><a href="acoes.html">Ações/Projetos</a></li>
-            <li><a href="doacoes.html">Doações</a></li>
-            <li><a href="contato.html">Contato</a></li>
+            <li><a href="index.php" class="active">Início</a></li>
+            <li><a href="registros.php">Registros</a></li>
+            <li><a href="produtos.php">Produtos</a></li>
+            <li><a href="acoes.php">Ações/Projetos</a></li>
+            <li><a href="doacoes.php">Doações</a></li>
+            <li><a href="contato.php">Contato</a></li>
         </ul>
         <!-- <div class="navbar-right">
             <a href=""><img id="user-img" src="img/user-logo.png" alt="user logo"></a>
