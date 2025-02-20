@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Portal Abepoli</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/doacoes.css">
 </head>
 <header>
     <nav>
@@ -31,5 +32,14 @@
     <script src="main.js"></script>   
 </header>
 <body>
+    <Div>
+    <h4>ESTA COM ALGUMA DUVIDA?</h4>
+    <div id="subtitulo">
+        <hr class="hrvermelho">
+        <h1>Abepoli está pronta para te ajudar</h1>
+        <hr class="hrvermelho">
+    </div>
+        
+    </Div>
 </body>
 </html>
