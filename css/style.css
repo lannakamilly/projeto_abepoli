@@ -168,3 +168,67 @@ button{
 .dropdown__menu ul li{
     width: 150px;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+form {
+    max-width: 100%; /* Garante que o formulário não tenha uma largura menor */
+    width: 400px; /* Define a largura para alinhar com os inputs */
+    margin: 0 auto; /* Centraliza o formulário */
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: orange;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contatobotao {
+    width: 100%;
+    padding: 12px;
+    background-color: gold;
+    margin-left: 0px;
+    color: black;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+}
+
+.contatobotao:hover {
+    background-color: #e6b800;
+}
