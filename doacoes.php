@@ -32,14 +32,13 @@
     <script src="main.js"></script>   
 </header>
 <body>
-    <Div>
-    <h4>ESTA COM ALGUMA DUVIDA?</h4>
-    <div id="subtitulo">
-        <hr class="hrvermelho">
-        <h1>Abepoli está pronta para te ajudar</h1>
-        <hr class="hrvermelho">
-    </div>
-        
+    <Div id="classe">
+        <div id="apoie">
+            <h1>apoie a Preservação da <a class="destaque">Natureza</a></h1>
+            <p>Sua doação ajuda a proteger abelhas, polinizadores e a biodiversidade para um futuro sustentável</p>
+            <button>Doe Agora!</button>
+        </div>
+        <img src="./img/Capturar.PNG2.PNG" alt="">
     </Div>
 </body>
 </html>
