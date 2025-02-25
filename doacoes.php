@@ -42,13 +42,24 @@
         <script src="main.js"></script>   
     </header>
     <Div>
-    <h4>ESTA COM ALGUMA DUVIDA?</h4>
     <div id="subtitulo">
-        <hr class="hrvermelho">
-        <h1>Abepoli está pronta para te ajudar</h1>
-        <hr class="hrvermelho">
+        <div>
+
+            <hr class="hrvermelho">
+            <h1>Apoie a preservação <br> da <a class="destaque">natureza</a></h1>
+            <p>Sua doação ajuda a proteger abelhas,<br> polinizadores e a biodiversidade para <br> um futuro sustentável.</p>
+            <button id="botaodoacoes">Fazer doaçoes</button>
+        </div>
+       <img id="imgabelhas"src="./img/Capturar.PNG2.PNG" alt="">
     </div>
-        
     </Div>
+    <section id="info">
+       
+            <div>
+                <h2 class="textobranco">Nosso trabalho</h2>
+                <p class="textobranco">O instituto Abepoli é uma organização dedicada <br> à conservação da biodiversidade, com foco na <br> proteção de polinizadores, fauna e flora, promovendo a <br> sustentabilidade e o equilibrio ambiental.</p>     
+            </div>
+        <img id="img_açoes" src="./img/açoes.PNG" alt="">
+    </section>
 </body>
 </html>
