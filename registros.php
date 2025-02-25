@@ -15,18 +15,27 @@
         <div class="menu-btn">
             <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
         </div>
-        <ul>
-            <li><a href="index.php" class="active">Início</a></li>
-            <li><a href="registros.php">Registros</a></li>
-            <li><a href="produtos.php">Produtos</a></li>
-            <li><a href="acoes.php">Ações/Projetos</a></li>
-            <li><a href="doacoes.php">Doações</a></li>
-            <li><a href="contato.php">Contato</a></li>
-        </ul>
-        <!-- <div class="navbar-right">
-            <a href=""><img id="user-img" src="img/user-logo.png" alt="user logo"></a>
-            <a href=""><img id="wpp-img" src="img/wpp-logo.png" alt="wpp-logo"></a>
-        </div> -->
+        <div class="menu__bar">
+            <ul>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="registros.php" class="active">Registros</a></li>
+                <li><a href="produtos.php">Produtos</a></li>
+                <li>
+                    <a href="acoes.php">Ações/Projetos <i class="fas-caret-down"></i></a>
+                    <div class="dropdown__menu">
+                        <ul>
+                            <li><a href="#">Projetos realizados e futuros</a></li>
+                            <li><a href="#">Parcerias/
+                                Eventos</a></li>
+                            <li><a href="#">Galeria</a></li>
+                            <li><a href="#">Causas</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="doacoes.php">Doações</a></li>
+                <li><a href="contato.php">Contato</a></li>
+            </ul>
+        </div>
     </nav>
     <script src="main.js"></script>   
 </header>
