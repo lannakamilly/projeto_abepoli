@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Portal Abepoli</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/index.css">
 </head>
 <header>
     <nav>
@@ -46,5 +45,39 @@
         </div>
         <img style="width: 30%; height: 30%;" src="./img/Capturar.PNG" alt="">
     </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Início</h3>
+                <ul>
+                    <li>Protegendo as abelhas</li>
+                    <li>Cuidando do futuro</li>
+                    <li>Por que escolher a Abepoli?</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Registros</h3>
+            </div>
+            <div class="footer-column">
+                <h3>Produtos</h3>
+            </div>
+            <div class="footer-column">
+                <h3>Ações/Projetos</h3>
+            </div>
+            <div class="footer-column social-icons">
+                <div class="logo">
+                    <img src="img/logo2.jpg" alt="img">
+                </div>
+                <img src="./img/instagram.png" alt="Instagram">
+                <img src="./img/whatsapp-removebg-preview.png" alt="WhatsApp">
+                <span>Fale conosco!</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2021 CodingLab. All rights reserved
+            <a href="#">Privacy policy</a> |
+            <a href="#">Terms & condition</a></p>
+        </div>
+    </footer>
 </body>
 </html>

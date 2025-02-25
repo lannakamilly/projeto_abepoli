@@ -16,18 +16,28 @@
             <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
         </div>
         <ul>
-            <li><a href="index.php" class="active">Início</a></li>
+            <li><a href="index.php">Início</a></li>
             <li><a href="registros.php">Registros</a></li>
             <li><a href="produtos.php">Produtos</a></li>
             <li><a href="acoes.php">Ações/Projetos</a></li>
             <li><a href="doacoes.php">Doações</a></li>
-            <li><a href="contato.php">Contato</a></li>
+            <li><a href="contato.php" class="active">Contato</a></li>
         </ul>
-        <!-- <div class="navbar-right">
-            <a href=""><img id="user-img" src="img/user-logo.png" alt="user logo"></a>
-            <a href=""><img id="wpp-img" src="img/wpp-logo.png" alt="wpp-logo"></a>
-        </div> -->
     </nav>
+    <div class="container">
+        <form action="" method="post">
+            <label for="name">Nome</label>
+            <input type="text" name="nome" placeholder="Escreva seu nome" required>
+            
+            <label for="email">Email</label>
+            <input type="text" name="email" placeholder="Insira seu email" required>
+            
+            <label for="mensagem">Mensagem</label>
+            <textarea name="mensagem" placeholder="Escreva sua dúvida" required></textarea>
+            
+            <button class="contatobotao" type="submit">ENVIAR</button>
+        </form>
+    </div>
     <script src="main.js"></script>   
 </header>
 <body>
