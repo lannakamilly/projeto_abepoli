@@ -24,6 +24,20 @@
             <li><a href="contato.php" class="active">Contato</a></li>
         </ul>
     </nav>
+    <div class="container">
+        <form action="" method="post">
+            <label for="name">Nome</label>
+            <input type="text" name="nome" placeholder="Escreva seu nome" required>
+            
+            <label for="email">Email</label>
+            <input type="text" name="email" placeholder="Insira seu email" required>
+            
+            <label for="mensagem">Mensagem</label>
+            <textarea name="mensagem" placeholder="Escreva sua dúvida" required></textarea>
+            
+            <button class="contatobotao" type="submit">ENVIAR</button>
+        </form>
+    </div>
     <script src="main.js"></script>   
 </header>
 <body>

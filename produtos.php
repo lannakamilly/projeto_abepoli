@@ -16,6 +16,7 @@
             <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
         </div>
         <ul>
+<<<<<<< HEAD
             <li><a href="index.php">Início</a></li>
             <li><a href="registros.php">Registros</a></li>
             <li><a href="produtos.php" class="active">Produtos</a></li>
@@ -30,6 +31,12 @@
                     </ul>
                 </div>
             </li>
+=======
+            <li><a href="index.php" class="active">Início</a></li>
+            <li><a href="registros.php">Registros</a></li>
+            <li><a href="produtos.php">Produtos</a></li>
+            <li><a href="acoes.php">Ações/Projetos</a></li>
+>>>>>>> 6fd8981d6814da2a01b848b64a8ca0a1d99e8121
             <li><a href="doacoes.php">Doações</a></li>
             <li><a href="contato.php">Contato</a></li>
         </ul>
