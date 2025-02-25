@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Portal Abepoli</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <header>
     <nav>
@@ -16,13 +16,11 @@
             <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
         </div>
         <ul>
-<<<<<<< HEAD:doacoes.html
-            <li><a href="index.html" class="active">Início</a></li>
-            <li><a href="registros.html">Registros</a></li>
-            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="index.php">Início</a></li>
+            <li><a href="registros.php">Registros</a></li>
+            <li><a href="produtos.php" class="active">Produtos</a></li>
             <li>
-                <a href="acoes.html">Ações/Projetos <i class="fas fa-caret-down"></i></a>
-
+                <a href="acoes.php">Ações/Projetos <i class="fas fa-caret-down"></i></a>
                 <div class="dropdown__menu">
                     <ul>
                         <li><a href="#">Projetos futuros</a></li>
@@ -32,16 +30,8 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="doacoes.html">Doações</a></li>
-            <li><a href="contato.html">Contato</a></li>
-=======
-            <li><a href="index.php" class="active">Início</a></li>
-            <li><a href="registros.php">Registros</a></li>
-            <li><a href="produtos.php">Produtos</a></li>
-            <li><a href="acoes.php">Ações/Projetos</a></li>
             <li><a href="doacoes.php">Doações</a></li>
             <li><a href="contato.php">Contato</a></li>
->>>>>>> a31a4cae2354f61d1c26e3054adbea3015151d82:produtos.php
         </ul>
         <!-- <div class="navbar-right">
             <a href=""><img id="user-img" src="img/user-logo.png" alt="user logo"></a>
