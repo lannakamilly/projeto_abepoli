@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./css/doacoes.css">
 </head>
 <body>
-<<<<<<< HEAD
     <header>
         <nav>
             <div class="logo">
@@ -42,7 +41,6 @@
         </nav>
         <script src="main.js"></script>   
     </header>
-=======
     <Div>
     <h4>ESTA COM ALGUMA DUVIDA?</h4>
     <div id="subtitulo">
@@ -52,6 +50,5 @@
     </div>
         
     </Div>
->>>>>>> 6fd8981d6814da2a01b848b64a8ca0a1d99e8121
 </body>
 </html>
