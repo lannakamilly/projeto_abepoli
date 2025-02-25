@@ -10,6 +10,12 @@
     align-items: center;
 }
 
+hr{
+    width: 300px;
+    border: rgb(255, 191, 0) 4px solid;
+    height: 4px;
+}
+
 .navbar-right img {
     width: 43px;
     height: 40px;
@@ -178,9 +184,9 @@ button{
 }
 
 form {
-    max-width: 100%; /* Garante que o formulário não tenha uma largura menor */
-    width: 400px; /* Define a largura para alinhar com os inputs */
-    margin: 0 auto; /* Centraliza o formulário */
+    max-width: 100%;
+    width: 400px;
+    margin: 0 auto;
 }
 
 input, textarea {
@@ -231,4 +237,49 @@ textarea {
 
 .contatobotao:hover {
     background-color: #e6b800;
+}
+
+footer {
+    background-color: #b8860b;
+    color: white;
+    padding: 20px 50px;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer-column {
+    flex: 1;
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+.footer-column h3 {
+    margin-bottom: 10px;
+}
+.footer-column ul {
+    list-style: none;
+}
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+.footer-bottom {
+    background-color: #a87c00;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+.footer-bottom a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.social-icons img {
+    width: 30px;
+    height: 30px;
 }
