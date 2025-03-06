@@ -122,9 +122,7 @@ nav .menu-btn i{
 
 .dropdown__menu ul li{
     width: 150px;
-<<<<<<< HEAD
     padding: 10px; 
-=======
 }
 
 .container {
@@ -226,12 +224,23 @@ footer {
     margin: 0 10px;
     text-decoration: none;
 }
-.social-icons {
+.footer-column {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
-.social-icons img {
+
+.footer-column .logo img {
+    width: 50px;
+    height: auto;
+}
+
+.footer-column img {
     width: 30px;
-    height: 30px;
+    height: auto;
+}
+
+.footer-column span {
+    font-size: 16px;
+    font-weight: bold;
 }
