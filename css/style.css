@@ -116,9 +116,7 @@ nav .menu-btn i{
 
 .dropdown__menu ul li{
     width: 150px;
-<<<<<<< HEAD
     padding: 10px; 
-=======
 }
 
 .container {
@@ -130,9 +128,9 @@ nav .menu-btn i{
 }
 
 form {
-    max-width: 100%; /* Garante que o formulário não tenha uma largura menor */
-    width: 400px; /* Define a largura para alinhar com os inputs */
-    margin: 0 auto; /* Centraliza o formulário */
+    max-width: 100%; 
+    width: 400px;
+    margin: 0 auto;
 }
 
 input, textarea {
@@ -183,5 +181,5 @@ textarea {
 
 .contatobotao:hover {
     background-color: #e6b800;
->>>>>>> 6fd8981d6814da2a01b848b64a8ca0a1d99e8121
 }
+

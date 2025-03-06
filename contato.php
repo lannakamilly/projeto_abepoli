@@ -8,21 +8,34 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <header>
-    <nav>
+<nav>
         <div class="logo">
             <img src="img/logo1.jpg" alt="img">
         </div>
         <div class="menu-btn">
             <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
         </div>
-        <ul>
-            <li><a href="index.php">Início</a></li>
-            <li><a href="registros.php">Registros</a></li>
-            <li><a href="produtos.php">Produtos</a></li>
-            <li><a href="acoes.php">Ações/Projetos</a></li>
-            <li><a href="doacoes.php">Doações</a></li>
-            <li><a href="contato.php" class="active">Contato</a></li>
-        </ul>
+        <div class="menu__bar">
+            <ul>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="registros.php">Registros</a></li>
+                <li><a href="produtos.php">Produtos</a></li>
+                <li>
+                    <a href="acoes.php">Ações/Projetos <i class="fas-caret-down"></i></a>
+                    <div class="dropdown__menu">
+                        <ul>
+                            <li><a href="#">Projetos realizados e futuros</a></li>
+                            <li><a href="#">Parcerias/
+                                Eventos</a></li>
+                            <li><a href="#">Galeria</a></li>
+                            <li><a href="#">Causas</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="doacoes.php">Doações</a></li>
+                <li><a href="contato.php"  class="active">Contato</a></li>
+            </ul>
+        </div>
     </nav>
     <div class="container">
         <form action="" method="post">
