@@ -29,7 +29,7 @@
                                 <li><a href="#">Projetos realizados e futuros</a></li>
                                 <li><a href="#">Parcerias/
                                         Eventos</a></li>
-                                <li><a href="#">Galeria</a></li>o
+                                <li><a href="#">Galeria</a></li>
                                 <li><a href="#">Causas</a></li>
                             </ul>
                         </div>
@@ -41,6 +41,16 @@
         </nav>
         <script src="main.js"></script>   
     </header>
+<<<<<<< HEAD
+    <div>
+    <h4>ESTA COM ALGUMA DUVIDA?</h4>
+    <div id="subtitulo">
+        <hr class="hrvermelho">
+        <h1>Abepoli está pronta para te ajudar</h1>
+        <hr class="hrvermelho">
+    </div>       
+    </div>
+=======
     <Div>
     <div id="subtitulo">
         <div>
@@ -61,5 +71,6 @@
             </div>
         <img id="img_açoes" src="./img/açoes.PNG" alt="">
     </section>
+>>>>>>> 9e94b96a979c4da186032260e74ebcbae285aad7
 </body>
 </html>

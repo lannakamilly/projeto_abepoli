@@ -134,7 +134,11 @@ nav .menu-btn i{
 }
 
 form {
+<<<<<<< HEAD
+    max-width: 100%; 
+=======
     max-width: 100%;
+>>>>>>> 9e94b96a979c4da186032260e74ebcbae285aad7
     width: 400px;
     margin: 0 auto;
 }
@@ -189,6 +193,8 @@ textarea {
     background-color: #e6b800;
 }
 
+<<<<<<< HEAD
+=======
 footer {
     background-color: #b8860b;
     color: white;
@@ -224,12 +230,24 @@ footer {
     margin: 0 10px;
     text-decoration: none;
 }
-.social-icons {
+.footer-column {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
-.social-icons img {
+
+.footer-column .logo img {
+    width: 50px;
+    height: auto;
+}
+
+.footer-column img {
     width: 30px;
-    height: 30px;
+    height: auto;
 }
+
+.footer-column span {
+    font-size: 16px;
+    font-weight: bold;
+}
+>>>>>>> 9e94b96a979c4da186032260e74ebcbae285aad7
