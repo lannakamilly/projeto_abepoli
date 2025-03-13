@@ -6,30 +6,71 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Portal Abepoli</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/doacoes.css">
 </head>
-<header>
-    <nav>
-        <div class="logo">
-            <img src="img/logo1.jpg" alt="img">
-        </div>
-        <div class="menu-btn">
-            <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
-        </div>
-        <ul>
-            <li><a href="index.php" class="active">Início</a></li>
-            <li><a href="registros.php">Registros</a></li>
-            <li><a href="produtos.php">Produtos</a></li>
-            <li><a href="acoes.php">Ações/Projetos</a></li>
-            <li><a href="doacoes.php">Doações</a></li>
-            <li><a href="contato.php">Contato</a></li>
-        </ul>
-        <!-- <div class="navbar-right">
-            <a href=""><img id="user-img" src="img/user-logo.png" alt="user logo"></a>
-            <a href=""><img id="wpp-img" src="img/wpp-logo.png" alt="wpp-logo"></a>
-        </div> -->
-    </nav>
-    <script src="main.js"></script>   
-</header>
 <body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/logo1.jpg" alt="img">
+            </div>
+            <div class="menu-btn">
+                <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
+            </div>
+            <div class="menu__bar">
+                <ul>
+                    <li><a href="index.php">Início</a></li>
+                    <li><a href="registros.php">Registros</a></li>
+                    <li><a href="produtos.php">Produtos</a></li>
+                    <li>
+                        <a href="acoes.php" >Ações/Projetos <i class="fas-caret-down"></i></a>
+                        <div class="dropdown__menu">
+                            <ul>
+                                <li><a href="#">Projetos realizados e futuros</a></li>
+                                <li><a href="#">Parcerias/
+                                        Eventos</a></li>
+                                <li><a href="#">Galeria</a></li>
+                                <li><a href="#">Causas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="doacoes.php" class="active">Doações</a></li>
+                    <li><a href="contato.php">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+        <script src="main.js"></script>   
+    </header>
+<<<<<<< HEAD
+    <div>
+    <h4>ESTA COM ALGUMA DUVIDA?</h4>
+    <div id="subtitulo">
+        <hr class="hrvermelho">
+        <h1>Abepoli está pronta para te ajudar</h1>
+        <hr class="hrvermelho">
+    </div>       
+    </div>
+=======
+    <Div>
+    <div id="subtitulo">
+        <div>
+
+            <hr class="hrvermelho">
+            <h1>Apoie a preservação <br> da <a class="destaque">natureza</a></h1>
+            <p>Sua doação ajuda a proteger abelhas,<br> polinizadores e a biodiversidade para <br> um futuro sustentável.</p>
+            <button id="botaodoacoes">Fazer doaçoes</button>
+        </div>
+       <img id="imgabelhas"src="./img/Capturar.PNG2.PNG" alt="">
+    </div>
+    </Div>
+    <section id="info">
+       
+            <div>
+                <h2 class="textobranco">Nosso trabalho</h2>
+                <p class="textobranco">O instituto Abepoli é uma organização dedicada <br> à conservação da biodiversidade, com foco na <br> proteção de polinizadores, fauna e flora, promovendo a <br> sustentabilidade e o equilibrio ambiental.</p>     
+            </div>
+        <img id="img_açoes" src="./img/açoes.PNG" alt="">
+    </section>
+>>>>>>> 9e94b96a979c4da186032260e74ebcbae285aad7
 </body>
 </html>

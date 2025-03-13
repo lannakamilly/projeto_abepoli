@@ -10,6 +10,12 @@
     align-items: center;
 }
 
+hr{
+    width: 300px;
+    border: rgb(255, 191, 0) 4px solid;
+    height: 4px;
+}
+
 .navbar-right img {
     width: 43px;
     height: 40px;
@@ -117,4 +123,129 @@ nav .menu-btn i{
 .dropdown__menu ul li{
     width: 150px;
     padding: 10px; 
+<<<<<<< HEAD
 }
+=======
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+form {
+    max-width: 100%; 
+    max-width: 100%;
+    width: 400px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: orange;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contatobotao {
+    width: 100%;
+    padding: 12px;
+    background-color: gold;
+    margin-left: 0px;
+    color: black;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+}
+
+.contatobotao:hover {
+    background-color: #e6b800;
+}
+
+footer {
+    background-color: #b8860b;
+    color: white;
+    padding: 20px 50px;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer-column {
+    flex: 1;
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+.footer-column h3 {
+    margin-bottom: 10px;
+}
+.footer-column ul {
+    list-style: none;
+}
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+.footer-bottom {
+    background-color: #a87c00;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+.footer-bottom a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.footer-column {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-column .logo img {
+    width: 50px;
+    height: auto;
+}
+
+.footer-column img {
+    width: 30px;
+    height: auto;
+}
+
+.footer-column span {
+    font-size: 16px;
+    font-weight: bold;
+}
+>>>>>>> 9df8761282bf7ee2cd45b4fa5a543d7890d3b7a8

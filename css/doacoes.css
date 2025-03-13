@@ -1,0 +1,84 @@
+.hrvermelho{
+    width: 30%;
+    height: 1px;
+    border: rgb(220, 4, 4) 4px solid;
+}
+
+#subtitulo{
+    padding: 2%;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+.destaque{
+    color: rgb(255, 191, 0);
+}
+ body{
+    align-items: center;
+    padding: 0px;
+}
+h1{
+    font-size: 50px;
+}
+nav{
+    margin-top: 0px;
+    /* margin-bottom: 15px; */
+}
+
+#botaodoacoes{
+    background-color:  rgb(255, 191, 0);
+}
+
+button{
+    width: 25%;
+    color:rgb(255, 255, 255);
+    font-size:20px;
+    border-radius: 50px;
+    border: 0px;
+    width: 250px;
+    height: 55px;
+    font-weight:bolder;
+    background-color:  rgb(255, 191, 0);
+}
+#imgabelhas{
+    width: 35%;
+    height: auto;
+}
+p{
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+div{
+    margin-top:30px
+}
+
+.textobranco{
+    color:white;
+   margin-left: 8%;
+   margin-top: 20px;
+   font-size: 23px;
+}
+
+h2{
+    margin-top: 40px;
+    font-size: 35px;
+}
+
+#info{
+    margin-top: 300px;
+    background-color:  rgb(255, 191, 0) ;
+}
+section{
+    display: flex;
+    justify-content: space-around;
+}
+
+#img_açoes{
+    width: 25%;
+    height: auto;
+    margin: 50px;
+    border-radius: 20px;
+    box-shadow: rgb(194, 194, 194) 20px 20px 30px 10px;
+}
