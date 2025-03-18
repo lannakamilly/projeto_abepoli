@@ -24,7 +24,6 @@ header{
   margin-bottom: 10px;
   font-size: 1.2rem;
   font-weight: 500;
-  color: var(--primary-color);
 }
 
 .section__header {
@@ -34,9 +33,6 @@ header{
   line-height: 3.25rem;
 }
 
-.section__header span {
-  color: var(--primary-color);
-}
 
 .section__description {
   color: var(--text-light);
@@ -88,7 +84,6 @@ ul {
 
 .header__content h1 span {
   text-decoration: underline;
-  text-decoration-color: var(--primary-color);
 }
 
 .header__content .section__description {
