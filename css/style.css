@@ -124,11 +124,7 @@ nav .menu-btn i{
 .dropdown__menu ul li{
     width: 150px;
     padding: 10px; 
-<<<<<<< HEAD
 }
-=======
-}
-
 .container {
     display: flex;
     justify-content: center;
@@ -249,4 +245,3 @@ footer {
     font-size: 16px;
     font-weight: bold;
 }
->>>>>>> 9df8761282bf7ee2cd45b4fa5a543d7890d3b7a8

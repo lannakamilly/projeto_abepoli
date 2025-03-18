@@ -15,7 +15,6 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/teste.css">
     <link rel="stylesheet" href="./css/style.css">
-<<<<<<< HEAD
     <title>Portal Abepoli</title>
   </head>
     <header>
@@ -49,51 +48,13 @@
         </nav>
         <script src="main.js"></script>   
     </header>
-=======
 </head>
 <header>
     <nav>
-        <div class="logo">
-            <img src="img/logo1.jpg" alt="img">
-
-        </div>
+        
         <div class="nav__menu__btn" id="menu-btn">
           <i class="ri-menu-3-line"></i>
         </div>
-<<<<<<< HEAD
-        <div class="menu__bar">
-            <ul>
-                <li><a href="index.php" class="active">Início</a></li>
-                <li><a href="registros.php">Registros</a></li>
-                <li><a href="produtos.php">Produtos</a></li>
-                <li>
-                    <a href="acoes.php">Ações/Projetos <i class="fas-caret-down"></i></a>
-                    <div class="dropdown__menu">
-                        <ul>
-                            <li><a href="#">Projetos realizados e futuros</a></li>
-                            <li><a href="#">Parcerias e eventos</a></li>
-                            <li><a href="#">Galeria de fotos e videos</a></li>
-                            <li><a href="#">Causas</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="doacoes.php">Doações</a></li>
-                <li><a href="contato.php">Contato</a></li>
-            </ul>
-        </div>
-=======
-
-      </div>
-      <ul class="nav__links" id="nav-links">
-        <li><a href="#home">1</a></li>
-        <li><a href="#about">2</a></li>
-        <li><a href="#package">3</a></li>
-        <li><a href="#contact">4</a></li>
-      </ul>
-     
-    </nav>
->>>>>>> fa4dfefd325e514d4d14cf0e04e6147bb69417c0
- 
     <section class="section__container header__container" id="home">
       <div class="header__content">
         <h1> Protegendo as <span>Abelhas</span></h1>
@@ -256,10 +217,6 @@
         </div>
       </div>
     </section>
-<<<<<<< HEAD
-=======
-
-
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/index.js"></script>
@@ -273,33 +230,10 @@
             <li><a href="doacoes.php">Doações</a></li>
             <li><a href="contato.php">Contato</a></li>
         </ul>
->>>>>>> 9df8761282bf7ee2cd45b4fa5a543d7890d3b7a8
     </nav>
     <script src="main.js"></script>   
 </header>
-<body>
-    <!-- <div style="display: flex;">
-        <div>
-            <div class="titulo">
-                <h1>Protegendo as <a style="background-color: rgb(255, 191, 0);">Abelhas</a></h1>
-                <h1>Cuidando do futuro</h1>
-                <hr>
-            </div>
-            <div class="descricao">
-                <h4>Junte-se à nós para conscientizar, preservar e transformar o mundo das abelhas.
-                    Descubra como você pode ajudar!
-                </h4>
-            </div>
-            <div class="botao">
-                <button type="submit">Saiba mais</button>
-            </div>
-        </div>
-        <img style="width: 30%; height: 30%;" src="./img/Capturar.PNG" alt="">
-<<<<<<< HEAD
-    </div> -->
-=======
-    </div>
->>>>>>> fa4dfefd325e514d4d14cf0e04e6147bb69417c0
+<body>     
     <footer>
         <div class="footer-container">
             <div class="footer-column">
@@ -330,19 +264,12 @@
         </div>
         <div class="footer-bottom">
             <p>Copyright © 2021 CodingLab. All rights reserved
-            <a href="#">Privacy policy</a> |
+            <a href="#">Privacy policy</a> 
             <a href="#">Terms & condition</a></p>
         </div>
     </footer>
-<<<<<<< HEAD
-
-
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/index.js"></script>
-=======
->>>>>>> 9df8761282bf7ee2cd45b4fa5a543d7890d3b7a8
->>>>>>> fa4dfefd325e514d4d14cf0e04e6147bb69417c0
 </body>
-
 </html>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Portal Abepoli</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <header>
 <nav>
@@ -15,8 +15,7 @@
         </div>
         <div class="menu__bar">
             <ul>
-                <li><a href="index.php" class="active">Início</a></li>
-                <li><a href="registros.php">Registros</a></li>
+                <li><a href="index.php">Início</a></li>
                 <li><a href="produtos.php">Produtos</a></li>
                 <li>
                     <a href="acoes.php">Ações/Projetos <i class="fas-caret-down"></i></a>
@@ -30,37 +29,16 @@
                     </div>
                 </li>
                 <li><a href="doacoes.php">Doações</a></li>
-                <li><a href="contato.php">Contato</a></li>
+                <li><a href="contato.php" class="active">Contato</a></li>
 
             </ul>
         </div>
         <div class="menu-btn">
             <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
         </div>
-<<<<<<< HEAD
     </nav>
     <script src="main.js"></script>
-=======
-        <div class="menu__bar">
-            <ul>
-                <li><a href="index.php">Início</a></li>
-                <li><a href="produtos.php">Produtos</a></li>
-                <li>
-                    <a href="acoes.php">Ações/Projetos <i class="fas-caret-down"></i></a>
-                    <div class="dropdown__menu">
-                        <ul>
-                            <li><a href="#">Projetos realizados e futuros</a></li>
-                            <li><a href="#">Parcerias/
-                                Eventos</a></li>
-                            <li><a href="#">Galeria</a></li>
-                            <li><a href="#">Causas</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="doacoes.php">Doações</a></li>
-                <li><a href="contato.php"  class="active">Contato</a></li>
-            </ul>
-        </div>
+
     </nav>
     <div class="container">
         <form action="" method="post">
@@ -76,8 +54,7 @@
             <button class="contatobotao" type="submit">ENVIAR</button>
         </form>
     </div>
-    <script src="main.js"></script>   
->>>>>>> 9df8761282bf7ee2cd45b4fa5a543d7890d3b7a8
+    <script src="main.js"></script> 
 </header>
 
 <body>
