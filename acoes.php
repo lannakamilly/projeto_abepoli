@@ -19,7 +19,6 @@
         <div class="menu__bar">
             <ul>
                 <li><a href="index.php">Início</a></li>
-                <li><a href="registros.php">Registros</a></li>
                 <li><a href="produtos.php">Produtos</a></li>
                 <li>
                     <a href="acoes.php"  class="active">Ações/Projetos <i class="fas-caret-down"></i></a>

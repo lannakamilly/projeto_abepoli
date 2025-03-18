@@ -20,7 +20,6 @@
             <div class="menu__bar">
                 <ul>
                     <li><a href="index.php">Início</a></li>
-                    <li><a href="registros.php">Registros</a></li>
                     <li><a href="produtos.php">Produtos</a></li>
                     <li>
                         <a href="acoes.php" >Ações/Projetos <i class="fas-caret-down"></i></a>
@@ -41,7 +40,6 @@
         </nav>
         <script src="main.js"></script>   
     </header>
-<<<<<<< HEAD
     <div>
     <h4>ESTA COM ALGUMA DUVIDA?</h4>
     <div id="subtitulo">
@@ -50,7 +48,6 @@
         <hr class="hrvermelho">
     </div>       
     </div>
-=======
     <Div>
     <div id="subtitulo">
         <div>
@@ -71,6 +68,5 @@
             </div>
         <img id="img_açoes" src="./img/açoes.PNG" alt="">
     </section>
->>>>>>> 9e94b96a979c4da186032260e74ebcbae285aad7
 </body>
 </html>
