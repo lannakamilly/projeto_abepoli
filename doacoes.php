@@ -20,7 +20,6 @@
             <div class="menu__bar">
                 <ul>
                     <li><a href="index.php">Início</a></li>
-                    <li><a href="registros.php">Registros</a></li>
                     <li><a href="produtos.php">Produtos</a></li>
                     <li>
                         <a href="acoes.php" >Ações/Projetos <i class="fas-caret-down"></i></a>
@@ -41,23 +40,13 @@
         </nav>
         <script src="main.js"></script>   
     </header>
-<<<<<<< HEAD
-    <div>
-    <h4>ESTA COM ALGUMA DUVIDA?</h4>
-    <div id="subtitulo">
-        <hr class="hrvermelho">
-        <h1>Abepoli está pronta para te ajudar</h1>
-        <hr class="hrvermelho">
-    </div>       
-    </div>
-=======
     <Div>
     <div id="subtitulo">
         <div>
 
             <hr class="hrvermelho">
             <h1>Apoie a preservação <br> da <a class="destaque">natureza</a></h1>
-            <p>Sua doação ajuda a proteger abelhas,<br> polinizadores e a biodiversidade para <br> um futuro sustentável.</p>
+            <p>Sua doação ajuda a proteger abelhas,<br> polinizadores e a biodiversidade psid <br> um futuro sustentável.</p>
             <button id="botaodoacoes">Fazer doaçoes</button>
         </div>
        <img id="imgabelhas"src="./img/Capturar.PNG2.PNG" alt="">
@@ -65,12 +54,14 @@
     </Div>
     <section id="info">
        
-            <div>
+            <div id="quadroamarelo">
                 <h2 class="textobranco">Nosso trabalho</h2>
                 <p class="textobranco">O instituto Abepoli é uma organização dedicada <br> à conservação da biodiversidade, com foco na <br> proteção de polinizadores, fauna e flora, promovendo a <br> sustentabilidade e o equilibrio ambiental.</p>     
             </div>
-        <img id="img_açoes" src="./img/açoes.PNG" alt="">
+            <div id="blank">
+                <img id="img_açoes" src="./img/açoes.PNG" alt="">
+                
+            </div>
     </section>
->>>>>>> 9e94b96a979c4da186032260e74ebcbae285aad7
 </body>
 </html>

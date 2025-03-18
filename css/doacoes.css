@@ -18,7 +18,7 @@
     padding: 0px;
 }
 h1{
-    font-size: 50px;
+    font-size: 70px;
 }
 nav{
     margin-top: 0px;
@@ -30,12 +30,11 @@ nav{
 }
 
 button{
-    width: 25%;
+    width: 35%;
     color:rgb(255, 255, 255);
-    font-size:20px;
+    font-size:30px;
     border-radius: 50px;
     border: 0px;
-    width: 250px;
     height: 55px;
     font-weight:bolder;
     background-color:  rgb(255, 191, 0);
@@ -47,7 +46,7 @@ button{
 p{
     margin-top: 10px;
     margin-bottom: 50px;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 div{
@@ -58,17 +57,18 @@ div{
     color:white;
    margin-left: 8%;
    margin-top: 20px;
-   font-size: 23px;
+   font-size: 33px;
 }
 
 h2{
     margin-top: 40px;
-    font-size: 35px;
+    font-size: 50px !important;
 }
 
 #info{
+    height: 800px;
     margin-top: 300px;
-    background-color:  rgb(255, 191, 0) ;
+    background-color: rgb(255, 191, 0);
 }
 section{
     display: flex;
@@ -76,9 +76,23 @@ section{
 }
 
 #img_açoes{
-    width: 25%;
+    margin-left: -40px;
+    margin-top: 30px;
+    width: 100%;
     height: auto;
-    margin: 50px;
-    border-radius: 20px;
-    box-shadow: rgb(194, 194, 194) 20px 20px 30px 10px;
+    margin-right: 20px;
+    border-radius: 50px;
+}
+#blank{
+    height: 600px;
+    border-radius: 50px;
+    width: auto;
+    right: 3px;
+    background-color: rgb(201, 201, 201)
+}
+
+#quadroamarelo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
