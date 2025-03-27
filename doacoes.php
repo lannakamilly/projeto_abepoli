@@ -63,5 +63,36 @@
                 
             </div>
     </section>
+    <section id="sectiontabela">
+        <div id="divaliembaixo">
+
+            <h2>Doações</h2>
+            <hr id="ailiembaixo" class="hrvermelho">
+        </div>
+
+        <div id="tabeladiv">
+
+        <table id="tabela">
+            <tr>
+                <th>Doador</th>
+                <th>Valor</th>
+                <th>destinado</th>
+            </tr>
+            <tr> 
+                <td>Maria</td>
+                <td>30</td>
+                <td>pagamento funcionarios</td>
+            </tr>
+            <tr>
+                <td>João</td>
+                <td>25</td>
+                <td>contrucção de comeias</td>
+            </tr>
+
+        </table>
+
+        
+        </div>
+    </section>
 </body>
 </html>

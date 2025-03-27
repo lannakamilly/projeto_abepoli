@@ -1,7 +1,7 @@
 .hrvermelho{
     width: 30%;
     height: 1px;
-    border: rgb(220, 4, 4) 4px solid;
+    border: rgb(226, 0, 0) 4px solid;
 }
 
 #subtitulo{
@@ -95,4 +95,34 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+#ailiembaixo{
+    width: 120% !important;
+}
+#divaliembaixo{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+#sectiontabela{
+    display: flex;
+    flex-direction: column;
+}
+#tabeladiv{
+    align-items: center;
+}
+#tabela{
+    width: 80%;
+}
+th{
+   font-size: 20px;
+   background-color:  rgb(255, 191, 0) ;
+}
+
+td{
+    text-align: center;
+    align-items: center;
 }
