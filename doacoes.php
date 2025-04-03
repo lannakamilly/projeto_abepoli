@@ -39,6 +39,63 @@
       </nav>
         <script src="main.js"></script>   
     </header>
+<<<<<<< HEAD
     
+=======
+    <Div>
+    <div id="subtitulo">
+        <div>
+
+            <hr class="hrvermelho">
+            <h1>Apoie a preservação <br> da <a class="destaque">natureza</a></h1>
+            <p>Sua doação ajuda a proteger abelhas,<br> polinizadores e a biodiversidade psid <br> um futuro sustentável.</p>
+            <button id="botaodoacoes">Fazer doaçoes</button>
+        </div>
+       <img id="imgabelhas"src="./img/Capturar.PNG2.PNG" alt="">
+    </div>
+    </Div>
+    <section id="info">
+       
+            <div id="quadroamarelo">
+                <h2 class="textobranco">Nosso trabalho</h2>
+                <p class="textobranco">O instituto Abepoli é uma organização dedicada <br> à conservação da biodiversidade, com foco na <br> proteção de polinizadores, fauna e flora, promovendo a <br> sustentabilidade e o equilibrio ambiental.</p>     
+            </div>
+            <div id="blank">
+                <img id="img_açoes" src="./img/açoes.PNG" alt="">
+                
+            </div>
+    </section>
+    <section id="sectiontabela">
+        <div id="divaliembaixo">
+
+            <h2>Doações</h2>
+            <hr id="ailiembaixo" class="hrvermelho">
+        </div>
+
+        <div id="tabeladiv">
+
+        <table id="tabela">
+            <tr>
+                <th>Doador</th>
+                <th>Valor</th>
+                <th>destinado</th>
+            </tr>
+            <tr> 
+                <td>Maria</td>
+                <td>30</td>
+                <td>pagamento funcionarios</td>
+            </tr>
+            <tr>
+                <td>João</td>
+                <td>25</td>
+                <td>contrucção de comeias</td>
+            </tr>
+
+        </table>
+
+        
+        </div>
+    </section>
+>>>>>>> 138367b1bc89f41b3dce68351c1ffdec35d99091
 </body>
 </html>
