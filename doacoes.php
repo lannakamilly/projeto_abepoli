@@ -39,13 +39,10 @@
       </nav>
         <script src="main.js"></script>   
     </header>
-<<<<<<< HEAD
-    
-=======
+
     <Div>
     <div id="subtitulo">
         <div>
-
             <hr class="hrvermelho">
             <h1>Apoie a preservação <br> da <a class="destaque">natureza</a></h1>
             <p>Sua doação ajuda a proteger abelhas,<br> polinizadores e a biodiversidade psid <br> um futuro sustentável.</p>
@@ -96,6 +93,5 @@
         
         </div>
     </section>
->>>>>>> 138367b1bc89f41b3dce68351c1ffdec35d99091
 </body>
 </html>
