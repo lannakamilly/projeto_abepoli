@@ -13,6 +13,9 @@
         <div class="logo">
             <img src="img/logo1.jpg" alt="img">
         </div>
+        <div class="menu-btn">
+            <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
+        </div>
         <div class="menu__bar">
             <ul>
                 <li><a href="index.php">Início</a></li>
@@ -32,9 +35,6 @@
                 <li><a href="contato.php" class="active">Contato</a></li>
 
             </ul>
-        </div>
-        <div class="menu-btn">
-            <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
         </div>
     </nav>
     <script src="main.js"></script>
