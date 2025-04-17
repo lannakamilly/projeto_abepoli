@@ -126,6 +126,7 @@ th{
 }
 
 td{
+    height: 80px;
     text-align: center;
     align-items: center;
 }
