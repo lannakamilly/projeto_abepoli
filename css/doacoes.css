@@ -14,6 +14,7 @@
     color: rgb(255, 191, 0);
 }
  body{
+    margin: auto;
     align-items: center;
     padding: 0px;
 }
@@ -62,7 +63,7 @@ div{
 
 h2{
     margin-top: 40px;
-    font-size: 50px !important;
+    font-size: 60px !important;
 }
 
 #info{
@@ -96,11 +97,15 @@ section{
     flex-direction: column;
     justify-content: center;
 }
+#h2doacao{
+    margin-top: 400px;
+}
 
 #ailiembaixo{
     width: 12%;
 }
 #divaliembaixo{
+    margin-top: 300px;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -110,6 +115,8 @@ section{
 #sectiontabela{
     display: flex;
     flex-direction: column;
+    height: auto;
+    padding-bottom: 300px;
 }
 #tabeladiv{
     width: 80%;
@@ -117,6 +124,7 @@ section{
     align-items: center;
 }
 #tabela{
+    border: solid 3px rgb(255, 203, 46) ;
     margin-left: 15%;
     width: 100%;
 }
@@ -130,3 +138,129 @@ td{
     text-align: center;
     align-items: center;
 }
+
+#tabela tr:nth-child(even) {
+    background-color: #ffffff; /* cor para linhas pares */
+}
+
+#tabela tr:nth-child(odd) {
+    background-color: #e3e3e3; /* cor para linhas ímpares */
+}
+
+#tabela th {
+    background-color: rgb(255, 191, 0);
+    color: white;
+}
+
+#tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tabela td, #tabela th {
+    border: 1px solid  rgb(250, 209, 85);
+    padding: 8px;
+}
+#body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.step-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-left: 50px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.bubble {
+    font-size: 30px;
+    background-color: #e5e5e5;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    position: relative;
+    max-width: 600px;
+}
+
+.bubble::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    border-left: 10px solid #e5e5e5;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.circle {
+    background-color: rgb(255, 203, 46);
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+#primeira{
+    margin-right: 600px;
+}
+#segunda{
+    margin-left: 300px;
+}
+#terceira{
+    margin-left: 400px;
+
+}
+#quarta{
+    margin-left: 600px;
+}
+#infografico{
+    width: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+#hrdoacao{
+    margin-left: 450px;
+}
+#pcomo{
+    width: 55%;
+    text-align: justify;
+    font-size: 25px;
+    align-items: center;
+}
+#divcomo{
+    margin-top: 300px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100hv;
+}
+h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+a{
+    font-Weight: 'bold';
+    color: black;
+    text-decoration: none;
+}
+
+
+/* Degrau visual (indentação) */
+.step:nth-child(2) { margin-left: 30px; }
+.step:nth-child(3) { margin-left: 60px; }
+.step:nth-child(4) { margin-left: 90px; }
