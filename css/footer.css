@@ -1,0 +1,74 @@
+.abepoli-footer {
+    background-color: #F7BE00;
+    color: #000;
+    font-family: 'Lato', sans-serif;
+}
+
+.wave-shape-divider {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg); /* Aqui faz a mágica */
+    margin-bottom: -5px; /* Ajusta o encaixe */
+}
+
+.wave-shape-divider svg {
+    display: block;
+    width: 100%;
+    height: 120px;
+}
+
+.shape-fill {
+    fill: #F7BE00;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 3em 10%;
+    gap: 2em;
+}
+
+.footer-col {
+    flex: 1 1 30%;
+    min-width: 250px;
+}
+
+.logo-col {
+    text-align: center;
+}
+
+.footer-logo {
+    width: 250px;
+    height: auto;
+    margin-bottom: 0.5em;
+}
+
+.slogan {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.contact-col i,
+.dev-col i {
+    margin-right: 10px;
+}
+
+.contact-col p,
+.dev-col p {
+    margin: 0.3em 0;
+}
+
+.social-icons p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-bottom {
+    text-align: center;
+    background-color: #F7BE00;
+    padding: 1em 0;
+    font-weight: bold;
+}

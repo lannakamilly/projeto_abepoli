@@ -41,26 +41,30 @@
         <script src="main.js"></script>   
     </header>
 
-    <Div>
-    <div id="subtitulo">
-        <div>
-            <hr class="hrvermelho">
-            <h1>Apoie a preservação <br> da <a class="destaque">natureza</a></h1>
-            <p>Sua doação ajuda a proteger abelhas,<br> polinizadores e a biodiversidade psid <br> um futuro sustentável.</p>
-            <button id="botaodoacoes">Fazer doaçoes</button>
-        </div>
-       <img id="imgabelhas"src="./img/Capturar.PNG2.PNG" alt="">
-    </div>
-    </Div>
-    <section id="info">
-       
-            <div id="quadroamarelo">
-                <h2 class="textobranco">Nosso trabalho</h2>
-                <p class="textobranco">O instituto Abepoli é uma organização dedicada <br> à conservação da biodiversidade, com foco na <br> proteção de polinizadores, fauna e flora, promovendo a <br> sustentabilidade e o equilibrio ambiental.</p>     
+    <div class="top-container">
+    <div class="subtitulo">
+        <div class="container" >
+            <hr class="hramarelo">
+            <div class="title">
+                <h1>Apoie a preservação <br> da <a class="destaque">natureza</a></h1>
             </div>
-            <div id="blank">
-                <img id="img_açoes" src="./img/açoes.PNG" alt="">
-                
+            <div class="description">
+                <p>Sua doação ajuda a proteger abelhas,<br> polinizadores e a biodiversidade para um futuro sustentável.</p>
+            </div>
+            <button class="botaodoacoes"><a href="#">Fazer doações</a></button>
+        </div>
+        <div class="image-bees">
+            <img class="bees" src="./img/Capturar.PNG2.PNG" alt="bees">
+        </div>
+    </div>
+    </div>
+    <section class="info">       
+            <div id="quadroamarelo">
+                <h2 class="titulo">Nosso trabalho</h2>
+                <p class="descricao">O instituto Abepoli é uma organização dedicada à conservação da biodiversidade, com foco na proteção de polinizadores, fauna e flora, promovendo a sustentabilidade e o equilibrio ambiental.</p>     
+            </div>
+            <div class="blank">
+                <img id="img_açoes" src="./img/açoes.PNG" alt="img-acoes" class="img-acoes">              
             </div>
     </section>
     <section id="sectiontabela">
@@ -121,8 +125,7 @@
     </section>
     <section id="infografico">
         
-
-            <h2>Caminho do Doação</h2>
+            <h2 class="h2">Caminho do Doação</h2>
             <hr id="hrdoacao">
             <div id="body">
                 <div class="step-container">
@@ -146,10 +149,21 @@
             </div>
             
         </section>
+<<<<<<< HEAD
         <div id="divcomo">
             <h3>Como doar</h3>
             <p id="pcomo">O gestor responsável pelo patrimônio ou o particular interessado em doar clica no botão <a href="contato.php">QUERO DOAR</a>, que o direcionará para tela de login pelo Senha-Rede para o gestor de patrimônio ou para o Portal Gov.BR para particulares, que acessará com CPF do doador ou representante legal da pessoa jurídica. O cadastro do anúncio é bem simples e intuitivo, com informações sobre o bem ou serviço, campo para inserir fotos e outras informações necessárias para os órgãos donatários poderem demonstrar interesse.</p>
             <div class="topo">
+=======
+                <div id="divcomo">
+                    <h3>Como doar</h3>
+                    <p id="pcomo">O gestor responsável pelo patrimônio ou o particular interessado em doar clica no botão <a href="contato.php" class="quero-doar" >QUERO DOAR</a>, que o direcionará para tela de login pelo Senha-Rede para o gestor de patrimônio ou para o Portal Gov.BR para particulares, que acessará com CPF do doador ou representante legal da pessoa jurídica. O cadastro do anúncio é bem simples e intuitivo, com informações sobre o bem ou serviço, campo para inserir fotos e outras informações necessárias para os órgãos donatários poderem demonstrar interesse.</p>
+               </div>
+               <<div style="position: relative; height: 900px; overflow: hidden;">
+  <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+    <path d="M0.00,49.98 C150.00,150.00 349.81,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" 
+          style="stroke: none; fill: #ffe68a;"></path>
+>>>>>>> 4c82a842d9488154af6a31799d04057d3049dc1a
   </svg>
   <h1>jude a nossa Causa</h1>
   <div id="dividir">
