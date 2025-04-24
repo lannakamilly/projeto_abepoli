@@ -258,6 +258,16 @@ a{
     color: black;
     text-decoration: none;
 }
+#qrcode{
+    width: 500px;
+}
+#dividir{
+    display: flex;
+}
+img{
+    padding: 20px;
+}
+
 
 
 /* Degrau visual (indentação) */

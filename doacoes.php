@@ -125,7 +125,6 @@
             <h2>Caminho do Doação</h2>
             <hr id="hrdoacao">
             <div id="body">
-                
                 <div class="step-container">
                     <div id="primeira" class="step">
                         <div class="bubble">Acessar o pix ou whatsapp</div>
@@ -147,17 +146,25 @@
             </div>
             
         </section>
-                <div id="divcomo">
-                    <h3>Como doar</h3>
-                    <p id="pcomo">O gestor responsável pelo patrimônio ou o particular interessado em doar clica no botão <a href="contato.php">QUERO DOAR</a>, que o direcionará para tela de login pelo Senha-Rede para o gestor de patrimônio ou para o Portal Gov.BR para particulares, que acessará com CPF do doador ou representante legal da pessoa jurídica. O cadastro do anúncio é bem simples e intuitivo, com informações sobre o bem ou serviço, campo para inserir fotos e outras informações necessárias para os órgãos donatários poderem demonstrar interesse.</p>
-               </div>
-               <<div style="position: relative; height: 900px; overflow: hidden;">
-  <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-    <path d="M0.00,49.98 C150.00,150.00 349.81,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" 
-          style="stroke: none; fill: #ffe68a;"></path>
+        <div id="divcomo">
+            <h3>Como doar</h3>
+            <p id="pcomo">O gestor responsável pelo patrimônio ou o particular interessado em doar clica no botão <a href="contato.php">QUERO DOAR</a>, que o direcionará para tela de login pelo Senha-Rede para o gestor de patrimônio ou para o Portal Gov.BR para particulares, que acessará com CPF do doador ou representante legal da pessoa jurídica. O cadastro do anúncio é bem simples e intuitivo, com informações sobre o bem ou serviço, campo para inserir fotos e outras informações necessárias para os órgãos donatários poderem demonstrar interesse.</p>
+            <div class="topo">
   </svg>
+  <h1>jude a nossa Causa</h1>
+  <div id="dividir">
+            <img src="./img/Capturar.PNG" alt="">
+            <ul>
+                <li><img src="./img/pngtree-whatsapp-icon-png-image_6315990.png" alt="">(12) 9914388</li>
+                <li><img src="./img/pix.png" alt="">123456789-00</li>
+            </ul>
+        </div>
+        </div>
+  </div>
 </div>
+    
+
   </svg>
-</div>
+
 </body>
 </html>
