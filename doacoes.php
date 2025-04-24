@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Portal Abepoli</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/doacoes.css">
 </head>
 <body>
     <header>
@@ -65,7 +66,7 @@
     <section id="sectiontabela">
         <div id="divaliembaixo">
 
-            <h2>Doações</h2>
+            <h2 id="h2doacoes">Doações</h2>
             <hr id="ailiembaixo" class="hrvermelho">
         </div>
 
@@ -82,7 +83,32 @@
                 <td>30</td>
                 <td>pagamento funcionarios</td>
             </tr>
-            <tr>
+            <tr id="par">
+                <td>João</td>
+                <td>25</td>
+                <td>contrucção de comeias</td>
+            </tr>
+            <tr id="impar">
+                <td>João</td>
+                <td>25</td>
+                <td>contrucção de comeias</td>
+            </tr>
+            <tr id="par">
+                <td>João</td>
+                <td>25</td>
+                <td>contrucção de comeias</td>
+            </tr>
+            <tr id="impar">
+                <td>João</td>
+                <td>25</td>
+                <td>contrucção de comeias</td>
+            </tr>
+            <tr id="par">
+                <td>João</td>
+                <td>25</td>
+                <td>contrucção de comeias</td>
+            </tr>
+            <tr id="impar">
                 <td>João</td>
                 <td>25</td>
                 <td>contrucção de comeias</td>
@@ -93,5 +119,45 @@
         
         </div>
     </section>
+    <section id="infografico">
+        
+
+            <h2>Caminho do Doação</h2>
+            <hr id="hrdoacao">
+            <div id="body">
+                
+                <div class="step-container">
+                    <div id="primeira" class="step">
+                        <div class="bubble">Acessar o pix ou whatsapp</div>
+                        <div class="circle">1</div>
+                    </div>
+                    <div id="segunda" class="step">
+                        <div class="bubble">Confirme a doação</div>
+                        <div class="circle">2</div>
+                    </div>
+                    <div id="terceira" class="step">
+                        <div class="bubble">Receba uma confirmação</div>
+                        <div class="circle">3</div>
+                    </div>
+                    <div id="quarta" class="step">
+                        <div class="bubble">Acompanhe o impacto</div>
+                        <div class="circle">4</div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+                <div id="divcomo">
+                    <h3>Como doar</h3>
+                    <p id="pcomo">O gestor responsável pelo patrimônio ou o particular interessado em doar clica no botão <a href="contato.php">QUERO DOAR</a>, que o direcionará para tela de login pelo Senha-Rede para o gestor de patrimônio ou para o Portal Gov.BR para particulares, que acessará com CPF do doador ou representante legal da pessoa jurídica. O cadastro do anúncio é bem simples e intuitivo, com informações sobre o bem ou serviço, campo para inserir fotos e outras informações necessárias para os órgãos donatários poderem demonstrar interesse.</p>
+               </div>
+               <<div style="position: relative; height: 900px; overflow: hidden;">
+  <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+    <path d="M0.00,49.98 C150.00,150.00 349.81,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" 
+          style="stroke: none; fill: #ffe68a;"></path>
+  </svg>
+</div>
+  </svg>
+</div>
 </body>
 </html>
