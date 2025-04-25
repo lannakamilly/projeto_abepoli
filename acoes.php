@@ -20,9 +20,9 @@
         <div class="menu__bar">
             <ul>
                 <li><a href="index.php">Início</a></li>
-                <li><a href="produtos.php" class="active">Produtos</a></li>
+                <li><a href="produtos.php">Produtos</a></li>
                 <li>
-                    <a href="acoes.php">Ações <i class="fas-caret-down"></i></a>
+                    <a href="acoes.php"  class="active">Ações <i class="fas-caret-down"></i></a>
                     <div class="dropdown__menu">
                         <ul>
                             <li><a href="#">Projetos</a></li>
@@ -39,25 +39,6 @@
             </ul>
         </div>
     </nav>
-
-        <body>
-            <nav class="navbar navbar-expand-lg">
-                <div class="container">
-                    <a class="navbar-brand" href="#">INSTITUTO ABEPOLI</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Produtos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Ações/Projetos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Doe Agora</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Saiba Mais</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
 
             <section class="banner">
                 <div class="container">

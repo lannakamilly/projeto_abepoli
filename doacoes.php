@@ -20,7 +20,7 @@
         <div class="menu__bar">
             <ul>
                 <li><a href="index.php">Início</a></li>
-                <li><a href="produtos.php" class="active">Produtos</a></li>
+                <li><a href="produtos.php">Produtos</a></li>
                 <li>
                     <a href="acoes.php">Ações <i class="fas-caret-down"></i></a>
                     <div class="dropdown__menu">
@@ -32,7 +32,7 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="doacoes.php">Doações</a></li>
+                <li><a href="doacoes.php"  class="active">Doações</a></li>
                 <li><a href="saibamais.php">Saiba mais</a></li>
                 <li><a href="contato.php">Contato</a></li>
 
