@@ -1,11 +1,231 @@
-html, body {
-    height: 100%;
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
+    box-sizing: border-box;
 }
 
-.main-content {
+body {
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+.produtos-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.titulo {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 70px;
+    text-align:left;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.categorias {
     flex: 1;
+    min-width: 250px;
+    border-left: 8px solid #FFCC00;
+    padding-left: 20px;
+    height: fit-content;
+}
+
+.categorias h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.categorias ul {
+    list-style: none;
+}
+
+.categoria-titulo {
+    margin-top: 20px;
+    font-size: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    color: #555;
+}
+
+.subcategorias li {
+    font-size: 14px;
+    color: gray;
+    margin-left: 15px;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.subcategorias li:hover {
+    color: #FF9900;
+}
+
+.produtos-grid {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.produto-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+}
+
+.produto-card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.nome-produto {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.preco-produto {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FF3300;
+    margin-bottom: 15px;
+}
+
+.btn-comprar {
+    background-color: #FFCC00;
+    border: none;
+    padding: 6px 60px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-comprar:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+.paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.paginacao::-webkit-scrollbar {
+    height: 6px;
+}
+
+.paginacao::-webkit-scrollbar-thumb {
+    background-color: #FFCC00;
+    border-radius: 5px;
+}
+
+.pagina {
+    border: 1px solid #ccc;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 45px;
+    text-align: center;
+}
+
+.pagina:hover,
+.pagina.ativa {
+    background-color: #FFCC00;
+    font-weight: bold;
+    border-color: #FFCC00;
+}
+
+@media (max-width: 1024px) {
+    .produtos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .titulo {
+        font-size: 28px;
+    }
+
+    .categorias {
+        min-width: 200px;
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .categorias {
+        width: 100%;
+        border-left: none;
+        border-top: 8px solid #FFCC00;
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .produtos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .titulo {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .produto-card img {
+        width: 80px;
+    }
+
+    .btn-comprar {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .titulo {
+        font-size: 24px;
+    }
+
+    .categorias h2 {
+        font-size: 22px;
+    }
 }
