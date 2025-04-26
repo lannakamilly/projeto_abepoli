@@ -78,50 +78,17 @@ header nav {
     border-radius: 5px;
     cursor: pointer;
 }
-
 .imagem-contato {
-    flex: 1;
-    max-width: 500px;
-    margin: 20px;
-}
-
-.imagem-contato img {
-    width: 100%;
-    border-radius: 20px 20px 0 0;
-}
-
-.imagem-contato {
-    position: relative;
     width: 100%;
     overflow: hidden;
 }
 
-.img-com-onda {
+.imagem-ondulada {
     width: 100%;
     height: auto;
     display: block;
+    clip-path: path('M44.4,-59.5C57.3,-50.2,66.8,-37.6,70.2,-23.8C73.7,-10.1,71.1,5,64.3,18.3C57.6,31.7,46.7,43.3,33.7,51.9C20.7,60.5,10.3,66.1,-1.1,67.5C-12.5,68.9,-25,66,-34.7,58.2C-44.4,50.3,-51.3,37.4,-58.7,23.5C-66,9.5,-73.9,-5.4,-70.9,-17.9C-67.8,-30.4,-53.7,-40.4,-39.9,-49.5C-26.1,-58.6,-13.1,-66.9,1.2,-68.4C15.5,-69.9,30.9,-64.9,44.4,-59.5Z');
 }
-
-.wave-clip {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.wave-clip svg {
-    position: relative;
-    display: block;
-    width: calc(150% + 1.3px);
-    height: 60px;
-}
-
-.wave-clip .shape-fill {
-    fill: #ffffff; /* Cor de fundo onde a onda vai "cortar" a imagem */
-}
-
 
 /* Contato secundário */
 .contato-secundario {
