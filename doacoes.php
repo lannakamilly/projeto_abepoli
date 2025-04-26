@@ -164,15 +164,16 @@
     <path d="M0.00,49.98 C150.00,150.00 349.81,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" 
           style="stroke: none; fill: #ffe68a;"></path>
   </svg>
-  <h1>jude a nossa Causa</h1>
+  <!-- <h1>jude a nossa Causa</h1> -->
+   <!-- <section id="esperoqude"> <p>oi</p></section>
   <div id="dividir">
             <img src="./img/Capturar.PNG" alt="">
             <ul>
                 <li><img src="./img/pngtree-whatsapp-icon-png-image_6315990.png" alt="">(12) 9914388</li>
                 <li><img src="./img/pix.png" alt="">123456789-00</li>
-            </ul>
-        </div>
-        </div>
+            </ul> 
+         </div>
+        </div> -->
   </div>
 </div>
     
