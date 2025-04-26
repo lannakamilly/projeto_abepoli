@@ -23,6 +23,7 @@
 }
 
 .footer-content {
+    margin-top: 0px !important;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
