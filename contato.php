@@ -49,7 +49,7 @@
         </div>
 
         <div class="imagem-contato">
-            <img src="./img/imagemcontatoabepli.jpg" alt="Grupo Abepoli" class="imagem-ondulada">
+            <img src="./img/imagemcontatoabepoli.jpg" alt="Grupo Abepoli" class="imagem-ondulada">
         </div>
     </section>
 
