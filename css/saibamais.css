@@ -275,10 +275,9 @@ body {
 }
 
 .integrante img {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 50%;
     margin-bottom: 1em;
 }
 

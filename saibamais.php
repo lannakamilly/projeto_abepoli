@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/saiba.css">
+    <link rel="stylesheet" href="./css/saibamais.css">
     <script src="./js/produtos.js" defer></script>
 </head>
 
@@ -27,7 +27,7 @@
                     <li><a href="index.php">Início</a></li>
                     <li><a href="produtos.php">Produtos</a></li>
                     <li>
-                        <a href="acoes.php">Ações <i class="fas-caret-down"></i></a>
+                    <a href="acoes.php">Ações <i class="fa fa-caret-down"></i></a>
                         <div class="dropdown__menu">
                             <ul>
                                 <li><a href="#">Projetos</a></li>
