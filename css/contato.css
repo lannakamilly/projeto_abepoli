@@ -90,6 +90,39 @@ header nav {
     border-radius: 20px 20px 0 0;
 }
 
+.imagem-contato {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.img-com-onda {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.wave-clip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave-clip svg {
+    position: relative;
+    display: block;
+    width: calc(150% + 1.3px);
+    height: 60px;
+}
+
+.wave-clip .shape-fill {
+    fill: #ffffff; /* Cor de fundo onde a onda vai "cortar" a imagem */
+}
+
+
 /* Contato secundário */
 .contato-secundario {
     text-align: center;
