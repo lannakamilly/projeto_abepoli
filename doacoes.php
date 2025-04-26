@@ -22,7 +22,7 @@
                 <li><a href="index.php">Início</a></li>
                 <li><a href="produtos.php">Produtos</a></li>
                 <li>
-                    <a href="acoes.php">Ações <i class="fas-caret-down"></i></a>
+                <a href="acoes.php">Ações <i class="fa fa-caret-down"></i></a>
                     <div class="dropdown__menu">
                         <ul>
                             <li><a href="#">Projetos</a></li>
