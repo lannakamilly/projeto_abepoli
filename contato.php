@@ -63,7 +63,6 @@
     </section>
 
     <section class="contato-secundario">
-        <h3>Se preferir entre em <span>contato</span>:</h3>
         <div class="info-contato">
             <div class="whatsapp">
                 <i class="fa fa-whatsapp"></i>
