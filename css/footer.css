@@ -10,7 +10,6 @@
 }
 
 .wave-shape-divider {
-    background-color: #F7BE00;
     width: 100%;
     overflow: hidden;
     line-height: 0;
@@ -19,7 +18,6 @@
 }
 
 .wave-shape-divider svg {
-    background-color: #F7BE00;
     display: block;
     width: 100%;
     height: 120px;
