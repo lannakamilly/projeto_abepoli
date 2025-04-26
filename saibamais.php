@@ -134,6 +134,18 @@
                 <p>Única fêmea fértil da colmeia e sua principal função é botar ovos para garantir a continuidade da colônia. Pode viver vários anos e libera feromônios que regulam o comportamento das operárias e zangões.</p>
             </div>
         </div>
+        <div class="header__content" >
+            <form action="curiosidades.php">
+            <div class="input__row">
+              <div class="input__group">
+                <div>
+                  <h4>Quer saber mais sobre apicultura? Clique abaixo!</h4>
+                </div>
+              </div>
+            </div>
+            <button type="submit">Apicultura</button>
+          </form>
+        </div>
     </section>
 
 
