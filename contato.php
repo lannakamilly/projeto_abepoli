@@ -49,7 +49,7 @@
         </div>
 
         <div class="imagem-contato">
-            <img src="./img/imagemcontatoabepli.jpg" alt="Grupo Abepoli" class="img-com-onda">
+            <img src="./img/imagemcontatoabepoli.jpg" alt="Grupo Abepoli" class="img-com-onda">
                 <div class="wave-clip">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                         <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
