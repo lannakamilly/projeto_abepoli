@@ -147,3 +147,24 @@ footer {
     padding: 10px;
     font-size: 14px;
 }
+
+.intro-abepoli {
+    background-color: #f9f9f9; /* cor de fundo suave */
+    padding: 60px 20px; /* espaçamento interno */
+    text-align: center;
+}
+
+.intro-abepoli h2 {
+    font-size: 32px;
+    color: #333333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.intro-abepoli p {
+    font-size: 18px;
+    color: #555555;
+    max-width: 900px;
+    margin: 0 auto; /* centralizar o texto */
+    line-height: 1.6;
+}

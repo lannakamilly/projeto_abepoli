@@ -44,6 +44,12 @@
     </header>
 
     <main>
+        <section class="intro-abepoli">
+            <div class="container">
+                <h2>O que é o Instituto Abepoli?</h2>
+                <p>O Instituto Abepoli é uma organização sem fins lucrativos que atua na preservação ambiental, com foco na conservação de polinizadores como abelhas nativas, educação ambiental e projetos de sustentabilidade. Suas ações incluem o desenvolvimento de projetos ambientais, atividades de conscientização em escolas e apoio a práticas que promovam a biodiversidade e a restauração de habitats. Com forte atuação no estado de São Paulo, o Instituto busca transformar o futuro, incentivando a proteção da natureza e a responsabilidade ecológica em toda a comunidade.</p>
+            </div>
+        </section>
         <section class="acoes-section">
             <div class="container">
                 <div class="row">
