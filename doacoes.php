@@ -161,11 +161,11 @@
                </div>
                <<div style="position: relative; height: 900px; overflow: hidden;">
   <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-    <path d="M0.00,49.98 C150.00,150.00 349.81,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" 
+    <path id="footerdoa" d="M0.00,49.98 C150.00,150.00 349.81,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" 
           style="stroke: none; fill: #ffe68a;"></path>
   </svg>
-  <!-- <h1>jude a nossa Causa</h1> -->
-   <!-- <section id="esperoqude"> <p>oi</p></section>
+  <h1>jude a nossa Causa</h1>
+   <section id="esperoqude"> <p>oi</p></section>
   <div id="dividir">
             <img src="./img/Capturar.PNG" alt="">
             <ul>
@@ -173,22 +173,20 @@
                 <li><img src="./img/pix.png" alt="">123456789-00</li>
             </ul> 
          </div>
-        </div> -->
-  </div>
-</div>
+       
     
 
   </svg>
-  <div class="wave-shape-divider">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+  <div  style="position: absolute; bottom: 0; left: 0;  width: 100%; height: 150px; z-index: 2;background-color: #fabf11; class= 'wave-shape-divider'">
+        <svg xmlns="http://www.w3.org/2000/svg" id='footerdoa'  viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
         82.39-16.72,168.19-17.73,250.45-.39C823.78,31,
         906.67,72,985.66,92.83c70.05,18.48,
         146.53,26.09,214.34,3V0H0V27.35A600.21,
-        600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        600.21,0,0,0,321.39,56.44Z" id='footerdoa' class="shape-fill"></path>
         </svg>
     </div>
-
+</div>
 <footer class="abepoli-footer">
         <div class="footer-content">
             <div class="footer-col logo-col">
