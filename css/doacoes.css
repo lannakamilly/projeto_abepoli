@@ -7,6 +7,10 @@
     height: 1px;
     border: rgb(255, 191, 0) 4px solid;
 }
+.subirumpuquinho{
+    position: relative;
+    top: -20px;
+}
 
 .container{
     width: 700px;
@@ -27,16 +31,28 @@
     padding: 0px;
 }
 
-.botaodoacoes{
-    width: 210px;
-    font-size: 22px;
-    border-radius: 50px;
-    border: 0px;
-    height: 50px;
-    font-weight: 500;
-    background-color:  rgb(255, 191, 0);
-    text-decoration: none;
+.botaodoacoes {
+  background-color: #ffc107; /* amarelo */
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* animação suave */
 }
+
+.botaodoacoes a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.botaodoacoes:hover {
+  background-color: #e0a800; /* um tom mais escuro no hover */
+  transform: scale(1.05); /* aumenta um pouquinho */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* adiciona sombra */
+}
+
 .title{
     font-size: 30px;
 }
@@ -72,7 +88,6 @@ h2{
     margin-top: 40px;
     font-size: 60px !important;
 }
-
 
 section{
     display: flex;
@@ -283,6 +298,11 @@ td{
     font-size: 40px;
     font-weight: bold;
 }
+#pli{
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+}
 
 #ajude{
     text-align: center;
@@ -304,8 +324,9 @@ h3{
     display: flex;
 }
 .iconedoar{
+   
     height: auto !important;
-    width: 50px !important;
+    width: 90px !important;
     height: auto;
 }
 a{
@@ -316,6 +337,7 @@ a{
     width: 500px;
 }
 #dividir{
+    margin-left: 200px;
     align-items: center;
     flex-direction: column ;
     display: flex;
