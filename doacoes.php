@@ -173,13 +173,13 @@
         <p id="pqr">QR code</p>
     </div>
         <ul style="list-style: none; padding: 0;">
-            <li style="margin: 10px 0;">
-                <img src="./img/pngtree-whatsapp-icon-png-image_6315990.png" alt="" style="width: 30px; margin-right: 10px;">
-                (12) 9914388
+            <li id="lista" style="margin: 10px 0;">
+                <img class="iconedoar" src="./img/pngtree-whatsapp-icon-png-image_6315990.png" alt="" style="width: 30px; margin-right: 10px;">
+                <p id="pqr">(12) 99143-8924</p>
             </li>
-            <li style="margin: 10px 0;">
-                <img src="./img/pix.png" alt="" style="width: 30px; margin-right: 10px;">
-                123456789-00
+            <li id="lista" style="margin: 10px 0;">
+                <img class="iconedoar" src="./img/pix.png" alt="" style="width: 30px; margin-right: 10px;">
+                <p id="pqr">123456789-00</p>
             </li>
         </ul> 
    
