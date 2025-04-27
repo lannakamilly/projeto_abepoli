@@ -5,37 +5,14 @@ body, html {
     font-family: 'Arial', sans-serif;
 }
 
-header nav {
-    background: #FFD700;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 50px;
-}
-
-.menu__bar ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.menu__bar ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
-.menu__bar ul li a.active {
-    color: #ff5e00;
-}
 
 /* Conteúdo principal */
 .contato-principal {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    padding: 50px 10px;
+    padding: 100px;
     background: #fff;
 }
 
@@ -80,14 +57,15 @@ header nav {
 }
 
 .imagem-contato {
+    position: absolute;
+    top: 80px;
+    right: 300px;
     flex: 1;
     max-width: 500px;
-    margin: 20px;
 }
 
 .imagem-contato img {
-    width: 100%;
-    border-radius: 20px 20px 0 0;
+    height: 600px;
 }
 
 /* Contato secundário */
