@@ -32,15 +32,6 @@
                 </ul>
             </div>
         </nav>
-
-        <section class="banner">
-            <div class="container">
-                <h1>Nossas Ações</h1>
-                <p>Descubra como o Instituto Abepoli transforma o futuro através da preservação ambiental e educação.</p>
-                <button class="btn btn-custom">Saiba Mais</button>
-            </div>
-            <div class="hexagon"></div>
-        </section>
     </header>
 
     <main>
