@@ -24,9 +24,11 @@
 }
 
 .shape-fill {
-    fill: #F7BE00;
+    fill: #fabf11;
 }
-
+#footerdoa{
+    fill:  #ffe68a !important;
+}
 .footer-content {
     margin-top: 0px !important;
     display: flex;
