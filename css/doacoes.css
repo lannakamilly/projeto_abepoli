@@ -254,7 +254,7 @@ td{
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 600px;
+    margin-bottom: 200px ;
 }
 #hrdoacao{
     margin-left: 450px;
@@ -265,13 +265,26 @@ td{
     font-size: 22px;
     align-items: center;
     
+    
 }
 #divcomo{
+    margin-bottom: 200px;
+    position: relative;
+    top: 50px;
+    bottom: 500px;
     margin-top: 300px;
     align-items: center;
     display: flex;
     flex-direction: column;
     width: 100hv;
+   
+}
+#pqr{
+    font-size: 40px;
+}
+
+#ajude{
+    text-align: center;
 }
 
 .quero-doar{
@@ -290,22 +303,19 @@ h3{
 a{
     font-Weight: 'bold';
     text-decoration: none;
-<<<<<<< HEAD
 }
 #qrcode{
     width: 500px;
 }
 #dividir{
+    align-items: center;
+    flex-direction: column ;
     display: flex;
 }
-img{
-    padding: 20px;
+#esperoqude{
+    background-color: #ffe68a;
 }
 
-=======
-    color: #fff;
-} 
->>>>>>> 4c82a842d9488154af6a31799d04057d3049dc1a
 
 
 /* Degrau visual (indentação) */
