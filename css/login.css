@@ -1,0 +1,84 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    background-image: url('../img/03417f45-5f2c-4ff9-8e7e-67bda77ae1a1.png'); /* Coloque sua imagem na mesma pasta ou ajuste o caminho */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 50px; 
+    border-radius: 20px;
+    width: 500px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.login-box h2 {
+    margin-bottom: 10px;
+    font-size: 28px; /* Adicionei esta linha */
+    font-weight: bold; /* Deixa ele ainda mais forte */
+}
+
+
+.divider {
+    width: 70%;
+    height: 3px;
+    background-color: gold;
+    border: none;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+.forgot-password {
+    font-size: 16px;
+    color: goldenrod;
+    margin-bottom: 20px;
+    text-decoration: none;
+    align-self: flex-start;
+}
+
+button {
+    background-color: goldenrod;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #d4af37;
+}
