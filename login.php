@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
-    <div class="login-container">   
+    <div class="login-container">  
+    <a href="index.php" class="back-arrow">&#8592;</a> 
         <div class="login-box">
             <h2>Faça o seu login</h2>
-            <hr class="divider" />
+            <hr class="divider"/>
 
             <form action="#" method="post">
                 <label for="email">Email</label>
@@ -19,9 +20,9 @@
                 <label for="senha">Senha</label>
                 <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
 
-                <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                <a href="index.php" class="forgot-password">Esqueceu a senha?</a>
 
-                <button type="submit">ENTRAR</button>
+                <button type="submit"><a id="entrar" href="index.php">ENTRAR</a></button>
             </form>
         </div>
     </div>

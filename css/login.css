@@ -27,6 +27,25 @@ body, html {
     width: 500px; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+.back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0,0,0,0.3);
+    padding: 8px 12px;
+    border-radius: 50%;
+}
+#entrar{
+    text-decoration: none;
+    color: white;
+}
+
+.back-arrow:hover {
+    background-color: rgba(0,0,0,0.6);
+}
 
 .login-box h2 {
     margin-bottom: 10px;
