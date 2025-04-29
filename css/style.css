@@ -12,6 +12,52 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* --- NAVBAR --- */
+/* nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  background-color: #FFBF00;
+  padding: 0 50px;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0 10px;
+  position: relative;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #F18800;
+}
+
+nav .menu-btn i {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  display: none;
+} */
+
 /* --- RESPONSIVO MENU --- */
 @media (max-width: 920px){
   nav .menu-btn i{

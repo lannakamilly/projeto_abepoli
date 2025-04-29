@@ -23,6 +23,9 @@
   padding: 5rem 1rem;
 }
 
+.active:hover{
+  color: #000000;
+}
 .section__subheader {
   margin-bottom: 0.5rem;
   font-size: 1.75rem;
