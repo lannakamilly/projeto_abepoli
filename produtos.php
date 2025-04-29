@@ -181,7 +181,7 @@
 
             <div class="footer-col dev-col">
                 <h4>Site desenvolvido por</h4>
-                <p>Flávia Glenda Guimarães Carvalho</p>
+                <p>Flávia Glenda Guimarães Carvalhp</p>
                 <p>Júlia da Silva Conconi</p>
                 <p>Kauã Albuquerque de Almeida</p>
                 <p>Lanna Kamilly Fres Motta</p>
