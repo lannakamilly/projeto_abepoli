@@ -14,31 +14,6 @@
 
 <body>
 
-    <header>
-    <nav>
-            <div class="logo">
-                <img src="img/logo1.jpg" alt="Instituto Abepoli Logo">
-            </div>
-            <div class="menu-btn">
-                <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
-            </div>
-            <div class="menu__bar">
-                <ul>
-                    <li><a href="index.php">Início</a></li>
-                    <li><a href="produtos.php" class="active">Produtos</a></li>
-                    <li>
-                    <a href="sobre.php">Ações </></a>
-                        <div class="dropdown__menu">
-                           
-                        </div>
-                    </li>
-                    <li><a href="doacoes.php">Doações</a></li>
-                    <li><a href="saibamais.php">Saiba mais</a></li>
-                    <li><a href="contato.php">Contato</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
 
     <section class="produtos-section">
         <h1 class="titulo">PRODUTOS</h1>
@@ -47,35 +22,45 @@
             <aside class="categorias">
                 <h2>Categorias</h2>
                 <ul>
-                    <li class="categoria-titulo">Abelhas sem ferrão</li>
+                    <li class="categoria-titulo">Produtos naturais de abelhas</li>
                     <ul class="subcategorias">
-                        <li>Produtos</li>
-                        <li>Produtos</li>
-                        <li>Produtos</li>
+                        <li>Mel de abelhas nativas</li>
+                        <li>Própolis e geoprópolis</li>
+                        <li>Cera de abelhas nativas</li>
+                        <li>Pólen apícola</li>
                     </ul>
 
-                    <li class="categoria-titulo">Preservação ambiental</li>
+                    <li class="categoria-titulo"> Conscientização</li>
                     <ul class="subcategorias">
-                        <li>Sementes</li>
-                        <li>Sementes</li>
-                        <li>Sementes</li>
-                        <li>Sementes</li>
+                        <li>Camiseta</li>
+                        <li>Chaveiros</li>
+                        <li>Ímãs educativos</li>
+                        <li>Adesivos</li>
                     </ul>
 
-                    <li class="categoria-titulo">Outros produtos</li>
+                    <li class="categoria-titulo">Sementes</li>
                     <ul class="subcategorias">
-                        <li>Produtos</li>
-                        <li>Produtos</li>
-                        <li>Produtos</li>
-                        <li>Produtos</li>
+                        <li>Kit de sementes</li>
+                        <li>Sementes de girassol</li>
+                        <li>Sementes de erva-cidreira-do-campo</li>
+                        <li>Todas as sementes</li>
                     </ul>
                 </ul>
             </aside>
 
             <main class="produtos-grid">
                 <div class="produto-card">
-                    <img src="./img/logo.png" alt="Produto">
-                    <p class="nome-produto">Nome do produto</p>
+                    <img src="./img/produto1.jpeg" alt="Produto">
+                    <p class="nome-produto">Mel de abelhas nativas</p>
+                    <p class="preco-produto">R$ 190,00</p>
+                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
+                        <i class="fa fa-whatsapp"></i> Comprar
+                    </a>
+                </div>
+
+                <div class="produto-card">
+                    <img src="./img/produto2.jpeg" alt="Produto">
+                    <p class="nome-produto">Extrato de própolis</p>
                     <p class="preco-produto">R$ 50,00</p>
                     <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
@@ -83,8 +68,8 @@
                 </div>
 
                 <div class="produto-card">
-                    <img src="./img/logo.png" alt="Produto">
-                    <p class="nome-produto">Nome do produto</p>
+                    <img src="./img/produto3.jpeg" alt="Produto">
+                    <p class="nome-produto">Cera de abelhas nativas</p>
                     <p class="preco-produto">R$ 50,00</p>
                     <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
@@ -92,59 +77,50 @@
                 </div>
 
                 <div class="produto-card">
-                    <img src="./img/logo.png" alt="Produto">
-                    <p class="nome-produto">Nome do produto</p>
+                    <img src="./img/produto5.jpeg" alt="Produto">
+                    <p class="nome-produto">Pólen apícola</p>
                     <p class="preco-produto">R$ 50,00</p>
+                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
+                        <i class="fa fa-whatsapp"></i> Comprar
+                    </a>
+                </div>
+                <div class="produto-card">
+                    <img src="./img/produtoooooooooo8.jpeg" alt="Produto">
+                    <p class="nome-produto">Casa de colmeia</p>
+                    <p class="preco-produto">R$ 80,00</p>
+                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
+                        <i class="fa fa-whatsapp"></i> Comprar
+                    </a>
+                </div>
+                <div class="produto-card">
+                    <img src="./img/produto6.jpeg" alt="Produto">
+                    <p class="nome-produto">Favo de mel</p>
+                    <p class="preco-produto">R$ 60,00</p>
+                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
+                        <i class="fa fa-whatsapp"></i> Comprar
+                    </a>
+                </div>
+                <div class="produto-card">
+                    <img src="./img/produto7.jpeg" alt="Produto">
+                    <p class="nome-produto">Sementes de girassol</p>
+                    <p class="preco-produto">R$ 09,00</p>
+                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
+                        <i class="fa fa-whatsapp"></i> Comprar
+                    </a>
+                </div>
+                <div class="produto-card">
+                    <img src="./img/produto9.jpg" alt="Produto">
+                    <p class="nome-produto">Camisa conscientização</p>
+                    <p class="preco-produto">R$ 55,00</p>
                     <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
                     </a>
                 </div>
 
                 <div class="produto-card">
-                    <img src="./img/logo.png" alt="Produto">
-                    <p class="nome-produto">Nome do produto</p>
-                    <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-                <div class="produto-card">
-                    <img src="./img/logo.png" alt="Produto">
-                    <p class="nome-produto">Nome do produto</p>
-                    <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-                <div class="produto-card">
-                    <img src="./img/logo.png" alt="Produto">
-                    <p class="nome-produto">Nome do produto</p>
-                    <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-                <div class="produto-card">
-                    <img src="./img/logo.png" alt="Produto">
-                    <p class="nome-produto">Nome do produto</p>
-                    <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-                <div class="produto-card">
-                    <img src="./img/logo.png" alt="Produto">
-                    <p class="nome-produto">Nome do produto</p>
-                    <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-
-                <div class="produto-card">
-                    <img src="./img/logo.png" alt="Produto">
-                    <p class="nome-produto">Nome do produto</p>
-                    <p class="preco-produto">R$ 50,00</p>
+                    <img src="./img/produto10.jpg" alt="Produto">
+                    <p class="nome-produto">Sementes de lavanda</p>
+                    <p class="preco-produto">R$ 13,00</p>
                     <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
                     </a>

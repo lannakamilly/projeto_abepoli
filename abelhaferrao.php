@@ -14,31 +14,7 @@
 
 <body>
 
-    <header>
-    <nav>
-            <div class="logo">
-                <img src="img/logo1.jpg" alt="Instituto Abepoli Logo">
-            </div>
-            <div class="menu-btn">
-                <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
-            </div>
-            <div class="menu__bar">
-                <ul>
-                    <li><a href="index.php">Início</a></li>
-                    <li><a href="produtos.php" >Produtos</a></li>
-                    <li>
-                    <a href="sobre.php">Ações </></a>
-                        <div class="dropdown__menu">
-                           
-                        </div>
-                    </li>
-                    <li><a href="doacoes.php">Doações</a></li>
-                    <li><a href="saibamais.php" class="active">Saiba mais</a></li>
-                    <li><a href="contato.php">Contato</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+   
     <section class="botao-voltar">
         <a href="saibamais.php">
             <i class="fa fa-arrow-left"></i>
