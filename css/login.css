@@ -1,103 +1,165 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body, html {
+  }
+  
+  body, html {
     height: 100%;
     font-family: Arial, sans-serif;
-}
-
-.login-container {
-    background-image: url('../img/03417f45-5f2c-4ff9-8e7e-67bda77ae1a1.png'); /* Coloque sua imagem na mesma pasta ou ajuste o caminho */
+  }
+  
+  .login-container {
+    background-image: url('../img/03417f45-5f2c-4ff9-8e7e-67bda77ae1a1.png');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.login-box {
+    padding: 20px;
+  }
+  
+  .login-box {
     background: rgba(255, 255, 255, 0.9);
-    padding: 50px; 
+    padding: 40px;
     border-radius: 20px;
-    width: 500px; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-.back-arrow {
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .back-arrow {
     position: absolute;
     top: 20px;
     left: 20px;
     font-size: 28px;
     text-decoration: none;
     color: white;
-    background-color: rgba(0,0,0,0.3);
     padding: 8px 12px;
     border-radius: 50%;
-}
-#entrar{
+    z-index: 10;
+  }
+  
+  #entrar {
     text-decoration: none;
     color: white;
-}
-
-.back-arrow:hover {
-    background-color: rgba(0,0,0,0.6);
-}
-
-.login-box h2 {
+  }
+  
+  .login-box h2 {
     margin-bottom: 10px;
-    font-size: 28px; /* Adicionei esta linha */
-    font-weight: bold; /* Deixa ele ainda mais forte */
-}
-
-
-.divider {
-    width: 70%;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .divider {
+    width: 60%;
     height: 3px;
     background-color: gold;
     border: none;
-    margin-bottom: 20px;
-}
-
-form {
+    margin: 0 auto 20px auto;
+  }
+  
+  form {
     display: flex;
     flex-direction: column;
-}
-
-label {
+  }
+  
+  label {
     margin-bottom: 5px;
     font-size: 14px;
-}
-
-input {
+  }
+  
+  input {
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #999;
     border-radius: 5px;
-}
-
-.forgot-password {
-    font-size: 16px;
+    font-size: 15px;
+  }
+  
+  .forgot-password {
+    font-size: 15px;
     color: goldenrod;
     margin-bottom: 20px;
     text-decoration: none;
     align-self: flex-start;
-}
-
-button {
-    background-color: goldenrod;
+  }
+  
+  button {
+    background: #ffcd05;
+background: radial-gradient(circle,rgba(255, 205, 5, 1) 0%, rgba(195, 155, 34, 1) 62%, rgba(120, 108, 6, 1) 100%);
     color: white;
     padding: 12px;
     border: none;
     border-radius: 10px;
     font-weight: bold;
+    font-size: 16px;
     cursor: pointer;
     transition: background 0.3s;
-}
-
-button:hover {
+  }
+  
+  button:hover {
     background-color: #d4af37;
-}
+  }
+  
+  @media (max-width: 768px) {
+    .login-box {
+      padding: 30px 25px;
+    }
+  
+    .login-box h2 {
+      font-size: 22px;
+    }
+  
+    .divider {
+      width: 80%;
+    }
+  
+    input {
+      font-size: 14px;
+      padding: 9px;
+    }
+  
+    button {
+      font-size: 15px;
+      padding: 10px;
+    }
+  
+    .forgot-password {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .login-box {
+      padding: 25px 20px;
+    }
+  
+    .back-arrow {
+      top: 10px;
+      left: 10px;
+      font-size: 24px;
+    }
+  
+    .login-box h2 {
+      font-size: 20px;
+    }
+  
+    input {
+      font-size: 13px;
+      padding: 8px;
+    }
+  
+    button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .forgot-password {
+      font-size: 13px;
+    }
+  }
+  
