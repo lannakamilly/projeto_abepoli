@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instituto Abepoli - Contato</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/contato.css">
+    <link rel="stylesheet" href="./css/contatoo.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/nav.css">
 </head>
 
 <body>
 
-<header>
-<nav>
+    <header>
+        <nav>
             <div class="logo">
                 <img src="img/logo1.jpg" alt="Instituto Abepoli Logo">
             </div>
@@ -26,7 +27,7 @@
                     <li><a href="index.php">Início</a></li>
                     <li><a href="produtos.php" class="active">Produtos</a></li>
                     <li>
-                    <a href="acoes.php">Ações <i class="fa fa-caret-down"></i></a>
+                        <a href="acoes.php">Ações <i class="fa fa-caret-down"></i></a>
                         <div class="dropdown__menu">
                             <ul>
                                 <li><a href="#">Projetos</a></li>
@@ -42,42 +43,53 @@
                 </ul>
             </div>
         </nav>
-</header>
+    </header>
+    <section class="secao-contato">
+  <div class="container-contato">
+    <div class="formulario-contato">
+      <p class="subtitulo-contato">Está com alguma dúvida?</p>
+      <h2 class="titulo-contato">Abepoli esta pronta para ajudar</h2>
+      <form>
+        <label>Nome:</label>
+        <input type="text" placeholder="">
 
-<main>
-    <section class="contato-principal">
-        <div class="formulario-contato">
-            <h3>Está com alguma dúvida?</h3>
-            <h2>Abepoli está pronta para ajudar</h2>
-            <form action="" method="post">
-                <input type="text" name="nome" placeholder="Nome" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="mensagem" placeholder="Mensagem" required></textarea>
-                <button type="submit" class="btn-enviar">Enviar</button>
-            </form>
-        </div>
+        <label>Email:</label>
+        <input type="email" placeholder="">
 
-        <div class="imagem-contato">
-            <img id="grupo" src="./img/imagemcontatoabepoliarrumado.jpeg" alt="Grupo Abepoli">
-        </div>
-    </section>
+        <label>Mensagem:</label>
+        <textarea rows="4" placeholder=""></textarea>
 
-    <section class="contato-secundario">
-        <h3>Se preferir entre em <span>contato</span>:</h3>
-        <div class="info-contato">
-            <div class="whatsapp">
-                <i class="fa fa-whatsapp"></i>
-                <span>(12) 98817-3762</span>
-            </div>
-            <div class="email">
-                <i class="fa fa-envelope"></i>
-                <span>abepoli@gmail.com</span>
-            </div>
-        </div>
-        <p>Rua Gilberto Mestroni Eugênio Ceri, 88 - Palmeiras de São José, São José dos Campos - SP</p>
-    </section>
-</main>
-<div class="wave-shape-divider">
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <div class="imagem-contato">
+      <div class="borda-amarela">
+        <img src="./img/fundo_contato.jpg" alt="Foto crianças Abepoli">
+      </div>
+    </div>
+  </div>
+
+  <section class="contato-alternativo">
+    <p class="preferencia">Se preferir entre em <span>contato</span> :</p>
+    <div class="icones-contato">
+      <div class="contato-item">
+        <img src="https://img.icons8.com/ios-filled/50/25D366/whatsapp.png" alt="WhatsApp" />
+        <span>(12) 98817-6722</span>
+      </div>
+      <div class="contato-item">
+        <img src="https://img.icons8.com/ios-filled/50/EA4335/gmail.png" alt="Email" />
+        <span>abepoli@gmail.com</span>
+      </div>
+    </div>
+    <p class="endereco">
+      Rua Gilberto Menotti Eugênio Cará, 88 - Palmeiras de São José, São José dos Campos - SP
+    </p>
+  </section>
+
+  </div>
+</section>
+
+    <div class="wave-shape-divider">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
         82.39-16.72,168.19-17.73,250.45-.39C823.78,31,
@@ -112,6 +124,11 @@
                             <i class="fa fa-whatsapp"></i> (12) 98817-6722
                         </a>
                     </p>
+                    <p>
+                        <a href="./login.php" style="text-decoration: none; color: inherit;">
+                             Realizar login
+                        </a>
+                        </p>
                 </div>
             </div>
 
@@ -130,6 +147,7 @@
         </div>
     </footer>
 
-<script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>

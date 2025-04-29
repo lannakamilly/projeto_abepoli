@@ -7,8 +7,8 @@
     <title>Portal Abepoli</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/saiba.css">
     <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/saibamais.css">
     <script src="./js/produtos.js" defer></script>
 </head>
 
@@ -27,7 +27,7 @@
                     <li><a href="index.php">Início</a></li>
                     <li><a href="produtos.php">Produtos</a></li>
                     <li>
-                    <a href="acoes.php">Ações <i class="fa fa-caret-down"></i></a>
+                        <a href="acoes.php">Ações <i class="fa fa-caret-down"></i></a>
                         <div class="dropdown__menu">
                             <ul>
                                 <li><a href="#">Projetos</a></li>
@@ -54,7 +54,6 @@
             </div>
         </div>
     </section>
-    </section>
 
     <section class="tipos-abelhas">
         <h2>Tipos de <span>abelhas</span></h2>
@@ -69,6 +68,7 @@
             </a>
         </div>
     </section>
+
     <section class="importancia">
         <div class="importanciaTitulo">
             <h2>Importância na <span>preservação ambiental</span></h2>
@@ -79,6 +79,7 @@
             <p class="citacao">“As abelhas garantem a variação genética tão importante ao desenvolvimento e reprodução das plantas e, com isso, garantem o equilíbrio dos ecossistemas e que existam plantas suficientes para a produção de oxigênio. São ainda consideradas um importante bioindicador da qualidade do meio ambiente”, acrescenta Ana Bueno, bióloga da ONG Bee or not to Be.</p>
         </div>
     </section>
+
     <section class="cards-beneficios">
         <div class="top-image">
             <img src="./img/abelhasustentavel.png" alt="Abelha e planta" />
@@ -86,7 +87,7 @@
 
         <div class="cards-container">
             <div class="card">
-                <h3>Polonização</h3>
+                <h3>Polinização</h3>
                 <ul>
                     <li class="texto">São responsáveis pela <span>polinização de muitas plantas, como frutas, legumes e grãos.</span></li>
                     <li class="textomenor">Essencial para a reprodução de muitas plantas e para a biodiversidade.</li>
@@ -111,6 +112,12 @@
         </div>
     </section>
 
+    <section class="explorar-apicultura">
+        <div class="conteudo-apicultura">
+            <h2 class="titulo-apicultura">Explore o mundo<br>da apicultura!</h2>
+            <a href="curiosidades.php" class="botao-saiba-mais">Saiba mais</a>
+        </div>
+    </section>
 
     <section class="colmeia">
         <h2>Integrantes da colméia</h2>
@@ -134,29 +141,17 @@
                 <p>Única fêmea fértil da colmeia e sua principal função é botar ovos para garantir a continuidade da colônia. Pode viver vários anos e libera feromônios que regulam o comportamento das operárias e zangões.</p>
             </div>
         </div>
-        <div class="header__content" >
-            <form action="curiosidades.php">
-            <div class="input__row">
-              <div class="input__group">
-                <div>
-                  <h4>Quer saber mais sobre apicultura? Clique abaixo!</h4>
-                </div>
-              </div>
-            </div>
-            <button type="submit">Apicultura</button>
-          </form>
-        </div>
     </section>
 
-
     <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+
     <div class="wave-shape-divider">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
-        82.39-16.72,168.19-17.73,250.45-.39C823.78,31,
-        906.67,72,985.66,92.83c70.05,18.48,
-        146.53,26.09,214.34,3V0H0V27.35A600.21,
-        600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            82.39-16.72,168.19-17.73,250.45-.39C823.78,31,
+            906.67,72,985.66,92.83c70.05,18.48,
+            146.53,26.09,214.34,3V0H0V27.35A600.21,
+            600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
         </svg>
     </div>
 
@@ -184,6 +179,11 @@
                         <a href="https://wa.me/5512988176722" target="_blank" style="text-decoration: none; color: inherit;">
                             <i class="fa fa-whatsapp"></i> (12) 98817-6722
                         </a>
+                        <p>
+                        <a href="./login.php" style="text-decoration: none; color: inherit;">
+                             Realizar login
+                        </a>
+                        </p>
                     </p>
                 </div>
             </div>
