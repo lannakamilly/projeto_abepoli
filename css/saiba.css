@@ -4,11 +4,18 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     line-height: 1.6;
     background-color: #fff;
     color: #000;
+    max-width: 100%;
 }
+
 
 .hero {
     background: url('../img/fundoooosaiba.png') no-repeat center center/cover;
@@ -19,8 +26,8 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     padding: 10% 10% 0 10%;
-    color: #000;
     overflow: hidden;
+    max-width: 100%;
 }
 
 .hero::after {
@@ -42,7 +49,6 @@ body {
 .hero-text h1 {
     font-size: 3rem;
     font-weight: 900;
-
 }
 
 .hero-text span {
@@ -62,18 +68,21 @@ body {
     align-items: center;
     margin-top: -40px;
     margin-left: -120px;
+    max-width: 100%;
 }
 
 .hero-paragrafo img {
     width: 350px;
     height: auto;
     margin-right: -90px;
+    max-width: 100%;
 }
 
-.hero-paragraph p {
+.hero-paragrafo p {
     font-size: 1.2rem;
     font-weight: 600;
 }
+
 .tipos-abelhas {
     text-align: center;
     padding: 4em 2em;
@@ -93,37 +102,39 @@ body {
     justify-content: center;
     gap: 2em;
     flex-wrap: wrap;
+    max-width: 100%;
 }
 
-.tipo-botao { 
-    color:#000;
+.tipo-botao {
+    color: #000;
     text-align: center;
-    text-decoration: none; 
-    transition: transform 0.3s ease-in-out; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tipo-botao:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
 .tipo-botao img {
     width: 250px;
     height: 250px;
     object-fit: cover;
-    margin-top: -30px;
+    margin-top: -20px;
     clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 .tipo-botao p {
     font-size: 27px;
     margin-top: 20px;
     font-weight: bold;
-    pointer-events: none; 
+    pointer-events: none;
 }
+
 .importancia {
     background-color: #fff;
     margin: 0;
@@ -157,6 +168,7 @@ body {
     padding: 2em 10%;
     box-sizing: border-box;
     margin-top: -30px;
+    max-width: 100%;
 }
 
 .importanciaTexto p {
@@ -167,13 +179,12 @@ body {
 
 .importanciaTexto p.citacao {
     font-style: italic;
-    margin-top: 2em;
-    font-size: 1.1rem;
 }
 
 .cards-beneficios {
     padding: 4em 10%;
     text-align: center;
+    max-width: 100%;
 }
 
 .top-image img {
@@ -181,6 +192,7 @@ body {
     width: 500px;
     margin-bottom: -50px;
     margin-top: -50px;
+    max-width: 100%;
 }
 
 .cards-container {
@@ -188,6 +200,7 @@ body {
     gap: 2em;
     justify-content: center;
     flex-wrap: wrap;
+    max-width: 100%;
 }
 
 .card {
@@ -213,13 +226,11 @@ body {
 .texto {
     margin-top: 80px;
     text-align: justify;
-
 }
 
 .textomenor {
     margin-top: 20px;
     text-align: justify;
-
 }
 
 .card ul {
@@ -242,6 +253,7 @@ body {
 .colmeia {
     padding: 4em 0;
     text-align: center;
+    max-width: 100%;
 }
 
 .colmeia h2 {
@@ -261,6 +273,7 @@ body {
     flex-wrap: wrap;
     margin-top: 3em;
     padding: 0 10%;
+    max-width: 100%;
 }
 
 .integrante {
@@ -271,7 +284,6 @@ body {
     background-color: #fff;
     box-sizing: border-box;
     padding: 1em;
-
 }
 
 .integrante img {
@@ -308,82 +320,166 @@ body {
     cursor: pointer;
 }
 
-.header__content form {
-    width: 400px;
-    margin-bottom: 4rem;
-    margin-left: 34%;
-    padding: 1.5rem;
+.explorar-apicultura {
+    background-image: url('../img/fundo_apicultura.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: 1rem 0;
-    border-radius: calc(1rem + 10px);
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
-  }
-  .header__content .input__row {
-    width: 240px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex: 1;
-  }
-  
-  .header__content .input__group {
-    flex: 1;
-    margin-right: 60px;
-  }
-  
-  .header__content .input__group h4 {
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 35px;
-    font-size: 1.0rem;
-    font-weight: 500;
-    color: var(--text-light);
-  }
-  
-  .header__content .input__group > div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .header__content h4 {
-    width: 240px;
-    outline: none;
-    border: none;
+    justify-content: flex-end;
+    padding: 0 60px;
+    margin-top: 90px;
+    margin-bottom: 120px;
+    position: relative;
+    max-width: 100%;
+}
+
+.conteudo-apicultura {
+    text-align: left;
+    max-width: 350px;
+}
+
+.titulo-apicultura {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.botao-saiba-mais {
+    background-color: #F7BE00;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
     font-size: 1rem;
-    background-color: transparent;
-  }
-  
-  .header__content input::placeholder {
-    font-weight: 600;
-    color: var(--text-dark);
-  }
-  
-  .header__content .input__group span {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--primary-color);
-  }
-  
-  .header__content button {
-    /* width: 100%; */
-    padding: 1rem 2rem;
-    outline: none;
-    border: none;
-    font-size: 1rem;
-    white-space: nowrap;
-    color: var(--white);
-    background-color: rgb(255, 191, 0);
-    border-radius: 10px;
-    transition: 0.3s;
-    cursor: pointer;
-    font-family: var(--header-font);
-  }
-  .header__content button:hover {
-    background-color: rgb(255, 150, 0);
-  }
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease;
+}
+
+.botao-saiba-mais:hover {
+    background-color: #e6b800;
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        padding: 15% 5% 0 5%;
+        height: auto;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .hero-text p {
+        text-align: center;
+    }
+
+    .hero-paragrafo {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0 0 0;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .hero-paragrafo img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .tipos-imagens {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top-image img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .integrantes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .explorar-apicultura {
+        justify-content: center;
+        text-align: center;
+        padding: 2em;
+    }
+
+    .conteudo-apicultura {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .tipo-botao img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .tipo-botao p {
+        font-size: 1.8rem;
+    }
+
+    .titulo-apicultura {
+        font-size: 2rem;
+    }
+
+    .top-image img {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+
+    .tipo-botao img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .tipo-botao p {
+        font-size: 1.5rem;
+    }
+
+    .titulo-apicultura {
+        font-size: 1.8rem;
+    }
+
+    .explorar-apicultura {
+        padding: 1.5em;
+    }
+
+    .botao-saiba-mais {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}

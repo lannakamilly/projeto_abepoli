@@ -14,16 +14,16 @@
     <header>
     <nav>
         <div class="logo">
-            <img src="img/logo1.jpg" alt="img">
+            <img class="subirumpuquinho" src="img/logo1.jpg" alt="img">
         </div>
         <div class="menu-btn">
             <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
         </div>
         <div class="menu__bar">
             <ul>
-                <li><a href="index.php">Início</a></li>
-                <li><a href="produtos.php">Produtos</a></li>
-                <li>
+                <li class="subirumpuquinho"><a href="index.php">Início</a></li>
+                <li class="subirumpuquinho"><a href="produtos.php">Produtos</a></li>
+                <li class="subirumpuquinho">
                 <a href="acoes.php">Ações <i class="fa fa-caret-down"></i></a>
                     <div class="dropdown__menu">
                         <ul>
@@ -34,9 +34,9 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="doacoes.php"  class="active">Doações</a></li>
-                <li><a href="saibamais.php">Saiba mais</a></li>
-                <li><a href="contato.php">Contato</a></li>
+                <li class="subirumpuquinho"><a href="doacoes.php"  class="active">Doações</a></li>
+                <li class="subirumpuquinho"><a href="saibamais.php">Saiba mais</a></li>
+                <li class="subirumpuquinho"><a href="contato.php">Contato</a></li>
 
             </ul>
         </div>
@@ -54,7 +54,7 @@
             <div class="description">
                 <p>Sua doação ajuda a proteger abelhas,<br> polinizadores e a biodiversidade para um futuro sustentável.</p>
             </div>
-            <button class="botaodoacoes"><a href="#">Fazer doações</a></button>
+            <button class="botaodoacoes"><a id="afazer" href="#">Fazer doações</a></button>
         </div>
         <div class="image-bees">
             <img class="bees" src="./img/Capturar.PNG2.PNG" alt="bees">
@@ -152,44 +152,51 @@
             </div>
             
         </section>
-        <div id="divcomo">
-            <h3>Como doar</h3>
-            <p id="pcomo">O gestor responsável pelo patrimônio ou o particular interessado em doar clica no botão <a href="contato.php">QUERO DOAR</a>, que o direcionará para tela de login pelo Senha-Rede para o gestor de patrimônio ou para o Portal Gov.BR para particulares, que acessará com CPF do doador ou representante legal da pessoa jurídica. O cadastro do anúncio é bem simples e intuitivo, com informações sobre o bem ou serviço, campo para inserir fotos e outras informações necessárias para os órgãos donatários poderem demonstrar interesse.</p>
-                <div id="divcomo">
+                <div style="background-color: white; padding: 50px 20px;" id="divcomo">
                     <h3>Como doar</h3>
                     <p id="pcomo">O gestor responsável pelo patrimônio ou o particular interessado em doar clica no botão <a href="contato.php" class="quero-doar" >QUERO DOAR</a>, que o direcionará para tela de login pelo Senha-Rede para o gestor de patrimônio ou para o Portal Gov.BR para particulares, que acessará com CPF do doador ou representante legal da pessoa jurídica. O cadastro do anúncio é bem simples e intuitivo, com informações sobre o bem ou serviço, campo para inserir fotos e outras informações necessárias para os órgãos donatários poderem demonstrar interesse.</p>
                </div>
-               <<div style="position: relative; height: 900px; overflow: hidden;">
-  <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-    <path d="M0.00,49.98 C150.00,150.00 349.81,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" 
-          style="stroke: none; fill: #ffe68a;"></path>
-  </svg>
-  <!-- <h1>jude a nossa Causa</h1> -->
-   <!-- <section id="esperoqude"> <p>oi</p></section>
-  <div id="dividir">
-            <img src="./img/Capturar.PNG" alt="">
-            <ul>
-                <li><img src="./img/pngtree-whatsapp-icon-png-image_6315990.png" alt="">(12) 9914388</li>
-                <li><img src="./img/pix.png" alt="">123456789-00</li>
-            </ul> 
-         </div>
-        </div> -->
-  </div>
-</div>
-    
+               <h1 id="ajude">Ajude nossa Causa</h1>
+               <div style="position: relative; height: 150px; overflow: hidden; background-color: white; bottom: 0px">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C150.00,150.00 349.81,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                  style="stroke: none; fill: #ffe68a;"></path>
+        </svg>
+    </div>
+</section>
 
-  </svg>
-  <div class="wave-shape-divider">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
+<!-- Agora sim, a seção amarela -->
+<section style="background-color: #ffe68a; padding: 50px 20px 0 20px; text-align: center;">
+
+    <div id="dividir" style="margin-top: 30px;">
+        <img src="./img/Capturar.JPG" alt="" style="width: 300px; border-radius: 20px; height: auto; margin-bottom: 20px;">
+        <p id="pqr">QR code</p>
+    </div>
+        <ul style="list-style: none;margin-top: 90px;  margin-bottom: 90px; padding: 0;">
+            <li id="lista" style="margin: 10px 0;  align-items: center; display: flex;">
+                <img class="iconedoar" src="./img/pngtree-whatsapp-icon-png-image_6315990.png" alt="" style="width: 30px; margin-right: 10px;">
+                <p id="pli">(12) 99143-8924</p>
+            </li>
+            <li id="lista" style="margin: 10px 0; align-items: center; display: flex;">
+                <img class="iconedoar" src="./img/pix.png" alt="" style="width: 30px; margin-right: 10px;">
+                <p id="pli">123456789-00</p>
+            </li>
+        </ul> 
+   
+</section>
+
+<!-- Onda de baixo -->
+<div style="position: relative; height: 150px; overflow: hidden; background-color: #fabf11; margin-top: -5px;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
         82.39-16.72,168.19-17.73,250.45-.39C823.78,31,
         906.67,72,985.66,92.83c70.05,18.48,
         146.53,26.09,214.34,3V0H0V27.35A600.21,
-        600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-        </svg>
-    </div>
+        600.21,0,0,0,321.39,56.44Z" fill=" #ffe68a"></path>
+    </svg>
+</div>
 
-<footer class="abepoli-footer">
+    <footer class="abepoli-footer">
         <div class="footer-content">
             <div class="footer-col logo-col">
                 <img src="img/logo1.jpg" alt="Instituto Abepoli" class="footer-logo">

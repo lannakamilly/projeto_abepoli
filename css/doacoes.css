@@ -7,6 +7,10 @@
     height: 1px;
     border: rgb(255, 191, 0) 4px solid;
 }
+.subirumpuquinho{
+    position: relative;
+    top: -20px;
+}
 
 .container{
     width: 700px;
@@ -27,16 +31,28 @@
     padding: 0px;
 }
 
-.botaodoacoes{
-    width: 210px;
-    font-size: 22px;
-    border-radius: 50px;
-    border: 0px;
-    height: 50px;
-    font-weight: 500;
-    background-color:  rgb(255, 191, 0);
-    text-decoration: none;
+.botaodoacoes {
+  background-color: #ffc107; /* amarelo */
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* animação suave */
 }
+
+.botaodoacoes a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.botaodoacoes:hover {
+  background-color: #e0a800; /* um tom mais escuro no hover */
+  transform: scale(1.05); /* aumenta um pouquinho */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* adiciona sombra */
+}
+
 .title{
     font-size: 30px;
 }
@@ -72,7 +88,6 @@ h2{
     margin-top: 40px;
     font-size: 60px !important;
 }
-
 
 section{
     display: flex;
@@ -254,7 +269,7 @@ td{
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 600px;
+    margin-bottom: 200px ;
 }
 #hrdoacao{
     margin-left: 450px;
@@ -265,13 +280,32 @@ td{
     font-size: 22px;
     align-items: center;
     
+    
 }
 #divcomo{
+    margin-bottom: 200px;
+    position: relative;
+    top: 50px;
+    bottom: 500px;
     margin-top: 300px;
     align-items: center;
     display: flex;
     flex-direction: column;
     width: 100hv;
+   
+}
+#pqr{
+    font-size: 40px;
+    font-weight: bold;
+}
+#pli{
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#ajude{
+    text-align: center;
 }
 
 .quero-doar{
@@ -285,27 +319,33 @@ h3{
 
     font-weight: 700;
 }
-
-
+.lista{
+    align-items: center;
+    display: flex;
+}
+.iconedoar{
+   
+    height: auto !important;
+    width: 90px !important;
+    height: auto;
+}
 a{
     font-Weight: 'bold';
     text-decoration: none;
-<<<<<<< HEAD
 }
 #qrcode{
     width: 500px;
 }
 #dividir{
+    margin-left: 200px;
+    align-items: center;
+    flex-direction: column ;
     display: flex;
 }
-img{
-    padding: 20px;
+#esperoqude{
+    background-color: #ffe68a;
 }
 
-=======
-    color: #fff;
-} 
->>>>>>> 4c82a842d9488154af6a31799d04057d3049dc1a
 
 
 /* Degrau visual (indentação) */

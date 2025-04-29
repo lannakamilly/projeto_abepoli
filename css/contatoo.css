@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .secao-contato {
+    padding: 50px 20px;
+    background-color: #fff;
+  }
+
+  .container-contato {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .formulario-contato {
+    flex: 1;
+    max-width: 450px;
+    width: 100%;
+  }
+  
+  .subtitulo-contato {
+    color: #d4a005;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .titulo-contato {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+  
+  .formulario-contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .formulario-contato input,
+  .formulario-contato textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff6dc;
+    font-size: 14px;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .formulario-contato button {
+    background-color: #ffc727;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100px;
+    align-self: flex-start;
+  }
+  
+  .formulario-contato button:hover {
+    background-color: #e0a800;
+  }
+  
+  .imagem-contato {
+    flex: 1;
+    max-width: 500px;
+    margin-top: 120px;
+    width: 100%;
+  }
+  
+  .borda-amarela {
+    border: 10px solid #ffc727;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .borda-amarela img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .contato-alternativo {
+    text-align: center;
+    padding: 60px 20px 20px;
+    background-color: #fff;
+  }
+  
+  .contato-alternativo .preferencia {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .contato-alternativo .preferencia span {
+    color: #ffc727;
+    font-weight: bold;
+  }
+  
+  .icones-contato {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+  }
+  
+  .contato-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    border-radius: 12px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+  
+  .contato-item img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .contato-item span {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .endereco {
+    font-size: 14px;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+    padding-top: 20px;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 992px) {
+    .container-contato {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .imagem-contato,
+    .formulario-contato {
+      max-width: 100%;
+    }
+  
+    .formulario-contato button {
+      align-self: stretch;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .contato-alternativo .preferencia {
+      font-size: 16px;
+    }
+  
+    .contato-item {
+      flex-direction: column;
+      text-align: center;
+      gap: 6px;
+      padding: 15px;
+    }
+  
+    .contato-item span {
+      font-size: 14px;
+    }
+  
+    .icones-contato {
+      gap: 30px;
+    }
+  
+    .titulo-contato {
+      font-size: 20px;
+    }
+  }
+  
