@@ -245,6 +245,7 @@ nav {
 }
 
 .intro__image img {
+  border-radius: 10px;
   background-color: var(--white);
   width: 400px;
   height: 400px;
