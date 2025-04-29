@@ -26,12 +26,12 @@
             </form>
             <script>
                 document.getElementById('loginButton').addEventListener('click', function(event) {
-                event.preventDefault(); // Impede o envio imediato do formulário
+                event.preventDefault(); 
         
                 alert('Usuário logado com sucesso!');
         
         
-                window.location.href = 'index.php';
+                window.location.href = 'perfil.php';
                 });
             </script>
         </div>
