@@ -9,10 +9,41 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/saiba.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href=".\css\news.css">
+
     <script src="./js/produtos.js" defer></script>
 </head>
 
 <body>
+    <nav>
+          <div class="logo">
+              <a href="index.php">
+                  <img src="img/logo1.jpg" alt="Instituto Abepoli Logo">
+              </a>
+          </div>
+          <div class="menu-btn">
+              <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
+          </div>
+          <div class="menu__bar">
+              <ul>
+                  <li><a href="index.php">Início</a></li>
+                  <li><a href="produtos.php">Produtos</a></li>
+                  <li>
+                      <a href="acoes.php">Ações <i class="fa fa-caret-down"></i></a>
+                      <div class="dropdown__menu">
+                          <ul>
+                              <li><a href="#">Projetos</a></li>
+                              <li><a href="#">Parcerias</a></li>
+                              <li><a href="./sobre.php">Sobre</a></li>
+                          </ul>
+                      </div>
+                  </li>
+                  <li><a href="doacoes.php">Doações</a></li>
+                  <li><a href="saibamais.php" class="active">Saiba mais</a></li>
+                  <li><a href="contato.php">Contato</a></li>
+              </ul>
+          </div>
+      </nav>
     <section class="hero">
         <div class="hero-text">
             <h1>Abelhas e sua <span>importância</span></h1>
