@@ -51,9 +51,9 @@
     </div>
   </header>
 
-  <section class="section__container intro__container" id="intro">
-    <div class="intro__image">
-      <img src="./img/açoes.PNG" alt="intro" />
+  <section class="section__container explore__container">
+    <div class="explore__image">
+    <img src="./img/ações2.PNG" alt="intro" />
     </div>
     <div class="intro__content">
 
