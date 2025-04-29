@@ -149,7 +149,6 @@
                 </div>
 
                 <div class="produto-card">
-<<<<<<< HEAD
                     <img src="./img/logo.png" alt="Produto">
                     <p class="nome-produto">Nome do produto</p>
                     <p class="preco-produto">R$ 50,00</p>
@@ -201,12 +200,6 @@
                     <p class="preco-produto">R$ 50,00</p>
                     <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
                         class="btn-comprar">
-=======
-                    <img src="./img/produto10.jpg" alt="Produto">
-                    <p class="nome-produto">Sementes de lavanda</p>
-                    <p class="preco-produto">R$ 13,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
->>>>>>> 6939634f8b1b7a8de4756fe0e1ba967979b39298
                         <i class="fa fa-whatsapp"></i> Comprar
                     </a>
                 </div>
