@@ -76,7 +76,7 @@
                 <button class="botaodoacoes"><a id="afazer" href="#">Fazer doações</a></button>
             </div>
             <div class="image-bees">
-                <img class="bees" src="./img/Capturar.PNG2.PNG" alt="bees">
+                <img class="bees" src="./img/sobre1.png" alt="bees">
             </div>
         </div>
     </div>
