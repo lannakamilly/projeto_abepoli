@@ -23,9 +23,6 @@
   padding: 5rem 1rem;
 }
 
-.active:hover{
-  color: #000000;
-}
 .section__subheader {
   margin-bottom: 0.5rem;
   font-size: 1.75rem;
@@ -70,7 +67,7 @@
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
 }
 
-.news {
+img {
   display: flex;
   width: 100%;
 }
@@ -94,20 +91,18 @@ body {
 }
 
 
-
 .header__container {
   display: grid;
   gap: 2rem;
 }
 
 .header__image img {
-  width: 600px;
-  height: auto;
+  max-width: 600px;
   margin-inline: auto;
 }
 
 .header__content img {
-  width: 150px;
+  max-width: 150px;
   margin-inline: auto;
   transform: rotate(-10deg);
 }
@@ -194,8 +189,6 @@ body {
   border: 0.75rem solid var(--white);
   border-radius: 0.5rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  width: 400px;
-  height: 300px;
 }
 
 .about__image::before {
@@ -448,8 +441,6 @@ body {
 
 .blog__card img {
   border-radius: 0.5rem;
-  width: 200px;
-  height: 200px;
 }
 
 .blog__content {
@@ -504,6 +495,58 @@ body {
   }
 }
 
+.footer__logo {
+  margin-bottom: 2rem;
+}
+
+.footer__logo img {
+  max-width: 150px;
+  margin-inline: auto;
+}
+
+.footer__links {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer__links a {
+  font-weight: 500;
+  color: var(--text-dark);
+  white-space: nowrap;
+}
+
+.footer__links a:hover {
+  color: var(--primary-color);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer__socials a {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+}
+
+.footer__socials a:hover {
+  color: var(--primary-color);
+}
+
+.footer__bar {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: center;
+}
 
 @media (width > 540px) {
   .header__content form {
@@ -524,6 +567,7 @@ body {
 }
 
 @media (width > 768px) {
+
   .header__container {
     padding-top: 2rem;
     grid-template-columns: repeat(2, 1fr);
@@ -577,7 +621,9 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  
+  .footer__links {
+    gap: 3rem;
+  }
 }
 
 @media (width > 1024px) {

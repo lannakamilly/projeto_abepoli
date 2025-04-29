@@ -13,39 +13,32 @@
     />
     <link rel="stylesheet" href="./css/news.css" />
     <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
     <title>Instituto Abepoli</title>
   </head>
   <body>
     <nav>
-      <div class="logo">
-          <a href="index.php">
-              <img src="img/logo1.jpg" alt="Instituto Abepoli Logo">
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">
+            <img src="assets/logo.png" alt="logo" />
           </a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
       </div>
-      <div class="menu-btn">
-          <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
-      </div>
-      <div class="menu__bar">
-          <ul>
-              <li><a href="index.php">Início</a></li>
-              <li><a href="produtos.php">Produtos</a></li>
-              <li>
-                  <a href="acoes.php">Ações <i class="fa fa-caret-down"></i></a>
-                  <div class="dropdown__menu">
-                      <ul>
-                          <li><a href="#">Projetos</a></li>
-                          <li><a href="#">Parcerias</a></li>
-                          <li><a href="./sobre.php">Sobre</a></li>
-                      </ul>
-                  </div>
-              </li>
-              <li><a href="doacoes.php">Doações</a></li>
-              <li><a href="saibamais.php" class="active">Saiba mais</a></li>
-              <li><a href="contato.php">Contato</a></li>
-          </ul>
-      </div>
-  </nav>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="./index.php">início</a></li>
+        <li><a href="./produtos.php">Produtos</a></li>
+        <li><a href="./sobre.php">Ações</a></li>
+        <li><a href="./doacoes.php">Doações</a></li>
+        <li><a href="./saibamais.php">Saiba Mais</a></li>
+        <li><a href="./contato.php">Contato</a></li>
+        <li>
+        </li>
+      </ul>
+    </nav>
     
     <header class="section__container header__container" id="home">
       <div class="header__image">
@@ -185,6 +178,7 @@ As abelhas se alimentam de néctar, pólen e mel, preferem locais escuros e são
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/nav.js"></script>
     <script src="./js/news.js"></script>
   </body>
 </html>
