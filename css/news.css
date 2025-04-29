@@ -98,12 +98,13 @@ body {
 }
 
 .header__image img {
-  max-width: 600px;
+  width: 600px;
+  height: auto;
   margin-inline: auto;
 }
 
 .header__content img {
-  max-width: 150px;
+  width: 150px;
   margin-inline: auto;
   transform: rotate(-10deg);
 }
@@ -126,7 +127,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   border-radius: 1rem;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+
 }
 
 .header__content .input__group {
@@ -190,6 +191,8 @@ body {
   border: 0.75rem solid var(--white);
   border-radius: 0.5rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  height: 300px;
 }
 
 .about__image::before {
@@ -442,6 +445,8 @@ body {
 
 .blog__card img {
   border-radius: 0.5rem;
+  width: 200px;
+  height: 200px;
 }
 
 .blog__content {

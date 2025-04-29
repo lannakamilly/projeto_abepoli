@@ -176,7 +176,7 @@ nav {
       ),
       url("../img/imgheader1.jpg");
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
   }
   
@@ -246,6 +246,8 @@ nav {
 
 .intro__image img {
   background-color: var(--white);
+  width: 400px;
+  height: 400px;
 }
 
 .intro__content :is(.section__subheader, .section__header) {
@@ -325,7 +327,8 @@ nav {
     line-height: 1.5rem;
 }
   .explore__image img {
-    max-width: 350px;
+    width: 350px;
+    height: 330px;
     margin-inline: auto;
     border-radius: 2rem;
     box-shadow: -30px -30px 0px rgba(0, 0, 0, 0.1);
@@ -562,6 +565,8 @@ nav {
 .portfolio__card img {
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: 300px;
 }
 
 .banner__container {

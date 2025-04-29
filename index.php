@@ -13,39 +13,33 @@
     />
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/nav.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Instituto Abepoli</title>
   </head>
   <body>
-    <nav>
-      <div class="logo">
-          <a href="index.php">
-              <img src="img/logo1.jpg" alt="Instituto Abepoli Logo">
-          </a>
-      </div>
-      <div class="menu-btn">
-          <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
-      </div>
-      <div class="menu__bar">
-          <ul>
-              <li><a href="index.php">Início</a></li>
-              <li><a href="produtos.php">Produtos</a></li>
-              <li>
-                  <a href="acoes.php">Ações <i class="fa fa-caret-down"></i></a>
-                  <div class="dropdown__menu">
-                      <ul>
-                          <li><a href="#">Projetos</a></li>
-                          <li><a href="#">Parcerias</a></li>
-                          <li><a href="./sobre.php">Sobre</a></li>
-                      </ul>
-                  </div>
-              </li>
-              <li><a href="doacoes.php">Doações</a></li>
-              <li><a href="saibamais.php" class="active">Saiba mais</a></li>
-              <li><a href="contato.php">Contato</a></li>
-          </ul>
-      </div>
-  </nav>
+  <nav>
+            <div class="logo">
+                <img src="img/logo1.jpg" alt="Instituto Abepoli Logo">
+            </div>
+            <div class="menu-btn">
+                <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
+            </div>
+            <div class="menu__bar">
+                <ul>
+                    <li><a href="index.php"  class="active">Início</a></li>
+                    <li><a href="produtos.php">Produtos</a></li>
+                    <li>
+                    <a href="sobre.php">Ações </></a>
+                        <div class="dropdown__menu">
+                           
+                        </div>
+                    </li>
+                    <li><a href="doacoes.php">Doações</a></li>
+                    <li><a href="saibamais.php">Saiba mais</a></li>
+                    <li><a href="contato.php">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
     
     <header class="section__container header__container" id="home">
       <div class="header__content">
@@ -116,7 +110,7 @@ Descubra como você pode ajudar!
           <p>
             O Instituto Abepoli iniciou um estudo no "Mar de Girassóis" para catalogar espécies de abelhas e analisar seu papel na polinização e biodiversidade local.
           </p>
-          <a href="./new3.php" class="saiba-mais">Ler Mais</a>
+          <a href="new1.php" class="saiba-mais">Ler Mais</a>
         </div>
       </div>
     
@@ -140,7 +134,7 @@ Descubra como você pode ajudar!
           <p>
             As abelhas nativas vivem em colônias organizadas, produzem pouco mel, mas são essenciais para a polinização e equilíbrio ambiental
           </p>
-          <a href="./news4.php" class="saiba-mais">Ler Mais</a>
+          <a href="./new1.php" class="saiba-mais">Ler Mais</a>
         </div>
       </div>
 
@@ -166,6 +160,15 @@ Descubra como você pode ajudar!
       </div>
     </section>
     
+    <div class="wave-shape-divider">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
+        82.39-16.72,168.19-17.73,250.45-.39C823.78,31,
+        906.67,72,985.66,92.83c70.05,18.48,
+        146.53,26.09,214.34,3V0H0V27.35A600.21,
+        600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
 
     <footer class="abepoli-footer">
       <div class="footer-content">
@@ -192,6 +195,11 @@ Descubra como você pode ajudar!
                           <i class="fa fa-whatsapp"></i> (12) 98817-6722
                       </a>
                   </p>
+                  <p>
+                        <a href="./login.php" style="text-decoration: none; color: inherit;">
+                             Realizar login
+                        </a>
+                        </p>
               </div>
           </div>
 
