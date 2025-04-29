@@ -22,8 +22,18 @@
 
                 <a href="index.php" class="forgot-password">Esqueceu a senha?</a>
 
-                <button type="submit"><a id="entrar" href="index.php">ENTRAR</a></button>
+                <button id="loginButton" type="submit">ENTRAR</button>
             </form>
+            <script>
+                document.getElementById('loginButton').addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o envio imediato do formulário
+        
+                alert('Usuário logado com sucesso!');
+        
+        
+                window.location.href = 'index.php';
+                });
+            </script>
         </div>
     </div>
 </body>
