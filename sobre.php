@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/sobre.css" />
   <link rel="stylesheet" href="./css/footer.css" />
@@ -27,7 +25,7 @@
         <ul>
           <li><a href="index.php">Início</a></li>
           <li><a href="produtos.php">Produtos</a></li>
-          <li><a href="acoes.php" class="active">Ações</a></li>
+          <li><a href="sobre.php" class="active">Ações</a></li>
           <li><a href="doacoes.php">Doações</a></li>
           <li><a href="saibamais.php">Saiba mais</a></li>
           <li><a href="contato.php">Contato</a></li>
