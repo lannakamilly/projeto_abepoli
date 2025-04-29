@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="./js/main.js">
   <title>Instituto Abepoli</title>
 </head>
-
 <body>
   <nav>
     <div class="logo">

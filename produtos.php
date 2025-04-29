@@ -15,7 +15,7 @@
 <body>
 
     <header>
-    <nav>
+        <nav>
             <div class="logo">
                 <img src="img/logo1.jpg" alt="Instituto Abepoli Logo">
             </div>
@@ -27,9 +27,9 @@
                     <li><a href="index.php">Início</a></li>
                     <li><a href="produtos.php" class="active">Produtos</a></li>
                     <li>
-                    <a href="sobre.php">Ações </></a>
+                        <a href="sobre.php">Ações </></a>
                         <div class="dropdown__menu">
-                           
+
                         </div>
                     </li>
                     <li><a href="doacoes.php">Doações</a></li>
@@ -77,7 +77,8 @@
                     <img src="./img/logo.png" alt="Produto">
                     <p class="nome-produto">Nome do produto</p>
                     <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
+                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
+                        class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
                     </a>
                 </div>
@@ -86,7 +87,8 @@
                     <img src="./img/logo.png" alt="Produto">
                     <p class="nome-produto">Nome do produto</p>
                     <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
+                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
+                        class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
                     </a>
                 </div>
@@ -95,7 +97,8 @@
                     <img src="./img/logo.png" alt="Produto">
                     <p class="nome-produto">Nome do produto</p>
                     <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
+                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
+                        class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
                     </a>
                 </div>
@@ -104,7 +107,8 @@
                     <img src="./img/logo.png" alt="Produto">
                     <p class="nome-produto">Nome do produto</p>
                     <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
+                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
+                        class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
                     </a>
                 </div>
@@ -112,7 +116,8 @@
                     <img src="./img/logo.png" alt="Produto">
                     <p class="nome-produto">Nome do produto</p>
                     <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
+                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
+                        class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
                     </a>
                 </div>
@@ -120,7 +125,8 @@
                     <img src="./img/logo.png" alt="Produto">
                     <p class="nome-produto">Nome do produto</p>
                     <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
+                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
+                        class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
                     </a>
                 </div>
@@ -128,7 +134,8 @@
                     <img src="./img/logo.png" alt="Produto">
                     <p class="nome-produto">Nome do produto</p>
                     <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
+                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
+                        class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
                     </a>
                 </div>
@@ -136,7 +143,8 @@
                     <img src="./img/logo.png" alt="Produto">
                     <p class="nome-produto">Nome do produto</p>
                     <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
+                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
+                        class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
                     </a>
                 </div>
@@ -145,7 +153,8 @@
                     <img src="./img/logo.png" alt="Produto">
                     <p class="nome-produto">Nome do produto</p>
                     <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank" class="btn-comprar">
+                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
+                        class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
                     </a>
                 </div>
@@ -181,25 +190,28 @@
                 <p><i class="fa fa-envelope"></i> abepoli@gmail.com</p>
                 <div class="social-icons">
                     <p>
-                        <a href="https://www.facebook.com/profile.php?id=100076095320985" target="_blank" style="text-decoration: none; color: inherit;">
+                        <a href="https://www.facebook.com/profile.php?id=100076095320985" target="_blank"
+                            style="text-decoration: none; color: inherit;">
                             <i class="fa fa-facebook"></i> Instituto Abepoli
                         </a>
                     </p>
                     <p>
-                        <a href="https://www.instagram.com/abepoli/" target="_blank" style="text-decoration: none; color: inherit;">
+                        <a href="https://www.instagram.com/abepoli/" target="_blank"
+                            style="text-decoration: none; color: inherit;">
                             <i class="fa fa-instagram"></i> @abepoli
                         </a>
                     </p>
                     <p>
-                        <a href="https://wa.me/5512988176722" target="_blank" style="text-decoration: none; color: inherit;">
+                        <a href="https://wa.me/5512988176722" target="_blank"
+                            style="text-decoration: none; color: inherit;">
                             <i class="fa fa-whatsapp"></i> (12) 98817-6722
                         </a>
                     </p>
                     <p>
                         <a href="./login.php" style="text-decoration: none; color: inherit;">
-                             Realizar login
+                            Realizar login
                         </a>
-                        </p>
+                    </p>
                 </div>
             </div>
 
