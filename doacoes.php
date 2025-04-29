@@ -22,7 +22,7 @@
             </div>
             <div class="menu__bar">
                 <ul>
-                    <li><a href="index.php" class="active">Início</a></li>
+                    <li><a href="index.php">Início</a></li>
                     <li><a href="produtos.php">Produtos</a></li>
                     <li>
                         <a href="sobre.php">Ações </></a>
@@ -30,7 +30,7 @@
 
                         </div>
                     </li>
-                    <li><a href="doacoes.php">Doações</a></li>
+                    <li><a href="doacoes.php" class="active">Doações</a></li>
                     <li><a href="saibamais.php">Saiba mais</a></li>
                     <li><a href="contato.php">Contato</a></li>
                 </ul>
