@@ -75,7 +75,16 @@ nav .menu-btn i{
     cursor: pointer;
     display: none;
 }
-
+.mobile-menu{
+    cursor: pointer;
+  }
+  
+  .mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+  }
 @media (max-width: 920px){
     nav .menu-btn i{
         display: block;
