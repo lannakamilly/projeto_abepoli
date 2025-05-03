@@ -1,40 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="./css/login.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Instituto Abepoli</title>
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 </head>
+
 <body>
-    <div class="login-container">  
-    <a href="index.php" class="back-arrow">&#8592;</a> 
-        <div class="login-box">
-            <h2>Faça o seu login</h2>
-            <hr class="divider"/>
+    <div class="tela-login">
+        <a href="./index.php" class="voltar">
+            <img src="./img/botao_voltar.png" alt="Voltar">
+        </a>
 
-            <form action="#" method="post">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+        <div class="conteudo">
+            <div class="lado-esquerdo">
+                <div class="fundo-ondulado">
+                    <img src="./img/img_abepoli.png" class="imagem-central" alt="Imagem Instituto Abepoli">
+                </div>
+            </div>
 
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+            <div class="lado-direito">
+                <div class="card-login">
+                    <h1>Realizar login</h1>
+                    <hr class="linha-titulo">
+                    <form>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Digite seu email" />
 
-                <a href="index.php" class="forgot-password">Esqueceu a senha?</a>
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" placeholder="Digite sua senha" />
 
-                <button id="loginButton" type="submit">ENTRAR</button>
-            </form>
-            <script>
-                document.getElementById('loginButton').addEventListener('click', function(event) {
-                event.preventDefault(); 
-        
-                alert('Usuário logado com sucesso!');
-        
-        
-                window.location.href = 'perfil.php';
-                });
-            </script>
+                        <a href="#" class="link-senha">Esqueceu a senha?</a>
+
+                        <a href="./perfil.php" class="botao-entrar">ENTRAR</a>
+
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
 </html>

@@ -1,165 +1,144 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+body {
+  margin: 0;
+  font-size: 18px;
+  background-image: url('../img/fundo_login.png');
+  background-size: 100%; 
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+
+.tela-login {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voltar {
+  position: absolute;
+  top: 15px;
+  left: -30px;
+  z-index: 10;
+}
+
+.voltar img {
+  width: 135px;
+  height: 70px;
+}
+
+.conteudo {
+  display: flex;
+  max-width: 1000px;
+  width: 95%;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.lado-esquerdo {
+  position: relative;
+  width: 55%;
+  background-color: #c2970c;
+}
+
+.fundo-ondulado {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #ffcf00,  #8a640b); 
+}
+
+.imagem-central {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  z-index: 1;
+  margin-top: 40px;
+  transform: scale(1.05);
+}
+
+.lado-direito {
+  width: 45%;
+  background: white;
+  padding: 50px 40px;
+}
+
+.card-login h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.linha-titulo {
+  border: none;
+  height: 4px;
+  background-color: #b9910d;
+  width: 270px;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+form input {
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
+.link-senha {
+  font-size: 14px;
+  color: #b9910d;
+  margin-bottom: 25px;
+  text-decoration: none;
+}
+
+.botao-entrar {
+  display: inline-block;
+  background-color: #d4a114;
+  color: white;
+  font-weight: bold;
+  padding: 14px 15px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background 0.3s ease;
+  min-width: 100px;
+  margin-top: -10px;
+  margin-left: 70px;
+  margin-right: 60px;
+  text-align: center;
   
-  body, html {
-    height: 100%;
-    font-family: Arial, sans-serif;
-  }
-  
-  .login-container {
-    background-image: url('../img/03417f45-5f2c-4ff9-8e7e-67bda77ae1a1.png');
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .login-box {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 20px;
-    width: 100%;
-    max-width: 450px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-  }
-  
-  .back-arrow {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 28px;
-    text-decoration: none;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 50%;
-    z-index: 10;
-  }
-  
-  #entrar {
-    text-decoration: none;
-    color: white;
-  }
-  
-  .login-box h2 {
-    margin-bottom: 10px;
-    font-size: 26px;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .divider {
-    width: 60%;
-    height: 3px;
-    background-color: gold;
-    border: none;
-    margin: 0 auto 20px auto;
-  }
-  
-  form {
-    display: flex;
+}
+.botao-entrar:hover {
+  background-color: #bf8e04;
+}
+
+@media (max-width: 768px) {
+  .conteudo {
     flex-direction: column;
+    width: 95%;
   }
-  
-  label {
-    margin-bottom: 5px;
-    font-size: 14px;
+
+  .lado-esquerdo, .lado-direito {
+    width: 100%;
   }
-  
-  input {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #999;
-    border-radius: 5px;
-    font-size: 15px;
+
+  .imagem-central {
+    padding: 20px;
+    margin-top: 20px;
   }
-  
-  .forgot-password {
-    font-size: 15px;
-    color: goldenrod;
-    margin-bottom: 20px;
-    text-decoration: none;
-    align-self: flex-start;
-  }
-  
-  button {
-    background: #ffcd05;
-background: radial-gradient(circle,rgba(255, 205, 5, 1) 0%, rgba(195, 155, 34, 1) 62%, rgba(120, 108, 6, 1) 100%);
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  button:hover {
-    background-color: #d4af37;
-  }
-  
-  @media (max-width: 768px) {
-    .login-box {
-      padding: 30px 25px;
-    }
-  
-    .login-box h2 {
-      font-size: 22px;
-    }
-  
-    .divider {
-      width: 80%;
-    }
-  
-    input {
-      font-size: 14px;
-      padding: 9px;
-    }
-  
-    button {
-      font-size: 15px;
-      padding: 10px;
-    }
-  
-    .forgot-password {
-      font-size: 14px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .login-box {
-      padding: 25px 20px;
-    }
-  
-    .back-arrow {
-      top: 10px;
-      left: 10px;
-      font-size: 24px;
-    }
-  
-    .login-box h2 {
-      font-size: 20px;
-    }
-  
-    input {
-      font-size: 13px;
-      padding: 8px;
-    }
-  
-    button {
-      font-size: 14px;
-      padding: 10px;
-    }
-  
-    .forgot-password {
-      font-size: 13px;
-    }
-  }
-  
+}
