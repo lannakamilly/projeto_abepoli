@@ -8,34 +8,32 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/index.css" />
   <link rel="stylesheet" href="./css/footer.css" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./js/main.js">
+  <link rel="stylesheet" href="./css/nav.css" />
   <title>Instituto Abepoli</title>
 </head>
 <body>
-  <nav>
-    <div class="logo">
-      <img src="img/logo1.jpg" alt="Instituto Abepoli Logo">
-    </div>
-    <div class="menu-btn">
-      <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
-    </div>
-    <div class="menu__bar">
-      <ul>
-        <li><a href="index.php" class="active">Início</a></li>
-        <li><a href="produtos.php">Produtos</a></li>
+<nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">
+            <img src="assets/logo.png" alt="logo" />
+          </a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="./index.php">início</a></li>
+        <li><a href="./produtos.php">Produtos</a></li>
+        <li><a href="./sobre.php">Ações</a></li>
+        <li><a href="./doacoes.php">Doações</a></li>
+        <li><a href="./saibamais.php">Saiba Mais</a></li>
+        <li><a href="./contato.php">Contato</a></li>
         <li>
-          <a href="sobre.php">Ações </></a>
-          <div class="dropdown__menu">
-
-          </div>
         </li>
-        <li><a href="doacoes.php">Doações</a></li>
-        <li><a href="saibamais.php">Saiba mais</a></li>
-        <li><a href="contato.php">Contato</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
 
   <header class="section__container header__container" id="home">
     <div class="header__content">
@@ -225,6 +223,7 @@
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./js/index.js"></script>
+  <script src="./js/nav.js"></script>
 </body>
 
 </html>
