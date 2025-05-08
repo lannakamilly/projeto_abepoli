@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --primary-color:  #F7BE00;
-  --primary-color-dark:  #F7BE00;
+  --primary-color: #F7BE00;
+  --primary-color-dark: #F7BE00;
   --text-dark: #000000;
   --text-light: #62748e;
   --extra-light: #fafafa;
@@ -17,118 +17,119 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif; 
+  font-family: "Poppins", sans-serif;
 }
+
 nav {
-    position: fixed;
-    isolation: isolate;
-    width: 100%;
-    z-index: 9;
-  }
-  
-  .nav__header {
+  position: fixed;
+  isolation: isolate;
+  width: 100%;
+  z-index: 9;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+}
+
+.nav__logo a img {
+  max-width: 150px;
+}
+
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.nav__links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--primary-color);
+  transition: transform 0.5s;
+  z-index: -1;
+  list-style: none;
+}
+
+.nav__links.open {
+  transform: translateY(100%);
+}
+
+.nav__links a {
+  font-weight: 500;
+  color: var(--text-dark);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.nav__links a:hover {
+  color: var(--primary-color);
+}
+
+.nav__links .btn {
+  font-weight: 500;
+  color: var(--text-dark);
+  background-color: var(--extra-light);
+}
+
+
+
+@media (width > 768px) {
+  nav {
+    position: static;
     padding: 1rem;
-    width: 100%;
+    max-width: var(--max-width);
+    margin-inline: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
     background-color: var(--primary-color);
-  }
-  
-  .nav__logo a img {
-    max-width: 150px;
-  }
-  
-  .nav__menu__btn {
-    font-size: 1.5rem;
-    color: var(--text-dark);
-    cursor: pointer;
-  }
-  
-  .nav__links {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
-    background-color: var(--primary-color);
-    transition: transform 0.5s;
-    z-index: -1;
-    list-style: none;
-  }
-  
-  .nav__links.open {
-    transform: translateY(100%);
-  }
-  
-  .nav__links a {
-    font-weight: 500;
-    color: var(--text-dark);
-    white-space: nowrap;
-    text-decoration: none;
-  }
-  
-  .nav__links a:hover {
-    color: var(--primary-color);
-  }
-  
-  .nav__links .btn {
-    font-weight: 500;
-    color: var(--text-dark);
-    background-color: var(--extra-light);
   }
 
-  
-  
-@media (width > 768px) {
-    nav {
-      position: static;
-      padding: 1rem;
-      max-width: var(--max-width);
-      margin-inline: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      background-color: var(--primary-color);
-    }
-  
-    .nav__header {
-      flex: 1;
-      padding: 0;
-      background-color: transparent;
-    }
-  
-    .nav__menu__btn {
-      display: none;
-    }
-  
-    .nav__links {
-      position: static;
-      width: fit-content;
-      padding: 0;
-      flex-direction: row;
-      gap: 3rem;
-      background-color: transparent;
-      transform: none !important;
-    }
-  
-    .nav__links a {
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid transparent;
-    }
-  
-    .nav__links a:hover {
-      border-color: var(--primary-color);
-    }
-  
-    .nav__links .btn {
-      color: var(--white);
-      background-color: var(--primary-color);
-    }
+  .nav__header {
+    flex: 1;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    width: fit-content;
+    padding: 0;
+    flex-direction: row;
+    gap: 3rem;
+    background-color: transparent;
+    transform: none !important;
+  }
+
+  .nav__links a {
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav__links a:hover {
+    border-color: var(--primary-color);
+  }
+
+  .nav__links .btn {
+    color: var(--white);
+    background-color: var(--primary-color);
+  }
 }
