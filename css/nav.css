@@ -36,7 +36,8 @@ nav {
   }
   
   .nav__logo a img {
-    max-width: 100px;
+    width: 200px;
+    height: 45px;
   }
   
   .nav__menu__btn {

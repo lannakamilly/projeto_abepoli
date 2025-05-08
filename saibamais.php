@@ -6,44 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Abepoli</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/saiba.css">
     <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href=".\css\news.css">
 
     <script src="./js/produtos.js" defer></script>
 </head>
 
 <body>
-    <nav>
-          <div class="logo">
-              <a href="index.php">
-                  <img src="img/logo1.jpg" alt="Instituto Abepoli Logo">
-              </a>
-          </div>
-          <div class="menu-btn">
-              <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
-          </div>
-          <div class="menu__bar">
-              <ul>
-                  <li><a href="index.php">Início</a></li>
-                  <li><a href="produtos.php">Produtos</a></li>
-                  <li>
-                      <a href="acoes.php">Ações <i class="fa fa-caret-down"></i></a>
-                      <div class="dropdown__menu">
-                          <ul>
-                              <li><a href="#">Projetos</a></li>
-                              <li><a href="#">Parcerias</a></li>
-                              <li><a href="./sobre.php">Sobre</a></li>
-                          </ul>
-                      </div>
-                  </li>
-                  <li><a href="doacoes.php">Doações</a></li>
-                  <li><a href="saibamais.php" class="active">Saiba mais</a></li>
-                  <li><a href="contato.php">Contato</a></li>
-              </ul>
-          </div>
-      </nav>
+<nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">
+            <img src="./img/logo1.jpg" alt="logo" />
+          </a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="./index.php">Início</a></li>
+        <li><a href="./produtoss.php">Produtos</a></li>
+        <li><a href="./sobre.php">Ações</a></li>
+        <li><a href="./doacoes.php">Doações</a></li>
+        <li><a href="./saibamais.php">Saiba Mais</a></li>
+        <li><a href="./contato.php">Contato</a></li>
+        <li>
+        </li>
+      </ul>
+    </nav>
+
     <section class="hero">
         <div class="hero-text">
             <h1>Abelhas e sua <span>importância</span></h1>
@@ -73,9 +66,15 @@
             <h2>Importância na <span>preservação ambiental</span></h2>
         </div>
         <div class="importanciaTexto">
-            <p>Quando olhamos para a grande biodiversidade de espécies vegetais pelo mundo, talvez não consigamos enxergar o trabalho das abelhas logo de cara. Mas, tenha certeza: para cerca de 85% das plantas com flores presentes nas matas e florestas da natureza, em algum momento, a ação destes polinizadores foi essencial segundo a Organização das Nações Unidas para a Alimentação e a Agricultura (FAO).</p>
+            <p>Quando olhamos para a grande biodiversidade de espécies vegetais pelo mundo, talvez não consigamos
+                enxergar o trabalho das abelhas logo de cara. Mas, tenha certeza: para cerca de 85% das plantas com
+                flores presentes nas matas e florestas da natureza, em algum momento, a ação destes polinizadores foi
+                essencial segundo a Organização das Nações Unidas para a Alimentação e a Agricultura (FAO).</p>
 
-            <p class="citacao">“As abelhas garantem a variação genética tão importante ao desenvolvimento e reprodução das plantas e, com isso, garantem o equilíbrio dos ecossistemas e que existam plantas suficientes para a produção de oxigênio. São ainda consideradas um importante bioindicador da qualidade do meio ambiente”, acrescenta Ana Bueno, bióloga da ONG Bee or not to Be.</p>
+            <p class="citacao">“As abelhas garantem a variação genética tão importante ao desenvolvimento e reprodução
+                das plantas e, com isso, garantem o equilíbrio dos ecossistemas e que existam plantas suficientes para a
+                produção de oxigênio. São ainda consideradas um importante bioindicador da qualidade do meio ambiente”,
+                acrescenta Ana Bueno, bióloga da ONG Bee or not to Be.</p>
         </div>
     </section>
 
@@ -88,7 +87,8 @@
             <div class="card">
                 <h3>Polinização</h3>
                 <ul>
-                    <li class="texto">São responsáveis pela <span>polinização de muitas plantas, como frutas, legumes e grãos.</span></li>
+                    <li class="texto">São responsáveis pela <span>polinização de muitas plantas, como frutas, legumes e
+                            grãos.</span></li>
                     <li class="textomenor">Essencial para a reprodução de muitas plantas e para a biodiversidade.</li>
                 </ul>
             </div>
@@ -96,8 +96,10 @@
             <div class="card">
                 <h3>Produção de alimentos</h3>
                 <ul>
-                    <li class="texto">As abelhas produzem <span>mel, geleia real e pólen</span>, que são alimentos de alta qualidade.</li>
-                    <li class="textomenor">A presença de abelhas nas plantações aumenta o rendimento das colheitas e melhora a qualidade dos produtos.</li>
+                    <li class="texto">As abelhas produzem <span>mel, geleia real e pólen</span>, que são alimentos de
+                        alta qualidade.</li>
+                    <li class="textomenor">A presença de abelhas nas plantações aumenta o rendimento das colheitas e
+                        melhora a qualidade dos produtos.</li>
                 </ul>
             </div>
 
@@ -105,7 +107,8 @@
                 <h3>Biodiversidade</h3>
                 <ul>
                     <li class="texto">Desempenham um papel vital na promoção da biodiversidade.</li>
-                    <li class="textomenor">As abelhas garantem a <span>variação genética</span> tão importante ao desenvolvimento e reprodução das plantas.</li>
+                    <li class="textomenor">As abelhas garantem a <span>variação genética</span> tão importante ao
+                        desenvolvimento e reprodução das plantas.</li>
                 </ul>
             </div>
         </div>
@@ -125,19 +128,23 @@
             <div class="integrante">
                 <img src="./img/operaria.png" alt="Operária">
                 <h4>Operária</h4>
-                <p>Fêmeas estéreis que têm uma vida curta e são responsáveis por todas as tarefas da colmeia, como buscar alimento, produzir cera, alimentar as larvas e defender a colmeia.</p>
+                <p>Fêmeas estéreis que têm uma vida curta e são responsáveis por todas as tarefas da colmeia, como
+                    buscar alimento, produzir cera, alimentar as larvas e defender a colmeia.</p>
             </div>
 
             <div class="integrante">
                 <img src="./img/zangao.png" alt="Zangão">
                 <h4>Zangão</h4>
-                <p>Machos da colmeia e sua principal função é fecundar a rainha. Eles não possuem ferrão e não realizam trabalhos como as operárias. Após o acasalamento, geralmente morrem.</p>
+                <p>Machos da colmeia e sua principal função é fecundar a rainha. Eles não possuem ferrão e não realizam
+                    trabalhos como as operárias. Após o acasalamento, geralmente morrem.</p>
             </div>
 
             <div class="integrante">
                 <img src="./img/rainha.png" alt="Rainha">
                 <h4>Rainha</h4>
-                <p>Única fêmea fértil da colmeia e sua principal função é botar ovos para garantir a continuidade da colônia. Pode viver vários anos e libera feromônios que regulam o comportamento das operárias e zangões.</p>
+                <p>Única fêmea fértil da colmeia e sua principal função é botar ovos para garantir a continuidade da
+                    colônia. Pode viver vários anos e libera feromônios que regulam o comportamento das operárias e
+                    zangões.</p>
             </div>
         </div>
     </section>
@@ -165,24 +172,27 @@
                 <p><i class="fa fa-envelope"></i> abepoli@gmail.com</p>
                 <div class="social-icons">
                     <p>
-                        <a href="https://www.facebook.com/profile.php?id=100076095320985" target="_blank" style="text-decoration: none; color: inherit;">
+                        <a href="https://www.facebook.com/profile.php?id=100076095320985" target="_blank"
+                            style="text-decoration: none; color: inherit;">
                             <i class="fa fa-facebook"></i> Instituto Abepoli
                         </a>
                     </p>
                     <p>
-                        <a href="https://www.instagram.com/abepoli/" target="_blank" style="text-decoration: none; color: inherit;">
+                        <a href="https://www.instagram.com/abepoli/" target="_blank"
+                            style="text-decoration: none; color: inherit;">
                             <i class="fa fa-instagram"></i> @abepoli
                         </a>
                     </p>
                     <p>
-                        <a href="https://wa.me/5512988176722" target="_blank" style="text-decoration: none; color: inherit;">
+                        <a href="https://wa.me/5512988176722" target="_blank"
+                            style="text-decoration: none; color: inherit;">
                             <i class="fa fa-whatsapp"></i> (12) 98817-6722
                         </a>
-                        <p>
+                    <p>
                         <a href="./login.php" style="text-decoration: none; color: inherit;">
-                             Realizar login
+                            Realizar login
                         </a>
-                        </p>
+                    </p>
                     </p>
                 </div>
             </div>
@@ -201,7 +211,7 @@
             <p>© Todos os direitos reservados</p>
         </div>
     </footer>
-
+    <script src="./js/nav.js"></script>
 </body>
 
 </html>
