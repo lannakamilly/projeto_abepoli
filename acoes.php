@@ -4,33 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ações - Instituto Abepoli</title>
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/acoes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="img/logo1.jpg" alt="Logo Abepoli">
-            </div>
-            <div class="menu-btn">
-                <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
-            </div>
-            <div class="menu__bar">
-                <ul>
-                    <li><a href="index.php">Início</a></li>
-                    <li><a href="produtos.php">Produtos</a></li>
-                    <li><a href="sobre.php" class="active">Ações</a></li>
-                    <li><a href="doacoes.php">Doações</a></li>
-                    <li><a href="saibamais.php">Saiba mais</a></li>
-                    <li><a href="contato.php">Contato</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+<nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">
+            <img src="./img/logo1.jpg" alt="logo" />
+          </a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="./index.php">Início</a></li>
+        <li><a href="./produtoss.php">Produtos</a></li>
+        <li><a href="./sobre.php">Ações</a></li>
+        <li><a href="./doacoes.php">Doações</a></li>
+        <li><a href="./saibamais.php">Saiba Mais</a></li>
+        <li><a href="./contato.php">Contato</a></li>
+      </ul>
+    </nav>
 
     <main>
         <section class="intro-abepoli">
@@ -141,6 +141,7 @@
     </footer>
 
     <script src="./js/main.js"></script>
+    <script src="./js/nav.js"></script>
 </body>
 
 </html>
