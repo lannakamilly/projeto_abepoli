@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #F7BE00;
-  --primary-color-dark: #F7BE00;
+  --primary-color-dark: #5e4c00;
   --text-dark: #000000;
   --text-light: #62748e;
   --extra-light: #fafafa;
@@ -75,7 +75,7 @@ nav {
 }
 
 .nav__links a:hover {
-  color: var(--primary-color);
+  color: var(--primary-color-dark);
 }
 
 .nav__links .btn {

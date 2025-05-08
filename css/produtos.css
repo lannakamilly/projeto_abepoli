@@ -4,9 +4,16 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
-    background-color: #ffffff;
     line-height: 1.6;
+    background-color: #fff;
+    color: #000;
+    max-width: 100%;
 }
 
 .produtos-section {
