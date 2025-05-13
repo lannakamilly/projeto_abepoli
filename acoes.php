@@ -13,26 +13,28 @@
 </head>
 
 <body>
-    <nav>
-        <div class="nav__header">
-            <div class="nav__logo">
-                <a href="#">
-                    <img src="./img/logo1.jpg" alt="logo" />
-                </a>
-            </div>
-            <div class="nav__menu__btn" id="menu-btn">
-                <i class="ri-menu-3-line"></i>
-            </div>
+<header>
+    <nav id="navisinha">
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">
+            <img src="./img/logo1.jpg" alt="logo" />
+          </a>
         </div>
-        <ul class="nav__links" id="nav-links">
-            <li><a href="./index.php">Início</a></li>
-            <li><a href="./produtoss.php">Produtos</a></li>
-            <li><a href="./sobre.php">Ações</a></li>
-            <li><a href="./doacoes.php">Doações</a></li>
-            <li><a href="./saibamais.php">Saiba Mais</a></li>
-            <li><a href="./contato.php">Contato</a></li>
-        </ul>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="./index.php">Início</a></li>
+        <li><a href="./produtoss.php">Produtos</a></li>
+        <li><a href="./sobre.php">Ações</a></li>
+        <li><a href="./doacoes.php">Doações</a></li>
+        <li><a href="./saibamais.php">Saiba Mais</a></li>
+        <li><a href="./contato.php">Contato</a></li>
+      </ul>
     </nav>
+    </header>
 
     <main>
         <section class="intro-abepoli">

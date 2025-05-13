@@ -37,6 +37,7 @@ nav {
 }
 
 .nav__logo a img {
+  width: 150px;
   max-width: 150px;
 }
 

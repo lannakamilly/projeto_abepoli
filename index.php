@@ -26,12 +26,11 @@
     </div>
     <ul class="nav__links" id="nav-links">
       <li><a href="./index.php">início</a></li>
-      <li><a href="./produtos.php">Produtos</a></li>
+      <li><a href="./produtoss.php">Produtos</a></li>
       <li><a href="./sobre.php">Ações</a></li>
       <li><a href="./doacoes.php">Doações</a></li>
       <li><a href="./saibamais.php">Saiba Mais</a></li>
       <li><a href="./contato.php">Contato</a></li>
-      <li>
       </li>
     </ul>
   </nav>
