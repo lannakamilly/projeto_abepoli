@@ -211,6 +211,7 @@
                 </div>
             </div>
 
+
             <div class="footer-col dev-col">
                 <h4>Site desenvolvido por</h4>
                 <p>Flávia Glenda Guimarães Carvalho</p>
@@ -225,7 +226,7 @@
             <p>© Todos os direitos reservados</p>
         </div>
     </footer>
-    <script src="./js/nav.js"></script>
+  
 </body>
 
 </html>
