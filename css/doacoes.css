@@ -370,6 +370,14 @@ a{
         display: flex;
         flex-direction: column;
     }
+    #title{
+        margin-top: 50px;
+        font-size: 57px;
+    }
+    p{
+        font-size: 30px;
+        width: 400px;
+    }
 
 
 
