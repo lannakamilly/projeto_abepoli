@@ -241,7 +241,7 @@
                 <h4>Site desenvolvido por</h4>
                 <p>Flávia Glenda Guimarães Carvalho</p>
                 <p>Júlia da Silva Conconi</p>
-                <p>Kauã Albuquerque de Almeida</p>
+                <p>Kauã de Albuquerque de Almeida</p>
                 <p>Lanna Kamilly Fres Motta</p>
                 <p>Miguel Borges da Silva</p>
             </div>
