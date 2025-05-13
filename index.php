@@ -11,29 +11,30 @@
   <link rel="stylesheet" href="./css/nav.css" />
   <title>Instituto Abepoli</title>
 </head>
+
 <body>
-<nav>
-      <div class="nav__header">
-        <div class="nav__logo">
-          <a href="#">
-            <img src="assets/logo.png" alt="logo" />
-          </a>
-        </div>
-        <div class="nav__menu__btn" id="menu-btn">
-          <i class="ri-menu-3-line"></i>
-        </div>
+  <nav>
+    <div class="nav__header">
+      <div class="nav__logo">
+        <a href="#">
+          <img src="./img/logo1.jpg" alt="logo" />
+        </a>
       </div>
-      <ul class="nav__links" id="nav-links">
-        <li><a href="./index.php">início</a></li>
-        <li><a href="./produtos.php">Produtos</a></li>
-        <li><a href="./sobre.php">Ações</a></li>
-        <li><a href="./doacoes.php">Doações</a></li>
-        <li><a href="./saibamais.php">Saiba Mais</a></li>
-        <li><a href="./contato.php">Contato</a></li>
-        <li>
-        </li>
-      </ul>
-    </nav>
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-3-line"></i>
+      </div>
+    </div>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="./index.php">início</a></li>
+      <li><a href="./produtos.php">Produtos</a></li>
+      <li><a href="./sobre.php">Ações</a></li>
+      <li><a href="./doacoes.php">Doações</a></li>
+      <li><a href="./saibamais.php">Saiba Mais</a></li>
+      <li><a href="./contato.php">Contato</a></li>
+      <li>
+      </li>
+    </ul>
+  </nav>
 
   <header class="section__container header__container" id="home">
     <div class="header__content">
