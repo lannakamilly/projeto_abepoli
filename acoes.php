@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
+
 <body>
-<nav>
+<header>
+    <nav id="navisinha">
       <div class="nav__header">
         <div class="nav__logo">
           <a href="#">
@@ -31,6 +34,7 @@
         <li><a href="./contato.php">Contato</a></li>
       </ul>
     </nav>
+    </header>
 
     <main>
         <section class="intro-abepoli">
@@ -129,7 +133,7 @@
                 <h4>Site desenvolvido por</h4>
                 <p>Flávia Glenda Guimarães Carvalho</p>
                 <p>Júlia da Silva Conconi</p>
-                <p>Kauã Albuquerque de Almeida</p>
+                <p>Kauã de Albuquerque Almeida</p>
                 <p>Lanna Kamilly Fres Motta</p>
                 <p>Miguel Borges da Silva</p>
             </div>

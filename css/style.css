@@ -112,9 +112,6 @@ li.dropdown{
   margin-top: 5px;
 }
 
-ul li a:hover{
-  background-color: rgb(255, 150, 0);
-}
 ul li:hover ul.dropdown{
   display: block;
   
