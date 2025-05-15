@@ -375,13 +375,17 @@ a{
         font-size: 57px;
     }
     p{
-        font-size: 30px;
-        width: 400px;
+        margin-top: 20px;
+        font-size: 20px;
+        width: 250px;
+    }h1{
+        margin-top: 40px;
+        font-size: 44px;
+    }
     }
 
 
 
-}
 @media (width > 768px) {
     nav {
         top: 0px !important;
