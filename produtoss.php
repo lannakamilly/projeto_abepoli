@@ -9,10 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/footerr.css">
-    <link rel="stylesheet" href="./css/produtoss.css">
-    <script src="./js/produtos.js" defer></script>
+    <link rel="stylesheet" href="./css/produtosInicio.css">
 </head>
-
 <body>
     <nav>
         <div class="nav__header">
@@ -35,135 +33,24 @@
         </ul>
     </nav>
 
-    <section class="produtos-section">
-        <h1 class="titulo">PRODUTOS</h1>
-
-        <div class="container">
-            <aside class="categorias">
-                <h2>Categorias</h2>
-                <ul>
-                    <li class="categoria-titulo">Produtos naturais de abelhas</li>
-                    <ul class="subcategorias">
-                        <li>Mel de abelhas nativas</li>
-                        <li>Própolis e geoprópolis</li>
-                        <li>Cera de abelhas nativas</li>
-                        <li>Pólen apícola</li>
-                    </ul>
-
-                    <li class="categoria-titulo"> Conscientização</li>
-                    <ul class="subcategorias">
-                        <li>Camiseta</li>
-                        <li>Chaveiros</li>
-                        <li>Ímãs educativos</li>
-                        <li>Adesivos</li>
-                    </ul>
-
-                    <li class="categoria-titulo">Sementes</li>
-                    <ul class="subcategorias">
-                        <li>Kit de sementes</li>
-                        <li>Sementes de girassol</li>
-                        <li>Sementes de erva-cidreira-do-campo</li>
-                        <li>Todas as sementes</li>
-                    </ul>
-                </ul>
-            </aside>
-
-            <main class="produtos-grid">
-                <div class="produto-card">
-                    <img src="./img/produto1.jpeg" alt="Produto">
-                    <p class="nome-produto">Mel de abelhas nativas</p>
-                    <p class="preco-produto">R$ 190,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-
-                <div class="produto-card">
-                    <img src="./img/produto2.jpeg" alt="Produto">
-                    <p class="nome-produto">Extrato de própolis</p>
-                    <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-
-                <div class="produto-card">
-                    <img src="./img/produto3.jpeg" alt="Produto">
-                    <p class="nome-produto">Cera de abelhas nativas</p>
-                    <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-
-                <div class="produto-card">
-                    <img src="./img/produto5.jpeg" alt="Produto">
-                    <p class="nome-produto">Pólen apícola</p>
-                    <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-                <div class="produto-card">
-                    <img src="./img/produtoooooooooo8.jpeg" alt="Produto">
-                    <p class="nome-produto">Casa de colmeia</p>
-                    <p class="preco-produto">R$ 80,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-                <div class="produto-card">
-                    <img src="./img/produto6.jpeg" alt="Produto">
-                    <p class="nome-produto">Favo de mel</p>
-                    <p class="preco-produto">R$ 60,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-                <div class="produto-card">
-                    <img src="./img/produto7.jpeg" alt="Produto">
-                    <p class="nome-produto">Sementes de girassol</p>
-                    <p class="preco-produto">R$ 09,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-                <div class="produto-card">
-                    <img src="./img/produto9.jpg" alt="Produto">
-                    <p class="nome-produto">Camisa conscientização</p>
-                    <p class="preco-produto">R$ 55,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-
-                <div class="produto-card">
-                    <img src="./img/chaveiro.webp" alt="Produto">
-                    <p class="nome-produto">Chaveiro abelha</p>
-                    <p class="preco-produto">R$ 55,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-        </div>
-    </section>
-
-    <div class="paginacao">
-        <button class="pagina ativa">1</button>
-        <button class="pagina">2</button>
-        <button class="pagina">3</button>
-        <button class="pagina">></button>
+  <div class="container">
+    <h1>Confira nossos produtos!</h1>
+    <div class="produtos">
+      <a href="propolis.html" class="produto">
+        <img src="./img/abelhas_produtos_1.jpg" alt="Extrato de Própolis">
+        <div class="descricao">Extrato de própolis (6)</div>
+      </a>
+      <a href="mel.html" class="produto">
+        <img src="./img/mel_produtos.jpg" alt="Mel">
+        <div class="descricao">Mel (5)</div>
+      </a>
+      <a href="compostos.html" class="produto">
+        <img src="./img/abelhas_produtos_3.jpg" alt="Compostos">
+        <div class="descricao">Compostos (8)</div>
+      </a>
     </div>
-    <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+  </div>
+      <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
     <div class="wave-shape-divider">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -203,6 +90,13 @@
                             <i class="fa fa-whatsapp"></i> (12) 98817-6722
                         </a>
                     <p>
+
+                    <p>
+                         <a href="https://www.google.com/maps?sca_esv=36354fdb691823cb&rlz=1C1GCEU_pt-BRBR1094BR1094&output=search&q=abepoli&source=lnms&fbs=ABzOT_BYhiZpMrUAF0c9tORwPGlsjfkTCQbVbkeDjnTQtijddCIwjuBvoXndi-OO1f8kXGUrQAK1bEIdN5wzK9JtNLp0OcVdlfH7WkxQQ_AuepJPuHeH2DWgH8c_t2v5kMcNa1ewf5bHGhgS0NqXr0T15GsUd-PPsI-UvLZnpji6Ar0uZz8IdrS_iGBwgroq-WVuNHPTSRfsdhx7eBkmikyoVkaa3QCNNw&entry=mc&ved=1t:200715&ictx=111" target="_blank"
+                            style="text-decoration: none; color: inherit;">
+                           <i class="fa-solid fa-location-dot"></i>Localização
+                        </a>
+                    </p>
                         <a href="./login.php" class="realizarLogin" style="text-decoration: none; color: inherit;">
                             Realizar login
                         </a>
@@ -226,7 +120,9 @@
             <p>© Todos os direitos reservados</p>
         </div>
     </footer>
-  
+   <script src="./js/nav.js"></script>
 </body>
 
+</html>
+</body>
 </html>
