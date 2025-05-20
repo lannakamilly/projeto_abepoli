@@ -12,7 +12,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="./css/news.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/footerr.css" />
     <link rel="stylesheet" href="./css/nav.css" />
     <title>Instituto Abepoli</title>
   </head>
@@ -134,32 +134,36 @@ As abelhas se alimentam de néctar, pólen e mel, preferem locais escuros e são
               <img src="img/logo1.jpg" alt="Instituto Abepoli" class="footer-logo">
           </div>
 
-          <div class="footer-col contact-col">
-              <h4>Contato</h4>
-              <p><i class="fa fa-envelope"></i> abepoli@gmail.com</p>
-              <div class="social-icons">
-                  <p>
-                      <a href="https://www.facebook.com/profile.php?id=100076095320985" target="_blank" style="text-decoration: none; color: inherit;">
-                          <i class="fa fa-facebook"></i> Instituto Abepoli
-                      </a>
-                  </p>
-                  <p>
-                      <a href="https://www.instagram.com/abepoli/" target="_blank" style="text-decoration: none; color: inherit;">
-                          <i class="fa fa-instagram"></i> @abepoli
-                      </a>
-                  </p>
-                  <p>
-                      <a href="https://wa.me/5512988176722" target="_blank" style="text-decoration: none; color: inherit;">
-                          <i class="fa fa-whatsapp"></i> (12) 98817-6722
-                      </a>
-                  </p>
-                  <p>
-                        <a href="./login.php" style="text-decoration: none; color: inherit;">
-                             Realizar login
+                <div class="footer-col contact-col">
+                <h4>Contato</h4>
+                <p><i class="fa fa-envelope"></i> abepoli@gmail.com</p>
+                <div class="social-icons">
+                    <p>
+                        <a href="https://www.facebook.com/profile.php?id=100076095320985" target="_blank"
+                            style="text-decoration: none; color: inherit;">
+                            <i class="fa fa-facebook"></i> Instituto Abepoli
                         </a>
-                        </p>
-              </div>
-          </div>
+                    </p>
+                    <p>
+                        <a href="https://www.instagram.com/abepoli/" target="_blank"
+                            style="text-decoration: none; color: inherit;">
+                            <i class="fa fa-instagram"></i> @abepoli
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://wa.me/5512988176722" target="_blank"
+                            style="text-decoration: none; color: inherit;">
+                            <i class="fa fa-whatsapp"></i> (12) 98817-6722
+                        </a>
+                    <p>
+                        <a href="./login.php" class="realizarLogin" style="text-decoration: none; color: inherit;">
+                            Realizar login
+                        </a>
+                    </p>
+                    </p>
+                </div>
+            </div>
+
 
           <div class="footer-col dev-col">
               <h4>Site desenvolvido por</h4>
