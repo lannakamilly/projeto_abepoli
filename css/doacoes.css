@@ -281,7 +281,7 @@ td{
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-bottom: 200px ;
+    margin-bottom: 20px ;
 }
 #hrdoacao{
     margin-left: 450px;
@@ -297,9 +297,9 @@ td{
 #divcomo{
     margin-bottom: 200px;
     position: relative;
-    top: 50px;
+    top: 20px;
     bottom: 500px;
-    margin-top: 300px;
+    margin-top: 30px;
     align-items: center;
     display: flex;
     flex-direction: column;
