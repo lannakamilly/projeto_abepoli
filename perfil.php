@@ -21,7 +21,7 @@
     <!-- restante do formulário aqui -->
   </div>
 
-  <!-- <body>
+  <body>
 <div class="topo">
   <a href="login.php" class="icone-voltar">&#8592</a>
   <h1 class="titulo">ATUALIZAR PERFIL</h1>
@@ -80,6 +80,6 @@
       </div>
     </form>
   </div>
-</body> -->
+</body>
 
 </html>

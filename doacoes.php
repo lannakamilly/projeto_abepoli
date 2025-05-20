@@ -1,5 +1,13 @@
+<?php
+include 'conexao.php';
+$sql_doacoes = "SELECT id_doacao, doador, valores, destinado	
+                FROM doacoes";
+
+$resultado_doacoes = $conn->query($sql_doacoes);
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+< lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +21,7 @@
 </head>
 <body>
 
-<body>
+<>
 
     <header>
     <nav id="navisinha">
@@ -67,11 +75,11 @@
             <img id="img_açoes" src="./img/açoes.PNG" alt="img-acoes" class="img-acoes">
         </div>
     </section>
-    <section id="sectiontabela">
         <div id="divaliembaixo">
 
             <h2 id="h2doacoes">Doações</h2>
             <hr id="ailiembaixo" class="hrvermelho">
+            <br>
         </div>
 
         <div id="tabeladiv">
@@ -81,48 +89,37 @@
                     <th>Doador</th>
                     <th>Valor</th>
                     <th>destinado</th>
+                    <th></th>
                 </tr>
-                <tr>
-                    <td>Maria</td>
-                    <td>30</td>
-                    <td>pagamento funcionarios</td>
-                </tr>
-                <tr id="par">
-                    <td>João</td>
-                    <td>25</td>
-                    <td>contrucção de comeias</td>
-                </tr>
-                <tr id="impar">
-                    <td>João</td>
-                    <td>25</td>
-                    <td>contrucção de comeias</td>
-                </tr>
-                <tr id="par">
-                    <td>João</td>
-                    <td>25</td>
-                    <td>contrucção de comeias</td>
-                </tr>
-                <tr id="impar">
-                    <td>João</td>
-                    <td>25</td>
-                    <td>contrucção de comeias</td>
-                </tr>
-                <tr id="par">
-                    <td>João</td>
-                    <td>25</td>
-                    <td>contrucção de comeias</td>
-                </tr>
-                <tr id="impar">
-                    <td>João</td>
-                    <td>25</td>
-                    <td>contrucção de comeias</td>
-                </tr>
-
-            </table>
+                <tbody>
+                    <?php 
+                        if ($resultado_doacoes->num_rows> 0) {
+                            while ($linha = $resultado_doacoes->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . $linha['doador'] . "</td>";
+                                echo "<td>" . $linha['valores'] . "</td>";
+                                echo "<td>" . $linha['destinado'] . "</td>";
+                                echo "<td class='actions'>
+                                        <a href='editar.php?id=" . $linha['id_doacao'] . "' class='edit-btn'>Editar</a>
+                                        <a href='excluir.php?id=" . $linha['id_doacao'] . "' class='delete-btn' onclick=\"return confirm('Tem certeza que deseja excluir?');\">Excluir</a>
+                                      </td>";
+                                echo "</tr>";
+                            }
+                        }else{
+                            echo "<tr><td colspan='8'>Nem um doador encontrado</td></tr>";
+                        }
+                    ?>
+                    </tbody>
+                </div>
+                
+                <button hafe="">adisionar</buttonhafe>
+           
+        </table>
 
 
         </div>
     </section>
+    
     <section id="infografico">
 
         <h2 class="h2">Caminho do Doação</h2>
