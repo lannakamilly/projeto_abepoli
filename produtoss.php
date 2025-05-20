@@ -203,7 +203,7 @@
                             <i class="fa fa-whatsapp"></i> (12) 98817-6722
                         </a>
                     <p>
-                        <a href="./login.php" style="text-decoration: none; color: inherit;">
+                        <a href="./login.php" class="realizarLogin" style="text-decoration: none; color: inherit;">
                             Realizar login
                         </a>
                     </p>

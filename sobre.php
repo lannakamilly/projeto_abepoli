@@ -195,29 +195,36 @@
       <div class="footer-col logo-col">
         <img src="img/logo1.jpg" alt="Instituto Abepoli" class="footer-logo">
       </div>
+       <div class="footer-col contact-col">
+                <h4>Contato</h4>
+                <p><i class="fa fa-envelope"></i> abepoli@gmail.com</p>
+                <div class="social-icons">
+                    <p>
+                        <a href="https://www.facebook.com/profile.php?id=100076095320985" target="_blank"
+                            style="text-decoration: none; color: inherit;">
+                            <i class="fa fa-facebook"></i> Instituto Abepoli
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.instagram.com/abepoli/" target="_blank"
+                            style="text-decoration: none; color: inherit;">
+                            <i class="fa fa-instagram"></i> @abepoli
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://wa.me/5512988176722" target="_blank"
+                            style="text-decoration: none; color: inherit;">
+                            <i class="fa fa-whatsapp"></i> (12) 98817-6722
+                        </a>
+                    <p>
+                        <a href="./login.php" class="realizarLogin" style="text-decoration: none; color: inherit;">
+                            Realizar login
+                        </a>
+                    </p>
+                    </p>
+                </div>
+            </div>
 
-      <div class="footer-col contact-col">
-        <h4>Contato</h4>
-        <p><i class="fa fa-envelope"></i> abepoli@gmail.com</p>
-        <div class="social-icons">
-          <p>
-            <a href="https://www.facebook.com/profile.php?id=100076095320985" target="_blank"
-              style="text-decoration: none; color: inherit;">
-              <i class="fa fa-facebook"></i> Instituto Abepoli
-            </a>
-          </p>
-          <p>
-            <a href="https://www.instagram.com/abepoli/" target="_blank" style="text-decoration: none; color: inherit;">
-              <i class="fa fa-instagram"></i> @abepoli
-            </a>
-          </p>
-          <p>
-            <a href="https://wa.me/5512988176722" target="_blank" style="text-decoration: none; color: inherit;">
-              <i class="fa fa-whatsapp"></i> (12) 98817-6722
-            </a>
-          </p>
-        </div>
-      </div>
 
       <div class="footer-col dev-col">
         <h4>Site desenvolvido por</h4>
@@ -233,6 +240,7 @@
       <p>© Todos os direitos reservados</p>
     </div>
   </footer>
+    <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>

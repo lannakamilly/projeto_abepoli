@@ -171,8 +171,8 @@ nav {
   
 .header {
     background-image: linear-gradient(
-        rgba(11, 20, 35, 0.8),
-        rgba(11, 20, 35, 0.8)
+        rgba(10, 20, 35, 0.7),
+        rgba(10, 20, 35, 0.7)
       ),
       url("../img/imgheader1.jpg");
     background-size: cover;
@@ -317,7 +317,21 @@ nav {
   font-size: 1.5rem;
   color: var(--primary-color);
 }
-
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #F7BE00;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
 .explore__container {
     display: grid;
     gap: 2rem 1rem;

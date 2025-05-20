@@ -199,7 +199,7 @@ header('Content-Type: text/html; charset=UTF-8');
                 <img src="img/logo1.jpg" alt="Instituto Abepoli" class="footer-logo">
             </div>
 
-            <div class="footer-col contact-col">
+                 <div class="footer-col contact-col">
                 <h4>Contato</h4>
                 <p><i class="fa fa-envelope"></i> abepoli@gmail.com</p>
                 <div class="social-icons">
@@ -220,12 +220,12 @@ header('Content-Type: text/html; charset=UTF-8');
                             style="text-decoration: none; color: inherit;">
                             <i class="fa fa-whatsapp"></i> (12) 98817-6722
                         </a>
-                    </p>
                     <p>
-                        <a href="./login.php" style="text-decoration: none; color: inherit;">
-                             Realizar login
+                        <a href="./login.php" class="realizarLogin" style="text-decoration: none; color: inherit;">
+                            Realizar login
                         </a>
-                        </p>
+                    </p>
+                    </p>
                 </div>
             </div>
 
