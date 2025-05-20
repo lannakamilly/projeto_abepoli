@@ -52,8 +52,9 @@ body {
 
 .imagem-central {
   position: relative;
-  width: 100%;
-  padding: 40px;
+  width: 100px;
+  height: 100px;
+  padding: 100px;
   box-sizing: border-box;
   z-index: 1;
   margin-top: 40px;

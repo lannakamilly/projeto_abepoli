@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Portal Abepoli</title>
     <link rel="stylesheet" href="./css/doacoes.css">
-    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/footerr.css">
     <link rel="stylesheet" href="./css/nav.css">
 </head>
 <body>

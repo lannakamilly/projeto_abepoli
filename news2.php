@@ -12,7 +12,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="./css/news.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/footerr.css" />
     <link rel="stylesheet" href="./css/nav.css" />
     <title>Instituto Abepoli</title>
   </head>
