@@ -36,7 +36,7 @@
     </nav>
 
     <section class="produtos-section">
-        <h1 class="titulo">PRODUTOS</h1>
+        <h1 class="titulo"> VESTIMENTAS</h1>
 
         <div class="container">
             <aside class="categorias">
@@ -70,18 +70,8 @@
 
             <main class="produtos-grid">
                 <div class="produto-card">
-                    <img src="./img/produto1.jpeg" alt="Produto">
-                    <p class="nome-produto">Mel de abelhas nativas</p>
-                    <p class="preco-produto">R$ 190,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-
-                <div class="produto-card">
-                    <img src="./img/produto2.jpeg" alt="Produto">
-                    <p class="nome-produto">Extrato de própolis</p>
+                    <img src="./img/camiseta produto abepoli.jpg" alt="Camiseta Abepoli Branca">
+                    <p class="nome-produto">Camiseta Instituto Abepoli</p>
                     <p class="preco-produto">R$ 50,00</p>
                     <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
                         class="btn-comprar">
@@ -90,8 +80,8 @@
                 </div>
 
                 <div class="produto-card">
-                    <img src="./img/produto3.jpeg" alt="Produto">
-                    <p class="nome-produto">Cera de abelhas nativas</p>
+                    <img src="./img/CAMISETA 2 - FUNDO TRANSPARENTE.png" alt="Produto">
+                    <p class="nome-produto">Camiseta Abelha Jatai</p>
                     <p class="preco-produto">R$ 50,00</p>
                     <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
                         class="btn-comprar">
@@ -100,45 +90,9 @@
                 </div>
 
                 <div class="produto-card">
-                    <img src="./img/produto5.jpeg" alt="Produto">
-                    <p class="nome-produto">Pólen apícola</p>
+                    <img src="./img/camiseta 3 abepoli.jpg" alt="Produto">
+                    <p class="nome-produto">Camiseta Manadaçaia</p>
                     <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-                <div class="produto-card">
-                    <img src="./img/produtoooooooooo8.jpeg" alt="Produto">
-                    <p class="nome-produto">Casa de colmeia</p>
-                    <p class="preco-produto">R$ 80,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-                <div class="produto-card">
-                    <img src="./img/produto6.jpeg" alt="Produto">
-                    <p class="nome-produto">Favo de mel</p>
-                    <p class="preco-produto">R$ 60,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-                <div class="produto-card">
-                    <img src="./img/produto7.jpeg" alt="Produto">
-                    <p class="nome-produto">Sementes de girassol</p>
-                    <p class="preco-produto">R$ 09,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-                <div class="produto-card">
-                    <img src="./img/produto9.jpg" alt="Produto">
-                    <p class="nome-produto">Camisa conscientização</p>
-                    <p class="preco-produto">R$ 55,00</p>
                     <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
                         class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
@@ -146,9 +100,9 @@
                 </div>
 
                 <div class="produto-card">
-                    <img src="./img/chaveiro.webp" alt="Produto">
-                    <p class="nome-produto">Chaveiro abelha</p>
-                    <p class="preco-produto">R$ 55,00</p>
+                    <img src="./img/produto boné abepoli.jpg" alt="Produto">
+                    <p class="nome-produto">Boné Insitituto Abepoli</p>
+                    <p class="preco-produto">R$ 50,00</p>
                     <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
                         class="btn-comprar">
                         <i class="fa fa-whatsapp"></i> Comprar
