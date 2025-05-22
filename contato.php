@@ -93,7 +93,12 @@
     </div>
 
     <footer class="abepoli-footer">
-              <div class="footer-col contact-col">
+        <div class="footer-content">
+            <div class="footer-col logo-col">
+                <img src="img/logo1.jpg" alt="Instituto Abepoli" class="footer-logo">
+            </div>
+
+            <div class="footer-col contact-col">
                 <h4>Contato</h4>
                 <p><i class="fa fa-envelope"></i> abepoli@gmail.com</p>
                 <div class="social-icons">
@@ -115,6 +120,8 @@
                             <i class="fa fa-whatsapp"></i> (12) 98817-6722
                         </a>
                     <p>
+
+                
                         <a href="./login.php" class="realizarLogin" style="text-decoration: none; color: inherit;">
                             Realizar login
                         </a>
@@ -128,12 +135,12 @@
                 <h4>Site desenvolvido por</h4>
                 <p>Flávia Glenda Guimarães Carvalho</p>
                 <p>Júlia da Silva Conconi</p>
-                <p>Kauã de Albuquerque Almeida</p>
+                <p>Kauã Albuquerque de Almeida</p>
                 <p>Lanna Kamilly Fres Motta</p>
                 <p>Miguel Borges da Silva</p>
             </div>
         </div>
-
+ 
         <div class="footer-bottom">
             <p>© Todos os direitos reservados</p>
         </div>
