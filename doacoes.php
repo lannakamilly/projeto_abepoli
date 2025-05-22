@@ -21,8 +21,6 @@ $resultado_doacoes = $conn->query($sql_doacoes);
 </head>
 <body>
 
-<>
-
     <header>
     <nav id="navisinha">
       <div class="nav__header">
