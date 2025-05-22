@@ -41,7 +41,7 @@
     </section>
 
     <section class="produtos-section">
-        <h1 class="titulo"> VESTIMENTAS</h1>
+        <h1 class="titulo">ITENS PORTÁTEIS</h1>
 
         <div class="container">
             <aside class="categorias">
@@ -67,38 +67,8 @@
 
             <main class="produtos-grid">
                 <div class="produto-card">
-                    <img src="./img/camiseta produto abepoli.jpg" alt="Camiseta Abepoli Branca">
-                    <p class="nome-produto">Camiseta Instituto Abepoli</p>
-                    <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-
-                <div class="produto-card">
-                    <img src="./img/CAMISETA 2 - FUNDO TRANSPARENTE.png" alt="Produto">
-                    <p class="nome-produto">Camiseta Abelha Jatai</p>
-                    <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-
-                <div class="produto-card">
-                    <img src="./img/camiseta 3 abepoli.jpg" alt="Produto">
-                    <p class="nome-produto">Camiseta Manadaçaia</p>
-                    <p class="preco-produto">R$ 50,00</p>
-                    <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
-                        class="btn-comprar">
-                        <i class="fa fa-whatsapp"></i> Comprar
-                    </a>
-                </div>
-
-                <div class="produto-card">
-                    <img src="./img/produto boné abepoli.jpg" alt="Produto">
-                    <p class="nome-produto">Boné Insitituto Abepoli</p>
+                    <img src="./img/ecobag produto abepoli.jpg" alt="Camiseta Abepoli Branca">
+                    <p class="nome-produto">Bolsa EcoBag Personalizada Instituto Abepoli</p>
                     <p class="preco-produto">R$ 50,00</p>
                     <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto" target="_blank"
                         class="btn-comprar">

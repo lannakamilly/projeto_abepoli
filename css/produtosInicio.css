@@ -13,7 +13,7 @@ body {
 
 h1 {
   color: #000;
-  margin-bottom: 30px;
+  margin-bottom: 52px;
   font-size: 2rem;
 }
 
@@ -29,9 +29,9 @@ h1 {
   max-width: 100%;
   text-decoration: none;
   color: black;
-  border-radius: 5px;
+  border-radius: 33px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.623);
   background: #fff;
   transition: transform 0.2s ease;
   flex: 1 1 calc(33.333% - 20px);

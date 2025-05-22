@@ -40,11 +40,11 @@
         <img src="./img/camiseta produto abepoli.jpg" alt="Extrato de Própolis">
         <div class="descricao">Vestimentas (6)</div>
       </a>
-      <a href="mel.html" class="produto">
+      <a href="produtosCopos.php" class="produto">
         <img src="./img/copo 1 produto abepoli.jpg" alt="Mel">
         <div class="descricao">Canecas (5)</div>
       </a>
-      <a href="compostos.html" class="produto">
+      <a href="produtosBolsas.php" class="produto">
         <img src="./img/ecobag produto abepoli.jpg" alt="Compostos">
         <div class="descricao">Bolsas(8)</div>
       </a>
