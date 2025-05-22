@@ -36,21 +36,21 @@
   <div class="container">
     <h1>Confira nossos produtos!</h1>
     <div class="produtos">
-      <a href="propolis.html" class="produto">
-        <img src="./img/abelhas_produtos_1.jpg" alt="Extrato de Própolis">
-        <div class="descricao">Extrato de própolis (6)</div>
+      <a href="produtosVestimentas.php" class="produto">
+        <img src="./img/camiseta produto abepoli.jpg" alt="Extrato de Própolis">
+        <div class="descricao">Vestimentas (6)</div>
       </a>
       <a href="mel.html" class="produto">
-        <img src="./img/mel_produtos.jpg" alt="Mel">
-        <div class="descricao">Mel (5)</div>
+        <img src="./img/copo 1 produto abepoli.jpg" alt="Mel">
+        <div class="descricao">Canecas (5)</div>
       </a>
       <a href="compostos.html" class="produto">
-        <img src="./img/abelhas_produtos_3.jpg" alt="Compostos">
-        <div class="descricao">Compostos (8)</div>
+        <img src="./img/ecobag produto abepoli.jpg" alt="Compostos">
+        <div class="descricao">Bolsas(8)</div>
       </a>
     </div>
   </div>
-      <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+  <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
     <div class="wave-shape-divider">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -91,12 +91,7 @@
                         </a>
                     <p>
 
-                    <p>
-                         <a href="https://www.google.com/maps?sca_esv=36354fdb691823cb&rlz=1C1GCEU_pt-BRBR1094BR1094&output=search&q=abepoli&source=lnms&fbs=ABzOT_BYhiZpMrUAF0c9tORwPGlsjfkTCQbVbkeDjnTQtijddCIwjuBvoXndi-OO1f8kXGUrQAK1bEIdN5wzK9JtNLp0OcVdlfH7WkxQQ_AuepJPuHeH2DWgH8c_t2v5kMcNa1ewf5bHGhgS0NqXr0T15GsUd-PPsI-UvLZnpji6Ar0uZz8IdrS_iGBwgroq-WVuNHPTSRfsdhx7eBkmikyoVkaa3QCNNw&entry=mc&ved=1t:200715&ictx=111" target="_blank"
-                            style="text-decoration: none; color: inherit;">
-                           <i class="fa-solid fa-location-dot"></i>Localização
-                        </a>
-                    </p>
+                
                         <a href="./login.php" class="realizarLogin" style="text-decoration: none; color: inherit;">
                             Realizar login
                         </a>
