@@ -73,10 +73,22 @@ h1 {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   z-index: 1000;
 }
+
 @media (max-width: 900px) {
   .produto {
     flex: 1 1 calc(50% - 20px); /* 2 colunas */
     max-width: calc(50% - 20px);
+  }
+
+  .produtos {
+    margin-left: 0;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .produto img {
+    height: 260px;
   }
 }
 
@@ -95,11 +107,17 @@ h1 {
   }
 
   .produto img {
-    height: 260px;
+    height: 220px;
   }
 
   .descricao {
     font-size: 0.95rem;
+  }
+
+  .produtos {
+    margin-left: 0;
+    width: 100%;
+    padding: 0 10px;
   }
 }
 
@@ -110,7 +128,7 @@ h1 {
   }
 
   .produto img {
-    height: 220px;
+    height: 200px;
   }
 
   .descricao {
@@ -120,5 +138,11 @@ h1 {
 
   .container {
     padding: 15px 10px;
+  }
+
+  .produtos {
+    margin-left: 0;
+    width: 100%;
+    padding: 0 8px;
   }
 }

@@ -1,7 +1,6 @@
 .abepoli-footer {
   background-color: #F7BE00;
   color: #000;
-  font-family: 'Lato', sans-serif;
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -53,6 +52,7 @@
 }
 
 .logo-col {
+    margin-top: 50px;
     text-align: center;
 }
 
