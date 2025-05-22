@@ -165,7 +165,7 @@
             <p>© Todos os direitos reservados</p>
         </div>
     </footer>
-  
+     <script src="./js/nav.js"></script>
 </body>
 
 </html>
