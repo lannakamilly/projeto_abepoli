@@ -286,6 +286,11 @@ td{
 #hrdoacao{
     margin-left: 450px;
 }
+
+#editar{
+    width: 100px;
+}
+
 #pcomo{
     width: 55%;
     text-align: justify;

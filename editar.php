@@ -1,3 +1,4 @@
+<?php
 $Setor = $_POST['Setor'];
     $Prioridade = $_POST['Prioridade'];
     $dia = $_POST['dia'];
@@ -13,7 +14,7 @@ $Setor = $_POST['Setor'];
     }
 
     $stmt->close();
-}
+
 $conn->close();
 ?>
 
