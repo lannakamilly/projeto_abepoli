@@ -151,7 +151,6 @@ body {
     padding-top: 20px;
   }
   
-  /* Responsividade */
   @media (max-width: 992px) {
     .container-contato {
       flex-direction: column;

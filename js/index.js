@@ -5,109 +5,51 @@ const scrollRevealOption = {
   duration: 1000,
 };
 
-ScrollReveal().reveal(".header__image img", {
-  ...scrollRevealOption,
-  origin: "right",
-  interval: 500,
-});
 ScrollReveal().reveal(".header__content h1", {
   ...scrollRevealOption,
-  delay: 1500,
 });
 ScrollReveal().reveal(".header__content .section__description", {
   ...scrollRevealOption,
-  delay: 2000,
-});
-ScrollReveal().reveal(".header__content form", {
-  ...scrollRevealOption,
-  delay: 2500,
-});
-
-ScrollReveal().reveal(".choose__image img", {
-  ...scrollRevealOption,
-  origin: "left",
-});
-ScrollReveal().reveal(".choose__content .section__subheader", {
-  ...scrollRevealOption,
   delay: 500,
 });
-ScrollReveal().reveal(".choose__content .section__header", {
+ScrollReveal().reveal(".header__btns", {
   ...scrollRevealOption,
   delay: 1000,
 });
-ScrollReveal().reveal(".choose__list li", {
+
+ScrollReveal().reveal(".about__content .section__description", {
   ...scrollRevealOption,
-  delay: 1500,
+  delay: 500,
+});
+ScrollReveal().reveal(".about__signature", {
+  ...scrollRevealOption,
+  delay: 1000,
+});
+
+ScrollReveal().reveal(".tour__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+
+ScrollReveal().reveal(".destination__card", {
+  ...scrollRevealOption,
   interval: 500,
 });
 
 const swiper = new Swiper(".swiper", {
-  slidesPerView: 3,
-  spaceBetween: 0,
   loop: true,
 });
 
-ScrollReveal().reveal(".explore__image img", {
+ScrollReveal().reveal(".blog__card", {
   ...scrollRevealOption,
-  origin: "right",
-});
-ScrollReveal().reveal(".explore__content .section__subheader", {
-  ...scrollRevealOption,
-  delay: 500,
-});
-ScrollReveal().reveal(".explore__content .section__header", {
-  ...scrollRevealOption,
-  delay: 1000,
-});
-ScrollReveal().reveal(".explore__content .section__description", {
-  ...scrollRevealOption,
-  delay: 1500,
-});
-ScrollReveal().reveal(".explore__content .explore__btn", {
-  ...scrollRevealOption,
-  delay: 2000,
-});
-ScrollReveal().reveal(".explore__grid div", {
-  duration: 1000,
-  delay: 2500,
   interval: 500,
 });
 
-const next = document.getElementById("next");
-const prev = document.getElementById("prev");
-const clientCards = Array.from(document.querySelectorAll(".client__card"));
+const banner = document.querySelector(".banner__wrapper");
+const bannerImages = Array.from(banner.children);
 
-next.addEventListener("click", (e) => {
-  for (let index = 0; index < clientCards.length; index++) {
-    if (clientCards[index].classList.contains("active")) {
-      const nextIndex = (index + 1) % clientCards.length;
-      clientCards[index].classList.remove("active");
-      clientCards[nextIndex].classList.add("active");
-      break;
-    }
-  }
+bannerImages.forEach((item) => {
+  const duplicateNode = item.cloneNode(true);
+  duplicateNode.setAttribute("aria-hidden", true);
+  banner.appendChild(duplicateNode);
 });
-
-prev.addEventListener("click", (e) => {
-  for (let index = 0; index < clientCards.length; index++) {
-    if (clientCards[index].classList.contains("active")) {
-      const prevIndex = (index ? index : clientCards.length) - 1;
-      clientCards[index].classList.remove("active");
-      clientCards[prevIndex].classList.add("active");
-      break;
-    }
-  }
-});
-
-ScrollReveal().reveal(".subscribe__container .section__header", {
-  ...scrollRevealOption,
-});
-ScrollReveal().reveal(".subscribe__container .section__description", {
-  ...scrollRevealOption,
-  delay: 500,
-});
-ScrollReveal().reveal(".subscribe__container form", {
-  ...scrollRevealOption,
-  delay: 1000,
-});
-

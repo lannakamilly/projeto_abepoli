@@ -1,65 +1,62 @@
+// Conteúdo das notícias
+const noticias = [
+  {
+    titulo: "Abelhas e o futuro do planeta",
+    texto: "As abelhas são responsáveis por cerca de 75% da polinização das plantas cultivadas no mundo. Proteger as abelhas é proteger o futuro da alimentação."
+  },
+  {
+    titulo: "Como é feito o mel natural",
+    texto: "O mel é produzido a partir do néctar coletado pelas abelhas, que o transformam em mel dentro das colmeias por meio de um processo natural e colaborativo."
+  },
+  {
+    titulo: "Nossos apicultores contam tudo",
+    texto: "Histórias reais de apicultores que dedicam suas vidas às abelhas, ensinando a importância do respeito e cuidado com a natureza."
+  },
+  {
+    titulo: "Polinização e agricultura",
+    texto: "Sem as abelhas, culturas como maçã, morango e café estariam ameaçadas. A polinização natural garante maior produtividade e alimentos de qualidade."
+  },
+  {
+    titulo: "Educação ambiental com abelhas",
+    texto: "Projetos do Instituto levam abelhas vivas e informações educativas às escolas, despertando o interesse de crianças pela preservação ambiental."
+  },
+  {
+    titulo: "Produtos sustentáveis com cera",
+    texto: "A cera de abelha é usada para produzir velas ecológicas, cosméticos naturais e até embalagens reutilizáveis que substituem o plástico."
+  },
+  {
+    titulo: "Mel orgânico certificado",
+    texto: "O mel orgânico do Instituto Bepoly é livre de agrotóxicos e aprovado por órgãos reguladores, garantindo qualidade e sustentabilidade."
+  },
+  {
+    titulo: "Abelhas e biodiversidade",
+    texto: "As abelhas são peças-chave na cadeia alimentar e na reprodução de inúmeras espécies vegetais, sendo essenciais para a biodiversidade."
+  }
+];
 
+// Criar o pop-up
+const popUp = document.createElement("div");
+popUp.className = "popup";
 
-
-const scrollRevealOption = {
-  distance: "50px",
-  origin: "bottom",
-  duration: 1000,
+const btnFechar = document.createElement("button");
+btnFechar.textContent = "X";
+btnFechar.onclick = () => {
+  popUp.style.display = "none";
 };
 
-ScrollReveal().reveal(".header__content h1", {
-  ...scrollRevealOption,
-});
-ScrollReveal().reveal(".header__content .section__description", {
-  ...scrollRevealOption,
-  delay: 500,
-});
-ScrollReveal().reveal(".header__content form", {
-  ...scrollRevealOption,
-  delay: 1000,
-});
-ScrollReveal().reveal(".header__content img", {
-  ...scrollRevealOption,
-  origin: "left",
-  delay: 1500,
-});
+const popUpTitulo = document.createElement("h2");
+const popUpTexto = document.createElement("p");
 
-ScrollReveal().reveal(".about__content .section__header", {
-  ...scrollRevealOption,
-});
-ScrollReveal().reveal(".about__content .section__description", {
-  ...scrollRevealOption,
-  delay: 500,
-});
-ScrollReveal().reveal(".about__signature", {
-  ...scrollRevealOption,
-  delay: 1000,
-});
+popUp.appendChild(btnFechar);
+popUp.appendChild(popUpTitulo);
+popUp.appendChild(popUpTexto);
+document.body.appendChild(popUp);
 
-ScrollReveal().reveal(".tour__card", {
-  ...scrollRevealOption,
-  interval: 500,
-});
-
-ScrollReveal().reveal(".destination__card", {
-  ...scrollRevealOption,
-  interval: 500,
-});
-
-const swiper = new Swiper(".swiper", {
-  loop: true,
-});
-
-ScrollReveal().reveal(".blog__card", {
-  ...scrollRevealOption,
-  interval: 500,
-});
-
-const banner = document.querySelector(".banner__wrapper");
-const bannerImages = Array.from(banner.children);
-
-bannerImages.forEach((item) => {
-  const duplicateNode = item.cloneNode(true);
-  duplicateNode.setAttribute("aria-hidden", true);
-  banner.appendChild(duplicateNode);
+// Ativar botões
+document.querySelectorAll(".read-more").forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    popUpTitulo.textContent = noticias[index].titulo;
+    popUpTexto.textContent = noticias[index].texto;
+    popUp.style.display = "flex";
+  });
 });
