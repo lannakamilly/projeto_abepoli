@@ -212,70 +212,87 @@ body {
 }
 
 @media (max-width: 1024px) {
-    .produtos-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
+  .botao-voltar {
+    margin-left: 30px;
+    margin-bottom: -80px;
+    margin-top: 25px;
+  }
 
-    .titulo {
-        font-size: clamp(1.25rem, 2.5vw, 2rem);
-    }
-
-    .categorias {
-        min-width: 200px;
-        padding-left: 15px;
-    }
+  .botao-voltar a {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
+  .container {
+    flex-direction: column;
+  }
 
-    .categorias {
-        width: 100%;
-        border-left: none;
-        border-top: 8px solid #FFCC00;
-        padding-top: 20px;
-        margin-bottom: 30px;
-    }
+  .categorias {
+    width: 100%;
+    border-left: none;
+    border-top: 8px solid #FFCC00;
+    padding-top: 20px;
+    margin-bottom: 30px;
+  }
 
-    .produtos-grid {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    }
+  .produtos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
 
-    .titulo {
-        font-size: clamp(1rem, 2.5vw, 1.5rem);
-    }
+  .titulo {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .botao-voltar {
+    margin-left: 20px;
+    margin-bottom: -70px;
+    margin-top: 20px;
+  }
+
+  .botao-voltar a {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 480px) {
-    .produtos-grid {
-        grid-template-columns: 1fr;
-    }
+  .produtos-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .produto-card img {
-        width: 100%;
-        height: 160px;
-    }
+  .produto-card img {
+    width: 100%;
+    height: 160px;
+  }
 
-    .btn-comprar {
-        padding: 8px 12px;
-        font-size: 0.75rem;
-    }
+  .btn-comprar {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
 
-    .titulo {
-        font-size: 1.25rem;
-    }
+  .titulo {
+    font-size: 1.25rem;
+  }
 
-    .categorias h2 {
-        font-size: 1.125rem;
-    }
+  .categorias h2 {
+    font-size: 1.125rem;
+  }
 
-    .nome-produto {
-        font-size: 0.875rem;
-    }
+  .nome-produto {
+    font-size: 0.875rem;
+  }
 
-    .preco-produto {
-        font-size: 1rem;
-    }
+  .preco-produto {
+    font-size: 1rem;
+  }
+
+  .botao-voltar {
+    margin-left: 15px;
+    margin-bottom: -60px;
+    margin-top: 15px;
+  }
+
+  .botao-voltar a {
+    font-size: 16px;
+  }
 }
