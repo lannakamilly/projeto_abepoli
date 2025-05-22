@@ -1,96 +1,75 @@
-
-
 const scrollRevealOption = {
   distance: "50px",
   origin: "bottom",
   duration: 1000,
 };
 
-ScrollReveal().reveal(".header__image img", {
+ScrollReveal().reveal(".header__content h4", {
   ...scrollRevealOption,
-  origin: "right",
-});
-ScrollReveal().reveal(".header__content h2", {
-  ...scrollRevealOption,
-  delay: 500,
 });
 ScrollReveal().reveal(".header__content h1", {
   ...scrollRevealOption,
-  delay: 1000,
+  delay: 500,
 });
-ScrollReveal().reveal(".header__content h3", {
+ScrollReveal().reveal(".header__content h2", {
   ...scrollRevealOption,
-  delay: 1500,
+  delay: 1000,
 });
 ScrollReveal().reveal(".header__content p", {
   ...scrollRevealOption,
+  delay: 1500,
+});
+ScrollReveal().reveal(".header__btn", {
+  ...scrollRevealOption,
   delay: 2000,
 });
-ScrollReveal().reveal(".header__btns", {
+
+ScrollReveal().reveal(".intro__card", {
   ...scrollRevealOption,
-  delay: 2500,
+  interval: 500,
 });
 
-ScrollReveal().reveal(".intro__image", {
+ScrollReveal().reveal(
+  ".about__row:nth-child(3) .about__image img, .about__row:nth-child(5) .about__image img",
+  {
+    ...scrollRevealOption,
+    origin: "left",
+  }
+);
+ScrollReveal().reveal(".about__row:nth-child(4) .about__image img", {
   ...scrollRevealOption,
-  origin: "left",
+  origin: "right",
 });
-ScrollReveal().reveal(".intro__content .section__subheader", {
+ScrollReveal().reveal(".about__content span", {
   ...scrollRevealOption,
   delay: 500,
 });
-ScrollReveal().reveal(".intro__content .section__header", {
+ScrollReveal().reveal(".about__content h4", {
   ...scrollRevealOption,
   delay: 1000,
 });
-ScrollReveal().reveal(".intro__description", {
+ScrollReveal().reveal(".about__content p", {
   ...scrollRevealOption,
   delay: 1500,
 });
-ScrollReveal().reveal(".intro__grid", {
-  ...scrollRevealOption,
-  delay: 2000,
-});
-ScrollReveal().reveal(".intro__content h4", {
-  ...scrollRevealOption,
-  delay: 2500,
-});
-ScrollReveal().reveal(".intro__flex div", {
-  ...scrollRevealOption,
-  delay: 3000,
-  interval: 500,
-});
 
-ScrollReveal().reveal(".journey__grid > div > div", {
+ScrollReveal().reveal(".product__card", {
   ...scrollRevealOption,
   interval: 500,
 });
 
-const mixer = mixitup(".portfolio__grid");
-
-ScrollReveal().reveal(".banner__content .section__header", {
-  ...scrollRevealOption,
-});
-ScrollReveal().reveal(".banner__content p", {
-  ...scrollRevealOption,
-  delay: 500,
-});
-ScrollReveal().reveal(".banner__btn", {
-  ...scrollRevealOption,
-  delay: 1000,
+ScrollReveal().reveal(".service__card", {
+  duration: 1000,
+  interval: 500,
 });
 
 const swiper = new Swiper(".swiper", {
-  slidesPerView: 2,
-  spaceBetween: 50,
+  slidesPerView: 3,
+  spaceBetween: 20,
   loop: true,
-
-  pagination: {
-    el: ".swiper-pagination",
-  },
 });
 
-ScrollReveal().reveal(".blog__card", {
-  ...scrollRevealOption,
+ScrollReveal().reveal(".instagram__grid img", {
+  duration: 1000,
   interval: 500,
 });
