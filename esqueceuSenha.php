@@ -30,7 +30,7 @@
                         <label for="senha">Confirmar senha</label>
                         <input type="password" id="senha" placeholder="Confirme sua senha" />
 
-                        <a href="./perfil.php" class="botao-entrar">CONFIRMAR</a>
+                        <a href="./login.php" class="botao-entrar">CONFIRMAR</a>
 
                     </form>
                 </div>
