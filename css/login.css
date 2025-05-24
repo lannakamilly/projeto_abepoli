@@ -67,6 +67,12 @@ body {
   margin-bottom: 10px;
 }
 
+.card-login .esqueceuSenhaTitulo {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
 .linha-titulo {
   border: none;
   height: 5px;
@@ -74,6 +80,15 @@ body {
   width: 280px;
   margin-bottom: 38px;
 }
+
+.linha-titulo-esqueceu {
+  border: none;
+  height: 5px;
+  background-color: #b9910d;
+  width: 350px;
+  margin-bottom: 38px;
+}
+
 
 form {
   display: flex;
