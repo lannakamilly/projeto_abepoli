@@ -145,9 +145,9 @@ Com sede em São José dos Campos e registrado sob o CNPJ 37.912.072/0001-15, o 
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgatXT3ZieNjeMPZR-xGcPVs88SPPPs_tLMhpwD3FSouQQX5CriPD-1ukZJ4ShThjQeY&usqp=CAU" alt="Image 1">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVE0AA9UCAE-9bQpO87c_TFJgg6GVI-9sGpQ&s" alt="Image 2">
         <img src="./img/apicultor.jpeg" alt="Image 3">
-        <img src="https://picsum.photos/id/1011/300/200" alt="Image 1">
-        <img src="https://picsum.photos/id/1015/300/200" alt="Image 2">
-        <img src="https://picsum.photos/id/1016/300/200" alt="Image 3">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgatXT3ZieNjeMPZR-xGcPVs88SPPPs_tLMhpwD3FSouQQX5CriPD-1ukZJ4ShThjQeY&usqp=CAU" alt="Image 1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVE0AA9UCAE-9bQpO87c_TFJgg6GVI-9sGpQ&s" alt="Image 2">
+        <img src="./img/apicultor.jpeg" alt="Image 3">
       </div>
     </div>
   </section>
