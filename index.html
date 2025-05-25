@@ -4,20 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-  <link rel="stylesheet" href="./css/sobre.css" />
-  <link rel="stylesheet" href="./css/footerr.css" />
-  <link rel="stylesheet" href="./css/nav.css">
-  <title>Instituto Abepoli</title>
+        <link rel="stylesheet" href="./css/footerr.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+    <link rel="stylesheet" href="./css/sobre.css" />
+
+    <title>Instituto Abepoli</title>
   </head>
   <body>
-     <nav>
+    <header class="header">
+    <nav>
       <div class="nav__header">
         <div class="nav__logo">
           <a href="#">
@@ -39,39 +37,37 @@
         </li>
       </ul>
     </nav>
-
-    <header id="home">
-      <div class="section__container header__container">
-        <div class="header__content">
-          <h4>Instituto Abepoli</h4>
-          <h1>Quem somos</h1>
-          <h2>Conheça a história, missão, membros, esforços e causas do Instituto Abepoli.</h2>
-          <p>
-           ︎
-          </p>
-          <div class="header__btn">
-            
-          </div>
-        </div>
-        <div class="header__image">
-          <img
-            src="./img/png.jpg"
-            alt="header-bg"
-            class="header__image-bg"
-          />
-          <img src="assets/header.png" alt="header" />
-        </div>
+      <div class="section__container header__container" id="home">
+        <p>Instituto Abepoli</p>
+        <h1>Quem Somos <span>Nós</span></h1>
       </div>
-      <div class="header__bottom"></div>
     </header>
 
+  
+
+    <section class="section__container about__container" id="about">
+      <div class="about__image">
+        <img src="./img/abelha-guaraipo.jpg" alt="about" />
+      </div>
+      <div class="about__content">
+        <p class="section__subheader">QUEM SOMOS</p>
+        <h2 class="section__header">Instituto Abepoli</h2>
+        <p class="section__description">
+         O Instituto Abepoli é uma organização dedicada à preservação ambiental, com foco na conservação da fauna, flora e biodiversidade. Atuando no estado de São Paulo, promovemos ações que garantem o equilíbrio dos ecossistemas, especialmente por meio da proteção das abelhas nativas e outros polinizadores.
+        </p>
+        <!-- <div class="about__btn">
+          <button class="btn">Read More</button>
+        </div> -->
+      </div>
+    </section>
+
     <section class="section__container intro__container">
-      
-      <h2 class="section__header">Valores e Objetivos do Instituto Abepoli</h2>
+       <p class="section__subheader">INSTITUTO ABEPOLI</p>
+      <h1 class="section__header">Valores e Objetivos</h1>
       <div class="intro__grid">
         <div class="intro__card">
           <div class="intro__image">
-            <img src="assets/intro-1.png" alt="intro" />
+            <img src="./img/abelha-bugia.jpeg" alt="intro" />
           </div>
           <h4>Proteção Ambiental</h4>
           <p>
@@ -81,7 +77,7 @@
         </div>
         <div class="intro__card">
           <div class="intro__image">
-            <img src="assets/intro-2.png" alt="intro" />
+            <img src="./img/abelha-bugia.jpeg" alt="intro" />
           </div>
           <h4>Sustentabilidade Comunitária</h4>
           <p>
@@ -91,7 +87,7 @@
         </div>
         <div class="intro__card">
           <div class="intro__image">
-            <img src="assets/intro-3.png" alt="intro" />
+            <img src="./img/abelha-bugia.jpeg" alt="intro" />
           </div>
           <h4>Educação Ecológica</h4>
           <p>
@@ -100,66 +96,65 @@
         </div>
       </div>
     </section>
-
+    
+    
     <section class="section__container about__container" id="about">
-  <p class="section__subheader">Sobre o Instituto</p>
-  <h2 class="section__header">Nosso Compromisso com a Natureza e a Ciência</h2>
-
-  <div class="about__row">
-    <div class="about__image">
-      <img src="./img/sobree1.png" alt="Imagem do Instituto Abepoli" />
-    </div>
-    <div class="about__content">
-      <span><img src="./img/icon1.png" alt="Ícone do Instituto" /></span>
-      <h4>Quem Somos: Instituto Abepoli</h4>
-      <p>
-        O Instituto Abepoli é uma organização dedicada à preservação ambiental, com foco na conservação da fauna, flora e biodiversidade. Atuando no estado de São Paulo, promovemos ações que garantem o equilíbrio dos ecossistemas, especialmente por meio da proteção das abelhas nativas e outros polinizadores.
-      </p>
-    </div>
-  </div>
-
-  <div class="about__row">
-    <div class="about__image">
-      <img src="./img/sobree2.png" alt="Origem do Instituto Abepoli" />
-    </div>
-    <div class="about__content">
-      <span><img src="./img/icon2.png" alt="Ícone de Origem" /></span>
-      <h4>Origem e Missão</h4>
-      <p>
-        Fundado em São José dos Campos, o Instituto Abepoli Elena Josefa de Oliveira nasceu com a missão de preservar a biodiversidade e incentivar práticas sustentáveis. Com um olhar científico e técnico, desenvolvemos pesquisas e projetos ambientais voltados à conscientização e à sustentabilidade.
-      </p>
-    </div>
-  </div>
-
-  <div class="about__row">
-    <div class="about__image">
-      <img src="./img/sobree3.png" alt="Atividades Científicas" />
-    </div>
-    <div class="about__content">
-      <span><img src="./img/icon3.png" alt="Ícone Científico" /></span>
-      <h4>Atuação Técnica <br> e Científica</h4>
-      <p>
-        Com sede em São José dos Campos e registrado sob o CNPJ 37.912.072/0001-15, o Instituto Abepoli desenvolve atividades científicas e técnicas que contribuem para a preservação da biodiversidade e o desenvolvimento sustentável, sempre em harmonia com o meio ambiente.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-    <section class="section__container instagram__container">
-      <p>Ver Página</p>
-      <h2 class="section__header">Instagram</h2>
-      <div class="instagram__grid">
-        <img src="./img/post1.png" alt="instagram" />
-        <img src="./img/post2.png" alt="instagram" />
-        <img src="./img/post3.png" alt="instagram" />
-        <img src="./img/postt4.png" alt="instagram" />
+      <div class="about__image">
+        <img src="./img/sobree3.png" alt="about" />
+      </div>
+      <div class="about__content">
+        <p class="section__subheader">ONDE COMEÇOU</p>
+        <h2 class="section__header">Atuação Técnica e Científica</h2>
+        <p class="section__description">
+Com sede em São José dos Campos e registrado sob o CNPJ 37.912.072/0001-15, o Instituto Abepoli desenvolve atividades científicas e técnicas que trazem benefícios para a preservação da biodiversidade e o desenvolvimento sustentável, sempre em harmonia com o meio ambiente.
+        </p>
+        <div class="about__btn">
+          <a href="https://maps.app.goo.gl/sopjX9KupRLhc12L9"></a>
+          <button class="btn">Ver Localização</button>
+        </div> 
       </div>
     </section>
 
+    <section class="service" id="service">
+      <div class="section__container service__container">
+        <div class="service__content">
+          <p class="section__subheader">NOSSA</p>
+          <h2 class="section__header">Origem e Missão</h2>
+          <ul class="service__list">
+            <li>
+            
+            Fundado em São José dos Campos, o Instituto Abepoli Elena Josefa de Oliveira nasceu com a missão de preservar a biodiversidade e promover práticas sustentáveis. Com um olhar científico e técnico, desenvolvemos pesquisas e projetos ambientais voltados para a conscientização e para a sustentabilidade.  High Class Security
+            </li>
+          
+          </ul>
+        </div>
+      </div>
+    </section>
+
+   <section class="travel-section">
+    <div class="text-content">
+      <h1>Registros da nossa <br> missão com as abelhas</h1>
+      <p><br></p>
+       <a href="./galeria.php">
+      <button class="btn">Ver Galeria</button>
+    </a>
+    </div>
+
+    <div class="carousel">
+      <div class="carousel-inner">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgatXT3ZieNjeMPZR-xGcPVs88SPPPs_tLMhpwD3FSouQQX5CriPD-1ukZJ4ShThjQeY&usqp=CAU" alt="Image 1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVE0AA9UCAE-9bQpO87c_TFJgg6GVI-9sGpQ&s" alt="Image 2">
+        <img src="./img/apicultor.jpeg" alt="Image 3">
+        <img src="https://picsum.photos/id/1011/300/200" alt="Image 1">
+        <img src="https://picsum.photos/id/1015/300/200" alt="Image 2">
+        <img src="https://picsum.photos/id/1016/300/200" alt="Image 3">
+      </div>
+    </div>
+  </section>
+
 
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-     <script src="./js/sobre.js"></script>
-      <script src="./js/nav.js"></script>
+   <script src="./js/index.js"></script>
+    <script src="./js/nav.js"></script>
+  </body>
 </html>

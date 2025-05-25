@@ -1,75 +1,52 @@
+
 const scrollRevealOption = {
   distance: "50px",
   origin: "bottom",
   duration: 1000,
 };
 
-ScrollReveal().reveal(".header__content h4", {
+// header container
+ScrollReveal().reveal(".header__container p", {
   ...scrollRevealOption,
 });
-ScrollReveal().reveal(".header__content h1", {
+
+ScrollReveal().reveal(".header__container h1", {
   ...scrollRevealOption,
   delay: 500,
 });
-ScrollReveal().reveal(".header__content h2", {
+
+// about container
+ScrollReveal().reveal(".about__image img", {
+  ...scrollRevealOption,
+  origin: "left",
+});
+
+ScrollReveal().reveal(".about__content .section__subheader", {
+  ...scrollRevealOption,
+  delay: 500,
+});
+
+ScrollReveal().reveal(".about__content .section__header", {
   ...scrollRevealOption,
   delay: 1000,
 });
-ScrollReveal().reveal(".header__content p", {
+
+ScrollReveal().reveal(".about__content .section__description", {
   ...scrollRevealOption,
   delay: 1500,
 });
-ScrollReveal().reveal(".header__btn", {
+
+ScrollReveal().reveal(".about__btn", {
   ...scrollRevealOption,
   delay: 2000,
 });
 
-ScrollReveal().reveal(".intro__card", {
+// room container
+
+
+// service container
+ScrollReveal().reveal(".service__list li", {
   ...scrollRevealOption,
   interval: 500,
-});
-
-ScrollReveal().reveal(
-  ".about__row:nth-child(3) .about__image img, .about__row:nth-child(5) .about__image img",
-  {
-    ...scrollRevealOption,
-    origin: "left",
-  }
-);
-ScrollReveal().reveal(".about__row:nth-child(4) .about__image img", {
-  ...scrollRevealOption,
   origin: "right",
-});
-ScrollReveal().reveal(".about__content span", {
-  ...scrollRevealOption,
-  delay: 500,
-});
-ScrollReveal().reveal(".about__content h4", {
-  ...scrollRevealOption,
-  delay: 1000,
-});
-ScrollReveal().reveal(".about__content p", {
-  ...scrollRevealOption,
-  delay: 1500,
-});
-
-ScrollReveal().reveal(".product__card", {
-  ...scrollRevealOption,
-  interval: 500,
-});
-
-ScrollReveal().reveal(".service__card", {
-  duration: 1000,
-  interval: 500,
-});
-
-const swiper = new Swiper(".swiper", {
-  slidesPerView: 3,
-  spaceBetween: 20,
-  loop: true,
-});
-
-ScrollReveal().reveal(".instagram__grid img", {
-  duration: 1000,
-  interval: 500,
 });
