@@ -149,7 +149,6 @@
   </footer>
 
   <script src="./js/nav.js"></script>
-  <script src="./js/index.js"></script>
   
 </body>
 
