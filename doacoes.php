@@ -56,7 +56,7 @@ $logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
                     <p>Sua doação ajuda a proteger abelhas,<br> polinizadores e a biodiversidade para um futuro
                         sustentável.</p>
                 </div>
-                <button class="botaodoacoes"><a id="afazer" href="#">Fazer doações</a></button>
+                <button class="botaodoacoes"><a id="afazer" href="#divcomo">Fazer doações</a></button>
             </div>
             <div class="image-bees">
                 <img class="bees" src="./img/sobre1.png" alt="bees">

@@ -64,9 +64,6 @@ $conn->close();
                 <button type="submit">Salvar Alterações</button>
 
             </form>
-            <div class="voltar">
-                <a href="doacoes.php">← Voltar para Doações</a>
-            </div>
         
     </div>
 </body>

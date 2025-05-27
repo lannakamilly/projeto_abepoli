@@ -434,7 +434,7 @@ a{
     width: 500px;
 }
 #dividir{
-    margin-left: 250px;
+    margin-left: 200px;
     align-items: center;
     flex-direction: column ;
     display: flex;
