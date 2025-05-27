@@ -44,8 +44,11 @@ $conn->close();
 
 </head>
 <body>
+    <a href="./index.php" class="voltar">
+      <img src="./img/botao_voltar.png" alt="Voltar">
+    </a>
     <div id="container">
-   
+    
 
             <h2>Editar Doação</h2>
             <form method="POST" action="">

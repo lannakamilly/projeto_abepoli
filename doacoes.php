@@ -175,7 +175,7 @@ $resultado_doacoes = $conn->query($sql_doacoes);
     <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
     <!-- Agora sim, a seção amarela -->
-    <section style="background-color: #ffe68a;display: flex; justify-content: normal; text-align: center;">
+    <section id="sectionqr" style="background-color: #ffe68a;display: flex; justify-content: normal; text-align: center;">
         <div>
 
             <h1 id="ajude">Ajude nossa Causa</h1>
@@ -188,7 +188,7 @@ $resultado_doacoes = $conn->query($sql_doacoes);
     height: auto;margin-bottom: 20px;">
             <p id="pqr">QR code</p>
         </div>
-        <ul style="list-style: none; margin-top: 140px; margin-left: 150px; margin-bottom: 0px;padding: 0;">
+        <ul id="ulzapp" style="list-style: none; margin-top: 140px; margin-left: 150px; margin-bottom: 0px;padding: 0;">
             <li id="lista" style="margin: 10px 0;  align-items: center; display: flex;">
                 <a href="https://wa.me/5512988176722" target="_blank" class="contato-item">
                     <img src="https://img.icons8.com/ios-filled/50/25D366/whatsapp.png" alt="WhatsApp" />

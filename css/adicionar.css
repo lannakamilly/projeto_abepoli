@@ -1,88 +1,101 @@
    body {
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-             background-image: url('../img/03417f45-5f2c-4ff9-8e7e-67bda77ae1a1.png');
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+       font-family: Arial, sans-serif;
+       background: #f2f2f2;
+       background-image: url('../img/03417f45-5f2c-4ff9-8e7e-67bda77ae1a1.png');
+       margin: 0;
+       padding: 0;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       min-height: 100vh;
+   }
 
-        #container {
-            background: #ffffff;
-            padding: 30px 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            max-width: 500px;
-            width: 100%;
-        }
+   #container {
+       background: #ffffff;
+       padding: 30px 40px;
+       border-radius: 10px;
+       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+       max-width: 500px;
+       width: 100%;
+   }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 25px;
-            color: #333;
-        }
+   .voltar {
+       position: absolute;
+       top: 15px;
+       left: -30px;
+       z-index: 10;
+   }
 
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
-        }
+   .voltar img {
+       width: 135px;
+       height: 70px;
+   }
 
-        input[type="text"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            box-sizing: border-box;
-        }
 
-        button {
-            margin-top: 20px;
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+   h2 {
+       text-align: center;
+       margin-bottom: 25px;
+       color: #333;
+   }
 
-        button:hover {
-            background-color: #45a049;
-        }
+   label {
+       display: block;
+       margin-top: 15px;
+       font-weight: bold;
+   }
 
-        .mensagem {
-            margin-top: 20px;
-            padding: 10px;
-            text-align: center;
-            font-weight: bold;
-            color: #333;
-            background-color: #e0ffe0;
-            border: 1px solid #b2ffb2;
-            border-radius: 5px;
-        }
+   input[type="text"],
+   textarea {
+       width: 100%;
+       padding: 10px;
+       margin-top: 5px;
+       border: 1px solid #ccc;
+       border-radius: 6px;
+       box-sizing: border-box;
+   }
 
-        .voltar {
-            margin-top: 15px;
-            text-align: center;
-        }
+   button {
+       margin-top: 20px;
+       width: 100%;
+       background-color: #4CAF50;
+       color: white;
+       padding: 12px;
+       border: none;
+       border-radius: 6px;
+       font-size: 16px;
+       cursor: pointer;
+   }
 
-        .voltar a {
-            color: black;
-            position: relative;
-            top: 10px;
-            right: 0px;
-            font-weight: bold;
-            text-decoration: none;
-            font-weight: bold;
-        }
+   button:hover {
+       background-color: #45a049;
+   }
 
-        .voltar a:hover {
-            text-decoration: underline;
-        }
+   .mensagem {
+       margin-top: 20px;
+       padding: 10px;
+       text-align: center;
+       font-weight: bold;
+       color: #333;
+       background-color: #e0ffe0;
+       border: 1px solid #b2ffb2;
+       border-radius: 5px;
+   }
+
+   .voltar {
+       margin-top: 15px;
+       text-align: center;
+   }
+
+   .voltar a {
+       color: black;
+       position: relative;
+       top: 10px;
+       right: 0px;
+       font-weight: bold;
+       text-decoration: none;
+       font-weight: bold;
+   }
+
+   .voltar a:hover {
+       text-decoration: underline;
+   }

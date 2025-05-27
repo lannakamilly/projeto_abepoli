@@ -32,6 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="./css/adicionar.css">
     <title>Adicionar Doação</title>
 <body>
+    <a href="./index.php" class="voltar">
+      <img src="./img/botao_voltar.png" alt="Voltar">
+    </a>
     <div id="container">
         
         <h2>Adicionar Nova Doação</h2>
