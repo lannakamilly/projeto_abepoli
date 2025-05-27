@@ -7,7 +7,12 @@
 body {
   margin: 0;
   font-size: 18px;
-   background-image: url('../img/fundo_login.png');
+  background: #a2966f;
+  background: radial-gradient(
+    circle,
+    rgba(247, 190, 0, 1) 0%,
+    rgba(175, 126, 15, 1) 100%
+  );
 }
 
 .tela-login {
@@ -33,18 +38,18 @@ body {
 
 .conteudo {
   display: flex;
-  background-image: url('../img/fundo_login_novo.png'); 
-  background-size: cover; 
+  background-image: url("../img/fundo_login_novo.png");
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 34px;
-  box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.405);
+  border-radius: 60px;
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.405);
   overflow: hidden;
   max-width: 890px;
   width: 100%;
   height: 490px;
   max-height: 600px;
-  position: relative; 
+  position: relative;
 }
 
 .lado-esquerdo {
@@ -89,7 +94,6 @@ body {
   margin-bottom: 38px;
 }
 
-
 form {
   display: flex;
   flex-direction: column;
@@ -133,10 +137,9 @@ form input {
   border-radius: 25px;
   transition: background 0.3s ease;
   width: 100px;
-  margin: 10px auto 0 auto; 
+  margin: 10px auto 0 auto;
   text-align: center;
 }
-
 
 .botao-entrar:hover {
   background: linear-gradient(90deg, #bf8e04, #d8b108);

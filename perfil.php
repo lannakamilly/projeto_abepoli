@@ -1,3 +1,25 @@
+<?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header("Location: login.php");
+    exit;
+}
+?>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  if (localStorage.getItem('loginSuccess') === '1') {
+    Swal.fire({
+      icon: 'success',
+      title: 'Login realizado!',
+      text: 'Bem-vindo(a) ao painel administrativo!',
+      confirmButtonColor: '#3085d6'
+    });
+    localStorage.removeItem('loginSuccess');
+  }
+</script>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
