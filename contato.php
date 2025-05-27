@@ -42,15 +42,15 @@
       <div class="formulario-contato">
         <p class="subtitulo-contato">Está com alguma dúvida?</p>
         <h2 class="titulo-contato">Abepoli esta pronta para ajudar</h2>
-        <form>
+        <form action="enviar_contato.php" method="POST">
           <label>Nome:</label>
-          <input type="text" placeholder="">
+          <input type="text" name="nome" placeholder="Digite seu nome" required>
 
           <label>Email:</label>
-          <input type="email" placeholder="">
+          <input type="email" name="email" placeholder="Digite seu email" required>
 
           <label>Mensagem:</label>
-          <textarea rows="4" placeholder=""></textarea>
+          <textarea name="mensagem" rows="4" placeholder="Digite sua mensagem" required></textarea>
 
           <button type="submit">Enviar</button>
         </form>
@@ -69,9 +69,9 @@
           <img src="https://img.icons8.com/ios-filled/50/25D366/whatsapp.png" alt="WhatsApp" />
           <span>(12) 98817-6722</span>
         </a>
-        <a href="mailto:abepoli@gmail.com" class="contato-item">
+        <a href="mailto:silvareginmr@gmail.com" class="contato-item">
           <img src="https://img.icons8.com/ios-filled/50/EA4335/gmail.png" alt="Email" />
-          <span>abepoli@gmail.com</span>
+          <span>silvareginmr@gmail.com</span>
         </a>
       </div>
       <p class="endereco">
