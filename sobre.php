@@ -67,7 +67,7 @@
       <div class="intro__grid">
         <div class="intro__card">
           <div class="intro__image">
-            <img src="./img/abelha-bugia.jpeg" alt="intro" />
+            <img src="./img/icon1.png" alt="intro" />
           </div>
           <h4>Proteção Ambiental</h4>
           <p>
