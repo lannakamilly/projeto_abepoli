@@ -1,47 +1,48 @@
 <?php
+session_start();
 include 'conexao.php';
-$sql_doacoes = "SELECT id_doacao, doador, valores, destinado	
-                FROM doacoes";
 
+$sql_doacoes = "SELECT id_doacao, doador, valores, destinado FROM doacoes";
 $resultado_doacoes = $conn->query($sql_doacoes);
 
+$logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
 ?>
-<!DOCTYPE html>
-< lang="en">
 
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Abepoli</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Portal Abepoli</title>
     <link rel="stylesheet" href="./css/doacoes.css">
     <link rel="stylesheet" href="./css/footerr.css">
     <link rel="stylesheet" href="./css/nav.css">
 </head>
-<body>
 
+<body>
     <header>
-    <nav id="navisinha">
-      <div class="nav__header">
-        <div class="nav__logo">
-          <a href="#">
-            <img src="./img/logo1.jpg" alt="logo" />
-          </a>
-        </div>
-        <div class="nav__menu__btn" id="menu-btn">
-          <i class="ri-menu-3-line"></i>
-        </div>
-      </div>
-      <ul class="nav__links" id="nav-links">
-        <li><a href="./index.php">Início</a></li>
-        <li><a href="./produtoss.php">Produtos</a></li>
-        <li><a href="./sobre.php">Ações</a></li>
-        <li><a href="./doacoes.php">Doações</a></li>
-        <li><a href="./saibamais.php">Saiba Mais</a></li>
-        <li><a href="./contato.php">Contato</a></li>
-      </ul>
-    </nav>
+        <nav id="navisinha">
+            <div class="nav__header">
+                <div class="nav__logo">
+                    <a href="#">
+                        <img src="./img/logo1.jpg" alt="logo" />
+                    </a>
+                </div>
+                <div class="nav__menu__btn" id="menu-btn">
+                    <i class="ri-menu-3-line"></i>
+                </div>
+            </div>
+            <ul class="nav__links" id="nav-links">
+                <li><a href="./index.php">Início</a></li>
+                <li><a href="./produtoss.php">Produtos</a></li>
+                <li><a href="./sobre.php">Ações</a></li>
+                <li><a href="./doacoes.php">Doações</a></li>
+                <li><a href="./saibamais.php">Saiba Mais</a></li>
+                <li><a href="./contato.php">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="top-container">
@@ -66,58 +67,72 @@ $resultado_doacoes = $conn->query($sql_doacoes);
         <div id="quadroamarelo">
             <h2 class="titulo">Nosso trabalho</h2>
             <p class="descricao">O instituto Abepoli é uma organização dedicada à conservação da biodiversidade, com
-                foco na proteção de polinizadores, fauna e flora, promovendo a sustentabilidade e o equilibrio
+                foco na proteção de polinizadores, fauna e flora, promovendo a sustentabilidade e o equilíbrio
                 ambiental.</p>
         </div>
         <div class="blank">
             <img id="img_açoes" src="./img/açoes.PNG" alt="img-acoes" class="img-acoes">
         </div>
     </section>
-        <div id="divaliembaixo">
 
-            <h2 id="h2doacoes">Doações</h2>
-            <hr id="ailiembaixo" class="hrvermelho">
-            <br>
-        </div>
+    <div id="divaliembaixo">
+        <h2 id="h2doacoes">Doações</h2>
+        <hr id="ailiembaixo" class="hrvermelho">
+        <br>
+    </div>
 
-        <div id="tabeladiv">
-
-            <table id="tabela">
+    <div id="tabeladiv">
+        <table id="tabela">
+            <thead>
                 <tr>
                     <th>Doador</th>
                     <th>Valor</th>
-                    <th>destinado</th>
-                    <th></th>
+                    <th>Destinado</th>
+                    <?php if ($logado): ?>
+                        <th>Ações</th>
+                    <?php endif; ?>
                 </tr>
-                <tbody>
-                    <?php 
-                        if ($resultado_doacoes->num_rows> 0) {
-                            while ($linha = $resultado_doacoes->fetch_assoc()) {
-                                echo "<tr>";
-                                echo "<td>" . $linha['doador'] . "</td>";
-                                echo "<td>" . $linha['valores'] . "</td>";
-                                echo "<td>" . $linha['destinado'] . "</td>";
-                                echo "<td class='actions'>
-                                <a href='editar.php?id=" . $linha['id_doacao'] . "' class='edit-btn'><img style='width: 100px;' src='./img/Design_sem_nome__6_-removebg-preview.png' alt='logo'/></a> 
-                                <a href='excluir.php?id=" . $linha['id_doacao'] . "' class='delete-btn' onclick=\"return confirm('Tem certeza que deseja excluir?');\"> <img style='width: 100px;' src='./img/Design_sem_nome__3_-removebg-preview.png' alt='logo'/></a>
-                                </td>";
-                                echo "</tr>";
-                            }
-                        }else{
-                            echo "<tr><td colspan='8'>Nem um doador encontrado</td></tr>";
+            </thead>
+            <tbody>
+                <?php
+                if ($resultado_doacoes->num_rows > 0) {
+                    while ($linha = $resultado_doacoes->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . htmlspecialchars($linha['doador']) . "</td>";
+                        echo "<td>" . htmlspecialchars($linha['valores']) . "</td>";
+                        echo "<td>" . htmlspecialchars($linha['destinado']) . "</td>";
+
+                        if ($logado) {
+                            echo "<td class='actions'>
+                                <a href='editar.php?id=" . $linha['id_doacao'] . "' class='edit-btn'>
+                                    <img style='width: 100px;' src='./img/Design_sem_nome__6_-removebg-preview.png' alt='Editar'/>
+                                </a> 
+                                <a href='excluir.php?id=" . $linha['id_doacao'] . "' class='delete-btn' onclick=\"return confirm('Tem certeza que deseja excluir?');\">
+                                    <img style='width: 100px;' src='./img/Design_sem_nome__3_-removebg-preview.png' alt='Excluir'/>
+                                </a>
+                            </td>";
                         }
-                        ?>
-                    </tbody>
-                </div>   
-            </table>
-            <a href="adicionar_doacao.php" style="width: 100px; margin-left: 60%;"><img src=".\img\Design_sem_nome__9_-removebg-preview.png" style="width: 100px;" alt=""></a>
-            
-            
-        </div>
+
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='4'>Nenhum doador encontrado</td></tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+
+    <?php if ($logado): ?>
+        <button class="btn-add" onclick="window.location.href='adicionar_doacao.php'">+</button>
+    <?php endif; ?>
+  
+
+    </div>
     </section>
-    
+
     <section id="infografico">
-        
+
         <h2 class="h2">Caminho do Doação</h2>
         <hr id="hrdoacao">
         <div id="body">
@@ -140,59 +155,68 @@ $resultado_doacoes = $conn->query($sql_doacoes);
                 </div>
             </div>
         </div>
-        
+
     </section>
-    <div style="background-color: white; padding: 50px 20px;" id="divcomo">
+    <div style="background-color: white;" id="divcomo">
         <h3>Como doar</h3>
         <p id="pcomo">O gestor responsável pelo patrimônio ou o particular interessado em doar clica no botão <a
-        href="contato.php" class="quero-doar">QUERO DOAR</a>, que o direcionará para tela de login pelo
-        Senha-Rede para o gestor de patrimônio ou para o Portal Gov.BR para particulares, que acessará com CPF do
-        doador ou representante legal da pessoa jurídica. O cadastro do anúncio é bem simples e intuitivo, com
-        informações sobre o bem ou serviço, campo para inserir fotos e outras informações necessárias para os órgãos
-        donatários poderem demonstrar interesse.</p>
+                href="contato.php" class="quero-doar">QUERO DOAR</a>, que o direcionará para tela de login pelo
+            Senha-Rede para o gestor de patrimônio ou para o Portal Gov.BR para particulares, que acessará com CPF do
+            doador ou representante legal da pessoa jurídica. O cadastro do anúncio é bem simples e intuitivo, com
+            informações sobre o bem ou serviço, campo para inserir fotos e outras informações necessárias para os órgãos
+            donatários poderem demonstrar interesse.</p>
     </div>
-    <h1 id="ajude">Ajude nossa Causa</h1>
     <div style="position: relative; height: 150px; overflow: hidden; background-color: white; bottom: 0px">
         <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
             <path d="M0.00,49.98 C150.00,150.00 349.81,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-            style="stroke: none; fill: #ffe68a;"></path>
+                style="stroke: none; fill: #ffe68a;"></path>
         </svg>
     </div>
-</section>
+    </section>
+    <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
-<!-- Agora sim, a seção amarela -->
-<section style="background-color: #ffe68a; padding: 50px 20px 0 20px; text-align: center;">
-    
-    <div id="dividir" style="margin-top: 30px;">
-        <img src="./img/Capturar.JPG" alt=""
-        style="width: 300px; border-radius: 20px; height: auto; margin-bottom: 20px;">
-        <p id="pqr">QR code</p>
-    </div>
-    <ul style="list-style: none;margin-top: 90px;  margin-bottom: 90px; padding: 0;">
-        <li id="lista" style="margin: 10px 0;  align-items: center; display: flex;">
-            <img class="iconedoar" src="./img/pngtree-whatsapp-icon-png-image_6315990.png" alt=""
-            style="width: 30px; margin-right: 10px;">
-            <p id="pli">(12) 99143-8924</p>
+    <!-- Agora sim, a seção amarela -->
+    <section id="sectionqr" style="background-color: #ffe68a;display: flex; justify-content: normal; text-align: center;">
+        <div>
+
+            <h1 id="ajude">Ajude nossa Causa</h1>
+            <br>
+        </div>
+        <div id="dividir" style="margin-top: 90px;">
+            <img src="./img/Capturar.JPG" alt=""
+                style="    width: 250px;
+    border-radius: 20px;
+    height: auto;margin-bottom: 20px;">
+            <p id="pqr">QR code</p>
+        </div>
+        <ul id="ulzapp" style="list-style: none; margin-top: 140px; margin-left: 150px; margin-bottom: 0px;padding: 0;">
+            <li id="lista" style="margin: 10px 0;  align-items: center; display: flex;">
+                <a href="https://wa.me/5512988176722" target="_blank" class="contato-item">
+                    <img src="https://img.icons8.com/ios-filled/50/25D366/whatsapp.png" alt="WhatsApp" />
+                    <span>(12) 98817-6722</span>
+                </a>
             </li>
             <li id="lista" style="margin: 10px 0; align-items: center; display: flex;">
-                <img class="iconedoar" src="./img/pix.png" alt="" style="width: 30px; margin-right: 10px;">
-                <p id="pli">123456789-00</p>
+                <a href="mailto:abepoli@gmail.com" class="contato-item">
+                    <img src="https://img.icons8.com/ios-filled/50/EA4335/gmail.png" alt="Email" />
+                    <span>abepoli@gmail.com</span>
+                </a>
             </li>
         </ul>
-        
+
     </section>
-    
+
     <!-- Onda de baixo -->
     <div style="position: relative; height: 150px; overflow: hidden; background-color: #fabf11; margin-top: -5px;">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"
-        style="height: 100%; width: 100%;">
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
+            style="height: 100%; width: 100%;">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
         82.39-16.72,168.19-17.73,250.45-.39C823.78,31,
         906.67,72,985.66,92.83c70.05,18.48,
         146.53,26.09,214.34,3V0H0V27.35A600.21,
         600.21,0,0,0,321.39,56.44Z" fill=" #ffe68a"></path>
-    </svg>
-</div>
+        </svg>
+    </div>
 
     <footer class="abepoli-footer">
         <div class="footer-content">
@@ -200,7 +224,7 @@ $resultado_doacoes = $conn->query($sql_doacoes);
                 <img src="img/logo1.jpg" alt="Instituto Abepoli" class="footer-logo">
             </div>
 
-                <div class="footer-col contact-col">
+            <div class="footer-col contact-col">
                 <h4>Contato</h4>
                 <p><i class="fa fa-envelope"></i> abepoli@gmail.com</p>
                 <div class="social-icons">

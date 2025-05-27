@@ -12,8 +12,27 @@
     top: -20px;
 }
 
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f7be00;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
 .container{
     width: 700px;
+}
+.hramarelo{
+    border: 3px solid red;
 }
 
 .subtitulo{
@@ -69,7 +88,7 @@ p{
 }
 
 .bees{
-    width: 500;
+    width: auto;
     height: 450px;
 }
 
@@ -112,6 +131,12 @@ section{
     font-size: large;
     color: #fff;
     margin-bottom: 50px;
+}
+img{
+    width: 250px;
+    /* border-radius: 20px; */
+    height: auto;
+    /* margin-bottom: 20px;*/
 }
 
 .descricao{
@@ -216,6 +241,7 @@ td{
 }
 
 .step-container {
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -229,6 +255,39 @@ td{
     gap: 15px;
     position: relative;
 }
+
+
+.contato-item {
+    margin-bottom: 25px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border-radius: 12px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contato-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contato-item img {
+     width: 45px;
+
+}
+
+.contato-item span {
+  font-size: 16px;
+}
+
 
 .bubble {
     font-size: 30px;
@@ -277,6 +336,7 @@ td{
     margin-left: 600px;
 }
 #infografico{
+    margin-top: 15%;
     width: auto;
     align-items: center;
     display: flex;
@@ -300,7 +360,7 @@ td{
     
 }
 #divcomo{
-    margin-bottom: 200px;
+    margin-bottom: 250px;
     position: relative;
     top: 20px;
     bottom: 500px;
@@ -317,11 +377,15 @@ td{
 }
 #pli{
     display: flex;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
+
 }
 
 #ajude{
+    font-size: 35px;
+    position: absolute;
+    margin-left: 40%;
     text-align: center;
 }
 
@@ -341,10 +405,26 @@ h3{
     display: flex;
 }
 .iconedoar{
-   
+    margin-bottom: 0px !important;
     height: auto !important;
-    width: 90px !important;
+    width: 70px !important;
     height: auto;
+}
+.btn-add {
+  position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: green;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    color: white;
 }
 a{
     font-Weight: 'bold';
@@ -354,7 +434,7 @@ a{
     width: 500px;
 }
 #dividir{
-    margin-left: 200px;
+    margin-left: 250px;
     align-items: center;
     flex-direction: column ;
     display: flex;
@@ -370,29 +450,183 @@ a{
 .step:nth-child(3) { margin-left: 60px; }
 .step:nth-child(4) { margin-left: 90px; }
 
-@media (min-width: 200px) and (max-width: 530px) {
-    .container{
-        display: flex;
-        flex-direction: column;
-    }
-    #title{
-        margin-top: 50px;
-        font-size: 57px;
-    }
-    p{
-        margin-top: 20px;
-        font-size: 20px;
-        width: 250px;
-    }h1{
-        margin-top: 40px;
-        font-size: 44px;
-    }
-    }
+@media (max-width: 480px) {
+  .botaodoacoes a {
+    font-size: 16px;
+  }
 
+  .circle {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+  .info{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  #divaliembaixo {
+    margin-top: 200px;
+  }
 
+  .bubble {
+    font-size: 16px;
+  }
+  .descricao{
+    margin-left: 10px;
+  }
+  .titulo{
+    margin-top: 0px !important;
+     margin-left: 10px;
+  }
+  .blank{
+      display: none;
+  }
+  .circle{
+     display: none;
+  }
+  .info{
+    height: 500px;
+    margin-bottom: 60px;
+  }
+   #dividir{
+    margin: 0;
+   }
+   #sectionqr{
+    display: flex;
+    flex-direction: column;
+   }
 
-@media (width > 768px) {
-    nav {
-        top: 0px !important;
+  #navisinha {
+    padding: 0.5rem;
+    font-size: 14px;
+  }
+  #primeira, #segunda, #terceira, #quarta{
+    margin-left: 0px;
+  }    
+
+  .nav__links li {
+    margin: 5px 0;
+  }
+
+  .contato-item span {
+    font-size: 14px;
+  }
 }
+
+@media (max-width: 768px) {
+  .subtitulo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bees {
+    width: 100%;
+    height: auto;
+  }
+
+  .title h1 {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  #img_açoes {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .blank {
+    width: 100%;
+    height: auto;
+  }
+
+  .step {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bubble {
+    max-width: 100%;
+    font-size: 18px;
+  }
+  #ulzapp{
+    margin-left: 60px !important;
+  }
+
+  .circle {
+    margin-top: 10px;
+  }
+
+.contato-item {
+    width: 86% !important;
+}
+
+  .contato-item {
+    width: 100%;
+  }
+
+  #qrcode {
+    width: 90%;
+  }
+
+  #pcomo {
+    width: 90%;
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 36px !important;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container,
+  p,
+  #img_açoes,
+  .blank {
+    width: 90% !important;
+  }
+
+  #primeira,
+  #segunda,
+  #terceira,
+  #quarta {
+    margin: 0 auto;
+  }
+
+  #ajude {
+    position: static;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  #tabeladiv {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  #tabela {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .step-container {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  #navisinha {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }
