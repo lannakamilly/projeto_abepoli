@@ -282,6 +282,22 @@ body {
   line-height: 1.75rem;
 }
 
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #F7BE00;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
 .destination__card__content h4::before {
   position: absolute;
   content: "";
