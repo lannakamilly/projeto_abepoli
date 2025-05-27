@@ -360,7 +360,7 @@ td{
     
 }
 #divcomo{
-    margin-bottom: 200px;
+    margin-bottom: 250px;
     position: relative;
     top: 20px;
     bottom: 500px;
@@ -385,7 +385,7 @@ td{
 #ajude{
     font-size: 35px;
     position: absolute;
-    margin-left: 39%;
+    margin-left: 40%;
     text-align: center;
 }
 
@@ -434,7 +434,7 @@ a{
     width: 500px;
 }
 #dividir{
-    margin-left: 200px;
+    margin-left: 250px;
     align-items: center;
     flex-direction: column ;
     display: flex;
