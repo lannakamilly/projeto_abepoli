@@ -20,7 +20,7 @@
       <div class="nav__header">
         <div class="nav__logo">
           <a href="#">
-            <img src="./img/logo1.jpg" alt="logo" />
+          <img src="./img/logo1.jpg" alt="logo" />
           </a>
         </div>
         <div class="nav__menu__btn" id="menu-btn">
@@ -34,6 +34,8 @@
         <li><a href="./doacoes.php">Doações</a></li>
         <li><a href="./saibamais.php">Saiba Mais</a></li>
         <li><a href="./contato.php">Contato</a></li>
+        <li>
+        </li>
       </ul>
     </nav>
   </header>
@@ -42,15 +44,15 @@
       <div class="formulario-contato">
         <p class="subtitulo-contato">Está com alguma dúvida?</p>
         <h2 class="titulo-contato">Abepoli esta pronta para ajudar</h2>
-        <form>
+        <form action="enviar_contato.php" method="POST">
           <label>Nome:</label>
-          <input type="text" placeholder="">
+          <input type="text" name="nome" placeholder="Digite seu nome" required>
 
           <label>Email:</label>
-          <input type="email" placeholder="">
+          <input type="email" name="email" placeholder="Digite seu email" required>
 
           <label>Mensagem:</label>
-          <textarea rows="4" placeholder=""></textarea>
+          <textarea name="mensagem" rows="4" placeholder="Digite sua mensagem" required></textarea>
 
           <button type="submit">Enviar</button>
         </form>
@@ -69,9 +71,9 @@
           <img src="https://img.icons8.com/ios-filled/50/25D366/whatsapp.png" alt="WhatsApp" />
           <span>(12) 98817-6722</span>
         </a>
-        <a href="mailto:abepoli@gmail.com" class="contato-item">
+        <a href="mailto:silvareginmr@gmail.com" class="contato-item">
           <img src="https://img.icons8.com/ios-filled/50/EA4335/gmail.png" alt="Email" />
-          <span>abepoli@gmail.com</span>
+          <span>silvareginmr@gmail.com</span>
         </a>
       </div>
       <p class="endereco">
@@ -146,8 +148,8 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
   <script src="./js/nav.js"></script>
+  
 </body>
 
 </html>

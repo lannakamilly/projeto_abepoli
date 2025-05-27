@@ -11,7 +11,7 @@
 
 <body>
     <div class="tela-login">
-        <a href="./index.php" class="voltar">
+        <a href="./login.php" class="voltar">
             <img src="./img/botao_voltar.png" alt="Voltar">
         </a>
 

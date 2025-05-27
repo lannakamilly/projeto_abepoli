@@ -1,12 +1,12 @@
 <?php
-$servername = "localhost"; 
-$username = "root";  
-$password = ""; 
-$dbname = "abepoli";  
+$host = "localhost";
+$user = "root";
+$pass = ""; 
+$db = "abepoli";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $user, $pass, $db);
 
 if ($conn->connect_error) {
-    die("Erro de conexão: " . $conn->connect_error);
+    die("Erro de conexão com o banco de dados: " . $conn->connect_error);
 }
 ?>
