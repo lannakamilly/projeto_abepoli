@@ -1,15 +1,19 @@
 <?php
-session_start();
 include 'conexao.php';
 
+// Executa a consulta usando PDO
 $sql_doacoes = "SELECT id_doacao, doador, valores, destinado FROM doacoes";
-$resultado_doacoes = $conn->query($sql_doacoes);
+$stmt = $conn->prepare($sql_doacoes);
+$stmt->execute();
+$resultado_doacoes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+session_start();
 $logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,23 +99,23 @@ $logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
             </thead>
             <tbody>
                 <?php
-                if ($resultado_doacoes->num_rows > 0) {
-                    while ($linha = $resultado_doacoes->fetch_assoc()) {
+                if (count($resultado_doacoes) > 0) {
+                    foreach ($resultado_doacoes as $linha) {
                         echo "<tr>";
                         echo "<td>" . htmlspecialchars($linha['doador']) . "</td>";
                         echo "<td>" . htmlspecialchars($linha['valores']) . "</td>";
                         echo "<td>" . htmlspecialchars($linha['destinado']) . "</td>";
 
-                        if ($logado) {
-                            echo "<td class='actions'>
-                                <a href='editar.php?id=" . $linha['id_doacao'] . "' class='edit-btn'>
-                                    <img style='width: 100px;' src='./img/Design_sem_nome__6_-removebg-preview.png' alt='Editar'/>
-                                </a> 
-                                <a href='excluir.php?id=" . $linha['id_doacao'] . "' class='delete-btn' onclick=\"return confirm('Tem certeza que deseja excluir?');\">
-                                    <img style='width: 100px;' src='./img/Design_sem_nome__3_-removebg-preview.png' alt='Excluir'/>
-                                </a>
-                            </td>";
-                        }
+                       if ($logado) {
+    echo "<td class='actions'>";
+    echo "<a href='editar.php?id=" . $linha['id_doacao'] . "' class='edit-btn'>";
+    echo "<img style='width: 100px;' src='./img/Design_sem_nome__6_-removebg-preview.png' alt='Editar'/>";
+    echo "</a>";
+    echo "<a href='excluir.php?id=" . $linha['id_doacao'] . "' class='delete-btn' onclick=\"return confirm('Tem certeza que deseja excluir?');\">";
+    echo "<img style='width: 100px;' src='./img/Design_sem_nome__3_-removebg-preview.png' alt='Excluir'/>";
+    echo "</a>";
+    echo "</td>";
+}
 
                         echo "</tr>";
                     }
@@ -126,7 +130,7 @@ $logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
     <?php if ($logado): ?>
         <button class="btn-add" onclick="window.location.href='adicionar_doacao.php'">+</button>
     <?php endif; ?>
-  
+
 
     </div>
     </section>
