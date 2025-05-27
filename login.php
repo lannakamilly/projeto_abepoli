@@ -13,11 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt = $conexao->prepare("SELECT * FROM administrador WHERE email_admin = ?");
   $stmt->bind_param("s", $email);
   $stmt->execute();
-  $res = $stmt->get_result();
+  
 
-  if ($res->num_rows === 1) {
-    $admin = $res->fetch_assoc();
+  $admin = $stmt->fetch(PDO::FETCH_ASSOC);
 
+  if ($admin) {
     if ($admin['senha_admin'] === $senha) {
       $_SESSION['admin'] = true;
       $_SESSION['email_admin'] = $email;
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $erro = "Administrador não encontrado.";
   }
 
-  $stmt->close();
+  $stmt->closeCursor();
 }
 $conexao->close();
 ?>
