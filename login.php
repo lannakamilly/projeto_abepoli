@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($res->num_rows === 1) {
     $admin = $res->fetch_assoc();
 
-    if ($admin['senha_admin'] === $senha) {
+    if ($admin['senha_admin'] == $senha) {
       $_SESSION['admin'] = true;
       $_SESSION['email_admin'] = $email;
       $sucesso = true;

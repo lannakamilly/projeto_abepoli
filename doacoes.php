@@ -1,26 +1,27 @@
 <?php
+session_start();
 include 'conexao.php';
-$sql_doacoes = "SELECT id_doacao, doador, valores, destinado	
-                FROM doacoes";
 
+$sql_doacoes = "SELECT id_doacao, doador, valores, destinado FROM doacoes";
 $resultado_doacoes = $conn->query($sql_doacoes);
 
+$logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
 ?>
-<!DOCTYPE html>
 
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Abepoli</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Portal Abepoli</title>
     <link rel="stylesheet" href="./css/doacoes.css">
     <link rel="stylesheet" href="./css/footerr.css">
     <link rel="stylesheet" href="./css/nav.css">
 </head>
 
 <body>
-
     <header>
         <nav id="navisinha">
             <div class="nav__header">
@@ -66,42 +67,42 @@ $resultado_doacoes = $conn->query($sql_doacoes);
         <div id="quadroamarelo">
             <h2 class="titulo">Nosso trabalho</h2>
             <p class="descricao">O instituto Abepoli é uma organização dedicada à conservação da biodiversidade, com
-                foco na proteção de polinizadores, fauna e flora, promovendo a sustentabilidade e o equilibrio
+                foco na proteção de polinizadores, fauna e flora, promovendo a sustentabilidade e o equilíbrio
                 ambiental.</p>
         </div>
         <div class="blank">
             <img id="img_açoes" src="./img/açoes.PNG" alt="img-acoes" class="img-acoes">
         </div>
     </section>
-    <div id="divaliembaixo">
 
+    <div id="divaliembaixo">
         <h2 id="h2doacoes">Doações</h2>
         <hr id="ailiembaixo" class="hrvermelho">
         <br>
     </div>
 
     <div id="tabeladiv">
-
         <table id="tabela">
-            <tr>
-                <th>Doador</th>
-                <th>Valor</th>
-                <th>destinado</th>
-                <?php if (isset($_SESSION['email'])): ?>
-                    <th></th>
-                <?php endif; ?>
-
-            </tr>
+            <thead>
+                <tr>
+                    <th>Doador</th>
+                    <th>Valor</th>
+                    <th>Destinado</th>
+                    <?php if ($logado): ?>
+                        <th>Ações</th>
+                    <?php endif; ?>
+                </tr>
+            </thead>
             <tbody>
                 <?php
                 if ($resultado_doacoes->num_rows > 0) {
                     while ($linha = $resultado_doacoes->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td>" . $linha['doador'] . "</td>";
-                        echo "<td>" . $linha['valores'] . "</td>";
-                        echo "<td>" . $linha['destinado'] . "</td>";
+                        echo "<td>" . htmlspecialchars($linha['doador']) . "</td>";
+                        echo "<td>" . htmlspecialchars($linha['valores']) . "</td>";
+                        echo "<td>" . htmlspecialchars($linha['destinado']) . "</td>";
 
-                        if (isset($_SESSION['email'])) {
+                        if ($logado) {
                             echo "<td class='actions'>
                                 <a href='editar.php?id=" . $linha['id_doacao'] . "' class='edit-btn'>
                                     <img style='width: 100px;' src='./img/Design_sem_nome__6_-removebg-preview.png' alt='Editar'/>
@@ -109,20 +110,21 @@ $resultado_doacoes = $conn->query($sql_doacoes);
                                 <a href='excluir.php?id=" . $linha['id_doacao'] . "' class='delete-btn' onclick=\"return confirm('Tem certeza que deseja excluir?');\">
                                     <img style='width: 100px;' src='./img/Design_sem_nome__3_-removebg-preview.png' alt='Excluir'/>
                                 </a>
-                                </td>";
+                            </td>";
                         }
 
                         echo "</tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='8'>Nem um doador encontrado</td></tr>";
+                    echo "<tr><td colspan='4'>Nenhum doador encontrado</td></tr>";
                 }
                 ?>
             </tbody>
+        </table>
     </div>
-    </table>
-    <?php if (isset($_SESSION['email'])): ?>
-         <button class="btn-add" onclick="window.location.href='adicionar_doacao.php'" >+</button>
+
+    <?php if ($logado): ?>
+        <button class="btn-add" onclick="window.location.href='adicionar_doacao.php'">+</button>
     <?php endif; ?>
   
 
