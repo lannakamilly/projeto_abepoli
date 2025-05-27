@@ -42,7 +42,7 @@
     </nav>
     <header class="section__container header__container" id="home">
         <div class="header__image">
-          <img src="assets/header.png" alt="header" />
+          <img src="./img/headerr.png" alt="header" />
         </div>
         <div class="header__content">
           <h1>Proteja as abelhas <br>Salve o futuro</h1>
@@ -50,8 +50,9 @@
             Promovemos a sustentabilidade protegendo abelhas <br> e despertando a consciência ecológica.
           </p>
           <div class="header__btns">
+             <a href="./saibamais.php">
             <button class="btn">Saiba Mais</button>
-            <a href="#">
+            <a href="./video.php">
               <span><i class="ri-play-fill"></i></span>
               Veja o vídeo
             </a>
@@ -101,12 +102,6 @@
           <h4>Ações Sustentáveis</h4>
           <p>Impacto real na natureza</p>
         </div>
-      </div>
-      <div class="tour__btn">
-        <button class="btn">
-          Conheça mais
-          <span><i class="ri-arrow-right-long-line"></i></span>
-        </button>
       </div>
     </section>
     

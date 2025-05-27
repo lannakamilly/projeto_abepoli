@@ -1,96 +1,52 @@
 
-
 const scrollRevealOption = {
   distance: "50px",
   origin: "bottom",
   duration: 1000,
 };
 
-ScrollReveal().reveal(".header__image img", {
+// header container
+ScrollReveal().reveal(".header__container p", {
   ...scrollRevealOption,
-  origin: "right",
 });
-ScrollReveal().reveal(".header__content h2", {
+
+ScrollReveal().reveal(".header__container h1", {
   ...scrollRevealOption,
   delay: 500,
 });
-ScrollReveal().reveal(".header__content h1", {
-  ...scrollRevealOption,
-  delay: 1000,
-});
-ScrollReveal().reveal(".header__content h3", {
-  ...scrollRevealOption,
-  delay: 1500,
-});
-ScrollReveal().reveal(".header__content p", {
-  ...scrollRevealOption,
-  delay: 2000,
-});
-ScrollReveal().reveal(".header__btns", {
-  ...scrollRevealOption,
-  delay: 2500,
-});
 
-ScrollReveal().reveal(".intro__image", {
+// about container
+ScrollReveal().reveal(".about__image img", {
   ...scrollRevealOption,
   origin: "left",
 });
-ScrollReveal().reveal(".intro__content .section__subheader", {
+
+ScrollReveal().reveal(".about__content .section__subheader", {
   ...scrollRevealOption,
   delay: 500,
 });
-ScrollReveal().reveal(".intro__content .section__header", {
+
+ScrollReveal().reveal(".about__content .section__header", {
   ...scrollRevealOption,
   delay: 1000,
 });
-ScrollReveal().reveal(".intro__description", {
+
+ScrollReveal().reveal(".about__content .section__description", {
   ...scrollRevealOption,
   delay: 1500,
 });
-ScrollReveal().reveal(".intro__grid", {
+
+ScrollReveal().reveal(".about__btn", {
   ...scrollRevealOption,
   delay: 2000,
 });
-ScrollReveal().reveal(".intro__content h4", {
-  ...scrollRevealOption,
-  delay: 2500,
-});
-ScrollReveal().reveal(".intro__flex div", {
-  ...scrollRevealOption,
-  delay: 3000,
-  interval: 500,
-});
 
-ScrollReveal().reveal(".journey__grid > div > div", {
+// room container
+
+
+// service container
+ScrollReveal().reveal(".service__list li", {
   ...scrollRevealOption,
   interval: 500,
-});
-
-const mixer = mixitup(".portfolio__grid");
-
-ScrollReveal().reveal(".banner__content .section__header", {
-  ...scrollRevealOption,
-});
-ScrollReveal().reveal(".banner__content p", {
-  ...scrollRevealOption,
-  delay: 500,
-});
-ScrollReveal().reveal(".banner__btn", {
-  ...scrollRevealOption,
-  delay: 1000,
-});
-
-const swiper = new Swiper(".swiper", {
-  slidesPerView: 2,
-  spaceBetween: 50,
-  loop: true,
-
-  pagination: {
-    el: ".swiper-pagination",
-  },
-});
-
-ScrollReveal().reveal(".blog__card", {
-  ...scrollRevealOption,
-  interval: 500,
+  origin: "right",
 });
