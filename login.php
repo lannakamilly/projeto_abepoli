@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'conexao.php'; 
 require_once('conexao.php');
 
 $erro = false;
@@ -10,14 +11,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = $_POST['email'] ?? '';
   $senha = $_POST['senha'] ?? '';
 
+  $stmt = $conn->prepare("SELECT * FROM administrador WHERE email_admin = ?");
   $stmt = $conexao->prepare("SELECT * FROM administrador WHERE email_admin = ?");
   $stmt->bind_param("s", $email);
   $stmt->execute();
-  
+  $res = $stmt->get_result();
 
-  $admin = $stmt->fetch(PDO::FETCH_ASSOC);
+  if ($res->num_rows === 1) {
+    $admin = $res->fetch_assoc();
 
-  if ($admin) {
     if ($admin['senha_admin'] === $senha) {
       $_SESSION['admin'] = true;
       $_SESSION['email_admin'] = $email;
@@ -30,8 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $erro = "Administrador não encontrado.";
   }
 
-  $stmt->closeCursor();
+  $stmt->close();
 }
+$conn->close();
 $conexao->close();
 ?>
 
@@ -95,6 +98,7 @@ $conexao->close();
         text: 'Bem-vindo(a), <?= htmlspecialchars($emailLogado) ?>',
         confirmButtonColor: '#3085d6'
       }).then(() => {
+        window.location.href = 'perfil.php';
         window.location.href = 'produtosVestimentas.php';
       });
     </script>
