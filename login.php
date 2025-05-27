@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'conexao.php'; 
+require_once('conexao.php');
 
 $erro = false;
 $sucesso = false;
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = $_POST['email'] ?? '';
   $senha = $_POST['senha'] ?? '';
 
-  $stmt = $conn->prepare("SELECT * FROM administrador WHERE email_admin = ?");
+  $stmt = $conexao->prepare("SELECT * FROM administrador WHERE email_admin = ?");
   $stmt->bind_param("s", $email);
   $stmt->execute();
   $res = $stmt->get_result();
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $stmt->close();
 }
-$conn->close();
+$conexao->close();
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +95,7 @@ $conn->close();
         text: 'Bem-vindo(a), <?= htmlspecialchars($emailLogado) ?>',
         confirmButtonColor: '#3085d6'
       }).then(() => {
-        window.location.href = 'perfil.php';
+        window.location.href = 'produtosVestimentas.php';
       });
     </script>
   <?php endif; ?>
