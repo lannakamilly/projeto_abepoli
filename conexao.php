@@ -4,9 +4,11 @@ $user = "root";
 $pass = ""; 
 $db = "abepoli";
 
-$conn = new mysqli($host, $user, $pass, $db);
+try {
 
-if ($conn->connect_error) {
-    die("Erro de conexão com o banco de dados: " . $conn->connect_error);
+    $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erro de conexão com o banco de dados: " . $e->getMessage());
 }
 ?>

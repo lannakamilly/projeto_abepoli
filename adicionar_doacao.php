@@ -32,6 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="./css/adicionar.css">
     <title>Adicionar Doação</title>
 <body>
+    <a href="./index.php" class="voltar">
+      <img src="./img/botao_voltar.png" alt="Voltar">
+    </a>
     <div id="container">
         
         <h2>Adicionar Nova Doação</h2>
@@ -43,13 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="valores" required>
             
             <label for="destinado">Destinado para:</label>
-            <textarea name="destinado" rows="3" required></textarea>
+            <input type="text" name="destinado" required>
             
             <button type="submit">Salvar Doação</button>
         </form>
-        <div class="voltar">
-            <a href="doacoes.php">← Voltar para Doações</a>
-        </div>
     </div>
 
     <?php if (!empty($mensagem)): ?>
