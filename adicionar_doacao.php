@@ -50,9 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             <button type="submit">Salvar Doação</button>
         </form>
-        <div class="voltar">
-            <a href="doacoes.php">← Voltar para Doações</a>
-        </div>
     </div>
 
     <?php if (!empty($mensagem)): ?>

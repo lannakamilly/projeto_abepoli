@@ -410,6 +410,22 @@ h3{
     width: 70px !important;
     height: auto;
 }
+.btn-add {
+  position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: green;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    color: white;
+}
 a{
     font-Weight: 'bold';
     text-decoration: none;

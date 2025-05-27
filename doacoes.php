@@ -124,8 +124,10 @@ $resultado_doacoes = $conn->query($sql_doacoes);
     <?php if (isset($_SESSION['email'])): ?>
         <a href="adicionar_doacao.php" style="width: 100px; margin-left: 60%;">
             <img src="./img/Design_sem_nome__9_-removebg-preview.png" style="width: 100px;" alt="Adicionar">
+
         </a>
     <?php endif; ?>
+    <button class="btn-add" onclick="window.location.href='adicionar_doacao.php'" >+</button>
 
     </div>
     </section>
