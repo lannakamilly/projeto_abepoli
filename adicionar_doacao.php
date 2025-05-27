@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="valores" required>
             
             <label for="destinado">Destinado para:</label>
-            <textarea name="destinado" rows="3" required></textarea>
+            <input type="text" name="destinado" required>
             
             <button type="submit">Salvar Doação</button>
         </form>
