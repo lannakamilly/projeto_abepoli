@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = $_POST['email'] ?? '';
   $senha = $_POST['senha'] ?? '';
 
-  $stmt = $conn->prepare("SELECT * FROM administrador WHERE email_admin = ?");
   $stmt = $conexao->prepare("SELECT * FROM administrador WHERE email_admin = ?");
   $stmt->bind_param("s", $email);
   $stmt->execute();
@@ -34,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $stmt->close();
 }
-$conn->close();
 $conexao->close();
 ?>
 
