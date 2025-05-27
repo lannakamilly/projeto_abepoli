@@ -20,7 +20,7 @@
       <div class="nav__header">
         <div class="nav__logo">
           <a href="#">
-            <img src="./img/logo1.jpg" alt="logo" />
+          <img src="./img/logo1.jpg" alt="logo" />
           </a>
         </div>
         <div class="nav__menu__btn" id="menu-btn">
@@ -34,6 +34,8 @@
         <li><a href="./doacoes.php">Doações</a></li>
         <li><a href="./saibamais.php">Saiba Mais</a></li>
         <li><a href="./contato.php">Contato</a></li>
+        <li>
+        </li>
       </ul>
     </nav>
   </header>
@@ -146,8 +148,9 @@
     </div>
   </footer>
 
-  <script src="./js/main.js"></script>
   <script src="./js/nav.js"></script>
+  <script src="./js/index.js"></script>
+  
 </body>
 
 </html>
