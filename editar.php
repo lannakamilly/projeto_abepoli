@@ -1,19 +1,36 @@
 <?php
-$Setor = $_POST['Setor'];
-    $Prioridade = $_POST['Prioridade'];
-    $dia = $_POST['dia'];
-    $estatos = $_POST['estatos'];
+include 'conexao.php';
 
-    $stmt = $conn->prepare("UPDATE tarefas SET ID_usuario=?, Descricao=?, Setor=?, Prioridade=?, dia=?, estatos=? WHERE id_Tarefa=?");
-    $stmt->bind_param("isisssi", $ID_usuario, $Descricao, $Setor, $Prioridade, $dia, $estatos, $id);
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']);
+
+    $stmt = $conn->prepare("SELECT doador, valores, destinado FROM doacoes WHERE id_doacao = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->bind_result($doador, $valores, $destinado);
+    $stmt->fetch();
+    $stmt->close();
+} else {
+    echo "ID inválido.";
+    exit;
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $novoDoador = $_POST['doador'];
+    $novosValores = $_POST['valores'];
+    $novoDestinado = $_POST['destinado'];
+
+    $stmt = $conn->prepare("UPDATE doacoes SET doador=?, valores=?, destinado=? WHERE id_doacao=?");
+    $stmt->bind_param("sssi", $novoDoador, $novosValores, $novoDestinado, $id);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Tarefa atualizada com sucesso!'); window.location.href='tarefa.php';</script>";
+        echo "<script>alert('Doação atualizada com sucesso!'); window.location.href='doacoes.php';</script>";
     } else {
         echo "Erro ao atualizar: " . $stmt->error;
     }
 
     $stmt->close();
+}
 
 $conn->close();
 ?>
@@ -22,33 +39,32 @@ $conn->close();
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Editar Tarefa</title>
-    <link rel="stylesheet" href="./form4.css">
+    <title>Editar Doação</title>
+    <link rel="stylesheet" href="./css/adicionar.css">
+
 </head>
 <body>
-    <div id="divisao">
-        <h3>Editar Tarefa</h3>
-        <form method="POST" action="">
-            <label>ID Usuário</label>
-            <input type="number" name="ID_usuario" value="<?php echo htmlspecialchars($ID_usuario); ?>" required>
+    <div id="container">
+   
 
-            <label>Descrição</label>
-            <input type="text" name="Descricao" value="<?php echo htmlspecialchars($Descricao); ?>" required>
+            <h2>Editar Doação</h2>
+            <form method="POST" action="">
+                <label>Doador</label>
+                <input type="text" name="doador" value="<?php echo htmlspecialchars($doador); ?>" required>
+                
+                <label>Valores</label>
+                <input type="text" name="valores" value="<?php echo htmlspecialchars($valores); ?>" required>
+                
+                <label>Destinado</label>
+                <input type="text" name="destinado" value="<?php echo htmlspecialchars($destinado); ?>" required>
+                
+                <button type="submit">Salvar Alterações</button>
 
-            <label>Setor</label>
-            <input type="number" name="Setor" value="<?php echo htmlspecialchars($Setor); ?>" required>
-
-            <label>Prioridade</label>
-            <input type="text" name="Prioridade" value="<?php echo htmlspecialchars($Prioridade); ?>" required>
-
-            <label>Data</label>
-            <input type="date" name="dia" value="<?php echo htmlspecialchars($dia); ?>" required>
-
-            <label>Status</label>
-            <input type="text" name="estatos" value="<?php echo htmlspecialchars($estatos); ?>" required>
-
-            <button type="submit"><a href="tarefa.php">Salvar Alterações</a></button>
-        </form>
+            </form>
+            <div class="voltar">
+                <a href="doacoes.php">← Voltar para Doações</a>
+            </div>
+        
     </div>
 </body>
 </html>
