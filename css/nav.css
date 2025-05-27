@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --primary-color: #F7BE00;
+  --primary-color: #f7be00;
   --primary-color-dark: #5e4c00;
   --text-dark: #000000;
   --text-light: #62748e;
   --extra-light: #fafafa;
   --white: #ffffff;
-
 }
 
 * {
@@ -42,6 +41,8 @@ nav {
 }
 
 .nav__menu__btn {
+  gap: -90px;
+  margin-left: 150px;
   font-size: 1.5rem;
   color: var(--text-dark);
   cursor: pointer;
@@ -84,8 +85,52 @@ nav {
   color: var(--text-dark);
   background-color: var(--extra-light);
 }
+.user-icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: -23px;
+  display: flex;
+  align-items: center;
+}
 
+.user-icon-btn img {
+  margin-left: 40px;
+  margin-top: -10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
 
+#user-icon-mobile {
+  display: none;
+}
+
+.contato-usuario {
+  margin-left: -5px;
+  margin-top: 10.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  #user-icon-desktop {
+    display: none;
+  }
+  #user-icon-mobile {
+    display: flex;
+    margin-left: 12px;
+  }
+  .user-icon-btn img {
+    margin-left: -18px;
+    margin-top: -5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+}
 
 @media (width > 768px) {
   nav {

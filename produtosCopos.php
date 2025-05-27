@@ -89,12 +89,7 @@
         </div>
     </section>
 
-    <div class="paginacao">
-        <button class="pagina ativa">1</button>
-        <button class="pagina">2</button>
-        <button class="pagina">3</button>
-        <button class="pagina">></button>
-    </div>
+   
     <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
     <div class="wave-shape-divider">
