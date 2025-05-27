@@ -97,7 +97,22 @@
       </div>
     </section>
     
-    
+      <section class="service" id="service">
+      <div class="section__container service__container">
+        <div class="service__content">
+          <p class="section__subheader">NOSSA</p>
+          <h2 class="section__header">Origem e Missão</h2>
+          <ul class="service__list">
+            <li>
+            
+            Fundado em São José dos Campos, o Instituto Abepoli Elena Josefa de Oliveira nasceu com a missão de preservar a biodiversidade e promover práticas sustentáveis. Com um olhar científico e técnico, desenvolvemos pesquisas e projetos ambientais voltados para a conscientização e para a sustentabilidade. 
+            </li>
+          
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="section__container about__container" id="about">
       <div class="about__image">
         <img src="./img/sobree3.png" alt="about" />
@@ -115,21 +130,7 @@ Com sede em São José dos Campos e registrado sob o CNPJ 37.912.072/0001-15, o 
       </div>
     </section>
 
-    <section class="service" id="service">
-      <div class="section__container service__container">
-        <div class="service__content">
-          <p class="section__subheader">NOSSA</p>
-          <h2 class="section__header">Origem e Missão</h2>
-          <ul class="service__list">
-            <li>
-            
-            Fundado em São José dos Campos, o Instituto Abepoli Elena Josefa de Oliveira nasceu com a missão de preservar a biodiversidade e promover práticas sustentáveis. Com um olhar científico e técnico, desenvolvemos pesquisas e projetos ambientais voltados para a conscientização e para a sustentabilidade. 
-            </li>
-          
-          </ul>
-        </div>
-      </div>
-    </section>
+  
 
    <section class="travel-section">
     <div class="text-content">

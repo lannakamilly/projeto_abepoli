@@ -3,7 +3,7 @@
 :root {
   --primary-color: #F7BE00;
   --text-dark: #000000;
-  --text-light: #62748e;
+  --text-light: #000000;
   --extra-light: #fafafa;
   --extra-light: #fafafa;
   --white: #ffffff;
@@ -44,7 +44,7 @@
 .section__description {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--text-light);
+  color: #000;
   line-height: 1.75rem;
   text-align: center;
 }
