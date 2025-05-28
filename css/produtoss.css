@@ -100,6 +100,7 @@ body {
 }
 
 .subcategorias li {
+  text-decoration: none;
   font-size: 0.875rem;
   color: gray;
   margin-left: 15px;
@@ -111,6 +112,17 @@ body {
 .subcategorias li:hover {
   color: #ff9900;
 }
+
+.subcategorias li a {
+  text-decoration: none;
+  color: gray;         
+  transition: color 0.3s;
+}
+
+.subcategorias li a:hover {
+  color: #ff9900;        
+}
+
 
 .produtos-grid {
   flex: 3;

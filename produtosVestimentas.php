@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $destino = 'img/' . basename($imgNome);
             move_uploaded_file($imgTmp, $destino);
 
-            $stmt = $conexao->prepare("INSERT INTO produtos (nome_produto, preco_produto, imagem_produto) VALUES (?, ?, ?)");
+            $stmt = $conexao->prepare("INSERT INTO produtos (nome_produto, preco_produto, imagem_produto, id_categoria) VALUES (?, ?, ?, 1)");
             $stmt->bind_param("sis", $nome, $preco, $destino);
             $stmt->execute();
             exit;
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$resultado = $conexao->query("SELECT * FROM produtos");
+$resultado = $conexao->query("SELECT * FROM produtos WHERE id_categoria = 1");
 $produtos = $resultado->fetch_all(MYSQLI_ASSOC);
 ?>
 
@@ -86,7 +86,6 @@ $produtos = $resultado->fetch_all(MYSQLI_ASSOC);
             <i class="ri-menu-3-line"></i>
         </div>
 
-        <!-- Ícone do usuário (mobile) -->
         <?php if ($logado): ?>
             <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
                 <img src="./img/iconn.png" alt="Usuário" />
@@ -112,8 +111,6 @@ $produtos = $resultado->fetch_all(MYSQLI_ASSOC);
         </li>
     </ul>
 </nav>
-
-
 
     <?php if ($logado): ?>
         <div id="user-drawer" class="user-drawer">
@@ -144,23 +141,21 @@ $produtos = $resultado->fetch_all(MYSQLI_ASSOC);
         <h1 class="titulo">VESTIMENTAS</h1>
 
         <div class="container">
-            <aside class="categorias">
+             <aside class="categorias">
                 <h2>Categorias</h2>
                 <ul>
                     <li class="categoria-titulo">Vestuário</li>
                     <ul class="subcategorias">
-                        <li>Camisetas Instituto Abepoli</li>
-                        <li>Boné Instituto Abepoli</li>
+                        <li><a href="./produtosVestimentas.php">Camisetas Instituto Abepoli</a></li>
+                        <li><a href="./produtosVestimentas.php">Boné Instituto Abepoli</a></li>
                     </ul>
-
                     <li class="categoria-titulo">Utensílios</li>
                     <ul class="subcategorias">
-                        <li>Canecas personalizadas</li>
+                        <li><a href="./produtosCopos.php">Canecas personalizadas</a></li>
                     </ul>
-
                     <li class="categoria-titulo">Itens portáteis</li>
                     <ul class="subcategorias">
-                        <li>EcoBags instituto Abepoli</li>
+                        <li><a href="./produtosBolsas.php">EcoBags instituto Abepoli</a></li>
                     </ul>
                 </ul>
             </aside>
