@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             </span>
                         </div>
 
-                        <button type="submit" class="botao-entrar">ENTRAR</button>
+                        <button type="submit" class="botao-entrar">ENVIAR</button>
                     </form>
                 </div>
             </div>

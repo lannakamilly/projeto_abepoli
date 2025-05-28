@@ -8,11 +8,9 @@ body {
   margin: 0;
   font-size: 18px;
   background: #a2966f;
-  background: radial-gradient(
-    circle,
-    rgba(247, 190, 0, 1) 0%,
-    rgba(175, 126, 15, 1) 100%
-  );
+  background: radial-gradient(circle,
+      rgba(247, 190, 0, 1) 0%,
+      rgba(175, 126, 15, 1) 100%);
 }
 
 .tela-login {
@@ -117,7 +115,7 @@ form input {
   margin-left: 12px;
   font-size: 12px;
   color: #b9910d;
-  margin-top: -20px;
+  margin-top: -40px;
   margin-bottom: 22px;
   text-decoration: none;
 }
@@ -144,35 +142,81 @@ form input {
 .botao-entrar:hover {
   background: linear-gradient(90deg, #bf8e04, #d8b108);
 }
+
+.botao-entrar-login {
+  display: inline-block;
+  background: linear-gradient(90deg, #b18713, #deb631, #b18713);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background 0.3s ease;
+  width: 100px;
+  margin-top: -60px;
+  text-align: center;
+}
+
+.input-group-login {
+  position: relative;
+  width: 100%;
+  margin-bottom: 90px;
+}
+
+.input-group-login input {
+  width: 100%;
+  margin-bottom: 4px;
+  padding-right: 45px;
+  box-sizing: border-box;
+}
+
+.toggle-password-login {
+  position: absolute;
+  right: 10px;
+  top: 36%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.toggle-password-login svg {
+  width: 22px;
+  height: 22px;
+  color: #7f7d7da7;
+}
+
+.toggle-password-login:hover svg {
+  color: #bf8e04;
+}
+
 .input-group {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .input-group input {
-    width: 100%;
-    padding-right: 40px;
-    box-sizing: border-box;
+  width: 100%;
+  padding-right: 40px;
+  box-sizing: border-box;
 }
 
 .input-group .toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 40%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    user-select: none;
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
 }
 
 .toggle-password svg {
-    width: 24px;
-    height: 24px;
-    color: #555;
-    transition: color 0.3s ease;
+  width: 24px;
+  height: 24px;
+  color: #7f7d7da7;
+  transition: color 0.3s ease;
 }
 
 .toggle-password:hover svg {
-    color: #bf8e04;
+  color: #bf8e04;
 }
 
 @media (max-width: 768px) {
