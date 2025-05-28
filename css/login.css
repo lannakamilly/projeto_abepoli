@@ -144,6 +144,36 @@ form input {
 .botao-entrar:hover {
   background: linear-gradient(90deg, #bf8e04, #d8b108);
 }
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+.input-group input {
+    width: 100%;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+.input-group .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-password svg {
+    width: 24px;
+    height: 24px;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover svg {
+    color: #bf8e04;
+}
 
 @media (max-width: 768px) {
   .conteudo {
