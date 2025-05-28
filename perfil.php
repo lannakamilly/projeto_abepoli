@@ -2,35 +2,44 @@
 session_start();
 require_once 'conexao.php';
 
-// Aqui você pode buscar os dados atuais do admin para preencher o formulário
-$id = $_SESSION['admin'];
-$stmt = $conn->prepare("SELECT nome_admin, email_admin, senha_admin, foto_admin FROM administrador WHERE id_admin=?");
-$stmt->execute([$id]);
-$admin = $stmt->fetch(PDO::FETCH_ASSOC);
-
-if (!$admin) {
-  $admin = [
-    'nome_admin' => '',
-    'email_admin' => '',
-    'senha_admin' => '',
-    'foto_admin' => '',
-  ];
+// Verifica se a conexão com o banco de dados foi estabelecida
+if (!$conexao) {
+    die("Erro ao conectar ao banco de dados.");
 }
 
-$foto_src = '';
-if (!empty($admin['foto_admin'])) {
-  $foto_src = 'data:image/jpeg;base64,' . base64_encode($admin['foto_admin']);
+// Verifica se a chave 'admin' está definida na sessão
+if (!isset($_SESSION['admin'])) {
+    die("Erro: Sessão não contém o ID do administrador.");
+}
+
+// Obtém o ID do administrador da sessão
+$id_admin = $_SESSION['admin'];
+
+// Consulta para buscar os dados do administrador
+$stmt = $conexao->prepare("SELECT nome_admin, email_admin, senha_admin, foto_admin FROM administrador WHERE id_admin = ?");
+if (!$stmt) {
+    die("Erro ao preparar a consulta: " . $conexao->error);
+}
+
+$stmt->bind_param("i", $id_admin);
+$stmt->execute();
+$resultado = $stmt->get_result();
+
+if ($resultado->num_rows > 0) {
+    $admin = $resultado->fetch_assoc();
 } else {
-  $foto_src = 'avatar.png';
+    die("Erro: Administrador não encontrado no banco de dados.");
 }
+
+// Define a fonte da foto de perfil
+$foto_src = !empty($admin['foto_admin']) ? 'data:image/jpeg;base64,' . base64_encode($admin['foto_admin']) : 'avatar.png';
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
-  <title>Editar Perfil</title>
+  <title>Perfil do Administrador</title>
   <link rel="stylesheet" href="./css/perfil.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
   <style>
@@ -114,33 +123,21 @@ if (!empty($admin['foto_admin'])) {
   <div class="form-container">
     <h2>Perfil Administrador</h2>
     <div class="perfil-info">
+      <!-- Exibe o ID do administrador dentro da div -->
+      <p>ID do administrador na sessão: <?php echo htmlspecialchars($id_admin); ?></p>
       <img src="<?php echo $foto_src; ?>" alt="Foto de perfil">
       <div class="campo">
         <strong>Nome:</strong> <?php echo htmlspecialchars($admin['nome_admin']); ?>
       </div>
       <div class="campo">
-        <strong>E-mail:</strong> <?php echo htmlspecialchars($admin['email_admin']); ?>
+        <strong>Email:</strong> <?php echo htmlspecialchars($admin['email_admin']); ?>
       </div>
       <div class="campo">
         <strong>Senha:</strong> <?php echo htmlspecialchars($admin['senha_admin']); ?>
       </div>
-
       <a class="editar-perfil-link" href="editar_perfil.php">Editar perfil</a>
     </div>
-    <a href="perfil.php" style="display:block; text-align:center; margin-top:10px;">Cancelar</a>
+    <a href="logout.php">Sair</a>
   </div>
-  <script>
-    function previewImagem(event) {
-      const input = event.target;
-      if (input.files && input.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          document.getElementById('preview-foto').src = e.target.result;
-        }
-        reader.readAsDataURL(input.files[0]);
-      }
-    }
-  </script>
 </body>
-
 </html>
