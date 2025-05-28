@@ -1,11 +1,12 @@
 <?php
 include 'conexao.php';
 
-// Executa a consulta usando PDO
 $sql_doacoes = "SELECT id_doacao, doador, valores, destinado FROM doacoes";
-$stmt = $conn->prepare($sql_doacoes);
+$stmt = $conexao->prepare($sql_doacoes);
 $stmt->execute();
-$resultado_doacoes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$resultado = $stmt->get_result(); // <-- correto para mysqli
+
+$resultado_doacoes = $resultado->fetch_all(MYSQLI_ASSOC); // <-- retorna array associativo
 
 session_start();
 $logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
