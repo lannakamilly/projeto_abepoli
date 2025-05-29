@@ -500,6 +500,11 @@ a{
   .botaodoacoes a {
     font-size: 16px;
   }
+  #divisãoqr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   .circle {
     width: 30px;

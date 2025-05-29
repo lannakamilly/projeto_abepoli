@@ -223,7 +223,7 @@ $logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
 
             <h1 id="ajude">Ajude nossa Causa</h1>
         </div>
-         <div style=" display: flex; justify-content: space-around; ">
+         <div id="divisãoqr" style=" display: flex; justify-content: space-around; ">
         <div id="dividir" style="margin-top: 90px;">
             <img src="./img/Capturar.JPG" alt=""
                 style="    width: 250px;
