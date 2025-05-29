@@ -2,7 +2,7 @@
 session_start();
 require_once('conexao.php');
 
-$logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
+$logado = isset($_SESSION['admin']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['acao'])) {
