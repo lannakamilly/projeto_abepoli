@@ -303,13 +303,13 @@ body {
   color: var(--white);
   border: none;
   padding: 12px 26px;
-  border-radius: 14px;
+  border-radius: 80px;
   cursor: pointer;
   font-weight: 700;
   font-size: 1.1rem;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   letter-spacing: 0.8px;
-  box-shadow: 0 6px 18px rgba(247, 190, 0, 0.4);
+  box-shadow: 0 6px 18px rgba(252, 212, 79, 0.4);
 }
 
 .ler-mais:hover {

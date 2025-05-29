@@ -1,43 +1,72 @@
+<?php
+session_start();
+$adminLogado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
+
+// Conexão com o banco
+$conexao = new mysqli("localhost", "root", "", "abepoli");
+if ($conexao->connect_error) die("Erro: " . $conexao->connect_error);
+
+// Inserção de mídias
+if ($_SERVER["REQUEST_METHOD"] === "POST" && $adminLogado) {
+  $tipo = $_POST["tipo"];
+  $legenda = $_POST["legenda"];
+  $arquivo = $_FILES["arquivo"];
+
+  $pasta = $tipo === "foto" ? "uploads/fotos/" : "uploads/videos/";
+  $destino = $pasta . basename($arquivo["name"]);
+
+  if (move_uploaded_file($arquivo["tmp_name"], $destino)) {
+    $stmt = $conexao->prepare("INSERT INTO galeria (tipo, caminho, legenda) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $tipo, $destino, $legenda);
+    $stmt->execute();
+    $stmt->close();
+  }
+}
+
+// Exclusão de mídia
+if (isset($_GET['excluir']) && $adminLogado) {
+  $id = intval($_GET['excluir']);
+  $res = $conexao->query("SELECT caminho FROM galeria WHERE id = $id");
+  if ($res->num_rows > 0) {
+    $row = $res->fetch_assoc();
+    unlink($row['caminho']);
+    $conn->query("DELETE FROM galeria WHERE id = $id");
+  }
+}
+
+// Busca das mídias
+$fotos = $conexao->query("SELECT * FROM galeria WHERE tipo='foto' ORDER BY data_envio DESC");
+$videos = $conexao->query("SELECT * FROM galeria WHERE tipo='video' ORDER BY data_envio DESC");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galeria de Fotos</title>
+  <title>Galeria</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background: #f5f5f5;
-      margin: 0;
       padding: 20px;
     }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
+    .container { max-width: 1000px; margin: auto; text-align: center; }
+    .galeria { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
+    .item { position: relative; }
+    .item img, .item video {
+      width: 180px; height: 120px; border-radius: 10px; object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 5px;
-      color: #222;
+    .item .legenda { margin-top: 5px; font-size: 14px; }
+    .item .btn-del {
+      position: absolute; top: 5px; right: 5px; background: red; color: white;
+      border: none; border-radius: 50%; width: 25px; height: 25px; cursor: pointer;
     }
-
-    .underline {
-      display: inline-block;
-      width: 60px;
-      height: 4px;
-      background-color: goldenrod;
-      vertical-align: middle;
-      margin-left: 10px;
-      border-radius: 4px;
+    .form-upload { margin-top: 30px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .form-upload input, .form-upload select, .form-upload button {
+      margin: 5px; padding: 8px; border-radius: 5px; border: 1px solid #ccc;
     }
-
-    .botoes {
-      margin: 20px 0;
-    }
-
+    h1 { font-size: 2em; margin-bottom: 10px; }
+    .botoes { margin: 20px 0; }
     .botao {
       background-color: white;
       border: 2px solid goldenrod;
@@ -49,90 +78,74 @@
       font-weight: bold;
       transition: 0.3s;
     }
-
-    .botao:hover {
+    .botao:hover, .botao.ativo {
       background-color: goldenrod;
       color: white;
-    }
-
-    .botao.ativo {
-      background-color: goldenrod;
-      color: white;
-    }
-
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .galeria img,
-    .galeria iframe {
-      width: 180px;
-      height: 120px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .galeria img:hover,
-    .galeria iframe:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    }
-
-    @media (max-width: 600px) {
-      .galeria img,
-      .galeria iframe {
-        width: 100%;
-        height: auto;
-      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Galeria de Fotos <span class="underline"></span></h1>
+    <h1>Galeria do Instituto</h1>
 
     <div class="botoes">
-      <button onclick="mostrar('fotos')" class="botao ativo" id="btn-fotos">Fotos</button>
-      <button onclick="mostrar('videos')" class="botao" id="btn-videos">Vídeos</button>
+      <button class="botao ativo" onclick="toggle('fotos')">Fotos</button>
+      <button class="botao" onclick="toggle('videos')">Vídeos</button>
     </div>
 
     <div id="fotos" class="galeria">
-      <img src="https://via.placeholder.com/180x120/87CEFA/ffffff?text=Foto+1" alt="Foto 1">
-      <img src="https://via.placeholder.com/180x120/87CEFA/ffffff?text=Foto+2" alt="Foto 2">
-      <img src="https://via.placeholder.com/180x120/87CEFA/ffffff?text=Foto+3" alt="Foto 3">
-      <img src="https://via.placeholder.com/180x120/87CEFA/ffffff?text=Foto+4" alt="Foto 4">
-      <img src="https://via.placeholder.com/180x120/87CEFA/ffffff?text=Foto+5" alt="Foto 5">
+      <?php while ($row = $fotos->fetch_assoc()): ?>
+        <div class="item">
+          <img src="<?= $row['caminho'] ?>" alt="">
+          <div class="legenda"><?= htmlspecialchars($row['legenda']) ?></div>
+          <?php if ($adminLogado): ?>
+            <form method="GET" style="position:absolute;top:0;right:0;">
+              <input type="hidden" name="excluir" value="<?= $row['id'] ?>">
+              <button class="btn-del" onclick="return confirm('Excluir foto?')">×</button>
+            </form>
+          <?php endif; ?>
+        </div>
+      <?php endwhile; ?>
     </div>
 
-    <div id="videos" class="galeria" style="display: none;">
-      <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    <div id="videos" class="galeria" style="display:none;">
+      <?php while ($row = $videos->fetch_assoc()): ?>
+        <div class="item">
+          <video src="<?= $row['caminho'] ?>" controls></video>
+          <div class="legenda"><?= htmlspecialchars($row['legenda']) ?></div>
+          <?php if ($adminLogado): ?>
+            <form method="GET" style="position:absolute;top:0;right:0;">
+              <input type="hidden" name="excluir" value="<?= $row['id'] ?>">
+              <button class="btn-del" onclick="return confirm('Excluir vídeo?')">×</button>
+            </form>
+          <?php endif; ?>
+        </div>
+      <?php endwhile; ?>
     </div>
+
+    <?php if ($adminLogado): ?>
+    <form class="form-upload" method="POST" enctype="multipart/form-data">
+      <h2>Adicionar Mídia</h2>
+      <select name="tipo" required>
+        <option value="foto">Foto</option>
+        <option value="video">Vídeo</option>
+      </select>
+      <input type="file" name="arquivo" required>
+      <input type="text" name="legenda" placeholder="Legenda (opcional)">
+      <button type="submit">Enviar</button>
+    </form>
+    <?php endif; ?>
   </div>
 
   <script>
-    function mostrar(tipo) {
-      const fotos = document.getElementById('fotos');
-      const videos = document.getElementById('videos');
-      const btnFotos = document.getElementById('btn-fotos');
-      const btnVideos = document.getElementById('btn-videos');
+    function toggle(tipo) {
+      document.getElementById('fotos').style.display = tipo === 'fotos' ? 'flex' : 'none';
+      document.getElementById('videos').style.display = tipo === 'videos' ? 'flex' : 'none';
 
-      if (tipo === 'fotos') {
-        fotos.style.display = 'flex';
-        videos.style.display = 'none';
-        btnFotos.classList.add('ativo');
-        btnVideos.classList.remove('ativo');
-      } else {
-        fotos.style.display = 'none';
-        videos.style.display = 'flex';
-        btnVideos.classList.add('ativo');
-        btnFotos.classList.remove('ativo');
-      }
+      const botoes = document.querySelectorAll('.botao');
+      botoes.forEach(btn => btn.classList.remove('ativo'));
+      if (tipo === 'fotos') document.querySelector('button[onclick*="fotos"]').classList.add('ativo');
+      else document.querySelector('button[onclick*="videos"]').classList.add('ativo');
     }
   </script>
 </body>

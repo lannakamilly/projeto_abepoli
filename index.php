@@ -84,7 +84,7 @@ $logado = isset($_SESSION['admin']);
           <img src="./img/headerr.png" alt="header" />
         </div>
         <div class="header__content">
-          <h1>Proteja as abelhas <br>Salve o futuro</h1>
+          <h1>Proteja as <span>abelhas</span> <br>Salve o futuro</h1>
           <p class="section__description">
             Promovemos a sustentabilidade protegendo abelhas <br> e despertando a consciência ecológica.
           </p>
@@ -106,7 +106,7 @@ $logado = isset($_SESSION['admin']);
           </div>
           <div class="about__content">
             <h2 class="section__header">
-              Preservar <span>a Natureza</span> é nossa missão
+              Preservar a <span>Natureza</span> é nossa missão
             </h2>
             <p class="section__description">
               O Instituto Abepoli nasceu em São José dos Campos com o compromisso de proteger abelhas nativas, polinizadores e toda a biodiversidade. Através da educação ambiental, pesquisa e ações sustentáveis, trabalhamos para construir um futuro mais equilibrado para as pessoas e para a natureza.
@@ -170,7 +170,7 @@ $logado = isset($_SESSION['admin']);
             <img src="./img/teste3.jpeg" alt="blog" />
             <div class="blog__content">
               <h4>Estudo da Abepoli revela abelhas no Mar de Girassóis</h4>
-              <a href="estudo.html">
+              <a href="./new.php">
                 <button class="btn">
                   Ler Mais
                   <span><i class="ri-arrow-right-long-line"></i></span>
@@ -183,7 +183,7 @@ $logado = isset($_SESSION['admin']);
             <img src="./img/teste2.jpeg" alt="blog" />
             <div class="blog__content">
               <h4>Como todos podem ajudar a salvar as abelhas</h4>
-              <a href="ajuda.html">
+               <a href="./new.php">
                 <button class="btn">
                   Ler Mais
                   <span><i class="ri-arrow-right-long-line"></i></span>
@@ -196,7 +196,7 @@ $logado = isset($_SESSION['admin']);
             <img src="./img/teste1.jpeg" alt="blog" />
             <div class="blog__content">
               <h4>Parceria Abepoli e SESI pela educação ambiental</h4>
-              <a href="parceria.html">
+              <a href="./new.php">
                 <button class="btn">
                   Ler Mais
                   <span><i class="ri-arrow-right-long-line"></i></span>
