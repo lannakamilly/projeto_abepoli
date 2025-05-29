@@ -4,7 +4,7 @@ include 'conexao.php';
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
 
-    $stmt = $conn->prepare("SELECT doador, valores, destinado FROM doacoes WHERE id_doacao = ?");
+    $stmt = $conexao->prepare("SELECT doador, valores, destinado FROM doacoes WHERE id_doacao = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $stmt->bind_result($doador, $valores, $destinado);
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $novosValores = $_POST['valores'];
     $novoDestinado = $_POST['destinado'];
 
-    $stmt = $conn->prepare("UPDATE doacoes SET doador=?, valores=?, destinado=? WHERE id_doacao=?");
+    $stmt = $conexao->prepare("UPDATE doacoes SET doador=?, valores=?, destinado=? WHERE id_doacao=?");
     $stmt->bind_param("sssi", $novoDoador, $novosValores, $novoDestinado, $id);
 
     if ($stmt->execute()) {
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 }
 
-$conn->close();
+$conexao->close();
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ $conn->close();
 
 </head>
 <body>
-    <a href="./index.php" class="voltar">
+    <a href="./doacoes.php" class="voltar">
       <img src="./img/botao_voltar.png" alt="Voltar">
     </a>
     <div id="container">

@@ -4,7 +4,7 @@ include 'conexao.php';
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
 
-    $stmt = $conn->prepare("DELETE FROM doacoes WHERE id_doacao = ?");
+    $stmt = $conexao->prepare("DELETE FROM doacoes WHERE id_doacao = ?");
     $stmt->bind_param("i", $id);
 
     if ($stmt->execute()) {
@@ -15,5 +15,5 @@ if (isset($_GET['id'])) {
 
     $stmt->close();
 }
-$conn->close();
+$conexao->close();
 ?>

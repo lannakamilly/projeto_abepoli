@@ -58,10 +58,10 @@ $logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
                     <h1>Apoie a preservação <br> da <a class="destaque">natureza</a></h1>
                 </div>
                 <div class="description">
-                    <p>Sua doação ajuda a proteger abelhas,<br> polinizadores e a biodiversidade para um futuro
+                    <p id="subititulop">Sua doação ajuda a proteger abelhas,<br> polinizadores e a biodiversidade para um futuro
                         sustentável.</p>
                 </div>
-                <button class="botaodoacoes"><a id="afazer" href="#divcomo">Fazer doações</a></button>
+                <button class="botaodoacoes"><a id="afazer" class="i"  href="#divcomo">Fazer doações</a></button>
             </div>
             <div class="image-bees">
                 <img class="bees" src="./img/sobre1.png" alt="bees">
@@ -164,12 +164,11 @@ $logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
     </section>
     <div style="background-color: white;" id="divcomo">
         <h3>Como doar</h3>
-        <p id="pcomo">O gestor responsável pelo patrimônio ou o particular interessado em doar clica no botão <a
-                href="contato.php" class="quero-doar">QUERO DOAR</a>, que o direcionará para tela de login pelo
-            Senha-Rede para o gestor de patrimônio ou para o Portal Gov.BR para particulares, que acessará com CPF do
-            doador ou representante legal da pessoa jurídica. O cadastro do anúncio é bem simples e intuitivo, com
-            informações sobre o bem ou serviço, campo para inserir fotos e outras informações necessárias para os órgãos
-            donatários poderem demonstrar interesse.</p>
+        <p id="pcomo">Dessa até a seção <em>Ajude Nossa Causa</em>, localizada no final da página. Lá, encontrará as opções de contato com a equipe gestora do Instituto Abepoli.<br><br>
+  Nosso processo é simples e direto: você pode escolher um dos meios de contato disponíveis (como e-mail, telefone ou redes sociais) para conversar com os responsáveis pelo Instituto e combinar a forma de contribuição seja em dinheiro, bens ou serviços.<br><br>
+  Além disso, caso prefira realizar uma <a href="contato.php" class="quero-doar">doação anônima</a>, disponibilizamos um <a href="contato.php" class="quero-doar">QR Code</a> nessa mesma seção. Basta escanear com a câmera do celular ou aplicativo de banco para efetuar sua doação de forma rápida, segura e sem necessidade de identificação.<br><br>
+  Nosso objetivo é tornar o processo acessível, transparente e acolhedor para todos que desejam apoiar a preservação da natureza e os projetos sustentáveis desenvolvidos pelo Instituto Abepoli.
+</p>
     </div>
     <div style="position: relative; height: 150px; overflow: hidden; background-color: white; bottom: 0px">
         <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
@@ -181,12 +180,12 @@ $logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
     <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
     <!-- Agora sim, a seção amarela -->
-    <section id="sectionqr" style="background-color: #ffe68a;display: flex; justify-content: normal; text-align: center;">
+    <section id="sectionqr" style="    background-color: #ffe68a; display: flex; flex-direction: column; justify-content: center; text-align: center;">
         <div>
 
             <h1 id="ajude">Ajude nossa Causa</h1>
-            <br>
         </div>
+         <div style=" display: flex; justify-content: space-around; ">
         <div id="dividir" style="margin-top: 90px;">
             <img src="./img/Capturar.JPG" alt=""
                 style="    width: 250px;
@@ -194,7 +193,7 @@ $logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
     height: auto;margin-bottom: 20px;">
             <p id="pqr">QR code</p>
         </div>
-        <ul id="ulzapp" style="list-style: none; margin-top: 140px; margin-left: 150px; margin-bottom: 0px;padding: 0;">
+        <ul id="ulzapp" style="list-style: none; margin-top: 140px; margin-left: 30px; margin-bottom: 0px;padding: 0;">
             <li id="lista" style="margin: 10px 0;  align-items: center; display: flex;">
                 <a href="https://wa.me/5512988176722" target="_blank" class="contato-item">
                     <img src="https://img.icons8.com/ios-filled/50/25D366/whatsapp.png" alt="WhatsApp" />
@@ -208,6 +207,7 @@ $logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
                 </a>
             </li>
         </ul>
+    </div>
 
     </section>
 
@@ -276,6 +276,34 @@ $logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
     </footer>
     <script src="./js/nav.js"></script>
 </body>
+  <!-- Scripts ao final do body -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    const scrollRevealOption = {
+      distance: "50px",
+      origin: "bottom",
+      duration: 1000,
+    };
+
+    ScrollReveal().reveal(".container .title", {
+      ...scrollRevealOption,
+    });
+
+    ScrollReveal().reveal(".container .description", {
+      ...scrollRevealOption,
+      delay: 500,
+    });
+
+    ScrollReveal().reveal(".i", {
+      ...scrollRevealOption,
+      delay: 1000,
+    });
+
+    ScrollReveal().reveal(".image-bees", {
+      ...scrollRevealOption,
+      delay: 1500,
+    });
+  </script>
 
 
 </html>

@@ -12,6 +12,10 @@
     top: -20px;
 }
 
+h1{
+  font-size: 4rem;
+}
+
 .scroll-top {
   position: fixed;
   bottom: 20px;
@@ -36,10 +40,13 @@
 }
 
 .subtitulo{
+ 
+
+    padding: 5rem 1rem;
     margin-top: 75px;
-    padding: 2%;
+
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding-bottom: 20px;
 }
 .destaque{
@@ -82,6 +89,13 @@
     margin-bottom: 20px;
     font-size: 21px;
 }
+#subititulop{
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-size: 1rem;
+}
+
+
 
 p{
     width: 600px;
@@ -89,7 +103,7 @@ p{
 
 .bees{
     width: auto;
-    height: 450px;
+    height: 400px;
 }
 
 
@@ -106,7 +120,7 @@ body{
 
 h2{
     margin-top: 40px;
-    font-size: 60px !important;
+    font-size: 40px !important;
 }
 
 section{
@@ -114,23 +128,24 @@ section{
     justify-content: space-around;
 }
 .info{
-    height: 600px;
-    margin-top: 300px;
+    height: 400px;
+    margin-top: 100px;
     background-color: rgb(255, 191, 0);
 }
 
 #img_açoes{
     margin-left: -30px;
     margin-top: 30px;
-    width: 450px;
-    height: 450px;
+        width: 300px;
+    height: 300px;
     margin-right: 10px;
     border-radius: 50px;
 }
 .titulo{
     font-size: large;
     color: #fff;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    margin-top: 0px;
 }
 img{
     width: 250px;
@@ -146,8 +161,8 @@ img{
 .blank{
     border-radius: 50px;
     margin-top: 50px;
-    width: 450px;
-    height: 450px;
+        width: 300px;
+    height: 300px;
     background-color: rgb(215, 215, 215)
 }
 
@@ -290,7 +305,7 @@ td{
 
 
 .bubble {
-    font-size: 30px;
+    font-size: 20px;
     background-color: #e5e5e5;
     padding: 15px 20px;
     border-radius: 20px;
@@ -352,9 +367,9 @@ td{
 }
 
 #pcomo{
-    width: 55%;
+       width: 60%;
     text-align: justify;
-    font-size: 22px;
+    font-size: 16px;
     align-items: center;
     
     
@@ -395,9 +410,8 @@ td{
 }
 h3{
     font-family: 'Poppins' sans-serif;
-    font-size: 45px;
-    margin-bottom: 10px;
-
+        font-size: 30px;
+    margin-bottom: 20px;
     font-weight: 700;
 }
 .lista{
@@ -434,15 +448,52 @@ a{
     width: 500px;
 }
 #dividir{
-    margin-left: 200px;
+    width: 300px;
     align-items: center;
-    flex-direction: column ;
-    display: flex;
+    flex-direction: column;
+    display: flex
+
 }
 #esperoqude{
     background-color: #ffe68a;
 }
 
+#secao-doacao {
+  background-color: #fff9e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+.card-doacao {
+  background-color: white;
+  border: 4px solid #ffc107;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-doacao {
+  font-size: 3rem;
+  color: #ffc107;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.texto-doacao {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.qr-doacao {
+  width: 250px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
 
 
 /* Degrau visual (indentação) */
@@ -521,13 +572,23 @@ a{
     text-align: center;
   }
 
+         .header__container {
+        padding-top: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 0;
+    }
   .bees {
     width: 100%;
     height: auto;
   }
 
   .title h1 {
-    font-size: 24px;
+    margin-bottom: 1rem;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 4.75rem;
   }
 
   .description {

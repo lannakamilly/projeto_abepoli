@@ -9,13 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $destinado = $_POST["destinado"];
 
     if (!empty($doador) && !empty($valores) && !empty($destinado)) {
-        $stmt = $conn->prepare("INSERT INTO doacoes (doador, valores, destinado) VALUES (?, ?, ?)");
+        $stmt = $conexao->prepare("INSERT INTO doacoes (doador, valores, destinado) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $doador, $valores, $destinado);
 
         if ($stmt->execute()) {
-            $mensagem = "Doação adicionada com sucesso!";
+        echo "<script>alert('Doação adicionada com sucesso!'); window.location.href='doacoes.php';</script>";
         } else {
-            $mensagem = "Erro ao adicionar doação: " . $conn->error;
+            echo "Erro ao adicionar doação: " . $conexao->error;
         }
 
         $stmt->close();
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="./css/adicionar.css">
     <title>Adicionar Doação</title>
 <body>
-    <a href="./index.php" class="voltar">
+    <a href="./doacoes.php" class="voltar">
       <img src="./img/botao_voltar.png" alt="Voltar">
     </a>
     <div id="container">
