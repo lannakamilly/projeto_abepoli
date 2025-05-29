@@ -29,7 +29,7 @@ $sql .= " WHERE id_admin = ?";
 $params[] = $id;
 
 // Executa a atualização
-$stmt = $conn->prepare($sql);
+$stmt = $conexao->prepare($sql);
 $stmt->execute($params);
 
 header("Location: perfil.php?sucesso=1");

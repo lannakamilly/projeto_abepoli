@@ -1,40 +1,90 @@
+:root{
+  --primary-color: #e4af00;
+  --secondary-color: #a50303;
+  --terciary-color: rgb(228, 201, 0);
+  --quaternary-color: #ef0101;
+  --text-dark: #000000;
+  --text-light: #000000;
+  --extra-light: #fafafa;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Poppins", sans-serif;
+}
+
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('../img/fundo_perfil.png');
+  background-image: url('../img/fundo-perfil.jpeg');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
 }
 
+.tela-login {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voltar {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  z-index: 10;
+}
+
+.voltar img {
+  width: 45px;
+  height: 50px;
+
+}
+
 .form-container {
-  margin-left: 400px;
+  margin-left: 500px;
   margin-top: 150px;
-  width: 700px;
-  height: 400px;
-  background-color: #e3e3e3;
+  width: 500px;
+  height: auto;
+  background-color: var(--extra-light);
   border-radius: 12px;
-  box-shadow: 1px 0 9px 7px rgba(0, 0, 0, 0.259);
+  box-shadow: 5px 0 15px 6px rgba(0, 0, 0, 0.259);
   text-align: center;
+  padding: 25px;
 }
 
 .form-container h2 {
-  color: #b08d2e;
+  color: var(--primary-color);
   font-weight: bold;
-  margin-bottom: 95px;
+  margin-bottom: 50px;
+  margin-top: 10px;
+}
+
+.title {
+  margin-top: 10px;
 }
 
 .perfil-info img {
-  width: 120px;
-  height: 120px;
+  /* width: 120px;
+  height: 120px; */
   border-radius: 50%;
   object-fit: cover;
   background-color: #f1f1f1;
   border: 1px solid #000;
   margin-bottom: 10px;
 }
+
+.perfil-info .foto-perfil {
+  display: flex;
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40%;
+  border: 3px solid var(--primary-color)
+}
+
 
 .perfil-info .campo {
   font-size: 1.1em;
@@ -43,7 +93,7 @@ body {
 }
 
 .perfil-info .campo strong {
-  color: #b08d2e;
+  color: var(--primary-color);
   margin-right: 5px;
 }
 
@@ -51,29 +101,29 @@ body {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 25px;
-  background-color: #b08d2e;
+  background-color: var(--primary-color);
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .editar-perfil-link:hover {
-  background-color: #967a1d;
+  background-color: var(--terciary-color);
 }
 
-.form-container > a[href="logout.php"] {
+.form-container>a[href="logout.php"] {
   display: inline-block;
   margin-top: 25px;
-  color: #b08d2e;
+  color: var(--secondary-color);
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.2s;
 }
 
-.form-container > a[href="logout.php"]:hover {
-  color: #967a1d;
+.form-container>a[href="logout.php"]:hover {
+  color: var(--quaternary-color);
 }
