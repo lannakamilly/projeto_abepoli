@@ -1,39 +1,34 @@
 <?php
 session_start();
-require_once 'conexao.php'; 
-require_once('conexao.php');
+require_once 'conexao.php';
 
-$erro = false;
+$erro = null;
 $sucesso = false;
-$emailLogado = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $email = $_POST['email'] ?? '';
-  $senha = $_POST['senha'] ?? '';
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-  $stmt = $conexao->prepare("SELECT * FROM administrador WHERE email_admin = ?");
-  $stmt->bind_param("s", $email);
-  $stmt->execute();
-  $res = $stmt->get_result();
+    // Consulta para verificar o administrador
+    $stmt = $conexao->prepare("SELECT id_admin, senha_admin FROM administrador WHERE email_admin = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
 
-  if ($res->num_rows === 1) {
-    $admin = $res->fetch_assoc();
+    if ($resultado->num_rows > 0) {
+        $admin = $resultado->fetch_assoc();
 
-    if ($admin['senha_admin'] == $senha) {
-      $_SESSION['admin'] = true;
-      $_SESSION['email_admin'] = $email;
-      $sucesso = true;
-      $emailLogado = $email;
+        // Verifica a senha
+        if (password_verify($senha, $admin['senha_admin'])) {
+            $_SESSION['admin'] = $admin['id_admin']; // Armazena o ID do administrador na sessão
+            $sucesso = true;
+        } else {
+            $erro = "Senha incorreta.";
+        }
     } else {
-      $erro = "Senha incorreta.";
+        $erro = "Administrador não encontrado.";
     }
-  } else {
-    $erro = "Administrador não encontrado.";
-  }
-
-  $stmt->close();
 }
-$conexao->close();
 ?>
 
 <!DOCTYPE html>
@@ -65,17 +60,31 @@ $conexao->close();
             <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Digite seu email" required />
 
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required />
+      <label for="senha">Senha</label>
+<div class="input-group-login">
+  <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required />
+  
+  <a href="./esqueceuSenha.php" class="link-senha">Esqueceu a senha?</a>
 
-            <a href="./esqueceuSenha.php" class="link-senha">Esqueceu a senha?</a>
-
-            <button type="submit" class="botao-entrar">ENTRAR</button>
+  <span class="toggle-password-login" data-target="senha">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path class="eye-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <path class="eye-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+      <path class="eye-slash" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M3 3l18 18" style="display: none;" />
+    </svg>
+  </span>
+</div>
+ <button type="submit" class="botao-entrar-login">ENTRAR</button>
           </form>
+
         </div>
       </div>
-    </div>
-  </div>
+    </div>   
+
+
 
   <?php if ($erro): ?>
     <script>
@@ -93,13 +102,32 @@ $conexao->close();
       Swal.fire({
         icon: 'success',
         title: 'Login realizado!',
-        text: 'Bem-vindo(a), <?= htmlspecialchars($emailLogado) ?>',
+        text: 'Bem-vindo(a)!',
         confirmButtonColor: '#3085d6'
       }).then(() => {
-        window.location.href = 'perfil.php';
-        window.location.href = 'produtosVestimentas.php';
+        window.location.href = './perfil.php'; 
       });
     </script>
   <?php endif; ?>
+
+  
+  <script>
+  document.querySelectorAll('.toggle-password-login').forEach(function (element) {
+    element.addEventListener('click', function () {
+      const targetId = this.getAttribute('data-target');
+      const input = document.getElementById(targetId);
+      const eyeSlash = this.querySelector('.eye-slash');
+
+      if (input.type === "password") {
+        input.type = "text";
+        eyeSlash.style.display = "block";
+      } else {
+        input.type = "password";
+        eyeSlash.style.display = "none";
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
