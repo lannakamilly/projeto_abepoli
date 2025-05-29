@@ -22,7 +22,7 @@
       flex-direction: column;
       align-items: center;
       background:
-        linear-gradient(135deg, #ffdd48 0%,  #F7BE00 100%);
+        linear-gradient(135deg,#f7be00 0%,rgb(141, 108, 0) 100%);
       background-repeat: no-repeat;
       background-attachment: fixed;
       position: relative;
@@ -176,7 +176,7 @@
   <main>
     <div class="video-wrapper" role="region" aria-label="Player de vídeo institucional">
       <video controls preload="metadata" playsinline>
-        <source src="video.mp4" type="video/mp4" />
+        <source src="./img/video_abepoli.mp4" type="video/mp4" />
         Seu navegador não suporta vídeo.
       </video>
     </div>
