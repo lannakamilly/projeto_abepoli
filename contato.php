@@ -2,7 +2,7 @@
 session_start();
 require_once('conexao.php');
 
-$logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
+$logado = isset($_SESSION['admin']);  
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

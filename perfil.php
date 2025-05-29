@@ -2,6 +2,7 @@
 session_start();
 require_once 'conexao.php';
 
+$logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
 // Verifica se a conexão com o banco de dados foi estabelecida
 if (!$conexao) {
     die("Erro ao conectar ao banco de dados.");
@@ -41,15 +42,22 @@ $foto_src = !empty($admin['foto_admin']) ? 'data:image/jpeg;base64,' . base64_en
   <meta charset="UTF-8">
   <title>Perfil do Administrador</title>
   <link rel="stylesheet" href="./css/perfil.css">
+  <script src="./js/drawer.js"></script>
+  <link rel="stylesheet" href="./css/drawerAdmin.css" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
+  <div class="voltar">
+        <a href="./index.php">
+            <img src="./img/arrow-left.png" alt="Voltar">
+        </a>
+    </div>
   <div class="form-container">
-    <h2><span>Perfil Administrador</span></h2>
+    <h2><span class="title">Perfil Administrador</span></h2>
     <div class="perfil-info">
       <p>ID do administrador na sessão: <?php echo htmlspecialchars($id_admin); ?></p>
-      <img src="<?php echo $foto_src; ?>" alt="Foto de perfil">
+      <img src="<?php echo $foto_src; ?>" alt="Foto de perfil" class="foto-perfil">
       <div class="campo">
         <strong>Nome:</strong> <?php echo htmlspecialchars($admin['nome_admin']); ?>
       </div>

@@ -9,7 +9,7 @@ $resultado = $stmt->get_result(); // <-- correto para mysqli
 $resultado_doacoes = $resultado->fetch_all(MYSQLI_ASSOC); // <-- retorna array associativo
 
 session_start();
-$logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
+$logado = isset($_SESSION['admin']);  
 ?>
 
 <!DOCTYPE html>
