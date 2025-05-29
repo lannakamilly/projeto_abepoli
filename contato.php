@@ -1,3 +1,9 @@
+<?php
+session_start();
+require_once('conexao.php');
+
+$logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,6 +16,8 @@
   <link rel="stylesheet" href="./css/nav.css">
   <link rel="stylesheet" href="./css/contatoo.css">
   <link rel="stylesheet" href="./css/footerr.css">
+   <script src="./js/drawer.js"></script><!-- copiem isso e colem no codigo de vcs -->
+    <link rel="stylesheet" href="./css/drawerAdmin.css" /><!-- copiem isso e colem no codigo de vcs -->
 
 </head>
 
@@ -17,26 +25,41 @@
 
   <header>
     <nav>
-      <div class="nav__header">
-        <div class="nav__logo">
-          <a href="#">
-          <img src="./img/logo1.jpg" alt="logo" />
-          </a>
+        <div class="nav__header">
+            <div class="nav__logo">
+                <a href="#">
+                    <img src="./img/logo1.jpg" alt="logo" />
+                </a>
+            </div>
+
+            <div class="nav__menu__btn" id="menu-btn">
+                <i class="ri-menu-3-line"></i>
+            </div>
+
+            <?php if ($logado): ?>
+                <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
+                    <img src="./img/iconn.png" alt="Usuário" />
+                </button>
+            <?php endif; ?>
         </div>
-        <div class="nav__menu__btn" id="menu-btn">
-          <i class="ri-menu-3-line"></i>
-        </div>
-      </div>
-      <ul class="nav__links" id="nav-links">
-        <li><a href="./index.php">Início</a></li>
-        <li><a href="./produtoss.php">Produtos</a></li>
-        <li><a href="./sobre.php">Ações</a></li>
-        <li><a href="./doacoes.php">Doações</a></li>
-        <li><a href="./saibamais.php">Saiba Mais</a></li>
-        <li><a href="./contato.php">Contato</a></li>
-        <li>
-        </li>
-      </ul>
+
+        <ul class="nav__links" id="nav-links">
+            <li><a href="./index.php">Início</a></li>
+            <li><a href="./produtoss.php">Produtos</a></li>
+            <li><a href="./sobre.php">Ações</a></li>
+            <li><a href="./doacoes.php">Doações</a></li>
+            <li><a href="./saibamais.php">Saiba Mais</a></li>
+
+            <li class="contato-usuario">
+                <a href="./contato.php">Contato</a>
+
+                <?php if ($logado): ?>
+                    <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
+                        <img src="./img/iconn.png" alt="Usuário" />
+                    </button>
+                <?php endif; ?>
+            </li>
+        </ul>
     </nav>
   </header>
   <section class="secao-contato">
