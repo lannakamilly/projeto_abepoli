@@ -6,32 +6,33 @@ $erro = null;
 $sucesso = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $email = $_POST['email'];
-  $senha = $_POST['senha'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-  $stmt = $conexao->prepare("SELECT id_admin, senha_admin FROM administrador WHERE email_admin = ?");
-  $stmt->bind_param("s", $email);
-  $stmt->execute();
-  $resultado = $stmt->get_result();
+    // Consulta para verificar o administrador
+    $stmt = $conexao->prepare("SELECT id_admin, senha_admin FROM administrador WHERE email_admin = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
 
-  if ($resultado->num_rows > 0) {
-    $admin = $resultado->fetch_assoc();
+    if ($resultado->num_rows > 0) {
+        $admin = $resultado->fetch_assoc();
 
-    if (password_verify($senha, $admin['senha_admin'])) {
-      $_SESSION['admin'] = $admin['id_admin'];
-      $sucesso = true;
+        // Verifica a senha
+        if (password_verify($senha, $admin['senha_admin'])) {
+            $_SESSION['admin'] = $admin['id_admin']; // Armazena o ID do administrador na sessão
+            $sucesso = true;
+        } else {
+            $erro = "Senha incorreta.";
+        }
     } else {
-      $erro = "Senha incorreta.";
+        $erro = "Administrador não encontrado.";
     }
-  } else {
-    $erro = "Administrador não encontrado.";
-  }
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -59,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Digite seu email" required />
 
-         <label for="senha">Senha</label>
+      <label for="senha">Senha</label>
 <div class="input-group-login">
   <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required />
   
@@ -81,32 +82,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         </div>
       </div>
-    </div>
+    </div>   
 
-    <?php if ($erro): ?>
-      <script>
-        Swal.fire({
-          icon: 'error',
-          title: 'Erro ao entrar',
-          text: '<?= $erro ?>',
-          confirmButtonColor: '#3085d6'
-        });
-      </script>
-    <?php endif; ?>
 
-    <?php if ($sucesso): ?>
-      <script>
-        Swal.fire({
-          icon: 'success',
-          title: 'Login realizado!',
-          text: 'Bem-vindo(a)!',
-          confirmButtonColor: '#3085d6'
-        }).then(() => {
-          window.location.href = './perfil.php';
-        });
-      </script>
-    <?php endif; ?>
 
+  <?php if ($erro): ?>
+    <script>
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro ao entrar',
+        text: '<?= $erro ?>',
+        confirmButtonColor: '#3085d6'
+      });
+    </script>
+  <?php endif; ?>
+
+  <?php if ($sucesso): ?>
+    <script>
+      Swal.fire({
+        icon: 'success',
+        title: 'Login realizado!',
+        text: 'Bem-vindo(a)!',
+        confirmButtonColor: '#3085d6'
+      }).then(() => {
+        window.location.href = './perfil.php'; 
+      });
+    </script>
+  <?php endif; ?>
+
+  
   <script>
   document.querySelectorAll('.toggle-password-login').forEach(function (element) {
     element.addEventListener('click', function () {
@@ -125,7 +129,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   });
 </script>
 
-
 </body>
-
 </html>

@@ -1,124 +1,79 @@
 body {
-  background: url('../img/background-yellow.jpg') no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 0;
+  background-image: url('../img/fundo_perfil.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .form-container {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
-  padding: 30px 30px 20px;
-  max-width: 400px;
-  width: 100%;
-  text-align: left;
+  margin-left: 400px;
+  margin-top: 150px;
+  width: 700px;
+  height: 400px;
+  background-color: #e3e3e3;
+  border-radius: 12px;
+  box-shadow: 1px 0 9px 7px rgba(0, 0, 0, 0.259);
+  text-align: center;
 }
 
 .form-container h2 {
-  margin-bottom: 6px;
-  color: #333;
-  font-size: 1.5em;
+  color: #b08d2e;
+  font-weight: bold;
+  margin-bottom: 95px;
 }
 
-.underline {
-  width: 60px;
-  height: 4px;
-  background-color: #F18800;
-  border-radius: 2px;
-  margin-bottom: 20px;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.form label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 4px;
-  color: #333;
-  font-size: 0.95em;
-  margin-top: 10px;
-}
-
-.form input[type="text"],
-.form input[type="email"],
-.form input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  background-color: #f3f4f6;
-  margin-bottom: 0;
-  font-size: 1em;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
-  margin-top: 2px;
-}
-
-.form input:focus {
-  outline: 2px solid #F18800;
-  background: #fff;
-}
-
-.foto-container {
-  margin-bottom: 20px;
-}
-
-.foto-container label {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: #2186a1;
-  cursor: pointer;
-  font-weight: 500;
+.perfil-info img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #f1f1f1;
+  border: 1px solid #000;
   margin-bottom: 10px;
 }
 
-.foto-container label:hover {
-  color: #F18800;
+.perfil-info .campo {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
-.foto-container input[type="file"] {
-  display: none;
+.perfil-info .campo strong {
+  color: #b08d2e;
+  margin-right: 5px;
 }
 
-.form button {
-  width: 100%;
-  padding: 10px;
-  background: linear-gradient(to right, #FFBF00, #F18800);
-  border: none;
-  border-radius: 30px;
+.editar-perfil-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #b08d2e;
   color: white;
-  font-size: 1em;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-  text-transform: uppercase;
-  margin-top: 10px;
-}
-
-.form button:hover {
-  background: #FFBF00;
-}
-
-.link {
-  text-align: center;
-  margin-top: 16px;
-  font-size: 0.95em;
-}
-
-.link a {
-  color: #F18800;
   text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-.link a:hover {
-  text-decoration: underline;
+.editar-perfil-link:hover {
+  background-color: #967a1d;
+}
+
+.form-container > a[href="logout.php"] {
+  display: inline-block;
+  margin-top: 25px;
+  color: #b08d2e;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.form-container > a[href="logout.php"]:hover {
+  color: #967a1d;
 }
