@@ -4,9 +4,11 @@ require_once 'conexao.php';
 
 
 $id = $_SESSION['admin'];
-$stmt = $conn->prepare("SELECT nome_admin, email_admin, senha_admin, foto_admin FROM administrador WHERE id_admin=?");
-$stmt->execute([$id]);
-$admin = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt = $conexao->prepare("SELECT nome_admin, email_admin, senha_admin, foto_admin FROM administrador WHERE id_admin=?");
+$stmt->bind_param("i", $id); // "i" para inteiro
+$stmt->execute();
+$resultado = $stmt->get_result();
+$admin = $stmt->fetch() ;
 
 if (!$admin || !is_array($admin)) {
     $admin = [
