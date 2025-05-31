@@ -27,8 +27,7 @@ $logado = isset($_SESSION['admin']);
     <title>Instituto Abepoli</title>
   </head>
   <body>
-   
-<nav>
+ <nav>
     <div class="nav__header">
       <div class="nav__logo">
         <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
@@ -61,15 +60,29 @@ $logado = isset($_SESSION['admin']);
       </li>
     </ul>
   </nav>
+  <?php
+  if ($logado):
+    require_once 'conexao.php';
 
-  <?php if ($logado): ?>
+    $id = $_SESSION['admin'] ?? 0;
+    $stmt = $conexao->prepare("SELECT nome_admin, foto_admin FROM administrador WHERE id_admin = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+    $adminData = $resultado->fetch_assoc();
+
+    $nome = htmlspecialchars($adminData['nome_admin'] ?? 'Administrador');
+    $foto = !empty($adminData['foto_admin'])
+      ? 'data:image/jpeg;base64,' . base64_encode($adminData['foto_admin'])
+      : './img/iconn.png';
+  ?>
     <div id="user-drawer" class="user-drawer">
       <div class="user-drawer-header">
-        <h3><?= htmlspecialchars($_SESSION['nome'] ?? 'Administrador') ?></h3>
+        <h3><?= $nome ?></h3>
         <button id="close-drawer">&times;</button>
       </div>
       <div class="user-drawer-content">
-        <img src="./img/iconn.png" alt="Foto de perfil" class="user-avatar">
+        <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
         <ul class="user-drawer-links">
           <li><a href="./perfil.php">Perfil</a></li>
           <li><a href="./logout.php" class="logout-link">Sair</a></li>
