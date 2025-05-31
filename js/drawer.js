@@ -3,6 +3,7 @@
         const userDrawer = document.getElementById('user-drawer');
         const closeDrawerBtn = document.getElementById('close-drawer');
         const drawerOverlay = document.getElementById('drawer-overlay');
+        
 
         if (userIcon && userDrawer && closeDrawerBtn && drawerOverlay) {
             userIcon.addEventListener('click', () => {
