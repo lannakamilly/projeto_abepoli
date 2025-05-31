@@ -449,6 +449,10 @@ a{
   align-items: center;
   padding: 80px 20px;
 }
+ #divisaoqr{
+   justify-content: space-around; 
+  display: flex;
+}
 
 .card-doacao {
   background-color: white;
@@ -487,8 +491,7 @@ a{
   .botaodoacoes a {
     font-size: 16px;
   }
-  #divisãoqr{
-    display: flex;
+  #divisaoqr{
     flex-direction: column;
     align-items: center;
   }
