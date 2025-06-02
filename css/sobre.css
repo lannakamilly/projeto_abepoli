@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #F7BE00;
-  --primary-color-dark: #F7BE00;
+  --primary-color-dark:  #5e4c00;
   --text-dark: #0c0a09;
   --text-light: #242323;
   --white: #ffffff;
@@ -142,7 +142,7 @@ body {
 
 
 .service {
-  background-image: url("https://wallpapers.com/images/hd/bee-pictures-bh1tyynzbw0fnn9u.jpg");
+  background-color: #F7BE00;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -298,7 +298,7 @@ body {
   height: 80px;
   margin: 0 auto 1rem;
   border-radius: 50%;
-  background-color: #fffbe6;
+  background-color: #f3ff8a;
   display: flex;
   align-items: center;
   justify-content: center;

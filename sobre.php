@@ -13,6 +13,10 @@ $logado = isset($_SESSION['admin']);
       href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+        <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
         <link rel="stylesheet" href="./css/footerr.css" />
     <link rel="stylesheet" href="./css/nav.css" />
     <link rel="stylesheet" href="./css/sobre.css" />
@@ -118,7 +122,7 @@ $logado = isset($_SESSION['admin']);
       <div class="intro__grid">
         <div class="intro__card">
           <div class="intro__image">
-            <img src="./img/icon1.png" alt="intro" />
+            <img src="./img/1.png" alt="intro" />
           </div>
           <h4>Proteção Ambiental</h4>
           <p>
@@ -128,7 +132,7 @@ $logado = isset($_SESSION['admin']);
         </div>
         <div class="intro__card">
           <div class="intro__image">
-            <img src="./img/abelha-bugia.jpeg" alt="intro" />
+            <img src="./img/2.png" alt="intro" />
           </div>
           <h4>Sustentabilidade Comunitária</h4>
           <p>
@@ -138,7 +142,7 @@ $logado = isset($_SESSION['admin']);
         </div>
         <div class="intro__card">
           <div class="intro__image">
-            <img src="./img/abelha-bugia.jpeg" alt="intro" />
+            <img src="./img/3.png" alt="intro" />
           </div>
           <h4>Educação Ecológica</h4>
           <p>
@@ -174,10 +178,7 @@ $logado = isset($_SESSION['admin']);
         <p class="section__description">
 Com sede em São José dos Campos e registrado sob o CNPJ 37.912.072/0001-15, o Instituto Abepoli desenvolve atividades científicas e técnicas que trazem benefícios para a preservação da biodiversidade e o desenvolvimento sustentável, sempre em harmonia com o meio ambiente.
         </p>
-        <div class="about__btn">
-          <a href="https://maps.app.goo.gl/sopjX9KupRLhc12L9"></a>
-          <button class="btn">Ver Localização</button>
-        </div> 
+        
       </div>
     </section>
 
@@ -204,8 +205,62 @@ Com sede em São José dos Campos e registrado sob o CNPJ 37.912.072/0001-15, o 
     </div>
   </section>
 
+      <footer class="abepoli-footer">
+        <div class="footer-content">
+            <div class="footer-col logo-col">
+                <img src="img/logo1.jpg" alt="Instituto Abepoli" class="footer-logo">
+            </div>
 
-    <script src="https://unpkg.com/scrollreveal"></script>
+                <div class="footer-col contact-col">
+                <h4>Contato</h4>
+                <p><i class="fa fa-envelope"></i> abepoli@gmail.com</p>
+                <div class="social-icons">
+                    <p>
+                        <a href="https://www.facebook.com/profile.php?id=100076095320985" target="_blank"
+                            style="text-decoration: none; color: inherit;">
+                            <i class="fa fa-facebook"></i> Instituto Abepoli
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.instagram.com/abepoli/" target="_blank"
+                            style="text-decoration: none; color: inherit;">
+                            <i class="fa fa-instagram"></i> @abepoli
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://wa.me/5512988176722" target="_blank"
+                            style="text-decoration: none; color: inherit;">
+                            <i class="fa fa-whatsapp"></i> (12) 98817-6722
+                        </a>
+                    <p>
+                        <a href="./login.php" class="realizarLogin" style="text-decoration: none; color: inherit;">
+                            Realizar login
+                        </a>
+                    </p>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="footer-col dev-col">
+                <h4>Site desenvolvido por</h4>
+                <p>Flávia Glenda Guimarães Carvalho</p>
+                <p>Júlia da Silva Conconi</p>
+                <p>Kauã de Albuquerque Almeida</p>
+                <p>Lanna Kamilly Fres Motta</p>
+                <p>Miguel Borges da Silva</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+
+    
+      <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
    <script src="./js/index.js"></script>
     <script src="./js/nav.js"></script>
   </body>
