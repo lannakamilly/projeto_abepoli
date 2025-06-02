@@ -9,26 +9,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    $stmt = $conexao->prepare("SELECT id_admin, nome_admin, senha_admin FROM administrador WHERE email_admin = ?");
+    // Verifica se é admin
+    $stmt = $conexao->prepare("SELECT id_admin AS id, nome_admin AS nome, senha_admin AS senha, 'admin' AS tipo FROM administrador WHERE email_admin = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $resultado = $stmt->get_result();
 
-    if ($resultado->num_rows > 0) {
-        $admin = $resultado->fetch_assoc();
+    // Se não for admin, tenta como funcionário
+    if ($resultado->num_rows === 0) {
+        $stmt = $conexao->prepare("SELECT id_funcionario AS id, nome_funcionario AS nome, senha_funcionario AS senha, 'funcionario' AS tipo FROM funcionarios WHERE email_funcionario = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+    }
 
-        if (password_verify($senha, $admin['senha_admin'])) {
-            $_SESSION['admin'] = $admin['id_admin'];
-            $_SESSION['nome'] = $admin['nome_admin'];
+    if ($resultado->num_rows > 0) {
+        $user = $resultado->fetch_assoc();
+
+        if (password_verify($senha, $user['senha'])) {
+            $_SESSION['usuario_id'] = $user['id'];
+            $_SESSION['usuario_nome'] = $user['nome'];
+            $_SESSION['usuario_tipo'] = $user['tipo'];
             $sucesso = true;
         } else {
             $erro = "Senha incorreta.";
         }
     } else {
-        $erro = "Administrador não encontrado.";
+        $erro = "Usuário não encontrado.";
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">

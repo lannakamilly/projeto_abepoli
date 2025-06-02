@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         $novaSenhaHash = password_hash($novaSenha, PASSWORD_DEFAULT);
 
+        // 1ª tentativa: ADMIN
         $stmt = $conexao->prepare("SELECT id_admin FROM administrador WHERE email_admin = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -22,25 +23,46 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($stmt->num_rows === 1) {
             $stmt->close();
-
             $stmt = $conexao->prepare("UPDATE administrador SET senha_admin = ? WHERE email_admin = ?");
             $stmt->bind_param("ss", $novaSenhaHash, $email);
             if ($stmt->execute()) {
-                $mensagem = "Senha atualizada com sucesso!";
+                $mensagem = "Senha do administrador atualizada com sucesso!";
                 $tipoAlerta = "success";
             } else {
-                $mensagem = "Erro ao atualizar a senha.";
+                $mensagem = "Erro ao atualizar a senha do administrador.";
                 $tipoAlerta = "error";
             }
         } else {
-            $mensagem = "Email não encontrado.";
-            $tipoAlerta = "error";
+            $stmt->close();
+
+            // 2ª tentativa: FUNCIONÁRIO
+            $stmt = $conexao->prepare("SELECT id_funcionario FROM funcionarios WHERE email_funcionario = ?");
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $stmt->store_result();
+
+            if ($stmt->num_rows === 1) {
+                $stmt->close();
+                $stmt = $conexao->prepare("UPDATE funcionarios SET senha_funcionario = ? WHERE email_funcionario = ?");
+                $stmt->bind_param("ss", $novaSenhaHash, $email);
+                if ($stmt->execute()) {
+                    $mensagem = "Senha do funcionário atualizada com sucesso!";
+                    $tipoAlerta = "success";
+                } else {
+                    $mensagem = "Erro ao atualizar a senha do funcionário.";
+                    $tipoAlerta = "error";
+                }
+            } else {
+                $mensagem = "Email não encontrado em nosso sistema.";
+                $tipoAlerta = "error";
+            }
         }
 
         $stmt->close();
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
