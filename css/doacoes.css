@@ -514,6 +514,7 @@ a{
     font-size: 16px;
   }
   .descricao{
+    width: 600px;
     margin-left: 10px;
   }
   .titulo{
