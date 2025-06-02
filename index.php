@@ -21,7 +21,8 @@ $logado = isset($_SESSION['admin']);
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/footerr.css" />
     <link rel="stylesheet" href="./css/nav.css" />
-      <link rel="stylesheet" href="./css/drawerAdmin.css" /><!-- coloquem isso no codigo de vcs -->
+    <link rel="stylesheet" href="./css/drawerAdmin.css" /><!-- coloquem isso no codigo de vcs -->
+    <link rel="icon" type="image/png" href="./img/logo.png">
   <script src="./js/drawer.js"></script><!-- coloquem isso no codigo de vcs -->
     
     <title>Instituto Abepoli</title>
@@ -230,7 +231,6 @@ $logado = isset($_SESSION['admin']);
         </div>
       </div>
     </section>
-    
     <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
    <div class="wave-shape-divider">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

@@ -204,6 +204,21 @@ body {
   color: #fb7185;
   background-color: #ffe4e6;
 }
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f7be00;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
 
 
 @media (width > 576px) {
@@ -298,7 +313,7 @@ body {
   height: 80px;
   margin: 0 auto 1rem;
   border-radius: 50%;
-  background-color: #f3ff8a;
+  background-color: #f8ffb3;
   display: flex;
   align-items: center;
   justify-content: center;
