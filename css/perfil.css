@@ -12,7 +12,6 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   background-image: url('../img/fundo-perfil.jpeg');
@@ -29,29 +28,29 @@ body {
   justify-content: center;
 }
 
-.voltar {
-  position: absolute;
-  top: 40px;
-  left: 50px;
-  z-index: 10;
+.botao-voltar {
+    margin-top:30px;
+    margin-bottom: 20px;
+    margin-left: 90px; 
 }
 
-.voltar img {
-  width: 45px;
-  height: 50px;
-
+.botao-voltar a {
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
 }
 
 .form-container {
   margin-left: 500px;
-  margin-top: 150px;
-  width: 500px;
-  height: auto;
-  background-color: var(--extra-light);
+  margin-top: 20px;
+  width: 800px;
+  height: 500px;
+  background-color:#eeeeee;
   border-radius: 12px;
   box-shadow: 5px 0 15px 6px rgba(0, 0, 0, 0.259);
   text-align: center;
   padding: 25px;
+  margin-left: 350px;
 }
 
 .form-container h2 {
@@ -70,21 +69,20 @@ body {
   height: 120px; */
   border-radius: 50%;
   object-fit: cover;
-  background-color: #f1f1f1;
+  
   border: 1px solid #000;
   margin-bottom: 10px;
 }
 
 .perfil-info .foto-perfil {
   display: flex;
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
   align-items: center;
   justify-content: center;
   margin-left: 40%;
   border: 3px solid var(--primary-color)
 }
-
 
 .perfil-info .campo {
   font-size: 1.1em;
@@ -97,33 +95,45 @@ body {
   margin-right: 5px;
 }
 
-.editar-perfil-link {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background-color: var(--primary-color);
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s;
+.menu-superior-direita {
+  position: absolute;
+  top: 480px;
+  right: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1000;
 }
 
-.editar-perfil-link:hover {
-  background-color: var(--terciary-color);
-}
-
-.form-container>a[href="logout.php"] {
-  display: inline-block;
-  margin-top: 25px;
-  color: var(--secondary-color);
+.menu-link {
+  display: flex;
+  align-items: center;
   font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
   text-decoration: none;
-  cursor: pointer;
-  transition: color 0.2s;
+  margin-bottom: 12px;
 }
 
-.form-container>a[href="logout.php"]:hover {
-  color: var(--quaternary-color);
+.menu-link i {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.editar-perfil-link,
+.funcionarios-consultar {
+  color: #e1b218;
+}
+
+.editar-perfil-link i,
+.funcionarios-consultar i {
+  color: #e1b218;
+}
+
+.sair-link {
+  color: #c30000;
+}
+
+.sair-link i {
+  color: #c30000;
 }
