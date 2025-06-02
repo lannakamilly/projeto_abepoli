@@ -1,78 +1,444 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #fff8f1;
-  margin: 0;
-  padding: 2rem;
-  color: #3e2723;
+ :root {
+      --primary-color:   #F7BE00;
+      --primary-dark:    #e0a800;
+      --text-dark:       #000000;
+      --bg-light:        #f7f7f7;
+      --card-bg:         #ffffff;
+      --shadow-color:    rgba(0, 0, 0, 0.12);
+      --input-border:    #cccccc;
+      --input-bg:        #ffffff;
+      --btn-text:        #ffffff;
+      --btn-hover:       #e0a800;
+      --btn-radius:      24px;
+    }
+
+ 
+
+   .header-bg {
+    position: relative;
+    background: url('https://cfbio.gov.br/wp-content/uploads/2022/07/Site_AbelhasJatai_Abre_00_1140-1140x675.jpg') no-repeat center center/cover;
+    height: 400px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55); /* controla a escuridão */
+    z-index: 1;
+  }
+
+  .header-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .header-content h1 {
+    font-size: 4rem;
+    letter-spacing: 2px;
+  }
+
+  .scroll-down {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: #e0a800;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+  
+:root {
+  --primary-color: #F7BE00;
+  --primary-color-dark: #d6a500;
+  --text-dark: #0c0a09;
+  --text-light: #242323;
+  --white: #ffffff;
+  --max-width: 1200px;
 }
 
-.titulo-principal {
+   
+ * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+/* Banner Header */
+/* Banner Header Moderno e Maior */
+.header-banner {
+  width: 100vw;
+  height: 500px;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("https://cfbio.gov.br/wp-content/uploads/2022/07/Site_AbelhasJatai_Abre_00_1140-1140x675.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.banner-content {
   text-align: center;
-  font-size: 2.5rem;
-  color: #5d4037;
-  margin-bottom: 2rem;
+  color: #fff;
+  z-index: 2;
+  padding: 20px;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+.banner-content h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.7);
 }
 
-.card {
-  background-color: #ffe0b2;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.banner-content p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-.card h2 {
+.banner-btn {
+  padding: 16px 30px;
   font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.read-more {
-  background-color: #ff9800;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white);
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 10px;
+  text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 8px 24px rgba(247, 190, 0, 0.5);
 }
 
-.read-more:hover {
-  background-color: #fb8c00;
+.banner-btn:hover {
+  background-color: var(--primary-color-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(214, 165, 0, 0.7);
 }
 
-/* Pop-up */
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff8f1;
-  color: #3e2723;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  max-width: 500px;
-  z-index: 1000;
-  display: none;
-  flex-direction: column;
-  gap: 1rem;
+@media (max-width: 768px) {
+  .header-banner {
+    height: 360px;
+  }
+
+  .banner-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .banner-content p {
+    font-size: 1.1rem;
+  }
 }
 
-.popup button {
-  align-self: flex-end;
+
+/* Formulário de adicionar notícia */
+.admin-form {
+  max-width: var(--max-width);
+  margin: 0 auto 40px;
+  background: var(--white);
+  padding: 30px 35px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: box-shadow 0.3s ease;
+  border: 2px solid var(--primary-color);
+}
+.admin-form:hover {
+  box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+}
+
+.admin-form h2 {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.admin-form input[type="text"],
+.admin-form textarea,
+.admin-form input[type="file"] {
+  width: 100%;
+  padding: 16px 20px;
+  margin-bottom: 25px;
+  border-radius: 14px;
+  border: 2px solid #ccc;
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+  color: var(--text-light);
+}
+
+.admin-form input[type="text"]:focus,
+.admin-form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+.admin-form textarea {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.6;
+  font-size: 1.15rem;
+}
+
+.admin-form button {
+  width: 100%;
+  padding: 18px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-weight: 800;
+  font-size: 1.3rem;
   border: none;
-  background: transparent;
-  font-size: 1.2rem;
+  border-radius: 14px;
   cursor: pointer;
-  color: #bf360c;
+  transition: background-color 0.3s ease;
+  letter-spacing: 1.1px;
+  box-shadow: 0 6px 15px rgba(247, 190, 0, 0.4);
+}
+
+.admin-form button:hover {
+  background-color: var(--primary-color-dark);
+  box-shadow: 0 8px 20px rgba(214, 165, 0, 0.6);
+}
+
+/* Grid das notícias */
+.noticias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+  max-width: var(--max-width);
+  margin: 0 auto 40px;
+  padding: 0 10px;
+}
+
+/* Cards */
+.noticia-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: default;
+}
+
+.noticia-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 42px rgba(0,0,0,0.22);
+}
+
+.noticia-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 4px solid var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.noticia-card:hover img {
+  transform: scale(1.05);
+}
+
+.noticia-content {
+  padding: 24px 28px 32px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.noticia-content h3 {
+  margin: 0 0 18px 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: 0.7px;
+  line-height: 1.2;
+}
+
+/* Ações do card */
+.noticia-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ler-mais {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 12px 26px;
+  border-radius: 80px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  letter-spacing: 0.8px;
+  box-shadow: 0 6px 18px rgba(252, 212, 79, 0.4);
+}
+
+.ler-mais:hover {
+  background-color: var(--primary-color-dark);
+  box-shadow: 0 9px 26px rgba(214, 165, 0, 0.6);
+}
+
+.noticia-actions a {
+  font-size: 1.8rem;
+  color: #dc3545;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding-left: 10px;
+}
+
+.noticia-actions a:hover {
+  color: #a71d2a;
+}
+
+/* Formulário de editar notícia */
+.editar-form {
+  margin-top: 28px;
+  background: #fafafa;
+  padding: 20px 25px;
+  border-radius: 18px;
+  box-shadow: inset 0 0 12px #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border: 1.8px solid #ddd;
+}
+
+.editar-form input[type="text"],
+.editar-form textarea,
+.editar-form input[type="file"] {
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1.8px solid #bbb;
+  font-family: inherit;
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-light);
+}
+
+.editar-form input[type="text"]:focus,
+.editar-form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+.editar-form textarea {
+  min-height: 130px;
+  resize: vertical;
+  line-height: 1.5;
+  font-size: 1.15rem;
+}
+
+.editar-form button {
+  width: 100%;
+  padding: 16px;
+  background-color: #28a745;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 6px 16px rgba(40, 167, 69, 0.45);
+  letter-spacing: 0.9px;
+}
+
+.editar-form button:hover {
+  background-color: #1e7e34;
+  box-shadow: 0 9px 24px rgba(30, 126, 52, 0.7);
+}
+
+/* Popup */
+.popup {
+  display: none;
+  position: fixed;
+  background: rgba(0,0,0,0.75);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.popup-content {
+  background: var(--white);
+  padding: 40px 45px;
+  border-radius: 24px;
+  max-width: 720px;
+  width: 90%;
+  box-shadow: 0 14px 38px rgba(0,0,0,0.28);
+  position: relative;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.popup-content h2 {
+  font-size: 2.3rem;
+  margin-bottom: 24px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.popup-content p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  cursor: pointer;
+  font-size: 30px;
+  color: #dc3545;
+  font-weight: 900;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #a71d2a;
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+
+  .noticias-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
