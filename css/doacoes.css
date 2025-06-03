@@ -41,7 +41,6 @@ h1{
 
 .subtitulo{
     padding: 5rem 1rem;
-    margin-top: 40px;
     display: flex;
     justify-content: center;
     padding-bottom: 20px;
@@ -145,7 +144,7 @@ img{
 }
 .blank{
     border-radius: 50px;
-    margin-top: 50px;
+    margin-top:30px;
         width: 300px;
     height: 300px;
     background-color: rgb(215, 215, 215)
@@ -487,72 +486,46 @@ a{
 .step:nth-child(3) { margin-left: 60px; }
 .step:nth-child(4) { margin-left: 90px; }
 
-@media (max-width: 480px) {
-  .botaodoacoes a {
-    font-size: 16px;
-  }
-  #divisaoqr{
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .circle {
-    width: 30px;
-    height: 30px;
-    font-size: 14px;
-  }
-  .info{
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-  }
-  #divaliembaixo {
-    margin-top: 200px;
+@media (max-width: 1200px) {
+  .container,
+  p,
+  #img_açoes,
+  .blank {
+    width: 90% !important;
   }
 
-  .bubble {
-    font-size: 16px;
+  #primeira,
+  #segunda,
+  #terceira,
+  #quarta {
+    margin: 0 auto;
   }
-  .descricao{
-    width: 600px;
-    margin-left: 10px;
+
+  #ajude {
+    position: static;
+    margin: 20px auto;
+    text-align: center;
   }
-  .titulo{
-    margin-top: 0px !important;
-     margin-left: 10px;
+
+  #tabeladiv {
+    width: 95%;
+    margin: 0 auto;
   }
-  .blank{
-      display: none;
+
+  #tabela {
+    margin-left: 0;
+    width: 100%;
   }
-  .circle{
-     display: none;
+
+  .step-container {
+    margin-left: 0;
+    padding: 20px;
   }
-  .info{
-    height: 500px;
-    margin-bottom: 60px;
-  }
-   #dividir{
-    margin: 0;
-   }
-   #sectionqr{
-    display: flex;
-    flex-direction: column;
-   }
 
   #navisinha {
-    padding: 0.5rem;
-    font-size: 14px;
-  }
-  #primeira, #segunda, #terceira, #quarta{
-    margin-left: 0px;
-  }    
-
-  .nav__links li {
-    margin: 5px 0;
-  }
-
-  .contato-item span {
-    font-size: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 }
 
@@ -563,23 +536,13 @@ a{
     text-align: center;
   }
 
-         .header__container {
-        padding-top: 2rem;
-        grid-template-columns: repeat(2, 1fr);
-        align-items: center;
-        gap: 0;
-    }
   .bees {
     width: 100%;
     height: auto;
   }
 
   .title h1 {
-    margin-bottom: 1rem;
-    font-size: 4rem;
-    font-weight: 800;
-    color: var(--text-dark);
-    line-height: 4.75rem;
+    font-size: 24px;
   }
 
   .description {
@@ -606,21 +569,12 @@ a{
     max-width: 100%;
     font-size: 18px;
   }
-  #ulzapp{
-    margin-left: 60px !important;
-  }
 
   .circle {
     margin-top: 10px;
   }
 
-.contato-item {
-    width: 86% !important;
-}
 
-  .contato-item {
-    width: 100%;
-  }
 
   #qrcode {
     width: 90%;
@@ -640,4 +594,46 @@ a{
   }
 }
 
+@media (max-width: 480px) {
+  .botaodoacoes a {
+    font-size: 16px;
+  }
+  .blank {
+     display: none;
+  }
+  #img_açoes {
+   display: none;
+  }
+#quadroamarelo{
+  margin-left: 5%;
+}
+
+  .circle {
+    display: none;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .bubble {
+    font-size: 16px;
+  }
+   #divisaoqr{
+    align-items: center;
+    flex-direction: column;
+   }
+
+  #navisinha {
+    padding: 0.5rem;
+    font-size: 14px;
+  }
+
+  .nav__links li {
+    margin: 5px 0;
+  }
+
+  .contato-item span {
+    font-size: 14px;
+  }
+}
 
