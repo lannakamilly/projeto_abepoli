@@ -151,19 +151,120 @@ $noticias = $conexao->query("SELECT * FROM noticias ORDER BY id_noticia DESC");
         </div>
     </header>
 
+<?php if ($logado): ?>
+  <!-- Botão para abrir o formulário -->
+  <button id="btn-toggle-form" title="Adicionar notícia" aria-label="Abrir formulário de adicionar notícia">
+    ＋
+  </button>
 
-    <?php if ($logado): ?>
+  <!-- Formulário oculto inicialmente -->
+  <div id="admin-form" class="admin-form" style="display: none;">
+    <h2>Adicionar Notícia</h2>
+    <form method="POST" enctype="multipart/form-data">
+      <input type="text" name="titulo" placeholder="Título" required>
+      <textarea name="texto" placeholder="Texto da notícia" rows="5" required></textarea>
+      <input type="file" name="imagem" accept="image/*" required>
+      <button type="submit" name="adicionar">Adicionar Notícia</button>
+    </form>
+  </div>
+<?php endif; ?>
 
-        <div class="admin-form">
-            <h2>Adicionar Notícia</h2>
-            <form method="POST" enctype="multipart/form-data">
-                <input type="text" name="titulo" placeholder="Título" required>
-                <textarea name="texto" placeholder="Texto da notícia" rows="5" required></textarea>
-                <input type="file" name="imagem" accept="image/*" required>
-                <button type="submit" name="adicionar">Adicionar Notícia</button>
-            </form>
-        </div>
-    <?php endif; ?>
+<!-- Botão scroll-top -->
+<button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+
+<style>
+  /* Estilo botão toggle "＋" */
+  #btn-toggle-form {
+    position: fixed;
+    bottom: 80px; /* 40px acima do scroll-top */
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #008000;
+    color: white;
+    font-size: 32px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background 0.3s ease;
+    z-index: 1000;
+  }
+  #btn-toggle-form:hover {
+    background:rgb(59, 190, 77);
+  }
+
+  /* Exemplo estilo scroll-top para alinhar */
+  .scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #f7be00;
+    color: white;
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+
+  /* Estilo básico para o formulário */
+  .admin-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .admin-form h2 {
+    margin-top: 0;
+  }
+  .admin-form input[type="text"],
+  .admin-form textarea,
+  .admin-form input[type="file"] {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  .admin-form button[type="submit"] {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .admin-form button[type="submit"]:hover {
+    background: #0056b3;
+  }
+</style>
+
+<script>
+  const btnToggleForm = document.getElementById('btn-toggle-form');
+  const adminForm = document.getElementById('admin-form');
+
+  btnToggleForm.addEventListener('click', () => {
+    if (adminForm.style.display === 'none' || adminForm.style.display === '') {
+      adminForm.style.display = 'block';
+    } else {
+      adminForm.style.display = 'none';
+    }
+  });
+</script>
 
     <div class="noticias-grid">
         <?php while ($n = $noticias->fetch_assoc()): ?>
@@ -214,6 +315,61 @@ $noticias = $conexao->query("SELECT * FROM noticias ORDER BY id_noticia DESC");
             600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
         </svg>
     </div>
+
+<!-- Botão manual "?" -->
+<?php if ($logado): ?>
+<button id="btn-help" title="Manual de como adicionar notícia" aria-label="Manual de como adicionar notícia">
+  ?
+</button>
+
+<style>
+  #btn-help {
+    position: fixed;
+    bottom: 140px; 
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background:rgb(242, 22, 22); /* verde */
+    color: white;
+    font-size: 28px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background 0.3s ease;
+    z-index: 1000;
+  }
+  #btn-help:hover {
+    background:rgb(158, 20, 20);
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  const btnHelp = document.getElementById('btn-help');
+
+  btnHelp.addEventListener('click', () => {
+    Swal.fire({
+      title: 'Manual para adicionar notícia',
+      html: `
+        <p>Para adicionar uma notícia, siga os passos:</p>
+        <ol style="text-align:left; margin-left: 20px;">
+          <li>Clique no botão <strong>＋</strong> para abrir o formulário.</li>
+          <li>Preencha o <em>Título</em> da notícia.</li>
+          <li>Escreva o <em>Texto da notícia</em> no campo correspondente.</li>
+          <li>Selecione uma <em>imagem</em> clicando no campo de upload.</li>
+          <li>Clique em <strong>Adicionar Notícia</strong> para salvar.</li>
+        </ol>
+        <p>Certifique-se de preencher todos os campos.</p>
+      `,
+      icon: 'info',
+      confirmButtonText: 'Entendi'
+    });
+  });
+</script>
+<?php endif; ?>
+
 
     <footer class="abepoli-footer">
         <div class="footer-content">
@@ -282,6 +438,8 @@ $noticias = $conexao->query("SELECT * FROM noticias ORDER BY id_noticia DESC");
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>
