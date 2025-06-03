@@ -1,4 +1,5 @@
 body {
+
   margin: 0;
   background-color: #fff;
 }
@@ -187,6 +188,9 @@ body {
 @media (max-width: 480px) {
   .titulo {
     font-size: 22px;
+  }
+  body{
+    padding-top: 10px;
   }
 
   .titulo::after {
