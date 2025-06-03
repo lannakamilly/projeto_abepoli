@@ -16,9 +16,9 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
   <link rel="stylesheet" href="./css/nav.css">
   <link rel="stylesheet" href="./css/contatoo.css">
   <link rel="stylesheet" href="./css/footerr.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="./js/drawer.js"></script><!-- copiem isso e colem no codigo de vcs -->
   <link rel="stylesheet" href="./css/drawerAdmin.css" /><!-- copiem isso e colem no codigo de vcs -->
-  <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
 
 </head>
 
@@ -80,7 +80,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
       $foto = !empty($usuario['foto'])
         ? 'data:image/jpeg;base64,' . base64_encode($usuario['foto'])
         : './img/iconn.png';
-      ?>
+    ?>
       <div id="user-drawer" class="user-drawer">
         <div class="user-drawer-header">
           <h3><?= $nome ?></h3>
@@ -103,15 +103,15 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
       <div class="formulario-contato">
         <p class="subtitulo-contato">Está com alguma dúvida?</p>
         <h2 class="titulo-contato">Abepoli esta pronta para ajudar</h2>
-        <form action="enviar_contato.php" method="POST">
+        <form action="enviar_comentario.php" method="POST">
           <label>Nome:</label>
           <input type="text" name="nome" placeholder="Digite seu nome" required>
 
           <label>Email:</label>
           <input type="email" name="email" placeholder="Digite seu email" required>
 
-          <label>Mensagem:</label>
-          <textarea name="mensagem" rows="4" placeholder="Digite sua mensagem" required></textarea>
+          <label>Comentário:</label>
+          <textarea name="comentario" rows="4" placeholder="Digite seu comentário" required></textarea>
 
           <button type="submit">Enviar</button>
         </form>
@@ -122,6 +122,37 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
         </div>
       </div>
     </div>
+<!-- 
+    <div class="comentarios-box">
+    <h2>Comentários</h2>
+    <?php
+    // require_once('conexao.php');
+    // $sql = "SELECT * FROM comentarios ORDER BY id DESC";
+    // $resultado = $conexao->query($sql);
+
+    // if ($resultado->num_rows > 0) {
+    //     while ($comentario = $resultado->fetch_assoc()) {
+    //         echo "<div class='comentario'>";
+    //         echo "<div class='comentario-header'>";
+    //         echo "<h3>" . htmlspecialchars($comentario['nome']) . "</h3>";
+    //         echo "<span class='email'>" . htmlspecialchars($comentario['email']) . "</span>";
+    //         echo "</div>";
+    //         echo "<p class='comentario-texto'>" . htmlspecialchars($comentario['comentario']) . "</p>";
+
+    //         if ($logado) {
+    //             echo "<div class='comentario-acoes'>";
+    //             echo "<a href='editar_comentario.php?id=" . $comentario['id'] . "' class='btn-editar'>Editar</a>";
+    //             echo "<a href='excluir_comentario.php?id=" . $comentario['id'] . "' class='btn-excluir' onclick=\"return confirm('Tem certeza que deseja excluir este comentário?');\">Excluir</a>";
+    //             echo "</div>";
+    //         }
+
+    //         echo "</div>";
+    //     }
+    // } else {
+    //     echo "<p style='text-align:center;'>Nenhum comentário ainda.</p>";
+    // }
+    ?>
+</div> -->
 
     <section class="contato-alternativo">
       <p class="preferencia">Se preferir entre em <span>contato</span> :</p>
@@ -142,7 +173,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
 
     </div>
   </section>
-
+ <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
   <div class="wave-shape-divider">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
@@ -170,12 +201,14 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
             </a>
           </p>
           <p>
-            <a href="https://www.instagram.com/abepoli/" target="_blank" style="text-decoration: none; color: inherit;">
+            <a href="https://www.instagram.com/abepoli/" target="_blank"
+              style="text-decoration: none; color: inherit;">
               <i class="fa fa-instagram"></i> @abepoli
             </a>
           </p>
           <p>
-            <a href="https://wa.me/5512988176722" target="_blank" style="text-decoration: none; color: inherit;">
+            <a href="https://wa.me/5512988176722" target="_blank"
+              style="text-decoration: none; color: inherit;">
               <i class="fa fa-whatsapp"></i> (12) 98817-6722
             </a>
           <p>
@@ -204,7 +237,35 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
       <p>© Todos os direitos reservados</p>
     </div>
   </footer>
+<script>
+    // Verifica se a URL tem o parâmetro sucesso=1
+    const urlParams = new URLSearchParams(window.location.search);
+    const sucesso = urlParams.get('sucesso');
 
+    if (sucesso === '1') {
+        Swal.fire({
+            title: 'Comentário enviado!',
+            text: 'Obrigado pelo seu feedback.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            // Remove o parâmetro da URL após exibir o alerta
+            window.history.replaceState({}, document.title, window.location.pathname);
+        });
+    }
+
+    const erro = urlParams.get('erro');
+    if (erro === '1') {
+        Swal.fire({
+            title: 'Erro!',
+            text: 'Não foi possível enviar o comentário.',
+            icon: 'error',
+            confirmButtonText: 'Tentar novamente'
+        }).then(() => {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        });
+    }
+</script>
   <script src="./js/nav.js"></script>
 
 </body>
