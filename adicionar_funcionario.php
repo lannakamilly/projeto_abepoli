@@ -19,7 +19,11 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1') {
     <link rel="stylesheet" href="./css/drawerAdmin.css" />
     <link rel="stylesheet" href="./css/footerr.css" />
     <link rel="stylesheet" href="./css/addFuncionario.css">
+<<<<<<< HEAD
+    <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
+=======
      <script src="./js/drawer.js"></script>
+>>>>>>> 4013c103b3d87c079fb1cb6964d19c967c71e9ba
 </head>
 <body>
      <nav>
@@ -88,7 +92,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1') {
   <?php endif; ?>
 
     <section class="botao-voltar">
-        <a href="produtoss.php" class="voltar">
+        <a href="consultar_funcionarios.php" class="voltar">
             <i class="fa fa-arrow-left"></i>
         </a>
     </section>

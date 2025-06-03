@@ -43,6 +43,7 @@ if (!$usuario || !is_array($usuario)) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
      <link rel="stylesheet" href="./css/nav.css" />
     <link rel="stylesheet" href="./css/drawerAdmin.css" />
@@ -57,7 +58,7 @@ if (!$usuario || !is_array($usuario)) {
         }
 
         :root {
-            --primary-color: #e4af00;
+            --primary-color: #F7BE00;
             --terciary-color: rgb(228, 201, 0);
         }
 

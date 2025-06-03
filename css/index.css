@@ -17,6 +17,7 @@
   box-sizing: border-box;
 }
 
+
 .section__container {
   max-width: var(--max-width);
   margin: auto;
@@ -494,7 +495,6 @@ body {
 
 @media (width > 768px) {
   .header__container {
-    padding-top: 2rem;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 0;

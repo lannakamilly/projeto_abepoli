@@ -55,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>Login - Instituto Abepoli</title>
   <link rel="stylesheet" href="./css/login.css" />
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 

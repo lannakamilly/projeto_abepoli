@@ -39,6 +39,7 @@ header("Location: perfil.php?sucesso=1");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
     <title>Salvar dados</title>
 </head>
 <body>

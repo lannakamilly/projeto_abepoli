@@ -24,6 +24,7 @@ $result = $conexao->query($sql);
   <link rel="stylesheet" href="./css/footerr.css" />
   <link rel="stylesheet" href="./css/funcionarios.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
   <script src="./js/drawer.js"></script>
 </head>
 

@@ -6,6 +6,7 @@
   <title>Instituto Abepoli</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
   <style>
     * {
       margin: 0;

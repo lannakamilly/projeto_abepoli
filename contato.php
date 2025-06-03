@@ -16,8 +16,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
   <link rel="stylesheet" href="./css/nav.css">
   <link rel="stylesheet" href="./css/contatoo.css">
   <link rel="stylesheet" href="./css/footerr.css">
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="./js/drawer.js"></script><!-- copiem isso e colem no codigo de vcs -->
   <link rel="stylesheet" href="./css/drawerAdmin.css" /><!-- copiem isso e colem no codigo de vcs -->
 
@@ -237,7 +236,35 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
       <p>© Todos os direitos reservados</p>
     </div>
   </footer>
+<script>
+    // Verifica se a URL tem o parâmetro sucesso=1
+    const urlParams = new URLSearchParams(window.location.search);
+    const sucesso = urlParams.get('sucesso');
 
+    if (sucesso === '1') {
+        Swal.fire({
+            title: 'Comentário enviado!',
+            text: 'Obrigado pelo seu feedback.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            // Remove o parâmetro da URL após exibir o alerta
+            window.history.replaceState({}, document.title, window.location.pathname);
+        });
+    }
+
+    const erro = urlParams.get('erro');
+    if (erro === '1') {
+        Swal.fire({
+            title: 'Erro!',
+            text: 'Não foi possível enviar o comentário.',
+            icon: 'error',
+            confirmButtonText: 'Tentar novamente'
+        }).then(() => {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        });
+    }
+</script>
   <script src="./js/nav.js"></script>
 
 </body>

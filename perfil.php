@@ -49,6 +49,7 @@ $foto_src = !empty($usuario['foto']) ? 'data:image/jpeg;base64,' . base64_encode
   <link rel="stylesheet" href="./css/footerr.css">
   <link rel="stylesheet" href="./css/produtosInicio.css">
   <link rel="stylesheet" href="./css/drawerAdmin.css">
+  <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
   <script src="./js/drawer.js"></script>
   <link rel="stylesheet" href="./css/perfil.css">
 </head>
@@ -109,7 +110,7 @@ $foto_src = !empty($usuario['foto']) ? 'data:image/jpeg;base64,' . base64_encode
   <div class="form-container">
     <h2><span class="title">Perfil <?= $tipoUsuario === 'funcionario' ? 'Funcionário' : 'Administrador' ?></span></h2>
     <div class="perfil-info">
-      <p>ID da sessão: <?= htmlspecialchars($id) ?></p>
+  
       <img src="<?= $foto_src ?>" alt="Foto de perfil" class="foto-perfil">
       <div class="campo">
         <strong>Nome:</strong> <?= $nome ?>
