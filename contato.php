@@ -123,14 +123,18 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
     </div>
 
     <div class="comentarios-box">
-    <h2>Comentários</h2>
-    <?php
-    require_once('conexao.php');
-    $sql = "SELECT * FROM comentarios ORDER BY id DESC";
-    $resultado = $conexao->query($sql);
+      <h2>Comentários</h2>
+      <?php
+      if ($logado): // Só mostra os comentários se estiver logado
+        require_once('conexao.php');
+        $sql = "SELECT * FROM comentarios ORDER BY id DESC";
+        $resultado = $conexao->query($sql);
 
-    if ($resultado->num_rows > 0) {
-        while ($comentario = $resultado->fetch_assoc()) {
+        echo "<div class='comentarios-box'>";
+        echo "<h2>Comentários</h2>";
+
+        if ($resultado->num_rows > 0) {
+          while ($comentario = $resultado->fetch_assoc()) {
             echo "<div class='comentario'>";
             echo "<div class='comentario-header'>";
             echo "<h3>" . htmlspecialchars($comentario['nome']) . "</h3>";
@@ -138,20 +142,24 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
             echo "</div>";
             echo "<p class='comentario-texto'>" . htmlspecialchars($comentario['comentario']) . "</p>";
 
-            if ($logado) {
-                echo "<div class='comentario-acoes'>";
-                echo "<a href='editar_comentario.php?id=" . $comentario['id'] . "' class='btn-editar'>Editar</a>";
-                echo "<a href='excluir_comentario.php?id=" . $comentario['id'] . "' class='btn-excluir' onclick=\"return confirm('Tem certeza que deseja excluir este comentário?');\">Excluir</a>";
-                echo "</div>";
+            // Somente o administrador pode editar e excluir
+            if (isset($_SESSION['admin'])) {
+              echo "<div class='comentario-acoes'>";
+              echo "<a href='editar_comentario.php?id=" . $comentario['id'] . "' class='btn-editar'>Editar</a>";
+              echo "<a href='excluir_comentario.php?id=" . $comentario['id'] . "' class='btn-excluir' onclick=\"return confirm('Tem certeza que deseja excluir este comentário?');\">Excluir</a>";
+              echo "</div>";
             }
 
             echo "</div>";
+          }
+        } else {
+          echo "<p style='text-align:center;'>Nenhum comentário ainda.</p>";
         }
-    } else {
-        echo "<p style='text-align:center;'>Nenhum comentário ainda.</p>";
-    }
-    ?>
-</div>
+
+        echo "</div>";
+      endif;
+      ?>
+    </div>
 
     <section class="contato-alternativo">
       <p class="preferencia">Se preferir entre em <span>contato</span> :</p>
