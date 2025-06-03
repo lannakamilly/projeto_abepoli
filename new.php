@@ -239,17 +239,17 @@ $noticias = $conexao->query("SELECT * FROM noticias ORDER BY id_noticia DESC");
     font-size: 14px;
   }
   .admin-form button[type="submit"] {
-    background: #007BFF;
+    background:#f7be00;
     color: white;
     border: none;
     padding: 10px 18px;
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: 80px;
     cursor: pointer;
     transition: background 0.3s ease;
   }
   .admin-form button[type="submit"]:hover {
-    background: #0056b3;
+    background:#f7be00;
   }
 </style>
 
