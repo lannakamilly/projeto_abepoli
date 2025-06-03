@@ -110,7 +110,7 @@ $foto_src = !empty($usuario['foto']) ? 'data:image/jpeg;base64,' . base64_encode
   <div class="form-container">
     <h2><span class="title">Perfil <?= $tipoUsuario === 'funcionario' ? 'Funcionário' : 'Administrador' ?></span></h2>
     <div class="perfil-info">
-      <p>ID da sessão: <?= htmlspecialchars($id) ?></p>
+  
       <img src="<?= $foto_src ?>" alt="Foto de perfil" class="foto-perfil">
       <div class="campo">
         <strong>Nome:</strong> <?= $nome ?>
