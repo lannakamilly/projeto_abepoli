@@ -281,7 +281,7 @@
     .galeria {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 40px;
+      gap: 2.7rem;
       max-width: 1200px;
       margin: 0 auto 3rem;
       padding: 0 1rem;
