@@ -1,7 +1,10 @@
 <?php
 session_start();
 require_once "conexao.php";
+
 $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SESSION['usuario_tipo'] === 'funcionario'); 
+$mensagem = "";
+$erro = "";
 
 // Adicionar notícia
 if (isset($_POST['adicionar'])) {
@@ -151,7 +154,8 @@ if ($logado):
 </header>
 
 
-<?php if (isset($_SESSION['admin'])): ?>
+<?php if ($logado): ?>
+
     <div class="admin-form">
         <h2>Adicionar Notícia</h2>
         <form method="POST" enctype="multipart/form-data">
@@ -171,12 +175,14 @@ if ($logado):
             <h3><?= $n['titulo_noticia'] ?></h3>
             <div class="noticia-actions">
                 <button class="ler-mais" onclick="abrirPopup(`<?= htmlspecialchars($n['titulo_noticia']) ?>`, `<?= htmlspecialchars($n['texto_noticia']) ?>`)">Ler mais</button>
-                <?php if (isset($_SESSION['admin'])): ?>
+              <?php if ($logado): ?>
+
                     <a href="?excluir=<?= $n['id_noticia'] ?>" onclick="return confirm('Deseja excluir?')">🗑️</a>
                 <?php endif; ?>
             </div>
 
-            <?php if (isset($_SESSION['admin'])): ?>
+          <?php if ($logado): ?>
+
                 <form method="POST" enctype="multipart/form-data" class="editar-form">
                     <input type="hidden" name="id" value="<?= $n['id_noticia'] ?>">
                     <input type="text" name="titulo" value="<?= $n['titulo_noticia'] ?>" required>
