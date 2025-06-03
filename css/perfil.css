@@ -28,17 +28,19 @@ body {
   justify-content: center;
 }
 
+
 .botao-voltar {
-    margin-top:30px;
-    margin-bottom: 20px;
-    margin-left: 90px; 
+  margin-top: 90px;
+  margin-left: 90px;
+  margin-bottom: 10px;
 }
 
 .botao-voltar a {
-    color: black;
-    font-size: 24px;
-    text-decoration: none;
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
 }
+
 
 .form-container {
   margin-left: 500px;
@@ -97,7 +99,7 @@ body {
 
 .menu-superior-direita {
   position: absolute;
-  top: 480px;
+  top: 550px;
   right: 430px;
   display: flex;
   flex-direction: column;
@@ -137,3 +139,4 @@ body {
 .sair-link i {
   color: #c30000;
 }
+

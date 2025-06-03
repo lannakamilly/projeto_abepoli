@@ -99,6 +99,11 @@ $result = $conexao->query($sql);
     </div>
     <div id="drawer-overlay" class="drawer-overlay"></div>
   <?php endif; ?>
+   <section class="botao-voltar">
+        <a href="produtoss.php" class="voltar">
+            <i class="fa fa-arrow-left"></i>
+        </a>
+    </section>
 
   <h2 class="titulo">Consultar funcionários cadastrados</h2>
   <div class="fundo-cinza">
