@@ -57,44 +57,50 @@ body {
 }
 
 .form-container h2 {
-  color: var(--primary-color);
+  color: #e1b218;
   font-weight: bold;
   margin-bottom: 50px;
   margin-top: 10px;
 }
 
 .title {
+  font-size: 30px;
   margin-top: 10px;
 }
 
 .perfil-info img {
-  /* width: 120px;
-  height: 120px; */
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  
   border: 1px solid #000;
   margin-bottom: 10px;
 }
 
 .perfil-info .foto-perfil {
+  margin-left: 20px;
+  margin-top: 30px;
   display: flex;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   align-items: center;
   justify-content: center;
-  margin-left: 40%;
-  border: 3px solid var(--primary-color)
+  border: 3px solid #e1b218;
 }
 
 .perfil-info .campo {
-  font-size: 1.1em;
+  font-size: 20px;
   margin-bottom: 15px;
   text-align: left;
 }
 
+.conjunto-campos {
+  margin-left: 260px;
+  margin-top: -180px;
+}
+
 .perfil-info .campo strong {
-  color: var(--primary-color);
+  color: #e1b218;
   margin-right: 5px;
 }
 
@@ -104,42 +110,43 @@ body {
   right: 430px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   z-index: 1000;
+  padding: 12px;
+  border-radius: 15px;
 }
 
 .menu-link {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   font-weight: bold;
   font-family: Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   text-decoration: none;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  padding: 10px 16px;
+  background-color: #e1b218;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  transition: background-color 0.3s;
 }
 
 .menu-link i {
   font-size: 20px;
   margin-right: 8px;
+  color: #ffffff;
 }
 
-.editar-perfil-link,
-.funcionarios-consultar {
-  color: #e1b218;
+.menu-link:hover {
+  background-color: #c18400;
 }
 
-.editar-perfil-link i,
-.funcionarios-consultar i {
-  color: #e1b218;
+.menu-link:last-child {
+  margin-bottom: 0;
 }
 
-.sair-link {
-  color: #c30000;
-}
-
-.sair-link i {
-  color: #c30000;
-}
 
 @media (max-width: 1200px) {
   .form-container {

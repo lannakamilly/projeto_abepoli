@@ -108,10 +108,12 @@ $foto_src = !empty($usuario['foto']) ? 'data:image/jpeg;base64,' . base64_encode
   </section>
 
   <div class="form-container">
-    <h2><span class="title">Perfil <?= $tipoUsuario === 'funcionario' ? 'Funcionário' : 'Administrador' ?></span></h2>
+    <h2><span class="title"> <?= $tipoUsuario === 'funcionario' ? 'Funcionário' : 'Administrador' ?></span></h2>
+
     <div class="perfil-info">
-      <p>ID da sessão: <?= htmlspecialchars($id) ?></p>
       <img src="<?= $foto_src ?>" alt="Foto de perfil" class="foto-perfil">
+      <div class="conjunto-campos">
+       
       <div class="campo">
         <strong>Nome:</strong> <?= $nome ?>
       </div>
@@ -121,23 +123,25 @@ $foto_src = !empty($usuario['foto']) ? 'data:image/jpeg;base64,' . base64_encode
       <div class="campo">
         <strong>Senha:</strong> ********
       </div>
-      <div class="menu-superior-direita">
-        <a class="menu-link editar-perfil-link" href="editar_perfil.php">
-          <i class="fa-solid fa-user-pen"></i>
-          Editar perfil
-        </a>
-        <?php if ($tipoUsuario === 'admin'): ?>
-          <a class="menu-link funcionarios-consultar" href="consultar_funcionarios.php">
-            <i class="fa-solid fa-people-group"></i>
-            Consultar funcionários
-          </a>
-        <?php endif; ?>
-        <a class="menu-link sair-link" href="#" id="sair-btn">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>
-          Sair
-        </a>
       </div>
     </div>
+    <div class="menu-superior-direita">
+  <a class="menu-link editar-perfil-link" href="editar_perfil.php">
+    <i class="fa-solid fa-user-pen"></i>
+    Editar perfil
+  </a>
+  <?php if ($tipoUsuario === 'admin'): ?>
+    <a class="menu-link funcionarios-consultar" href="consultar_funcionarios.php">
+      <i class="fa-solid fa-people-group"></i>
+      Consultar funcionários
+    </a>
+  <?php endif; ?>
+  <a class="menu-link sair-link" href="#" id="sair-btn">
+    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    Sair
+  </a>
+</div>
+
   </div>
 
   <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
