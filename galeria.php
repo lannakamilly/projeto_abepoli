@@ -173,7 +173,19 @@ $midias = $conexao->query("SELECT * FROM midias ORDER BY data_upload DESC");
         
       </div>
       <div class="card">
-        <img src="./img/jatai.jpg" alt="Serviço 3">
+        <img src="./img/apicultura-header.jpg" alt="Serviço 3">
+       
+      </div>
+      <div class="card">
+        <img src="./img/abelha-jatai.jpg" alt="Serviço 3">
+       
+      </div>
+      <div class="card">
+        <img src="./img/abelha-mirim.jpeg" alt="Serviço 3">
+       
+      </div>
+      <div class="card">
+        <img src="./img/abelha3.jpg" alt="Serviço 3">
        
       </div>
       <div class="card">
