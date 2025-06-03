@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Instituto Abepoli</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -32,19 +32,30 @@
       position: absolute;
       top: 20px;
       left: 20px;
-      font-size: 28px;
-      color:rgb(255, 255, 255);
-      text-decoration: none;
+      font-size: 24px;
+      color: #fff;
       background: #f7be00;
-      padding: 10px;
-      border-radius: 100%;
-      transition: all 0.3s ease;
-      z-index: 10;
+      padding: 14px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+      animation: glow 2s ease-in-out infinite;
     }
 
     .back-link:hover {
-      background: rgba(247, 190, 0, 0.15);
-      transform: scale(1.1);
+      transform: scale(1.15);
+      background: #ffde3d;
+      box-shadow: 0 0 15px rgba(255, 222, 61, 0.7);
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 5px rgba(255, 222, 61, 0.3); }
+      50% { box-shadow: 0 0 15px rgba(255, 222, 61, 0.7); }
+      100% { box-shadow: 0 0 5px rgba(255, 222, 61, 0.3); }
     }
 
     header {
@@ -53,7 +64,6 @@
     }
 
     header h1 {
-      font-family: "Poppins", sans-serif;
       font-size: 3rem;
       font-weight: 600;
       background: linear-gradient(90deg, #f7be00, #ffde3d);
@@ -61,13 +71,12 @@
       -webkit-text-fill-color: transparent;
       text-transform: uppercase;
       letter-spacing: 2px;
-      animation: pulse 3s infinite ease-in-out;
+      animation: pulseText 3s infinite ease-in-out;
     }
 
-    @keyframes pulse {
-      0% { text-shadow: 0 0 8px rgba(247,190,0,0.3); }
+    @keyframes pulseText {
+      0%, 100% { text-shadow: 0 0 8px rgba(247,190,0,0.3); }
       50% { text-shadow: 0 0 20px rgba(247,190,0,0.6); }
-      100% { text-shadow: 0 0 8px rgba(247,190,0,0.3); }
     }
 
     .container {
@@ -80,43 +89,48 @@
     }
 
     .glass-card {
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      padding: 25px;
       border: 1px solid rgba(255, 255, 255, 0.4);
       width: 100%;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .glass-card:hover {
-      transform: scale(1.01);
-      box-shadow: 0 12px 40px rgba(247, 190, 0, 0.3);
+      transform: scale(1.02);
+      box-shadow: 0 14px 40px rgba(247, 190, 0, 0.35);
     }
 
     video {
       width: 100%;
-      border-radius: 14px;
-      border: 3px solid #f7be00;
-      box-shadow: 0 0 12px rgba(247, 190, 0, 0.2);
+      border-radius: 18px;
+      border: 4px solid #f7be00;
+      box-shadow: 0 0 20px rgba(247, 190, 0, 0.25);
+      transition: transform 0.3s ease;
+    }
+
+    video:hover {
+      transform: scale(1.01);
     }
 
     @media (max-width: 768px) {
       header h1 {
-        font-size: 2rem;
-      }
-      .glass-card {
-        border-radius: 16px;
+        font-size: 2.3rem;
       }
     }
 
     @media (max-width: 480px) {
       header h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
       }
+
       .back-link {
-        font-size: 22px;
+        font-size: 20px;
+        padding: 12px;
       }
     }
   </style>
