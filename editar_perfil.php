@@ -14,7 +14,7 @@ if (isset($_SESSION['admin'])) {
     $tipo = 'funcionario';
     $stmt = $conexao->prepare("SELECT nome_funcionario AS nome, email_funcionario AS email, senha_funcionario AS senha, foto_funcionario AS foto FROM funcionario WHERE id_funcionario = ?");
 } else {
-    header("Location: login.php");
+    header("Location: editar_perfil.php");
     exit;
 }
 

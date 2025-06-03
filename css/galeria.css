@@ -13,17 +13,17 @@
     }
 
  
+.header-bg {
+  position: relative;
+  background: url('https://cfbio.gov.br/wp-content/uploads/2022/07/Site_AbelhasJatai_Abre_00_1140-1140x675.jpg') no-repeat center center/cover;
+  height: 50vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-   .header-bg {
-    position: relative;
-    background: url('https://cfbio.gov.br/wp-content/uploads/2022/07/Site_AbelhasJatai_Abre_00_1140-1140x675.jpg') no-repeat center center/cover;
-    height: 90vh;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
 
   .overlay {
     position: absolute;
