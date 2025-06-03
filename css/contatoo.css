@@ -11,7 +11,7 @@ body {
 }
 
 .container-contato {
-  display: flex;
+    display: flex;
   justify-content: center;
   align-items: flex-start;
   max-width: 1100px;
@@ -41,6 +41,7 @@ body {
 }
 
 .contato-item img {
+   margin-top: -40px;
   width: 28px;
   height: 28px;
 }
@@ -50,6 +51,7 @@ body {
 }
 
 .formulario-contato {
+  margin-top: -40px;
   flex: 1;
   max-width: 450px;
   width: 100%;
@@ -105,6 +107,7 @@ body {
 }
 
 .imagem-contato {
+  margin-top: -40px;
   flex: 1;
   max-width: 500px;
   margin-top: 120px;
@@ -182,7 +185,8 @@ body {
 
 .comentarios-box {
   max-width: 800px;
-  margin: 50px auto;
+  margin-left: 250px;
+ margin-top: -90px;
   background-color: #fff8dc;
   border: 5px solid #e0a800;
   border-radius: 15px;
@@ -197,7 +201,6 @@ body {
   font-size: 28px;
 }
 
-/* Cada comentário */
 .comentario {
   background-color: #fffdf5;
   border: 3px solid #e0a800;
@@ -211,7 +214,6 @@ body {
   transform: translateY(-3px);
 }
 
-/* Cabeçalho do comentário */
 .comentario-header {
   display: flex;
   justify-content: space-between;
@@ -230,7 +232,6 @@ body {
   font-style: italic;
 }
 
-/* Texto do comentário */
 .comentario-texto {
   margin-top: 10px;
   color: #333;
@@ -238,7 +239,6 @@ body {
   line-height: 1.4;
 }
 
-/* Botões de ações (editar e excluir) */
 .comentario-acoes {
   margin-top: 10px;
   display: flex;
