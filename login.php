@@ -6,43 +6,49 @@ $erro = null;
 $sucesso = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+  $email = $_POST['email'];
+  $senha = $_POST['senha'];
 
-    // Verifica se é admin
-    $stmt = $conexao->prepare("SELECT id_admin AS id, nome_admin AS nome, senha_admin AS senha, 'admin' AS tipo FROM administrador WHERE email_admin = ?");
+  $stmt = $conexao->prepare("SELECT id_admin AS id, nome_admin AS nome, senha_admin AS senha, 'admin' AS tipo FROM administrador WHERE email_admin = ?");
+  $stmt->bind_param("s", $email);
+  $stmt->execute();
+  $resultado = $stmt->get_result();
+
+  if ($resultado->num_rows === 0) {
+    $stmt = $conexao->prepare("SELECT id_funcionario AS id, nome_funcionario AS nome, senha_funcionario AS senha, 'funcionario' AS tipo FROM funcionarios WHERE email_funcionario = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
+
     $resultado = $stmt->get_result();
+  }
 
-    // Se não for admin, tenta como funcionário
-    if ($resultado->num_rows === 0) {
-        $stmt = $conexao->prepare("SELECT id_funcionario AS id, nome_funcionario AS nome, senha_funcionario AS senha, 'funcionario' AS tipo FROM funcionarios WHERE email_funcionario = ?");
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $resultado = $stmt->get_result();
-    }
+  if ($resultado->num_rows > 0) {
+    $user = $resultado->fetch_assoc();
 
-    if ($resultado->num_rows > 0) {
-        $user = $resultado->fetch_assoc();
+    if (password_verify($senha, $user['senha'])) {
+      $_SESSION['usuario_id'] = $user['id'];
+      $_SESSION['usuario_nome'] = $user['nome'];
+      $_SESSION['usuario_tipo'] = $user['tipo'];
 
-        if (password_verify($senha, $user['senha'])) {
-            $_SESSION['usuario_id'] = $user['id'];
-            $_SESSION['usuario_nome'] = $user['nome'];
-            $_SESSION['usuario_tipo'] = $user['tipo'];
-            $sucesso = true;
-        } else {
-            $erro = "Senha incorreta.";
-        }
+      if ($user['tipo'] === 'admin') {
+        $_SESSION['admin'] = $user['id'];
+      } elseif ($user['tipo'] === 'funcionarios') {
+        $_SESSION['funcionario'] = $user['id'];
+      }
+
+      $sucesso = true;
     } else {
-        $erro = "Usuário não encontrado.";
+      $erro = "Senha incorreta.";
     }
+  } else {
+    $erro = "Usuário não encontrado.";
+  }
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -118,8 +124,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php endif; ?>
 
     <script>
-      document.querySelectorAll('.toggle-password-login').forEach(function (element) {
-        element.addEventListener('click', function () {
+      document.querySelectorAll('.toggle-password-login').forEach(function(element) {
+        element.addEventListener('click', function() {
           const targetId = this.getAttribute('data-target');
           const input = document.getElementById(targetId);
           const eyeSlash = this.querySelector('.eye-slash');

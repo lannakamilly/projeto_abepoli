@@ -6,19 +6,17 @@ $id = $_SESSION['admin'];
 
 $nome = $_POST['nome'];
 $email = $_POST['email'];
-$senha = $_POST['senha'];
+$senha = $_POST['senha'] ?? '';
 
-// Monta a query de atualização
+
 $sql = "UPDATE administrador SET nome_admin = ?, email_admin = ?";
 $params = [$nome, $email];
 
-// Só atualiza a senha se o campo não estiver vazio
 if (!empty($senha)) {
     $sql .= ", senha_admin = ?";
     $params[] = $senha;
 }
 
-// Se uma nova foto foi enviada, atualiza também
 if (isset($_FILES['foto']) && $_FILES['foto']['error'] == UPLOAD_ERR_OK) {
     $foto = file_get_contents($_FILES['foto']['tmp_name']);
     $sql .= ", foto_admin = ?";
@@ -28,7 +26,6 @@ if (isset($_FILES['foto']) && $_FILES['foto']['error'] == UPLOAD_ERR_OK) {
 $sql .= " WHERE id_admin = ?";
 $params[] = $id;
 
-// Executa a atualização
 $stmt = $conexao->prepare($sql);
 $stmt->execute($params);
 
