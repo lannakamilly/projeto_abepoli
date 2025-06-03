@@ -28,8 +28,7 @@ $result = $conexao->query($sql);
 </head>
 
 <body>
-  <!-- NAV -->
-  <nav>
+    <nav>
     <div class="nav__header">
       <div class="nav__logo">
         <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
@@ -63,7 +62,6 @@ $result = $conexao->query($sql);
     </ul>
   </nav>
 
-  <!-- DRAWER -->
   <?php
   if ($logado):
     $id = $_SESSION['admin'] ?? $_SESSION['usuario_id'] ?? 0;
@@ -109,9 +107,10 @@ $result = $conexao->query($sql);
     <?php while ($row = $result->fetch_assoc()): ?>
       <div class="card-funcionario" id="funcionario-<?= $row['id_funcionario'] ?>">
         <?php
-          $foto = !empty($row['foto_funcionario'])
-            ? 'data:image/jpeg;base64,' . $row['foto_funcionario']
-            : 'https://via.placeholder.com/60x60.png?text=👤';
+         $foto = !empty($row['foto_funcionario'])
+  ? 'data:image/jpeg;base64,' . base64_encode($row['foto_funcionario'])
+  : 'https://via.placeholder.com/60x60.png?text=👤';
+
         ?>
         <img class="img-funcionario" src="<?= $foto ?>" alt="Foto">
 
