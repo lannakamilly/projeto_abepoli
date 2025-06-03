@@ -1,7 +1,7 @@
 :root{
-  --primary-color: #e4af00;
+  --primary-color: #f7be00;
   --secondary-color: #a50303;
-  --terciary-color: rgb(228, 201, 0);
+  --terciary-color: #f7be00;
   --quaternary-color: #ef0101;
   --text-dark: #000000;
   --text-light: #000000;
@@ -30,12 +30,13 @@ body {
 
 
 .botao-voltar {
-  margin-top: 90px;
+  margin-top: 10px;
   margin-left: 90px;
   margin-bottom: 10px;
 }
 
 .botao-voltar a {
+  margin-top: 90px;
   color: black;
   font-size: 24px;
   text-decoration: none;
@@ -99,7 +100,7 @@ body {
 
 .menu-superior-direita {
   position: absolute;
-  top: 550px;
+  top: 460px;
   right: 430px;
   display: flex;
   flex-direction: column;
