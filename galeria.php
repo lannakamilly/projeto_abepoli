@@ -284,6 +284,59 @@ $midias = $conexao->query("SELECT * FROM midias ORDER BY data_upload DESC");
     </div>
   </div>
 
+  <?php if ($logado): ?>
+<button id="btn-help" title="Manual de como adicionar notícia" aria-label="Manual de como adicionar notícia">
+  ?
+</button>
+
+<style>
+  #btn-help {
+    position: fixed;
+    bottom:  81px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background:rgb(242, 22, 22); /* verde */
+    color: white;
+    font-size: 28px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background 0.3s ease;
+    z-index: 1000;
+  }
+  #btn-help:hover {
+    background:rgb(158, 20, 20);
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  const btnHelp = document.getElementById('btn-help');
+
+  btnHelp.addEventListener('click', () => {
+    Swal.fire({
+      title: 'Manual para adicionar notícia',
+      html: `
+        <p>Para adicionar uma notícia, siga os passos:</p>
+        <ol style="text-align:left; margin-left: 20px;">
+          <li>Clique no botão <strong>＋</strong> para abrir o formulário.</li>
+          <li>Preencha o <em>Título</em> da notícia.</li>
+          <li>Escreva o <em>Texto da notícia</em> no campo correspondente.</li>
+          <li>Selecione uma <em>imagem</em> clicando no campo de upload.</li>
+          <li>Clique em <strong>Adicionar Notícia</strong> para salvar.</li>
+        </ol>
+        <p>Certifique-se de preencher todos os campos.</p>
+      `,
+      icon: 'info',
+      confirmButtonText: 'Entendi'
+    });
+  });
+</script>
+<?php endif; ?>
+
   <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
   <div class="wave-shape-divider">
