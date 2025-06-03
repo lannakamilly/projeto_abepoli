@@ -11,7 +11,7 @@ body {
 }
 
 .botao-voltar {
-    margin: 30px 0 20px 90px;
+    margin: 120px 0 20px 90px;
 }
 
 .botao-voltar a {
@@ -22,7 +22,7 @@ body {
 
 .conteudo-abelhas {
     max-width: 900px;
-    margin: 40px auto;
+    margin: 50px auto;
     padding: 0 20px;
 }
 
