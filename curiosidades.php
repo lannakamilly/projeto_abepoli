@@ -102,7 +102,7 @@ if ($logado):
             <img src="img/apicultura-header.jpg" alt="Apicultura" />
         </div>
         <div class="section__container header__container" id="home">
-            <h1>Curiosidades sobre a Apicultura que você não sabia</h1>
+            <h1>Curiosidades sobre a apicultura que você não sabia</h1>
             <p>O cuidado com as abelhas que transforma flores em mel, preserva a natureza e adoça a vida.</p>
             <a href="#choose"><i class="ri-arrow-down-double-line"></i></a>
         </div>
@@ -112,7 +112,7 @@ if ($logado):
     <section class="section__container choose__container" id="choose">
         <img class="choose__bg" src="img/dot-bg.png" alt="bg" />
         <div class="choose__content">
-            <h2 class="section__header">O que é Apicultura?</h2>
+            <h2 class="section__header">O que é apicultura?</h2>
             <p class="section__subheader">
                 Confira abaixo tópicos sobre o incrível mundo da apicultura
                 e a importância das abelhas para a natureza.
