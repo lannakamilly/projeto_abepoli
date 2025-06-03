@@ -2,35 +2,38 @@
 session_start();
 require_once 'conexao.php';
 
-$logado = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
+$logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SESSION['usuario_tipo'] === 'funcionario'); 
 if (!$conexao) {
   die("Erro ao conectar ao banco de dados.");
 }
 
-if (!isset($_SESSION['admin'])) {
-  die("Erro: Sessão não contém o ID do administrador.");
+if (!isset($_SESSION['admin']) && !isset($_SESSION['usuario_id'])) {
+  die("Erro: Sessão não contém informações de usuário.");
 }
 
-$id_admin = $_SESSION['admin'];
+$tipoUsuario = $_SESSION['usuario_tipo'] ?? 'admin';
+$id = $_SESSION['admin'] ?? $_SESSION['usuario_id'];
 
-$stmt = $conexao->prepare("SELECT nome_admin, email_admin, senha_admin, foto_admin FROM administrador WHERE id_admin = ?");
-if (!$stmt) {
-  die("Erro ao preparar a consulta: " . $conexao->error);
+if ($tipoUsuario === 'funcionario') {
+  $stmt = $conexao->prepare("SELECT nome_funcionario AS nome, email_funcionario AS email, senha_funcionario AS senha, foto_funcionario AS foto FROM funcionarios WHERE id_funcionario = ?");
+} else {
+  $stmt = $conexao->prepare("SELECT nome_admin AS nome, email_admin AS email, senha_admin AS senha, foto_admin AS foto FROM administrador WHERE id_admin = ?");
 }
 
-$stmt->bind_param("i", $id_admin);
+$stmt->bind_param("i", $id);
 $stmt->execute();
 $resultado = $stmt->get_result();
 
 if ($resultado->num_rows > 0) {
-  $admin = $resultado->fetch_assoc();
+  $usuario = $resultado->fetch_assoc();
 } else {
-  die("Erro: Administrador não encontrado no banco de dados.");
+  die("Erro: Usuário não encontrado no banco de dados.");
 }
 
-$foto_src = !empty($admin['foto_admin']) ? 'data:image/jpeg;base64,' . base64_encode($admin['foto_admin']) : 'avatar.png';
+$nome = htmlspecialchars($usuario['nome']);
+$email = htmlspecialchars($usuario['email']);
+$foto_src = !empty($usuario['foto']) ? 'data:image/jpeg;base64,' . base64_encode($usuario['foto']) : './img/iconn.png';
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -45,7 +48,7 @@ $foto_src = !empty($admin['foto_admin']) ? 'data:image/jpeg;base64,' . base64_en
   <link rel="stylesheet" href="./css/nav.css">
   <link rel="stylesheet" href="./css/footerr.css">
   <link rel="stylesheet" href="./css/produtosInicio.css">
-  <link rel="stylesheet" href="./css/drawerAdmin.css" /><!-- coloquem isso no codigo de vcs -->
+  <link rel="stylesheet" href="./css/drawerAdmin.css">
   <script src="./js/drawer.js"></script>
   <link rel="stylesheet" href="./css/perfil.css">
 </head>
@@ -59,85 +62,60 @@ $foto_src = !empty($admin['foto_admin']) ? 'data:image/jpeg;base64,' . base64_en
       <div class="nav__menu__btn" id="menu-btn">
         <i class="ri-menu-3-line"></i>
       </div>
-
       <?php if ($logado): ?>
         <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
-          <img src="./img/iconn.png" alt="Usuário" />
+          <img src="<?= $foto_src ?>" alt="Usuário" />
         </button>
       <?php endif; ?>
     </div>
-
     <ul class="nav__links" id="nav-links">
       <li><a href="./index.php">Início</a></li>
       <li><a href="./produtoss.php">Produtos</a></li>
       <li><a href="./sobre.php">Ações</a></li>
       <li><a href="./doacoes.php">Doações</a></li>
       <li><a href="./saibamais.php">Saiba Mais</a></li>
-
       <li class="contato-usuario">
         <a href="./contato.php">Contato</a>
         <?php if ($logado): ?>
           <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
-            <img src="./img/iconn.png" alt="Usuário" />
+            <img src="<?= $foto_src ?>" alt="Usuário" />
           </button>
         <?php endif; ?>
       </li>
     </ul>
   </nav>
-  <?php
-if ($logado):
-    require_once 'conexao.php';
 
-    $id = $_SESSION['admin'] ?? $_SESSION['usuario_id'] ?? 0;
-    $tipo = $_SESSION['usuario_tipo'] ?? 'admin';
-
-    if ($tipo === 'funcionario') {
-        $stmt = $conexao->prepare("SELECT nome_funcionario AS nome, foto_funcionario AS foto FROM funcionarios WHERE id_funcionario = ?");
-    } else {
-        $stmt = $conexao->prepare("SELECT nome_admin AS nome, foto_admin AS foto FROM administrador WHERE id_admin = ?");
-    }
-
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-    $usuario = $resultado->fetch_assoc();
-
-    $nome = htmlspecialchars($usuario['nome'] ?? 'Usuário');
-    $foto = !empty($usuario['foto'])
-        ? 'data:image/jpeg;base64,' . base64_encode($usuario['foto'])
-        : './img/iconn.png';
-?>
+  <?php if ($logado): ?>
     <div id="user-drawer" class="user-drawer">
-        <div class="user-drawer-header">
-            <h3><?= $nome ?></h3>
-            <button id="close-drawer">&times;</button>
-        </div>
-        <div class="user-drawer-content">
-            <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar"
-                style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
-            <ul class="user-drawer-links">
-                <li><a href="./perfil.php">Perfil</a></li>
-                <li><a href="./logout.php" class="logout-link">Sair</a></li>
-            </ul>
-        </div>
+      <div class="user-drawer-header">
+        <h3><?= $nome ?></h3>
+        <button id="close-drawer">&times;</button>
+      </div>
+      <div class="user-drawer-content">
+        <img src="<?= $foto_src ?>" alt="Foto de perfil" class="user-avatar" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
+        <ul class="user-drawer-links">
+          <li><a href="./perfil.php">Perfil</a></li>
+          <li><a href="./logout.php" class="logout-link">Sair</a></li>
+        </ul>
+      </div>
     </div>
     <div id="drawer-overlay" class="drawer-overlay"></div>
-<?php endif; ?>
+  <?php endif; ?>
+
   <section class="botao-voltar">
-    <a href="saibamais.php">
-      <i class="fa fa-arrow-left"></i>
-    </a>
+    <a href="saibamais.php"><i class="fa fa-arrow-left"></i></a>
   </section>
+
   <div class="form-container">
-    <h2><span class="title">Perfil Administrador</span></h2>
+    <h2><span class="title">Perfil <?= $tipoUsuario === 'funcionario' ? 'Funcionário' : 'Administrador' ?></span></h2>
     <div class="perfil-info">
-      <p>ID do administrador na sessão: <?php echo htmlspecialchars($id_admin); ?></p>
-      <img src="<?php echo $foto_src; ?>" alt="Foto de perfil" class="foto-perfil">
+      <p>ID da sessão: <?= htmlspecialchars($id) ?></p>
+      <img src="<?= $foto_src ?>" alt="Foto de perfil" class="foto-perfil">
       <div class="campo">
-        <strong>Nome:</strong> <?php echo htmlspecialchars($admin['nome_admin']); ?>
+        <strong>Nome:</strong> <?= $nome ?>
       </div>
       <div class="campo">
-        <strong>Email:</strong> <?php echo htmlspecialchars($admin['email_admin']); ?>
+        <strong>Email:</strong> <?= $email ?>
       </div>
       <div class="campo">
         <strong>Senha:</strong> ********
@@ -147,18 +125,20 @@ if ($logado):
           <i class="fa-solid fa-user-pen"></i>
           Editar perfil
         </a>
-        <a class="menu-link funcionarios-consultar" href="consultar_funcionarios.php">
-          <i class="fa-solid fa-people-group"></i>
-          Consultar funcionários
-        </a>
+        <?php if ($tipoUsuario === 'admin'): ?>
+          <a class="menu-link funcionarios-consultar" href="consultar_funcionarios.php">
+            <i class="fa-solid fa-people-group"></i>
+            Consultar funcionários
+          </a>
+        <?php endif; ?>
         <a class="menu-link sair-link" href="#" id="sair-btn">
           <i class="fa-solid fa-arrow-right-from-bracket"></i>
           Sair
         </a>
-
       </div>
     </div>
   </div>
+
   <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
   <div class="wave-shape-divider">
@@ -176,39 +156,16 @@ if ($logado):
       <div class="footer-col logo-col">
         <img src="img/logo1.jpg" alt="Instituto Abepoli" class="footer-logo">
       </div>
-
       <div class="footer-col contact-col">
         <h4>Contato</h4>
         <p><i class="fa fa-envelope"></i> abepoli@gmail.com</p>
         <div class="social-icons">
-          <p>
-            <a href="https://www.facebook.com/profile.php?id=100076095320985" target="_blank"
-              style="text-decoration: none; color: inherit;">
-              <i class="fa fa-facebook"></i> Instituto Abepoli
-            </a>
-          </p>
-          <p>
-            <a href="https://www.instagram.com/abepoli/" target="_blank"
-              style="text-decoration: none; color: inherit;">
-              <i class="fa fa-instagram"></i> @abepoli
-            </a>
-          </p>
-          <p>
-            <a href="https://wa.me/5512988176722" target="_blank"
-              style="text-decoration: none; color: inherit;">
-              <i class="fa fa-whatsapp"></i> (12) 98817-6722
-            </a>
-          <p>
-
-            <a href="./login.php" class="realizarLogin" style="text-decoration: none; color: inherit;">
-              Realizar login
-            </a>
-          </p>
-          </p>
+          <p><a href="https://www.facebook.com/profile.php?id=100076095320985" target="_blank"><i class="fa fa-facebook"></i> Instituto Abepoli</a></p>
+          <p><a href="https://www.instagram.com/abepoli/" target="_blank"><i class="fa fa-instagram"></i> @abepoli</a></p>
+          <p><a href="https://wa.me/5512988176722" target="_blank"><i class="fa fa-whatsapp"></i> (12) 98817-6722</a></p>
+          <p><a href="./login.php" class="realizarLogin">Realizar login</a></p>
         </div>
       </div>
-
-
       <div class="footer-col dev-col">
         <h4>Site desenvolvido por</h4>
         <p>Flávia Glenda Guimarães Carvalho</p>
@@ -218,16 +175,15 @@ if ($logado):
         <p>Miguel Borges da Silva</p>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>© Todos os direitos reservados</p>
     </div>
   </footer>
+
   <script src="./js/nav.js"></script>
   <script>
     document.getElementById('sair-btn').addEventListener('click', function(e) {
-      e.preventDefault(); 
-
+      e.preventDefault();
       Swal.fire({
         title: 'Tem certeza?',
         text: "Você deseja mesmo sair?",
@@ -245,5 +201,4 @@ if ($logado):
     });
   </script>
 </body>
-
 </html>

@@ -2,7 +2,7 @@
 include 'conexao.php';
 session_start();
 
-$logado = isset($_SESSION['admin']);
+$logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SESSION['usuario_tipo'] === 'funcionario'); 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acao'])) {
     if ($_POST['acao'] === 'editar_doacao') {

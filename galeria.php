@@ -2,7 +2,7 @@
 session_start();
 require_once "conexao.php"; // Ajuste aqui para sua conexão
 
-$logado = isset($_SESSION['admin']);
+$logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SESSION['usuario_tipo'] === 'funcionario'); 
 $mensagem = "";
 $erro = "";
 
