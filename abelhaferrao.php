@@ -92,7 +92,6 @@ if ($logado):
     </div>
     <div id="drawer-overlay" class="drawer-overlay"></div>
 <?php endif; ?>
-   
     <section class="botao-voltar">
         <a href="saibamais.php">
             <i class="fa fa-arrow-left"></i>

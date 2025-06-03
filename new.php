@@ -74,7 +74,6 @@ $noticias = $conexao->query("SELECT * FROM noticias ORDER BY id_noticia DESC");
 
 </head>
 <body>
-
  <nav>
     <div class="nav__header">
       <div class="nav__logo">
@@ -109,37 +108,44 @@ $noticias = $conexao->query("SELECT * FROM noticias ORDER BY id_noticia DESC");
     </ul>
   </nav>
   <?php
-  if ($logado):
+if ($logado):
     require_once 'conexao.php';
 
-    $id = $_SESSION['admin'] ?? 0;
-    $stmt = $conexao->prepare("SELECT nome_admin, foto_admin FROM administrador WHERE id_admin = ?");
+    $id = $_SESSION['admin'] ?? $_SESSION['usuario_id'] ?? 0;
+    $tipo = $_SESSION['usuario_tipo'] ?? 'admin';
+
+    if ($tipo === 'funcionario') {
+        $stmt = $conexao->prepare("SELECT nome_funcionario AS nome, foto_funcionario AS foto FROM funcionarios WHERE id_funcionario = ?");
+    } else {
+        $stmt = $conexao->prepare("SELECT nome_admin AS nome, foto_admin AS foto FROM administrador WHERE id_admin = ?");
+    }
+
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $resultado = $stmt->get_result();
-    $adminData = $resultado->fetch_assoc();
+    $usuario = $resultado->fetch_assoc();
 
-    $nome = htmlspecialchars($adminData['nome_admin'] ?? 'Administrador');
-    $foto = !empty($adminData['foto_admin'])
-      ? 'data:image/jpeg;base64,' . base64_encode($adminData['foto_admin'])
-      : './img/iconn.png';
-  ?>
+    $nome = htmlspecialchars($usuario['nome'] ?? 'Usuário');
+    $foto = !empty($usuario['foto'])
+        ? 'data:image/jpeg;base64,' . base64_encode($usuario['foto'])
+        : './img/iconn.png';
+?>
     <div id="user-drawer" class="user-drawer">
-      <div class="user-drawer-header">
-        <h3><?= $nome ?></h3>
-        <button id="close-drawer">&times;</button>
-      </div>
-      <div class="user-drawer-content">
-        <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
-        <ul class="user-drawer-links">
-          <li><a href="./perfil.php">Perfil</a></li>
-          <li><a href="./logout.php" class="logout-link">Sair</a></li>
-        </ul>
-      </div>
+        <div class="user-drawer-header">
+            <h3><?= $nome ?></h3>
+            <button id="close-drawer">&times;</button>
+        </div>
+        <div class="user-drawer-content">
+            <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar"
+                style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
+            <ul class="user-drawer-links">
+                <li><a href="./perfil.php">Perfil</a></li>
+                <li><a href="./logout.php" class="logout-link">Sair</a></li>
+            </ul>
+        </div>
     </div>
     <div id="drawer-overlay" class="drawer-overlay"></div>
-  <?php endif; ?>
-
+<?php endif; ?>
 <header class="header-bg">
   <div class="overlay"></div>
   <div class="header-content">
