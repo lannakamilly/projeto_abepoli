@@ -6,6 +6,20 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+=======
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./css/footerr.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+    <link rel="stylesheet" href="./css/sobre.css" />
+       <link rel="stylesheet" href="./css/drawerAdmin.css" /><!-- coloquem isso no codigo de vcs -->
+  <script src="./js/drawer.js"></script><!-- coloquem isso no codigo de vcs -->
+    
+>>>>>>> 4013c103b3d87c079fb1cb6964d19c967c71e9ba
 
 <head>
   <meta charset="UTF-8" />

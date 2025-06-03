@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $foto = null;
     if (isset($_FILES['foto_funcionario']) && $_FILES['foto_funcionario']['error'] == 0) {
         $foto = file_get_contents($_FILES['foto_funcionario']['tmp_name']);
-        $foto = base64_encode($foto); // base64 evita problemas com longblob
+        $foto = base64_encode($foto); 
     }
 
     $stmt = $conexao->prepare("INSERT INTO funcionarios 
@@ -41,8 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conexao->close();
 }
 ?>
-
-<!-- HTML + SweetAlert2 -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

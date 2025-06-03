@@ -1,4 +1,5 @@
 body {
+
   margin: 0;
   background-color: #fff;
 }
@@ -12,6 +13,18 @@ body {
   display: block;
   padding-bottom: 5px;
   width: 100%;
+}
+.botao-voltar {
+  margin-top: 30px;
+  margin-left: 90px;
+  margin-bottom: 10px;
+}
+
+.botao-voltar a {
+    margin-top: 90px;
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
 }
 
 .titulo::after {
@@ -175,6 +188,9 @@ body {
 @media (max-width: 480px) {
   .titulo {
     font-size: 22px;
+  }
+  body{
+    padding-top: 10px;
   }
 
   .titulo::after {

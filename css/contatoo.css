@@ -180,6 +180,111 @@ body {
   padding-top: 20px;
 }
 
+.comentarios-box {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #fff8dc;
+  border: 5px solid #e0a800;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.comentarios-box h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+/* Cada comentário */
+.comentario {
+  background-color: #fffdf5;
+  border: 3px solid #e0a800;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.comentario:hover {
+  transform: translateY(-3px);
+}
+
+/* Cabeçalho do comentário */
+.comentario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comentario-header h3 {
+  color: #d48b00;
+  margin: 0;
+  font-size: 20px;
+}
+
+.comentario-header .email {
+  color: #555;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Texto do comentário */
+.comentario-texto {
+  margin-top: 10px;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* Botões de ações (editar e excluir) */
+.comentario-acoes {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.comentario-acoes a {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-editar {
+  background-color: #ffc107;
+}
+
+.btn-editar:hover {
+  background-color: #e0a800;
+}
+
+.btn-excluir {
+  background-color: #dc3545;
+}
+
+.btn-excluir:hover {
+  background-color: #b02a37;
+}
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f7be00;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+
 @media (max-width: 992px) {
   .container-contato {
     flex-direction: column;
@@ -219,5 +324,24 @@ body {
 
   .titulo-contato {
     font-size: 20px;
+  }
+
+   .comentarios-box {
+    margin: 30px 15px;
+    padding: 20px;
+  }
+
+  .comentario-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .comentario-header h3 {
+    font-size: 18px;
+  }
+
+  .comentario-header .email {
+    font-size: 12px;
   }
 }
