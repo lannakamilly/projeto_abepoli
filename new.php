@@ -146,10 +146,16 @@ if ($logado):
     </div>
     <div id="drawer-overlay" class="drawer-overlay"></div>
 <?php endif; ?>
+
+
 <header class="header-bg">
   <div class="overlay"></div>
   <div class="header-content">
-    <h1>Últimas Notícias</h1>
+      <h1>Últimas Notícias</h1>
+   
+    <a href="#carrossel" class="scroll-down">
+      <i class="ri-arrow-down-line"></i>
+    </a>
   </div>
 </header>
 

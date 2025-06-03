@@ -147,7 +147,7 @@
 
   <div class="container">
     <div class="glass-card" role="region" aria-label="Vídeo Institucional">
-      <video controls preload="metadata" playsinline poster="./img/videoo.png">
+      <video controls preload="metadata" playsinline poster="./img/vd.png">
         <source src="./img/video_abepoli.mp4" type="video/mp4" />
         Seu navegador não suporta vídeo.
       </video>
