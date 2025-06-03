@@ -49,6 +49,7 @@ $foto_src = !empty($usuario['foto']) ? 'data:image/jpeg;base64,' . base64_encode
   <link rel="stylesheet" href="./css/footerr.css">
   <link rel="stylesheet" href="./css/produtosInicio.css">
   <link rel="stylesheet" href="./css/drawerAdmin.css">
+  <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
   <script src="./js/drawer.js"></script>
   <link rel="stylesheet" href="./css/perfil.css">
 </head>

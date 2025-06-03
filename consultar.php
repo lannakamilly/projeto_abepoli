@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Consultar Funcionários</title>
   <link rel="stylesheet" href="./css/consultarr.css">
+  <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
 </head>
 <body>
   <header class="cabecalho">

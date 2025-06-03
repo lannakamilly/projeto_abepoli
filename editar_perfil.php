@@ -40,7 +40,9 @@ if (!$usuario || !is_array($usuario)) {
     <title>Editar Perfil</title>
     <link rel="stylesheet" href="./css/perfil.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
         * {

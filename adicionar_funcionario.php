@@ -11,6 +11,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1') {
     <meta charset="UTF-8">
     <title>Cadastrar Funcionário</title>
     <link rel="stylesheet" href="./css/addFuncionario.css">
+    <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
 </head>
 <body>
     <form action="processa_cadastro.php" method="POST" enctype="multipart/form-data">

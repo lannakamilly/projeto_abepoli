@@ -2,31 +2,30 @@
 session_start();
 require_once('conexao.php');
 
-$logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SESSION['usuario_tipo'] === 'funcionario'); 
+$logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SESSION['usuario_tipo'] === 'funcionario');
 ?>
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-        <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-        <link rel="stylesheet" href="./css/footerr.css" />
-    <link rel="stylesheet" href="./css/nav.css" />
-    <link rel="stylesheet" href="./css/sobre.css" />
-       <link rel="stylesheet" href="./css/drawerAdmin.css" /><!-- coloquem isso no codigo de vcs -->
-  <script src="./js/drawer.js"></script><!-- coloquem isso no codigo de vcs -->
-    
 
-    <title>Instituto Abepoli</title>
-  </head>
-  <body> <nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/footerr.css" />
+  <link rel="stylesheet" href="./css/nav.css" />
+  <link rel="stylesheet" href="./css/sobre.css" />
+  <link rel="stylesheet" href="./css/drawerAdmin.css" /><!-- coloquem isso no codigo de vcs -->
+  <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
+  <script src="./js/drawer.js"></script><!-- coloquem isso no codigo de vcs -->
+
+
+  <title>Instituto Abepoli</title>
+</head>
+
+<body>
+  <nav>
     <div class="nav__header">
       <div class="nav__logo">
         <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
@@ -60,16 +59,16 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
     </ul>
   </nav>
   <?php
-if ($logado):
+  if ($logado):
     require_once 'conexao.php';
 
     $id = $_SESSION['admin'] ?? $_SESSION['usuario_id'] ?? 0;
     $tipo = $_SESSION['usuario_tipo'] ?? 'admin';
 
     if ($tipo === 'funcionario') {
-        $stmt = $conexao->prepare("SELECT nome_funcionario AS nome, foto_funcionario AS foto FROM funcionarios WHERE id_funcionario = ?");
+      $stmt = $conexao->prepare("SELECT nome_funcionario AS nome, foto_funcionario AS foto FROM funcionarios WHERE id_funcionario = ?");
     } else {
-        $stmt = $conexao->prepare("SELECT nome_admin AS nome, foto_admin AS foto FROM administrador WHERE id_admin = ?");
+      $stmt = $conexao->prepare("SELECT nome_admin AS nome, foto_admin AS foto FROM administrador WHERE id_admin = ?");
     }
 
     $stmt->bind_param("i", $id);
@@ -79,140 +78,154 @@ if ($logado):
 
     $nome = htmlspecialchars($usuario['nome'] ?? 'Usuário');
     $foto = !empty($usuario['foto'])
-        ? 'data:image/jpeg;base64,' . base64_encode($usuario['foto'])
-        : './img/iconn.png';
-?>
+      ? 'data:image/jpeg;base64,' . base64_encode($usuario['foto'])
+      : './img/iconn.png';
+    ?>
     <div id="user-drawer" class="user-drawer">
-        <div class="user-drawer-header">
-            <h3><?= $nome ?></h3>
-            <button id="close-drawer">&times;</button>
-        </div>
-        <div class="user-drawer-content">
-            <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar"
-                style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
-            <ul class="user-drawer-links">
-                <li><a href="./perfil.php">Perfil</a></li>
-                <li><a href="./logout.php" class="logout-link">Sair</a></li>
-            </ul>
-        </div>
+      <div class="user-drawer-header">
+        <h3><?= $nome ?></h3>
+        <button id="close-drawer">&times;</button>
+      </div>
+      <div class="user-drawer-content">
+        <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar"
+          style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
+        <ul class="user-drawer-links">
+          <li><a href="./perfil.php">Perfil</a></li>
+          <li><a href="./logout.php" class="logout-link">Sair</a></li>
+        </ul>
+      </div>
     </div>
     <div id="drawer-overlay" class="drawer-overlay"></div>
-<?php endif; ?>
-        <header class="header">
-      <div class="section__container header__container" id="home">
-        <p>Instituto Abepoli</p>
-        <h1>Quem Somos <span>Nós</span></h1>
-      </div>
-    </header>
+  <?php endif; ?>
+  <header class="header">
+    <div class="section__container header__container" id="home">
+      <p>Instituto Abepoli</p>
+      <h1>Quem Somos <span>Nós</span></h1>
+    </div>
+  </header>
 
-  
 
-    <section class="section__container about__container" id="about">
-      <div class="about__image">
-        <img src="./img/abelha-guaraipo.jpg" alt="about" />
-      </div>
-      <div class="about__content">
-        <p class="section__subheader">QUEM SOMOS</p>
-        <h2 class="section__header">Instituto Abepoli</h2>
-        <p class="section__description">
-         O Instituto Abepoli é uma organização dedicada à preservação ambiental, com foco na conservação da fauna, flora e biodiversidade. Atuando no estado de São Paulo, promovemos ações que garantem o equilíbrio dos ecossistemas, especialmente por meio da proteção das abelhas nativas e outros polinizadores.
-        </p>
-        <!-- <div class="about__btn">
+
+  <section class="section__container about__container" id="about">
+    <div class="about__image">
+      <img src="./img/abelha-guaraipo.jpg" alt="about" />
+    </div>
+    <div class="about__content">
+      <p class="section__subheader">QUEM SOMOS</p>
+      <h2 class="section__header">Instituto Abepoli</h2>
+      <p class="section__description">
+        O Instituto Abepoli é uma organização dedicada à preservação ambiental, com foco na conservação da fauna, flora
+        e biodiversidade. Atuando no estado de São Paulo, promovemos ações que garantem o equilíbrio dos ecossistemas,
+        especialmente por meio da proteção das abelhas nativas e outros polinizadores.
+      </p>
+      <!-- <div class="about__btn">
           <button class="btn">Read More</button>
         </div> -->
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section__container intro__container">
-       <p class="section__subheader">INSTITUTO ABEPOLI</p>
-      <h1 class="section__header">Valores e Objetivos</h1>
-      <div class="intro__grid">
-        <div class="intro__card">
-          <div class="intro__image">
-            <img src="./img/1.png" alt="intro" />
-          </div>
-          <h4>Proteção Ambiental</h4>
-          <p>
-            Proteger a fauna, flora e biodiversidade, <br> com foco especial em abelhas nativas e polinizadores essenciais para o ecossistema.
-          </p>
-         
+  <section class="section__container intro__container">
+    <p class="section__subheader">INSTITUTO ABEPOLI</p>
+    <h1 class="section__header">Valores e Objetivos</h1>
+    <div class="intro__grid">
+      <div class="intro__card">
+        <div class="intro__image">
+          <img src="./img/1.png" alt="intro" />
         </div>
-        <div class="intro__card">
-          <div class="intro__image">
-            <img src="./img/2.png" alt="intro" />
-          </div>
-          <h4>Sustentabilidade Comunitária</h4>
-          <p>
-            Incentivar práticas sustentáveis e apoiar comunidades na implementação de soluções ecológicas.
-          </p>
-       
-        </div>
-        <div class="intro__card">
-          <div class="intro__image">
-            <img src="./img/3.png" alt="intro" />
-          </div>
-          <h4>Educação Ecológica</h4>
-          <p>
-            Promover conhecimento sobre sustentabilidade, conservação e a importância dos polinizadores para natureza e a sociedade.
-          </p>
-        </div>
-      </div>
-    </section>
-    
-      <section class="service" id="service">
-      <div class="section__container service__container">
-        <div class="service__content">
-          <p class="section__subheader">NOSSA</p>
-          <h2 class="section__header">Origem e Missão</h2>
-          <ul class="service__list">
-            <li>
-            
-            Fundado em São José dos Campos, o Instituto Abepoli Elena Josefa de Oliveira nasceu com a missão de preservar a biodiversidade e promover práticas sustentáveis. Com um olhar científico e técnico, desenvolvemos pesquisas e projetos ambientais voltados para a conscientização e para a sustentabilidade. 
-            </li>
-          
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section__container about__container" id="about">
-      <div class="about__image">
-        <img src="./img/sobree3.png" alt="about" />
-      </div>
-      <div class="about__content">
-        <p class="section__subheader">ONDE COMEÇOU</p>
-        <h2 class="section__header">Atuação Técnica e Científica</h2>
-        <p class="section__description">
-Com sede em São José dos Campos e registrado sob o CNPJ 37.912.072/0001-15, o Instituto Abepoli desenvolve atividades científicas e técnicas que trazem benefícios para a preservação da biodiversidade e o desenvolvimento sustentável, sempre em harmonia com o meio ambiente.
+        <h4>Proteção Ambiental</h4>
+        <p>
+          Proteger a fauna, flora e biodiversidade, <br> com foco especial em abelhas nativas e polinizadores essenciais
+          para o ecossistema.
         </p>
-        
+
       </div>
-    </section>
+      <div class="intro__card">
+        <div class="intro__image">
+          <img src="./img/2.png" alt="intro" />
+        </div>
+        <h4>Sustentabilidade Comunitária</h4>
+        <p>
+          Incentivar práticas sustentáveis e apoiar comunidades na implementação de soluções ecológicas.
+        </p>
 
-  
+      </div>
+      <div class="intro__card">
+        <div class="intro__image">
+          <img src="./img/3.png" alt="intro" />
+        </div>
+        <h4>Educação Ecológica</h4>
+        <p>
+          Promover conhecimento sobre sustentabilidade, conservação e a importância dos polinizadores para natureza e a
+          sociedade.
+        </p>
+      </div>
+    </div>
+  </section>
 
-   <section class="travel-section">
+  <section class="service" id="service">
+    <div class="section__container service__container">
+      <div class="service__content">
+        <p class="section__subheader">NOSSA</p>
+        <h2 class="section__header">Origem e Missão</h2>
+        <ul class="service__list">
+          <li>
+
+            Fundado em São José dos Campos, o Instituto Abepoli Elena Josefa de Oliveira nasceu com a missão de
+            preservar a biodiversidade e promover práticas sustentáveis. Com um olhar científico e técnico,
+            desenvolvemos pesquisas e projetos ambientais voltados para a conscientização e para a sustentabilidade.
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section__container about__container" id="about">
+    <div class="about__image">
+      <img src="./img/sobree3.png" alt="about" />
+    </div>
+    <div class="about__content">
+      <p class="section__subheader">ONDE COMEÇOU</p>
+      <h2 class="section__header">Atuação Técnica e Científica</h2>
+      <p class="section__description">
+        Com sede em São José dos Campos e registrado sob o CNPJ 37.912.072/0001-15, o Instituto Abepoli desenvolve
+        atividades científicas e técnicas que trazem benefícios para a preservação da biodiversidade e o desenvolvimento
+        sustentável, sempre em harmonia com o meio ambiente.
+      </p>
+
+    </div>
+  </section>
+
+
+
+  <section class="travel-section">
     <div class="text-content">
       <h1>Registros da nossa <br> missão com as abelhas</h1>
       <p><br></p>
-       <a href="./galeria.php">
-      <button class="btn">Ver Galeria</button>
-    </a>
+      <a href="./galeria.php">
+        <button class="btn">Ver Galeria</button>
+      </a>
     </div>
 
     <div class="carousel">
       <div class="carousel-inner">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgatXT3ZieNjeMPZR-xGcPVs88SPPPs_tLMhpwD3FSouQQX5CriPD-1ukZJ4ShThjQeY&usqp=CAU" alt="Image 1">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVE0AA9UCAE-9bQpO87c_TFJgg6GVI-9sGpQ&s" alt="Image 2">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgatXT3ZieNjeMPZR-xGcPVs88SPPPs_tLMhpwD3FSouQQX5CriPD-1ukZJ4ShThjQeY&usqp=CAU"
+          alt="Image 1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVE0AA9UCAE-9bQpO87c_TFJgg6GVI-9sGpQ&s"
+          alt="Image 2">
         <img src="./img/apicultor.jpeg" alt="Image 3">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgatXT3ZieNjeMPZR-xGcPVs88SPPPs_tLMhpwD3FSouQQX5CriPD-1ukZJ4ShThjQeY&usqp=CAU" alt="Image 1">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVE0AA9UCAE-9bQpO87c_TFJgg6GVI-9sGpQ&s" alt="Image 2">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgatXT3ZieNjeMPZR-xGcPVs88SPPPs_tLMhpwD3FSouQQX5CriPD-1ukZJ4ShThjQeY&usqp=CAU"
+          alt="Image 1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVE0AA9UCAE-9bQpO87c_TFJgg6GVI-9sGpQ&s"
+          alt="Image 2">
         <img src="./img/apicultor.jpeg" alt="Image 3">
       </div>
     </div>
   </section>
-   <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
-<div class="wave-shape-divider">
+  <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+  <div class="wave-shape-divider">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
             82.39-16.72,168.19-17.73,250.45-.39C823.78,31,
@@ -222,63 +235,62 @@ Com sede em São José dos Campos e registrado sob o CNPJ 37.912.072/0001-15, o 
     </svg>
   </div>
 
-      <footer class="abepoli-footer">
-        <div class="footer-content">
-            <div class="footer-col logo-col">
-                <img src="img/logo1.jpg" alt="Instituto Abepoli" class="footer-logo">
-            </div>
+  <footer class="abepoli-footer">
+    <div class="footer-content">
+      <div class="footer-col logo-col">
+        <img src="img/logo1.jpg" alt="Instituto Abepoli" class="footer-logo">
+      </div>
 
-                <div class="footer-col contact-col">
-                <h4>Contato</h4>
-                <p><i class="fa fa-envelope"></i> abepoli@gmail.com</p>
-                <div class="social-icons">
-                    <p>
-                        <a href="https://www.facebook.com/profile.php?id=100076095320985" target="_blank"
-                            style="text-decoration: none; color: inherit;">
-                            <i class="fa fa-facebook"></i> Instituto Abepoli
-                        </a>
-                    </p>
-                    <p>
-                        <a href="https://www.instagram.com/abepoli/" target="_blank"
-                            style="text-decoration: none; color: inherit;">
-                            <i class="fa fa-instagram"></i> @abepoli
-                        </a>
-                    </p>
-                    <p>
-                        <a href="https://wa.me/5512988176722" target="_blank"
-                            style="text-decoration: none; color: inherit;">
-                            <i class="fa fa-whatsapp"></i> (12) 98817-6722
-                        </a>
-                    <p>
-                        <a href="./login.php" class="realizarLogin" style="text-decoration: none; color: inherit;">
-                            Realizar login
-                        </a>
-                    </p>
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="footer-col dev-col">
-                <h4>Site desenvolvido por</h4>
-                <p>Flávia Glenda Guimarães Carvalho</p>
-                <p>Júlia da Silva Conconi</p>
-                <p>Kauã de Albuquerque Almeida</p>
-                <p>Lanna Kamilly Fres Motta</p>
-                <p>Miguel Borges da Silva</p>
-            </div>
+      <div class="footer-col contact-col">
+        <h4>Contato</h4>
+        <p><i class="fa fa-envelope"></i> abepoli@gmail.com</p>
+        <div class="social-icons">
+          <p>
+            <a href="https://www.facebook.com/profile.php?id=100076095320985" target="_blank"
+              style="text-decoration: none; color: inherit;">
+              <i class="fa fa-facebook"></i> Instituto Abepoli
+            </a>
+          </p>
+          <p>
+            <a href="https://www.instagram.com/abepoli/" target="_blank" style="text-decoration: none; color: inherit;">
+              <i class="fa fa-instagram"></i> @abepoli
+            </a>
+          </p>
+          <p>
+            <a href="https://wa.me/5512988176722" target="_blank" style="text-decoration: none; color: inherit;">
+              <i class="fa fa-whatsapp"></i> (12) 98817-6722
+            </a>
+          <p>
+            <a href="./login.php" class="realizarLogin" style="text-decoration: none; color: inherit;">
+              Realizar login
+            </a>
+          </p>
+          </p>
         </div>
-
-        <div class="footer-bottom">
-            <p>© Todos os direitos reservados</p>
-        </div>
-    </footer>
+      </div>
 
 
-    
-      <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-   <script src="./js/index.js"></script>
-    <script src="./js/nav.js"></script>
-  </body>
+      <div class="footer-col dev-col">
+        <h4>Site desenvolvido por</h4>
+        <p>Flávia Glenda Guimarães Carvalho</p>
+        <p>Júlia da Silva Conconi</p>
+        <p>Kauã de Albuquerque Almeida</p>
+        <p>Lanna Kamilly Fres Motta</p>
+        <p>Miguel Borges da Silva</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/nav.js"></script>
+</body>
+
 </html>

@@ -68,6 +68,7 @@ $produtos = $resultado->fetch_all(MYSQLI_ASSOC);
     <link rel="stylesheet" href="./css/drawerAdmin.css" />
     <link rel="stylesheet" href="./css/footerr.css" />
     <link rel="stylesheet" href="./css/produtoss.css" />
+    <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/drawer.js"></script>
     <script src="./js/modais_produtos.js"></script>

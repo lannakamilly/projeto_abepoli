@@ -12,6 +12,7 @@ if (!$logado) {
       <meta charset="UTF-8" />
       <title>Acesso Negado</title>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
     </head>
     <body>
       <script>

@@ -61,6 +61,7 @@ $produtos = $resultado->fetch_all(MYSQLI_ASSOC);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portal Abepoli</title>
+    <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -74,70 +75,71 @@ $produtos = $resultado->fetch_all(MYSQLI_ASSOC);
 </head>
 
 <body>
- <nav>
-    <div class="nav__header">
-      <div class="nav__logo">
-        <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
-      </div>
-      <div class="nav__menu__btn" id="menu-btn">
-        <i class="ri-menu-3-line"></i>
-      </div>
+    <nav>
+        <div class="nav__header">
+            <div class="nav__logo">
+                <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
+            </div>
+            <div class="nav__menu__btn" id="menu-btn">
+                <i class="ri-menu-3-line"></i>
+            </div>
 
-      <?php if ($logado): ?>
-        <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
-          <img src="./img/iconn.png" alt="Usuário" />
-        </button>
-      <?php endif; ?>
-    </div>
+            <?php if ($logado): ?>
+                <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
+                    <img src="./img/iconn.png" alt="Usuário" />
+                </button>
+            <?php endif; ?>
+        </div>
 
-    <ul class="nav__links" id="nav-links">
-      <li><a href="./index.php">Início</a></li>
-      <li><a href="./produtoss.php">Produtos</a></li>
-      <li><a href="./sobre.php">Ações</a></li>
-      <li><a href="./doacoes.php">Doações</a></li>
-      <li><a href="./saibamais.php">Saiba Mais</a></li>
+        <ul class="nav__links" id="nav-links">
+            <li><a href="./index.php">Início</a></li>
+            <li><a href="./produtoss.php">Produtos</a></li>
+            <li><a href="./sobre.php">Ações</a></li>
+            <li><a href="./doacoes.php">Doações</a></li>
+            <li><a href="./saibamais.php">Saiba Mais</a></li>
 
-      <li class="contato-usuario">
-        <a href="./contato.php">Contato</a>
-        <?php if ($logado): ?>
-          <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
-            <img src="./img/iconn.png" alt="Usuário" />
-          </button>
-        <?php endif; ?>
-      </li>
-    </ul>
-  </nav>
-  <?php
-  if ($logado):
-    require_once 'conexao.php';
-
-    $id = $_SESSION['admin'] ?? 0;
-    $stmt = $conexao->prepare("SELECT nome_admin, foto_admin FROM administrador WHERE id_admin = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-    $adminData = $resultado->fetch_assoc();
-
-    $nome = htmlspecialchars($adminData['nome_admin'] ?? 'Administrador');
-    $foto = !empty($adminData['foto_admin'])
-      ? 'data:image/jpeg;base64,' . base64_encode($adminData['foto_admin'])
-      : './img/iconn.png';
-  ?>
-    <div id="user-drawer" class="user-drawer">
-      <div class="user-drawer-header">
-        <h3><?= $nome ?></h3>
-        <button id="close-drawer">&times;</button>
-      </div>
-      <div class="user-drawer-content">
-        <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
-        <ul class="user-drawer-links">
-          <li><a href="./perfil.php">Perfil</a></li>
-          <li><a href="./logout.php" class="logout-link">Sair</a></li>
+            <li class="contato-usuario">
+                <a href="./contato.php">Contato</a>
+                <?php if ($logado): ?>
+                    <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
+                        <img src="./img/iconn.png" alt="Usuário" />
+                    </button>
+                <?php endif; ?>
+            </li>
         </ul>
-      </div>
-    </div>
-    <div id="drawer-overlay" class="drawer-overlay"></div>
-  <?php endif; ?>
+    </nav>
+    <?php
+    if ($logado):
+        require_once 'conexao.php';
+
+        $id = $_SESSION['admin'] ?? 0;
+        $stmt = $conexao->prepare("SELECT nome_admin, foto_admin FROM administrador WHERE id_admin = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $adminData = $resultado->fetch_assoc();
+
+        $nome = htmlspecialchars($adminData['nome_admin'] ?? 'Administrador');
+        $foto = !empty($adminData['foto_admin'])
+            ? 'data:image/jpeg;base64,' . base64_encode($adminData['foto_admin'])
+            : './img/iconn.png';
+        ?>
+        <div id="user-drawer" class="user-drawer">
+            <div class="user-drawer-header">
+                <h3><?= $nome ?></h3>
+                <button id="close-drawer">&times;</button>
+            </div>
+            <div class="user-drawer-content">
+                <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar"
+                    style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
+                <ul class="user-drawer-links">
+                    <li><a href="./perfil.php">Perfil</a></li>
+                    <li><a href="./logout.php" class="logout-link">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="drawer-overlay" class="drawer-overlay"></div>
+    <?php endif; ?>
 
     <section class="botao-voltar">
         <a href="produtoss.php" class="voltar">
@@ -170,15 +172,18 @@ $produtos = $resultado->fetch_all(MYSQLI_ASSOC);
             <main class="produtos-grid">
                 <?php foreach ($produtos as $produto): ?>
                     <div class="produto-card">
-                        <img src="<?= htmlspecialchars($produto['imagem_produto']) ?>" alt="<?= htmlspecialchars($produto['nome_produto']) ?>">
+                        <img src="<?= htmlspecialchars($produto['imagem_produto']) ?>"
+                            alt="<?= htmlspecialchars($produto['nome_produto']) ?>">
                         <p class="nome-produto"><?= htmlspecialchars($produto['nome_produto']) ?></p>
                         <p class="preco-produto">R$ <?= number_format($produto['preco_produto'], 2, ',', '.') ?></p>
-                        <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto%20<?= urlencode($produto['nome_produto']) ?>" target="_blank" class="btn-comprar">
+                        <a href="https://wa.me/5512988176722?text=Tenho%20interesse%20no%20produto%20<?= urlencode($produto['nome_produto']) ?>"
+                            target="_blank" class="btn-comprar">
                             <i class="fa fa-whatsapp"></i> Comprar
                         </a>
                         <?php if ($logado): ?>
                             <div class="acoes">
-                                <button onclick="abrirModalEditar(<?= $produto['id_produto'] ?>, '<?= addslashes($produto['nome_produto']) ?>', '<?= $produto['preco_produto'] ?>', '<?= addslashes($produto['imagem_produto']) ?>')">
+                                <button
+                                    onclick="abrirModalEditar(<?= $produto['id_produto'] ?>, '<?= addslashes($produto['nome_produto']) ?>', '<?= $produto['preco_produto'] ?>', '<?= addslashes($produto['imagem_produto']) ?>')">
                                     <i class="fa fa-pen"></i>
                                 </button>
                                 <button onclick="confirmarExclusao(<?= $produto['id_produto'] ?>)">

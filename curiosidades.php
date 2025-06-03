@@ -20,6 +20,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
     <link rel="stylesheet" href="css/footerr.css">
    <link rel="stylesheet" href="./css/nav.css" />
    <link rel="stylesheet" href="./css/drawerAdmin.css" />
+   <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
     <script src="./js/drawer.js"></script>
     <title>Curiosidades</title>
 </head>
