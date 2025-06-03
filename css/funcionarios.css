@@ -1,4 +1,5 @@
 body {
+
   margin: 0;
   background-color: #fff;
 }
@@ -14,7 +15,7 @@ body {
   width: 100%;
 }
 .botao-voltar {
-  margin-top: 90px;
+  margin-top: 30px;
   margin-left: 90px;
   margin-bottom: 10px;
 }
@@ -187,6 +188,9 @@ body {
 @media (max-width: 480px) {
   .titulo {
     font-size: 22px;
+  }
+  body{
+    padding-top: 10px;
   }
 
   .titulo::after {
