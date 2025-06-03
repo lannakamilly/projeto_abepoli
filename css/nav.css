@@ -135,6 +135,7 @@ nav {
 @media (width > 768px) {
   nav {
     position: fixed;
+    top: 0;
     padding: 1rem;
     max-width: 100%;
     margin-inline: auto;
