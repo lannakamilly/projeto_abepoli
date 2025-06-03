@@ -2,7 +2,7 @@
 session_start();
 require_once('conexao.php');
 
-$logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SESSION['usuario_tipo'] === 'funcionario'); 
+$logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SESSION['usuario_tipo'] === 'funcionario');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,101 +16,101 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
   <link rel="stylesheet" href="./css/nav.css">
   <link rel="stylesheet" href="./css/contatoo.css">
   <link rel="stylesheet" href="./css/footerr.css">
-   <script src="./js/drawer.js"></script><!-- copiem isso e colem no codigo de vcs -->
-    <link rel="stylesheet" href="./css/drawerAdmin.css" /><!-- copiem isso e colem no codigo de vcs -->
+  <script src="./js/drawer.js"></script><!-- copiem isso e colem no codigo de vcs -->
+  <link rel="stylesheet" href="./css/drawerAdmin.css" /><!-- copiem isso e colem no codigo de vcs -->
 
 </head>
 
 <body>
 
   <header>
-  <nav>
-    <div class="nav__header">
-      <div class="nav__logo">
-        <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
-      </div>
-      <div class="nav__menu__btn" id="menu-btn">
-        <i class="ri-menu-3-line"></i>
-      </div>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
 
-      <?php if ($logado): ?>
-        <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
-          <img src="./img/iconn.png" alt="Usuário" />
-        </button>
-      <?php endif; ?>
-    </div>
-
-    <ul class="nav__links" id="nav-links">
-      <li><a href="./index.php">Início</a></li>
-      <li><a href="./produtoss.php">Produtos</a></li>
-      <li><a href="./sobre.php">Ações</a></li>
-      <li><a href="./doacoes.php">Doações</a></li>
-      <li><a href="./saibamais.php">Saiba Mais</a></li>
-
-      <li class="contato-usuario">
-        <a href="./contato.php">Contato</a>
         <?php if ($logado): ?>
-          <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
+          <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
             <img src="./img/iconn.png" alt="Usuário" />
           </button>
         <?php endif; ?>
-      </li>
-    </ul>
-  </nav>
-  <?php
-if ($logado):
-    require_once 'conexao.php';
+      </div>
 
-    $id = $_SESSION['admin'] ?? $_SESSION['usuario_id'] ?? 0;
-    $tipo = $_SESSION['usuario_tipo'] ?? 'admin';
+      <ul class="nav__links" id="nav-links">
+        <li><a href="./index.php">Início</a></li>
+        <li><a href="./produtoss.php">Produtos</a></li>
+        <li><a href="./sobre.php">Ações</a></li>
+        <li><a href="./doacoes.php">Doações</a></li>
+        <li><a href="./saibamais.php">Saiba Mais</a></li>
 
-    if ($tipo === 'funcionario') {
+        <li class="contato-usuario">
+          <a href="./contato.php">Contato</a>
+          <?php if ($logado): ?>
+            <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
+              <img src="./img/iconn.png" alt="Usuário" />
+            </button>
+          <?php endif; ?>
+        </li>
+      </ul>
+    </nav>
+    <?php
+    if ($logado):
+      require_once 'conexao.php';
+
+      $id = $_SESSION['admin'] ?? $_SESSION['usuario_id'] ?? 0;
+      $tipo = $_SESSION['usuario_tipo'] ?? 'admin';
+
+      if ($tipo === 'funcionario') {
         $stmt = $conexao->prepare("SELECT nome_funcionario AS nome, foto_funcionario AS foto FROM funcionarios WHERE id_funcionario = ?");
-    } else {
+      } else {
         $stmt = $conexao->prepare("SELECT nome_admin AS nome, foto_admin AS foto FROM administrador WHERE id_admin = ?");
-    }
+      }
 
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-    $usuario = $resultado->fetch_assoc();
+      $stmt->bind_param("i", $id);
+      $stmt->execute();
+      $resultado = $stmt->get_result();
+      $usuario = $resultado->fetch_assoc();
 
-    $nome = htmlspecialchars($usuario['nome'] ?? 'Usuário');
-    $foto = !empty($usuario['foto'])
+      $nome = htmlspecialchars($usuario['nome'] ?? 'Usuário');
+      $foto = !empty($usuario['foto'])
         ? 'data:image/jpeg;base64,' . base64_encode($usuario['foto'])
         : './img/iconn.png';
-?>
-    <div id="user-drawer" class="user-drawer">
+    ?>
+      <div id="user-drawer" class="user-drawer">
         <div class="user-drawer-header">
-            <h3><?= $nome ?></h3>
-            <button id="close-drawer">&times;</button>
+          <h3><?= $nome ?></h3>
+          <button id="close-drawer">&times;</button>
         </div>
         <div class="user-drawer-content">
-            <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar"
-                style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
-            <ul class="user-drawer-links">
-                <li><a href="./perfil.php">Perfil</a></li>
-                <li><a href="./logout.php" class="logout-link">Sair</a></li>
-            </ul>
+          <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar"
+            style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
+          <ul class="user-drawer-links">
+            <li><a href="./perfil.php">Perfil</a></li>
+            <li><a href="./logout.php" class="logout-link">Sair</a></li>
+          </ul>
         </div>
-    </div>
-    <div id="drawer-overlay" class="drawer-overlay"></div>
-<?php endif; ?>
+      </div>
+      <div id="drawer-overlay" class="drawer-overlay"></div>
+    <?php endif; ?>
   </header>
   <section class="secao-contato">
     <div class="container-contato">
       <div class="formulario-contato">
         <p class="subtitulo-contato">Está com alguma dúvida?</p>
         <h2 class="titulo-contato">Abepoli esta pronta para ajudar</h2>
-        <form action="enviar_contato.php" method="POST">
+        <form action="enviar_comentario.php" method="POST">
           <label>Nome:</label>
           <input type="text" name="nome" placeholder="Digite seu nome" required>
 
           <label>Email:</label>
           <input type="email" name="email" placeholder="Digite seu email" required>
 
-          <label>Mensagem:</label>
-          <textarea name="mensagem" rows="4" placeholder="Digite sua mensagem" required></textarea>
+          <label>Comentário:</label>
+          <textarea name="comentario" rows="4" placeholder="Digite seu comentário" required></textarea>
 
           <button type="submit">Enviar</button>
         </form>
@@ -121,6 +121,37 @@ if ($logado):
         </div>
       </div>
     </div>
+<!-- 
+    <div class="comentarios-box">
+    <h2>Comentários</h2>
+    <?php
+    // require_once('conexao.php');
+    // $sql = "SELECT * FROM comentarios ORDER BY id DESC";
+    // $resultado = $conexao->query($sql);
+
+    // if ($resultado->num_rows > 0) {
+    //     while ($comentario = $resultado->fetch_assoc()) {
+    //         echo "<div class='comentario'>";
+    //         echo "<div class='comentario-header'>";
+    //         echo "<h3>" . htmlspecialchars($comentario['nome']) . "</h3>";
+    //         echo "<span class='email'>" . htmlspecialchars($comentario['email']) . "</span>";
+    //         echo "</div>";
+    //         echo "<p class='comentario-texto'>" . htmlspecialchars($comentario['comentario']) . "</p>";
+
+    //         if ($logado) {
+    //             echo "<div class='comentario-acoes'>";
+    //             echo "<a href='editar_comentario.php?id=" . $comentario['id'] . "' class='btn-editar'>Editar</a>";
+    //             echo "<a href='excluir_comentario.php?id=" . $comentario['id'] . "' class='btn-excluir' onclick=\"return confirm('Tem certeza que deseja excluir este comentário?');\">Excluir</a>";
+    //             echo "</div>";
+    //         }
+
+    //         echo "</div>";
+    //     }
+    // } else {
+    //     echo "<p style='text-align:center;'>Nenhum comentário ainda.</p>";
+    // }
+    ?>
+</div> -->
 
     <section class="contato-alternativo">
       <p class="preferencia">Se preferir entre em <span>contato</span> :</p>
@@ -141,7 +172,7 @@ if ($logado):
 
     </div>
   </section>
-
+ <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
   <div class="wave-shape-divider">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
@@ -207,7 +238,7 @@ if ($logado):
   </footer>
 
   <script src="./js/nav.js"></script>
-  
+
 </body>
 
 </html>
