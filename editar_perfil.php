@@ -45,15 +45,11 @@ if (!$usuario || !is_array($usuario)) {
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<<<<<<< HEAD
-    
-=======
      <link rel="stylesheet" href="./css/nav.css" />
     <link rel="stylesheet" href="./css/drawerAdmin.css" />
     <link rel="stylesheet" href="./css/footerr.css" />
     <link rel="stylesheet" href="./css/perfil.css">
      <script src="./js/drawer.js"></script>
->>>>>>> 4013c103b3d87c079fb1cb6964d19c967c71e9ba
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
         * {
@@ -62,7 +58,7 @@ if (!$usuario || !is_array($usuario)) {
         }
 
         :root {
-            --primary-color: #e4af00;
+            --primary-color: #F7BE00;
             --terciary-color: rgb(228, 201, 0);
         }
 

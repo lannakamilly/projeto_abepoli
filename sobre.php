@@ -6,8 +6,6 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-=======
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +17,6 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
        <link rel="stylesheet" href="./css/drawerAdmin.css" /><!-- coloquem isso no codigo de vcs -->
   <script src="./js/drawer.js"></script><!-- coloquem isso no codigo de vcs -->
     
->>>>>>> 4013c103b3d87c079fb1cb6964d19c967c71e9ba
 
 <head>
   <meta charset="UTF-8" />
