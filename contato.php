@@ -11,12 +11,15 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instituto Abepoli - Contato</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="./css/nav.css">
   <link rel="stylesheet" href="./css/contatoo.css">
   <link rel="stylesheet" href="./css/footerr.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <script src="./js/drawer.js"></script><!-- copiem isso e colem no codigo de vcs -->
   <link rel="stylesheet" href="./css/drawerAdmin.css" /><!-- copiem isso e colem no codigo de vcs -->
 
@@ -131,25 +134,27 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
     $resultado = $conexao->query($sql);
 
     if ($resultado->num_rows > 0) {
-        while ($comentario = $resultado->fetch_assoc()) {
-            echo "<div class='comentario'>";
-            echo "<div class='comentario-header'>";
-            echo "<h3>" . htmlspecialchars($comentario['nome']) . "</h3>";
-            echo "<span class='email'>" . htmlspecialchars($comentario['email']) . "</span>";
-            echo "</div>";
-            echo "<p class='comentario-texto'>" . htmlspecialchars($comentario['comentario']) . "</p>";
+    while ($comentario = $resultado->fetch_assoc()) {
+        echo "<div class='comentario'>";
+        echo "<div class='comentario-header'>";
+        echo "<h3>" . htmlspecialchars($comentario['nome']) . "</h3>";
+        echo "<span class='email'>" . htmlspecialchars($comentario['email']) . "</span>";
+        echo "</div>";
+        echo "<p class='comentario-texto'>" . htmlspecialchars($comentario['comentario']) . "</p>";
 
-            if ($logado) {
-                echo "<div class='comentario-acoes'>";
-                echo "<button class='delete-btn' style='background:none;border:none;cursor:pointer;' title='Excluir' data-id='{$comentario['id']}'><a>Escluir</a>";
-                echo "</div>";
-            }
+        if ($logado) {
+            echo "<div class='comentario-acoes'>";
+          echo " <i class='fa-solid fa-trash delete-btn' data-id='" . $comentario['id'] . "' style='color:rgb(209, 4, 4); cursor:pointer;' header('Location: contato.php?msg=ComentarioExcluido');></i>";
 
             echo "</div>";
         }
-    } else {
-        echo "<p style='text-align:center;'>Nenhum comentário ainda.</p>";
+
+        echo "</div>"; // fecha div .comentario
     }
+} else {
+    echo "<p style='text-align:center;'>Nenhum comentário ainda.</p>";
+}
+
     ?>
 </div>
 
@@ -236,6 +241,47 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
       <p>© Todos os direitos reservados</p>
     </div>
   </footer>
+  <script>
+  $(document).ready(function () {
+    const urlParams = new URLSearchParams(window.location.search); // <== declarado corretamente aqui
+
+    // 1. Alerta de exclusão
+    $('.delete-btn').click(function () {
+      const comentarioId = $(this).data('id');
+
+      Swal.fire({
+        title: 'Tem certeza que deseja excluir?',
+        text: "Essa ação não poderá ser desfeita!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Sim, excluir',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = 'excluir_comentario.php?id=' + comentarioId;
+        }
+      });
+    });
+
+    // 2. Alerta de sucesso após exclusão
+    if (urlParams.get('msg') === 'ComentarioExcluido') {
+      Swal.fire({
+        icon: 'success',
+        title: 'Excluído!',
+        text: 'O comentário foi removido com sucesso.',
+        timer: 2000,
+        showConfirmButton: false
+      });
+
+      // Remove o parâmetro da URL depois de exibir
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  });
+</script>
+
+
 <script>
     // Verifica se a URL tem o parâmetro sucesso=1
     const urlParams = new URLSearchParams(window.location.search);
