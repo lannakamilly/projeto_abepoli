@@ -97,6 +97,7 @@ $noticias = $conexao->query("SELECT * FROM noticias ORDER BY id_noticia DESC");
       <li><a href="./produtosVestimentas.php">Produtos</a></li>
        <li><a href="./galeria.php">Galeria</a></li>
       <li><a href="./doacoes.php">Doações</a></li>
+      <li> <a href="./contato.php">Contato</a></li>
       <li class="contato-usuario">
         <?php if ($logado): ?>
           <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
@@ -122,7 +123,6 @@ $noticias = $conexao->query("SELECT * FROM noticias ORDER BY id_noticia DESC");
     <?php endif; ?>
   </ul>
 </nav>
-
 <?php
 if ($logado):
   require_once 'conexao.php';

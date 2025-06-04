@@ -29,38 +29,54 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
 
   <header>
     <nav>
-      <div class="nav__header">
-        <div class="nav__logo">
-          <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
-        </div>
-        <div class="nav__menu__btn" id="menu-btn">
-          <i class="ri-menu-3-line"></i>
-        </div>
+  <div class="nav__header">
+    <div class="nav__logo">
+      <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
+    </div>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-3-line"></i>
+    </div>
 
+    <?php if ($logado): ?>
+      <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
+        <img src="./img/iconn.png" alt="Usuário" />
+      </button>
+    <?php endif; ?>
+  </div>
+
+  <ul class="nav__links" id="nav-links">
+    <?php if ($logado): ?>
+      <!-- Menu visível apenas para ADMIN -->
+        <li><a href="./new.php">Notícias</a></li>
+      <li><a href="./produtosVestimentas.php">Produtos</a></li>
+       <li><a href="./galeria.php">Galeria</a></li>
+      <li><a href="./doacoes.php">Doações</a></li>
+      <li> <a href="./contato.php">Contato</a></li>
+      <li class="contato-usuario">
         <?php if ($logado): ?>
-          <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
+          <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
             <img src="./img/iconn.png" alt="Usuário" />
           </button>
         <?php endif; ?>
-      </div>
-
-      <ul class="nav__links" id="nav-links">
-        <li><a href="./index.php">Início</a></li>
-        <li><a href="./produtoss.php">Produtos</a></li>
-        <li><a href="./sobre.php">Ações</a></li>
-        <li><a href="./doacoes.php">Doações</a></li>
-        <li><a href="./saibamais.php">Saiba Mais</a></li>
-
-        <li class="contato-usuario">
-          <a href="./contato.php">Contato</a>
-          <?php if ($logado): ?>
-            <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
-              <img src="./img/iconn.png" alt="Usuário" />
-            </button>
-          <?php endif; ?>
-        </li>
-      </ul>
-    </nav>
+      </li>
+    <?php else: ?>
+      <!-- Menu padrão para usuários comuns -->
+      <li><a href="./index.php">Início</a></li>
+      <li><a href="./produtoss.php">Produtos</a></li>
+      <li><a href="./sobre.php">Ações</a></li>
+      <li><a href="./doacoes.php">Doações</a></li>
+      <li><a href="./saibamais.php">Saiba Mais</a></li>
+      <li class="contato-usuario">
+        <a href="./contato.php">Contato</a>
+        <?php if ($logado): ?>
+          <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
+            <img src="./img/iconn.png" alt="Usuário" />
+          </button>
+        <?php endif; ?>
+      </li>
+    <?php endif; ?>
+  </ul>
+</nav>
     <?php
     if ($logado):
       require_once 'conexao.php';
@@ -125,37 +141,37 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
         </div>
       </div>
     </div>
+<?php
+if ($logado) {
+  echo "<div class='comentarios-box'>";
+  echo "<h2>Comentários</h2>";
 
-    <div class="comentarios-box">
-    <h2>Comentários</h2>
-    <?php
-    require_once('conexao.php');
-    $sql = "SELECT * FROM comentarios ORDER BY id DESC";
-    $resultado = $conexao->query($sql);
+  require_once('conexao.php');
+  $sql = "SELECT * FROM comentarios ORDER BY id DESC";
+  $resultado = $conexao->query($sql);
 
-    if ($resultado->num_rows > 0) {
+  if ($resultado->num_rows > 0) {
     while ($comentario = $resultado->fetch_assoc()) {
-        echo "<div class='comentario'>";
-        echo "<div class='comentario-header'>";
-        echo "<h3>" . htmlspecialchars($comentario['nome']) . "</h3>";
-        echo "<span class='email'>" . htmlspecialchars($comentario['email']) . "</span>";
-        echo "</div>";
-        echo "<p class='comentario-texto'>" . htmlspecialchars($comentario['comentario']) . "</p>";
+      echo "<div class='comentario'>";
+      echo "<div class='comentario-header'>";
+      echo "<h3>" . htmlspecialchars($comentario['nome']) . "</h3>";
+      echo "<span class='email'>" . htmlspecialchars($comentario['email']) . "</span>";
+      echo "</div>";
+      echo "<p class='comentario-texto'>" . htmlspecialchars($comentario['comentario']) . "</p>";
 
-        if ($logado) {
-            echo "<div class='comentario-acoes'>";
-          echo " <i class='fa-solid fa-trash delete-btn' data-id='" . $comentario['id'] . "' style='color:rgb(209, 4, 4); cursor:pointer;' header('Location: contato.php?msg=ComentarioExcluido');></i>";
+      echo "<div class='comentario-acoes'>";
+      echo "<i class='fa-solid fa-trash delete-btn' data-id='" . $comentario['id'] . "' style='color:rgb(209, 4, 4); cursor:pointer;'></i>";
+      echo "</div>";
 
-            echo "</div>";
-        }
-
-        echo "</div>"; // fecha div .comentario
+      echo "</div>"; // fecha .comentario
     }
-} else {
+  } else {
     echo "<p style='text-align:center;'>Nenhum comentário ainda.</p>";
-}
+  }
 
-    ?>
+  echo "</div>"; // fecha .comentarios-box
+}
+?>
 </div>
 
     <section class="contato-alternativo">

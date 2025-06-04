@@ -6,8 +6,11 @@ body {
 }
 
 .secao-contato {
-  padding: 50px 20px;
-  background-color: #fff;
+  flex-direction: column;
+    display: flex;
+    padding: 50px 20px;
+    align-items: center;
+    background-color: #fff;
 }
 
 .container-contato {
@@ -184,13 +187,12 @@ body {
 }
 
 .comentarios-box {
-  max-width: 800px;
-  margin-left: 250px;
- margin-top: -90px;
-  background-color: #fff8dc;
-  border: 5px solid #e0a800;
-  border-radius: 15px;
-  padding: 30px;
+    width: 50%;
+    margin-top: -90px;
+    background-color: #fff8dc;
+    border: 5px solid #e0a800;
+    border-radius: 15px;
+    padding: 30px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 

@@ -47,6 +47,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
       <li><a href="./produtosVestimentas.php">Produtos</a></li>
        <li><a href="./galeria.php">Galeria</a></li>
       <li><a href="./doacoes.php">Doações</a></li>
+      <li> <a href="./contato.php">Contato</a></li>
       <li class="contato-usuario">
         <?php if ($logado): ?>
           <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
