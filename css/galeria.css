@@ -13,17 +13,16 @@
     }
 
  
-.header-bg {
-  position: relative;
-  background: url('https://cfbio.gov.br/wp-content/uploads/2022/07/Site_AbelhasJatai_Abre_00_1140-1140x675.jpg') no-repeat center center/cover;
-  height: 50vh;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
+   .header-bg {
+    position: relative;
+    background: url('https://cfbio.gov.br/wp-content/uploads/2022/07/Site_AbelhasJatai_Abre_00_1140-1140x675.jpg') no-repeat center center/cover;
+    height: 400px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
   .overlay {
     position: absolute;
@@ -58,98 +57,146 @@
     50% { transform: translateY(10px); }
   }
   
+:root {
+  --primary-color: #F7BE00;
+  --primary-color-dark: #d6a500;
+  --text-dark: #0c0a09;
+  --text-light: #242323;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+   
+ * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+/* Banner Header */
+/* Banner Header Moderno e Maior */
+.header-banner {
+  width: 100vw;
+  height: 500px;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("https://cfbio.gov.br/wp-content/uploads/2022/07/Site_AbelhasJatai_Abre_00_1140-1140x675.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+
+  .scroll-down {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: #e0a800;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+  
     /* CARROSSEL SECTION */
-    section {
+ 
+    .secao-servicos {
       background-color: #fff;
       padding: 3rem 1rem;
       text-align: center;
     }
 
-    section h2 {
-      font-size: 2rem;
+    .secao-servicos h2 {
+      font-size: 2.2rem;
       margin-bottom: 2rem;
-      color: #000000;
+      color: #333;
     }
 
-    .carrossel-wrapper {
+    .container-carrossel {
       overflow: hidden;
       position: relative;
+      max-width: 100%;
+      padding: 1rem 0;
     }
 
-    .carrossel {
+    .faixa-carrossel {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.2rem;
       overflow-x: auto;
       scroll-behavior: smooth;
-      padding-bottom: 1rem;
       padding-left: 1rem;
     }
 
-    .carrossel::-webkit-scrollbar {
+    .faixa-carrossel::-webkit-scrollbar {
       display: none;
     }
 
-    .card {
-      min-width: 250px;
-      max-width: 250px;
-      border-radius: 20px;
+    .item-carrossel {
+      flex: 0 0 auto;
+      min-width: 260px;
+      max-width: 260px;
+      border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
       background: #fff;
-      position: relative;
-      transition: transform 0.3s;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
     }
 
-    .card:hover {
-      transform: scale(1.03);
+    .item-carrossel:hover {
+      transform: scale(1.05);
     }
 
-    .card img {
+    .item-carrossel img {
       width: 100%;
-      height: 160px;
+      height: 180px;
       object-fit: cover;
       display: block;
     }
 
-    .card-info {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-      color: white;
-      padding: 1rem;
-      font-size: 1rem;
-      font-weight: 500;
-      text-align: left;
-    }
-
-    .controls {
+    .botoes-navegacao {
       display: flex;
       justify-content: center;
       gap: 2rem;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
-    .controls i {
-      font-size: 2.2rem;
-      color:  #e0a800;
+    .botoes-navegacao i {
+      font-size: 2.5rem;
+      color: #e0a800;
       cursor: pointer;
-      transition: color 0.3s;
+      transition: transform 0.2s, color 0.3s;
     }
 
-    .controls i:hover {
-      color:  #806104;
+    .botoes-navegacao i:hover {
+      color: #806104;
+      transform: scale(1.1);
     }
 
     @media (min-width: 768px) {
-      header h1 { font-size: 4rem; }
-      section h2 { font-size: 2.2rem; }
-      .card { min-width: 300px; max-width: 300px; }
-      .card img { height: 200px; }
+      .item-carrossel {
+        min-width: 320px;
+        max-width: 320px;
+      }
+      .item-carrossel img {
+        height: 220px;
+      }
     }
-
-
     
  * {
       box-sizing: border-box;

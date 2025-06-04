@@ -81,29 +81,45 @@ $midias = $conexao->query("SELECT * FROM midias ORDER BY data_upload DESC");
 </head>
 
 <body>
-  <nav>
-    <div class="nav__header">
-      <div class="nav__logo">
-        <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
-      </div>
-      <div class="nav__menu__btn" id="menu-btn">
-        <i class="ri-menu-3-line"></i>
-      </div>
-
-      <?php if ($logado): ?>
-        <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
-          <img src="./img/iconn.png" alt="Usuário" />
-        </button>
-      <?php endif; ?>
+ 
+  <!-- nav bar atualizado -->
+<nav>
+  <div class="nav__header">
+    <div class="nav__logo">
+      <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
+    </div>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-3-line"></i>
     </div>
 
-    <ul class="nav__links" id="nav-links">
+    <?php if ($logado): ?>
+      <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
+        <img src="./img/iconn.png" alt="Usuário" />
+      </button>
+    <?php endif; ?>
+  </div>
+
+  <ul class="nav__links" id="nav-links">
+    <?php if ($logado): ?>
+      <!-- Menu visível apenas para ADMIN -->
+        <li><a href="./new.php">Notícias</a></li>
+      <li><a href="./produtosVestimentas.php">Produtos</a></li>
+       <li><a href="./galeria.php">Galeria</a></li>
+      <li><a href="./doacoes.php">Doações</a></li>
+      <li class="contato-usuario">
+        <?php if ($logado): ?>
+          <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
+            <img src="./img/iconn.png" alt="Usuário" />
+          </button>
+        <?php endif; ?>
+      </li>
+    <?php else: ?>
+      <!-- Menu padrão para usuários comuns -->
       <li><a href="./index.php">Início</a></li>
       <li><a href="./produtoss.php">Produtos</a></li>
       <li><a href="./sobre.php">Ações</a></li>
       <li><a href="./doacoes.php">Doações</a></li>
       <li><a href="./saibamais.php">Saiba Mais</a></li>
-
       <li class="contato-usuario">
         <a href="./contato.php">Contato</a>
         <?php if ($logado): ?>
@@ -112,97 +128,98 @@ $midias = $conexao->query("SELECT * FROM midias ORDER BY data_upload DESC");
           </button>
         <?php endif; ?>
       </li>
-    </ul>
+    <?php endif; ?>
+  </ul>
+</nav>
 
-  </nav>
-  <?php
-  if ($logado):
-    require_once 'conexao.php';
+<?php
+if ($logado):
+  require_once 'conexao.php';
 
-    $id = $_SESSION['admin'] ?? 0;
-    $stmt = $conexao->prepare("SELECT nome_admin, foto_admin FROM administrador WHERE id_admin = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-    $adminData = $resultado->fetch_assoc();
+  $id = $_SESSION['admin'] ?? 0;
+  $stmt = $conexao->prepare("SELECT nome_admin, foto_admin FROM administrador WHERE id_admin = ?");
+  $stmt->bind_param("i", $id);
+  $stmt->execute();
+  $resultado = $stmt->get_result();
+  $adminData = $resultado->fetch_assoc();
 
-    $nome = htmlspecialchars($adminData['nome_admin'] ?? 'Administrador');
-    $foto = !empty($adminData['foto_admin'])
-      ? 'data:image/jpeg;base64,' . base64_encode($adminData['foto_admin'])
-      : './img/iconn.png';
-    ?>
-    <div id="user-drawer" class="user-drawer">
-      <div class="user-drawer-header">
-        <h3><?= $nome ?></h3>
-        <button id="close-drawer">&times;</button>
-      </div>
-      <div class="user-drawer-content">
-        <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar"
-          style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
-        <ul class="user-drawer-links">
-          <li><a href="./perfil.php">Perfil</a></li>
-          <li><a href="./logout.php" class="logout-link">Sair</a></li>
-        </ul>
-      </div>
+  $nome = htmlspecialchars($adminData['nome_admin'] ?? 'Administrador');
+  $foto = !empty($adminData['foto_admin'])
+    ? 'data:image/jpeg;base64,' . base64_encode($adminData['foto_admin'])
+    : './img/iconn.png';
+?>
+  <!-- Drawer de perfil e sair -->
+  <div id="user-drawer" class="user-drawer">
+    <div class="user-drawer-header">
+      <h3><?= $nome ?></h3>
+      <button id="close-drawer">&times;</button>
     </div>
-    <div id="drawer-overlay" class="drawer-overlay"></div>
-  <?php endif; ?>
-  <!-- fim da nav -->
-
-  <header class="header-bg">
-    <div class="overlay"></div>
-    <div class="header-content">
-      <h1>Galeria Abepoli</h1>
-
-      <a href="#carrossel" class="scroll-down">
-        <i class="ri-arrow-down-line"></i>
-      </a>
+    <div class="user-drawer-content">
+      <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
+      <ul class="user-drawer-links">
+        <li><a href="./perfil.php">Perfil</a></li>
+        <li><a href="./logout.php" class="logout-link">Sair</a></li>
+      </ul>
     </div>
-  </header>
+  </div>
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+<?php endif; ?>
+<!-- Fim do nav bar -->
 
-  <section id="carrossel">
-    <h2>Nossos Serviços</h2>
-    <div class="carrossel-wrapper">
-      <div class="carrossel" id="carousel">
-        <div class="card">
-          <img src="img/sobree2.png" alt="Serviço 1">
 
+   <header class="header-bg">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1>︎
+              Galeria Abepoli</h1>
         </div>
-        <div class="card">
-          <img src="img/reginaldo.jpg" alt="Serviço 2">
+    </header>
 
-        </div>
-        <div class="card">
-          <img src="./img/apicultura-header.jpg" alt="Serviço 3">
-
-        </div>
-        <div class="card">
-          <img src="./img/abelha-jatai.jpg" alt="Serviço 3">
-
-        </div>
-        <div class="card">
-          <img src="./img/abelha-mirim.jpeg" alt="Serviço 3">
-
-        </div>
-        <div class="card">
-          <img src="./img/abelha3.jpg" alt="Serviço 3">
-
-        </div>
-        <div class="card">
-          <img src="./img/entre.jpg" alt="Serviço 4">
-
-        </div>
-        <div class="card">
-          <img src="./img/entrevista.png" alt="Serviço 5">
-
-        </div>
+  <section class="secao-servicos">
+  <h2>Nossos Serviços</h2>
+  <div class="container-carrossel">
+    <div class="faixa-carrossel" id="faixaCarrossel">
+      <div class="item-carrossel">
+        <img src="img/sobree2.png" alt="Serviço 1">
+      </div>
+      <div class="item-carrossel">
+        <img src="img/reginaldo.jpg" alt="Serviço 2">
+      </div>
+      <div class="item-carrossel">
+        <img src="img/apicultura-header.jpg" alt="Serviço 3">
+      </div>
+      <div class="item-carrossel">
+        <img src="img/abelha-jatai.jpg" alt="Serviço 4">
+      </div>
+      <div class="item-carrossel">
+        <img src="img/abelha-mirim.jpeg" alt="Serviço 5">
+      </div>
+      <div class="item-carrossel">
+        <img src="img/abelha3.jpg" alt="Serviço 6">
+      </div>
+      <div class="item-carrossel">
+        <img src="img/entre.jpg" alt="Serviço 7">
+      </div>
+      <div class="item-carrossel">
+        <img src="img/entrevista.png" alt="Serviço 8">
       </div>
     </div>
-    <div class="controls">
-      <i class="ri-arrow-left-s-line" onclick="scrollCarousel(-1)"></i>
-      <i class="ri-arrow-right-s-line" onclick="scrollCarousel(1)"></i>
-    </div>
-  </section>
+  </div>
+  <div class="botoes-navegacao">
+    <i class="ri-arrow-left-s-line" onclick="moverCarrossel(-1)"></i>
+    <i class="ri-arrow-right-s-line" onclick="moverCarrossel(1)"></i>
+  </div>
+</section>
+<script>
+  function moverCarrossel(direcao) {
+    const carrossel = document.getElementById("faixaCarrossel");
+    const larguraItem = carrossel.querySelector(".item-carrossel").offsetWidth + 20; // item + gap
+    carrossel.scrollBy({
+      left: direcao * larguraItem,
+      behavior: 'smooth'
+    });
+  }
+</script>
 
 
 
@@ -318,15 +335,14 @@ $midias = $conexao->query("SELECT * FROM midias ORDER BY data_upload DESC");
 
   btnHelp.addEventListener('click', () => {
     Swal.fire({
-      title: 'Manual para adicionar notícia',
+      title: 'Manual para adicionar Imagem ou Vídeo',
       html: `
         <p>Para adicionar uma notícia, siga os passos:</p>
         <ol style="text-align:left; margin-left: 20px;">
           <li>Clique no botão <strong>＋</strong> para abrir o formulário.</li>
-          <li>Preencha o <em>Título</em> da notícia.</li>
-          <li>Escreva o <em>Texto da notícia</em> no campo correspondente.</li>
-          <li>Selecione uma <em>imagem</em> clicando no campo de upload.</li>
-          <li>Clique em <strong>Adicionar Notícia</strong> para salvar.</li>
+          <li>Preencha a <em>Descrição</em> para a foto ou vídeo.</li>
+          <li>Selecione uma <em>imagem/ vídeo </em> clicando no campo de upload.</li>
+          <li>Clique em <strong>Enviar Mídia</strong> para salvar.</li>
         </ol>
         <p>Certifique-se de preencher todos os campos.</p>
       `,

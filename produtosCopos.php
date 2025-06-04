@@ -75,71 +75,89 @@ $produtos = $resultado->fetch_all(MYSQLI_ASSOC);
 </head>
 
 <body>
-    <nav>
-        <div class="nav__header">
-            <div class="nav__logo">
-                <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
-            </div>
-            <div class="nav__menu__btn" id="menu-btn">
-                <i class="ri-menu-3-line"></i>
-            </div>
+            <!-- nav bar atualizado -->
+<nav>
+  <div class="nav__header">
+    <div class="nav__logo">
+      <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
+    </div>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-3-line"></i>
+    </div>
 
-            <?php if ($logado): ?>
-                <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
-                    <img src="./img/iconn.png" alt="Usuário" />
-                </button>
-            <?php endif; ?>
-        </div>
-
-        <ul class="nav__links" id="nav-links">
-            <li><a href="./index.php">Início</a></li>
-            <li><a href="./produtoss.php">Produtos</a></li>
-            <li><a href="./sobre.php">Ações</a></li>
-            <li><a href="./doacoes.php">Doações</a></li>
-            <li><a href="./saibamais.php">Saiba Mais</a></li>
-
-            <li class="contato-usuario">
-                <a href="./contato.php">Contato</a>
-                <?php if ($logado): ?>
-                    <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
-                        <img src="./img/iconn.png" alt="Usuário" />
-                    </button>
-                <?php endif; ?>
-            </li>
-        </ul>
-    </nav>
-    <?php
-    if ($logado):
-        require_once 'conexao.php';
-
-        $id = $_SESSION['admin'] ?? 0;
-        $stmt = $conexao->prepare("SELECT nome_admin, foto_admin FROM administrador WHERE id_admin = ?");
-        $stmt->bind_param("i", $id);
-        $stmt->execute();
-        $resultado = $stmt->get_result();
-        $adminData = $resultado->fetch_assoc();
-
-        $nome = htmlspecialchars($adminData['nome_admin'] ?? 'Administrador');
-        $foto = !empty($adminData['foto_admin'])
-            ? 'data:image/jpeg;base64,' . base64_encode($adminData['foto_admin'])
-            : './img/iconn.png';
-        ?>
-        <div id="user-drawer" class="user-drawer">
-            <div class="user-drawer-header">
-                <h3><?= $nome ?></h3>
-                <button id="close-drawer">&times;</button>
-            </div>
-            <div class="user-drawer-content">
-                <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar"
-                    style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
-                <ul class="user-drawer-links">
-                    <li><a href="./perfil.php">Perfil</a></li>
-                    <li><a href="./logout.php" class="logout-link">Sair</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="drawer-overlay" class="drawer-overlay"></div>
+    <?php if ($logado): ?>
+      <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
+        <img src="./img/iconn.png" alt="Usuário" />
+      </button>
     <?php endif; ?>
+  </div>
+
+  <ul class="nav__links" id="nav-links">
+    <?php if ($logado): ?>
+      <!-- Menu visível apenas para ADMIN -->
+        <li><a href="./new.php">Notícias</a></li>
+      <li><a href="./produtosVestimentas.php">Produtos</a></li>
+       <li><a href="./galeria.php">Galeria</a></li>
+      <li><a href="./doacoes.php">Doações</a></li>
+      <li class="contato-usuario">
+        <?php if ($logado): ?>
+          <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
+            <img src="./img/iconn.png" alt="Usuário" />
+          </button>
+        <?php endif; ?>
+      </li>
+    <?php else: ?>
+      <!-- Menu padrão para usuários comuns -->
+      <li><a href="./index.php">Início</a></li>
+      <li><a href="./produtoss.php">Produtos</a></li>
+      <li><a href="./sobre.php">Ações</a></li>
+      <li><a href="./doacoes.php">Doações</a></li>
+      <li><a href="./saibamais.php">Saiba Mais</a></li>
+      <li class="contato-usuario">
+        <a href="./contato.php">Contato</a>
+        <?php if ($logado): ?>
+          <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
+            <img src="./img/iconn.png" alt="Usuário" />
+          </button>
+        <?php endif; ?>
+      </li>
+    <?php endif; ?>
+  </ul>
+</nav>
+
+<?php
+if ($logado):
+  require_once 'conexao.php';
+
+  $id = $_SESSION['admin'] ?? 0;
+  $stmt = $conexao->prepare("SELECT nome_admin, foto_admin FROM administrador WHERE id_admin = ?");
+  $stmt->bind_param("i", $id);
+  $stmt->execute();
+  $resultado = $stmt->get_result();
+  $adminData = $resultado->fetch_assoc();
+
+  $nome = htmlspecialchars($adminData['nome_admin'] ?? 'Administrador');
+  $foto = !empty($adminData['foto_admin'])
+    ? 'data:image/jpeg;base64,' . base64_encode($adminData['foto_admin'])
+    : './img/iconn.png';
+?>
+  <!-- Drawer de perfil e sair -->
+  <div id="user-drawer" class="user-drawer">
+    <div class="user-drawer-header">
+      <h3><?= $nome ?></h3>
+      <button id="close-drawer">&times;</button>
+    </div>
+    <div class="user-drawer-content">
+      <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
+      <ul class="user-drawer-links">
+        <li><a href="./perfil.php">Perfil</a></li>
+        <li><a href="./logout.php" class="logout-link">Sair</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+<?php endif; ?>
+<!-- Fim do nav bar -->
 
     <section class="botao-voltar">
         <a href="produtoss.php" class="voltar">

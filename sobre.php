@@ -181,7 +181,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
         <ul class="service__list">
           <li>
 
-            Fundado em São José dos Campos, o Instituto Abepoli Elena Josefa de Oliveira nasceu com a missão de
+            Fundado em São José dos Campos, o Instituto Abepoli nasceu com a missão de
             preservar a biodiversidade e promover práticas sustentáveis. Com um olhar científico e técnico,
             desenvolvemos pesquisas e projetos ambientais voltados para a conscientização e para a sustentabilidade.
           </li>
