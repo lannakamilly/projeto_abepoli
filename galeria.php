@@ -77,7 +77,7 @@ $midias = $conexao->query("SELECT * FROM midias ORDER BY data_upload DESC");
   <link rel="stylesheet" href="./css/drawerAdmin.css" /><!-- coloquem isso no codigo de vcs -->
   <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
   <script src="./js/drawer.js"></script><!-- coloquem isso no codigo de vcs -->
-  <title>Galeria Elegante</title>
+  <title>Galeria Abepoli</title>
 </head>
 
 <body>
@@ -338,9 +338,8 @@ if ($logado):
     Swal.fire({
       title: 'Manual para adicionar Imagem ou Vídeo',
       html: `
-        <p>Para adicionar uma notícia, siga os passos:</p>
+        <p>Para adicionar uma imagem ou video, siga os passos:</p>
         <ol style="text-align:left; margin-left: 20px;">
-          <li>Clique no botão <strong>＋</strong> para abrir o formulário.</li>
           <li>Preencha a <em>Descrição</em> para a foto ou vídeo.</li>
           <li>Selecione uma <em>imagem/ vídeo </em> clicando no campo de upload.</li>
           <li>Clique em <strong>Enviar Mídia</strong> para salvar.</li>

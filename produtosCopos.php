@@ -74,9 +74,7 @@ $produtos = $resultado->fetch_all(MYSQLI_ASSOC);
     <script src="./js/modais_produtos.js"></script>
 </head>
 
-<body>
-            <!-- nav bar atualizado -->
-<nav>
+<body> <nav>
   <div class="nav__header">
     <div class="nav__logo">
       <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
@@ -125,39 +123,46 @@ $produtos = $resultado->fetch_all(MYSQLI_ASSOC);
     <?php endif; ?>
   </ul>
 </nav>
-<?php
-if ($logado):
-  require_once 'conexao.php';
+    <?php
+    if ($logado):
+      require_once 'conexao.php';
 
-  $id = $_SESSION['admin'] ?? 0;
-  $stmt = $conexao->prepare("SELECT nome_admin, foto_admin FROM administrador WHERE id_admin = ?");
-  $stmt->bind_param("i", $id);
-  $stmt->execute();
-  $resultado = $stmt->get_result();
-  $adminData = $resultado->fetch_assoc();
+      $id = $_SESSION['admin'] ?? $_SESSION['usuario_id'] ?? 0;
+      $tipo = $_SESSION['usuario_tipo'] ?? 'admin';
 
-  $nome = htmlspecialchars($adminData['nome_admin'] ?? 'Administrador');
-  $foto = !empty($adminData['foto_admin'])
-    ? 'data:image/jpeg;base64,' . base64_encode($adminData['foto_admin'])
-    : './img/iconn.png';
-?>
-  <!-- Drawer de perfil e sair -->
-  <div id="user-drawer" class="user-drawer">
-    <div class="user-drawer-header">
-      <h3><?= $nome ?></h3>
-      <button id="close-drawer">&times;</button>
-    </div>
-    <div class="user-drawer-content">
-      <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
-      <ul class="user-drawer-links">
-        <li><a href="./perfil.php">Perfil</a></li>
-        <li><a href="./logout.php" class="logout-link">Sair</a></li>
-      </ul>
-    </div>
-  </div>
-  <div id="drawer-overlay" class="drawer-overlay"></div>
-<?php endif; ?>
-<!-- Fim do nav bar -->
+      if ($tipo === 'funcionario') {
+        $stmt = $conexao->prepare("SELECT nome_funcionario AS nome, foto_funcionario AS foto FROM funcionarios WHERE id_funcionario = ?");
+      } else {
+        $stmt = $conexao->prepare("SELECT nome_admin AS nome, foto_admin AS foto FROM administrador WHERE id_admin = ?");
+      }
+
+      $stmt->bind_param("i", $id);
+      $stmt->execute();
+      $resultado = $stmt->get_result();
+      $usuario = $resultado->fetch_assoc();
+
+      $nome = htmlspecialchars($usuario['nome'] ?? 'Usuário');
+      $foto = !empty($usuario['foto'])
+        ? 'data:image/jpeg;base64,' . base64_encode($usuario['foto'])
+        : './img/iconn.png';
+    ?>
+      <div id="user-drawer" class="user-drawer">
+        <div class="user-drawer-header">
+          <h3><?= $nome ?></h3>
+          <button id="close-drawer">&times;</button>
+        </div>
+        <div class="user-drawer-content">
+          <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar"
+            style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
+          <ul class="user-drawer-links">
+            <li><a href="./perfil.php">Perfil</a></li>
+            <li><a href="./logout.php" class="logout-link">Sair</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="drawer-overlay" class="drawer-overlay"></div>
+    <?php endif; ?>
+  </header>
 
     <section class="botao-voltar">
         <a href="produtoss.php" class="voltar">
@@ -258,7 +263,7 @@ if ($logado):
           <li>Preencha o <em>Nome</em> do produto.</li>
           <li>Escreva o <em>Preço do produto</em> no campo correspondente.</li>
           <li>Selecione uma <em>imagem</em> clicando no campo escolher arquivo.</li>
-          <li>Clique em <strong>Saulvar</strong> para adicionar um produto.</li>
+          <li>Clique em <strong>Salvar</strong> para adicionar um produto.</li>
         </ol>
         <p>Certifique-se de preencher todos os campos.</p>
       `,
