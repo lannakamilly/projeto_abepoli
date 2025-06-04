@@ -10,7 +10,7 @@ body {
     display: flex;
     padding: 50px 20px;
     align-items: center;
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
 .container-contato {
@@ -56,7 +56,6 @@ body {
 .formulario-contato {
   margin-top: -40px;
   flex: 1;
-  max-width: 450px;
   width: 100%;
 }
 
@@ -136,7 +135,6 @@ body {
   padding: 60px 20px 20px;
   background-color: #fff;
 }
-
 .contato-alternativo .preferencia {
   font-size: 18px;
   margin-bottom: 30px;
@@ -168,6 +166,7 @@ body {
 }
 
 .contato-item img {
+  margin-top: -4px;
   width: 28px;
   height: 28px;
 }
@@ -187,8 +186,8 @@ body {
 }
 
 .comentarios-box {
-    width: 50%;
-    margin-top: -90px;
+  margin-top: 40px;
+    width: 900px;
     background-color: #fff8dc;
     border: 5px solid #e0a800;
     border-radius: 15px;

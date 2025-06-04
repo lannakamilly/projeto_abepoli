@@ -119,28 +119,33 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
   </header>
   <section class="secao-contato">
     <div class="container-contato">
-      <div class="formulario-contato">
-        <p class="subtitulo-contato">Está com alguma dúvida?</p>
-        <h2 class="titulo-contato">Abepoli esta pronta para ajudar</h2>
-        <form action="enviar_comentario.php" method="POST">
-          <label>Nome:</label>
-          <input type="text" name="nome" placeholder="Digite seu nome" required>
+ <div class="formulario-contato">
+  <?php if (!$logado): ?>
+    <p class="subtitulo-contato">Está com alguma dúvida?</p>
+    <h2 class="titulo-contato">Abepoli está pronta para ajudar</h2>
+    <form action="enviar_comentario.php" method="POST">
+      <label>Nome:</label>
+      <input type="text" name="nome" placeholder="Digite seu nome" required>
 
-          <label>Email:</label>
-          <input type="email" name="email" placeholder="Digite seu email" required>
+      <label>Email:</label>
+      <input type="email" name="email" placeholder="Digite seu email" required>
 
-          <label>Comentário:</label>
-          <textarea name="comentario" rows="4" placeholder="Digite seu comentário" required></textarea>
+      <label>Comentário:</label>
+      <textarea name="comentario" rows="4" placeholder="Digite seu comentário" required></textarea>
 
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
-      <div class="imagem-contato">
-        <div class="borda-amarela">
-          <img src="./img/fundo_contato.jpg" alt="Foto crianças Abepoli">
-        </div>
-      </div>
+      <button type="submit">Enviar</button>
+    </form>
+  <?php endif; ?>
+</div>
+
+<div class="imagem-contato">
+  <?php if (!$logado): ?>
+    <div class="borda-amarela">
+      <img src="./img/fundo_contato.jpg" alt="Foto crianças Abepoli">
     </div>
+  <?php endif; ?>
+</div>
+
 <?php
 if ($logado) {
   echo "<div class='comentarios-box'>";
