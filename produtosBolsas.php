@@ -263,15 +263,15 @@ if ($logado):
 
   btnHelp.addEventListener('click', () => {
     Swal.fire({
-      title: 'Manual para adicionar notícia',
+      title: 'Manual para adicionar um produto',
       html: `
-        <p>Para adicionar uma notícia, siga os passos:</p>
+        <p>Para adicionar um produto, siga os passos:</p>
         <ol style="text-align:left; margin-left: 20px;">
           <li>Clique no botão <strong>＋</strong> para abrir o formulário.</li>
-          <li>Preencha o <em>Título</em> da notícia.</li>
-          <li>Escreva o <em>Texto da notícia</em> no campo correspondente.</li>
-          <li>Selecione uma <em>imagem</em> clicando no campo de upload.</li>
-          <li>Clique em <strong>Adicionar Notícia</strong> para salvar.</li>
+          <li>Preencha o <em>Nome</em> do produto.</li>
+          <li>Escreva o <em>Preço do produto</em> no campo correspondente.</li>
+          <li>Selecione uma <em>imagem</em> clicando no campo escolher arquivo.</li>
+          <li>Clique em <strong>Saulvar</strong> para adicionar um produto.</li>
         </ol>
         <p>Certifique-se de preencher todos os campos.</p>
       `,
