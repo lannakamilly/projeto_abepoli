@@ -1,20 +1,19 @@
 <?php
 session_start();
 require_once 'conexao.php';
-$logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SESSION['usuario_tipo'] === 'funcionario');
-$usuario = null;
-$tipo = null;
+
+$logado = isset($_SESSION['admin']) || isset($_SESSION['funcionario']);
 
 if (isset($_SESSION['admin'])) {
     $id = $_SESSION['admin'];
     $tipo = 'admin';
-    $stmt = $conexao->prepare("SELECT nome_admin AS nome, email_admin AS email, senha_admin AS senha, foto_admin AS foto FROM administrador WHERE id_admin = ?");
+    $stmt = $conexao->prepare("SELECT nome_admin AS nome, email_admin AS email, foto_admin AS foto FROM administrador WHERE id_admin = ?");
 } elseif (isset($_SESSION['funcionario'])) {
     $id = $_SESSION['funcionario'];
     $tipo = 'funcionario';
-    $stmt = $conexao->prepare("SELECT nome_funcionario AS nome, email_funcionario AS email, senha_funcionario AS senha, foto_funcionario AS foto FROM funcionario WHERE id_funcionario = ?");
+    $stmt = $conexao->prepare("SELECT nome_funcionario AS nome, email_funcionario AS email, foto_funcionario AS foto FROM funcionarios WHERE id_funcionario = ?");
 } else {
-    header("Location: editar_perfil.php");
+    header("Location: login.php");
     exit;
 }
 
@@ -22,15 +21,6 @@ $stmt->bind_param("i", $id);
 $stmt->execute();
 $resultado = $stmt->get_result();
 $usuario = $resultado->fetch_assoc();
-
-if (!$usuario || !is_array($usuario)) {
-    $usuario = [
-        'nome' => '',
-        'email' => '',
-        'senha' => '',
-        'foto' => ''
-    ];
-}
 ?>
 
 <!DOCTYPE html>
@@ -204,25 +194,24 @@ if (!$usuario || !is_array($usuario)) {
     <div class="form-container">
         <h2>Editar Perfil</h2>
         <form method="post" action="salvar_edicao.php" enctype="multipart/form-data">
-            <label for="foto" class="title-foto-perfil">Foto de Perfil</label>
-            <img id="preview-foto" class="foto_perfil" src="<?php
-            echo !empty($usuario['foto']) ? 'data:image/jpeg;base64,' . base64_encode($usuario['foto']) : './img/avatar.png';
-            ?>" alt="Foto de perfil">
+    <label for="foto" class="title-foto-perfil">Foto de Perfil</label>
+    <img id="preview-foto" class="foto_perfil" src="<?php
+        echo !empty($usuario['foto']) ? 'data:image/jpeg;base64,' . base64_encode($usuario['foto']) : './img/avatar.png';
+    ?>" alt="Foto de perfil">
 
-            <input type="file" id="foto" name="foto" accept="image/*" onchange="previewImagem(event)">
+    <input type="file" id="foto" name="foto" accept="image/*" onchange="previewImagem(event)">
 
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" value="<?= htmlspecialchars($usuario['nome']) ?>" required>
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" name="nome" value="<?= htmlspecialchars($usuario['nome']) ?>" required>
 
-            <label for="email">Novo E-mail</label>
-            <input type="email" id="email" name="email" value="<?= htmlspecialchars($usuario['email']) ?>" required>
+    <label for="email">Novo E-mail</label>
+    <input type="email" id="email" name="email" value="<?= htmlspecialchars($usuario['email']) ?>" required>
 
-           
+    <label for="senha">Nova Senha (opcional)</label>
+    <input type="password" id="senha" name="senha">
 
-            <input type="hidden" name="tipo" value="<?= $tipo ?>">
-
-            <button type="submit">Salvar alterações</button>
-        </form>
+    <button type="submit">Salvar alterações</button>
+</form>
     </div>
     
 
@@ -310,6 +299,18 @@ if (!$usuario || !is_array($usuario)) {
         confirmButtonText: 'OK',
         confirmButtonColor: '#e4af00'
     });
+</script>
+<script>
+function previewImagem(event) {
+    const input = event.target;
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('preview-foto').src = e.target.result;
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 </script>
 <?php endif; ?>
 
