@@ -2,17 +2,24 @@
 session_start();
 require_once 'conexao.php';
 
-$logado = isset($_SESSION['admin']) || isset($_SESSION['funcionario']);
+$logado = isset($_SESSION['usuario_id']) && isset($_SESSION['usuario_tipo']);
 
-if (isset($_SESSION['admin'])) {
-    $id = $_SESSION['admin'];
-    $tipo = 'admin';
+// Verifica se o usuário está logado
+if (!isset($_SESSION['usuario_id']) || !isset($_SESSION['usuario_tipo'])) {
+    header('Location: login.php');
+    exit;
+}
+
+$tipo = $_SESSION['usuario_tipo'];
+$id = $_SESSION['usuario_id'];
+
+
+if ($tipo === 'admin') {
     $stmt = $conexao->prepare("SELECT nome_admin AS nome, email_admin AS email, foto_admin AS foto FROM administrador WHERE id_admin = ?");
-} elseif (isset($_SESSION['funcionario'])) {
-    $id = $_SESSION['funcionario'];
-    $tipo = 'funcionario';
+} elseif ($tipo === 'funcionario') {
     $stmt = $conexao->prepare("SELECT nome_funcionario AS nome, email_funcionario AS email, foto_funcionario AS foto FROM funcionarios WHERE id_funcionario = ?");
 } else {
+   
     header("Location: login.php");
     exit;
 }
@@ -21,6 +28,12 @@ $stmt->bind_param("i", $id);
 $stmt->execute();
 $resultado = $stmt->get_result();
 $usuario = $resultado->fetch_assoc();
+
+if (!$usuario) {
+   
+    header("Location: login.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
