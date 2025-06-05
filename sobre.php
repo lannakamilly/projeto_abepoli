@@ -111,7 +111,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
   <header class="header">
     <div class="section__container header__container" id="home">
       <p>Instituto Abepoli</p>
-      <h1>Quem Somos <span>Nós</span></h1>
+      <h1>Quem somos <span>nós</span></h1>
     </div>
   </header>
 
@@ -137,13 +137,13 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
 
   <section class="section__container intro__container">
     <p class="section__subheader">INSTITUTO ABEPOLI</p>
-    <h1 class="section__header">Valores e Objetivos</h1>
+    <h1 class="section__header">Valores e objetivos</h1>
     <div class="intro__grid">
       <div class="intro__card">
         <div class="intro__image">
           <img src="./img/1.png" alt="intro" />
         </div>
-        <h4>Proteção Ambiental</h4>
+        <h4>Proteção ambiental</h4>
         <p>
           Proteger a fauna, flora e biodiversidade, <br> com foco especial em abelhas nativas e polinizadores essenciais
           para o ecossistema.
@@ -154,7 +154,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
         <div class="intro__image">
           <img src="./img/2.png" alt="intro" />
         </div>
-        <h4>Sustentabilidade Comunitária</h4>
+        <h4>Sustentabilidade comunitária</h4>
         <p>
           Incentivar práticas sustentáveis e apoiar comunidades na implementação de soluções ecológicas.
         </p>
@@ -164,7 +164,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
         <div class="intro__image">
           <img src="./img/3.png" alt="intro" />
         </div>
-        <h4>Educação Ecológica</h4>
+        <h4>Educação ecológica</h4>
         <p>
           Promover conhecimento sobre sustentabilidade, conservação e a importância dos polinizadores para natureza e a
           sociedade.
@@ -177,7 +177,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
     <div class="section__container service__container">
       <div class="service__content">
         <p class="section__subheader">NOSSA</p>
-        <h2 class="section__header">Origem e Missão</h2>
+        <h2 class="section__header">Origem e missão</h2>
         <ul class="service__list">
           <li>
 
@@ -197,7 +197,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
     </div>
     <div class="about__content">
       <p class="section__subheader">ONDE COMEÇOU</p>
-      <h2 class="section__header">Atuação Técnica e Científica</h2>
+      <h2 class="section__header">Atuação técnica e científica</h2>
       <p class="section__description">
         Com sede em São José dos Campos e registrado sob o CNPJ 37.912.072/0001-15, o Instituto Abepoli desenvolve
         atividades científicas e técnicas que trazem benefícios para a preservação da biodiversidade e o desenvolvimento
@@ -214,7 +214,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
       <h1>Registros da nossa <br> missão com as abelhas</h1>
       <p><br></p>
       <a href="./galeria.php">
-        <button class="btn">Ver Galeria</button>
+        <button class="btn">Ver galeria</button>
       </a>
     </div>
 
