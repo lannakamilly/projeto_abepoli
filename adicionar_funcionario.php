@@ -138,10 +138,10 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1') {
             <label>Cargo</label>
             <select name="cargo_funcionario" required>
                 <option value="">Selecione o cargo</option>
-                <option value="Cargo 1">Gestor de Produtos</option>
-                <option value="Cargo 2">Responsável Financeiro</option>
-                <option value="Cargo 3">Auxiliar Técnico</option>
-                <option value="Cargo 4">Moderador de Comentários</option>
+                <option>Gestor de Produtos</option>
+                <option>Responsável Financeiro</option>
+                <option>Auxiliar Técnico</option>
+                <option>Moderador de Comentários</option>
             </select>
 
             <label>Senha:</label>
