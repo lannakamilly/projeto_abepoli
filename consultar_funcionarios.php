@@ -29,7 +29,7 @@ $result = $conexao->query($sql);
 </head>
 
 <body>
-     <nav>
+    <nav>
   <div class="nav__header">
     <div class="nav__logo">
       <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
@@ -117,14 +117,13 @@ $result = $conexao->query($sql);
       </div>
       <div id="drawer-overlay" class="drawer-overlay"></div>
     <?php endif; ?>
-  </header>
-   <section class="botao-voltar">
-        <a href="produtoss.php" class="voltar">
-            <i class="fa fa-arrow-left"></i>
-        </a>
-    </section>
 
   <h2 class="titulo">Consultar funcionários cadastrados</h2>
+  <section class="botao-voltar">
+    <a href="perfil.php" class="voltar">
+        <i class="fa fa-arrow-left"></i>
+    </a>
+</section>
   <div class="fundo-cinza">
 <div class="container-funcionarios">
   <?php if ($result->num_rows > 0): ?>

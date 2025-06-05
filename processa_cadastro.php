@@ -1,44 +1,53 @@
 <?php
-require_once 'conexao.php';
+session_start();
+require_once('conexao.php');
 
-$mensagem = '';
-$tipo = '';
+$mensagem = "";
+$tipo = "error";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nome = $_POST['nome_funcionario'];
-    $email = $_POST['email_funcionario'];
-    $telefone = $_POST['telefone_funcionario'];
-    $cargo = $_POST['cargo_funcionario'];
-    $senha = password_hash($_POST['senha_funcionario'], PASSWORD_DEFAULT);
+    // Dados do formulário
+    $nome = $_POST['nome_funcionario'] ?? '';
+    $email = $_POST['email_funcionario'] ?? '';
+    $telefone = $_POST['telefone_funcionario'] ?? '';
+    $cargo = $_POST['cargo_funcionario'] ?? '';
+    $senha = $_POST['senha_funcionario'] ?? '';
 
-    $foto = null;
-    if (isset($_FILES['foto_funcionario']) && $_FILES['foto_funcionario']['error'] == 0) {
-        $foto = file_get_contents($_FILES['foto_funcionario']['tmp_name']);
-        $foto = base64_encode($foto); 
-    }
-
-    $stmt = $conexao->prepare("INSERT INTO funcionarios 
-        (nome_funcionario, telefone_funcionario, email_funcionario, cargo_funcionario, foto_funcionario, senha_funcionario)
-        VALUES (?, ?, ?, ?, ?, ?)");
-
-    if (!$stmt) {
-        $mensagem = "Erro ao preparar: " . $conexao->error;
-        $tipo = "error";
+    // Validação
+    if (empty($nome) || empty($email) || empty($telefone) || empty($cargo) || empty($senha)) {
+        $mensagem = "Por favor, preencha todos os campos.";
     } else {
-        $stmt->bind_param("sissss", $nome, $telefone, $email, $cargo, $foto, $senha);
+        // Hash da senha
+        $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-        if ($stmt->execute()) {
-            $mensagem = "Funcionário cadastrado com sucesso!";
-            $tipo = "success";
-        } else {
-            $mensagem = "Erro ao cadastrar: " . $stmt->error;
-            $tipo = "error";
+        // Tratamento da foto
+        $foto_binaria = null;
+        if (isset($_FILES['foto_funcionario']) && $_FILES['foto_funcionario']['error'] === UPLOAD_ERR_OK) {
+            $foto_binaria = file_get_contents($_FILES['foto_funcionario']['tmp_name']);
         }
 
-        $stmt->close();
-    }
+        // Query
+        $sql = "INSERT INTO funcionarios (nome_funcionario, email_funcionario, telefone_funcionario, cargo_funcionario, senha_funcionario, foto_funcionario) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $conexao->prepare($sql);
 
-    $conexao->close();
+        if ($stmt) {
+            $null = null;
+            $stmt->bind_param("sssssb", $nome, $email, $telefone, $cargo, $senha_hash, $null);
+
+            if ($foto_binaria !== null) {
+                $stmt->send_long_data(5, $foto_binaria);
+            }
+
+            if ($stmt->execute()) {
+                $mensagem = "Funcionário cadastrado com sucesso!";
+                $tipo = "success";
+            } else {
+                $mensagem = "Erro ao cadastrar funcionário: " . $stmt->error;
+            }
+        } else {
+            $mensagem = "Erro na preparação da query: " . $conexao->error;
+        }
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -58,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             confirmButtonText: 'OK'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = 'index.php';
+                window.location.href = 'adicionar_funcionario.php';
             }
         });
     </script>

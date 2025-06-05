@@ -75,7 +75,7 @@ $produtos = $resultado->fetch_all(MYSQLI_ASSOC);
 </head>
 
 <body>  
- <nav>
+<nav>
   <div class="nav__header">
     <div class="nav__logo">
       <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
@@ -163,9 +163,6 @@ $produtos = $resultado->fetch_all(MYSQLI_ASSOC);
       </div>
       <div id="drawer-overlay" class="drawer-overlay"></div>
     <?php endif; ?>
-  </header>
-
-
 
     <section class="botao-voltar">
         <a href="produtoss.php" class="voltar">

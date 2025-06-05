@@ -1,33 +1,45 @@
 body {
-    background: #f9f9f9;
+    background: #ffffff;
     margin: 0;
     padding: 0;
 }
 
 .container {
     width: 700px;
-    background: #fff;
-    margin: 40px auto;
+    background: #edeaea;
+    margin: 80px auto;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    box-shadow: 5px 0 15px 6px rgba(0, 0, 0, 0.259);
     position: relative;
     text-align: center;
 }
 .botao-voltar {
-  margin-top: 30px;
-  margin-left: 90px;
-  margin-bottom: 10px;
+  margin: -60px 0 10px 50px;
+  z-index: 10;
+  position: relative;
 }
 
 .botao-voltar a {
-  color: black;
-  font-size: 24px;
-  text-decoration: none;
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.foto_perfil {
+  margin-top: 40px;
+  display: flex;
+  width: 190px;
+  height: 190px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40%;
+  border-radius: 50%;
+  border: 3px solid #e1b218;
 }
 
 h2 {
-margin: -30px auto 0;
+margin-top: 140px;
   text-align: center;
   font-size: 42px;
   font-weight: bold;

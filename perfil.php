@@ -145,9 +145,11 @@ $foto_src = !empty($usuario['foto']) ? 'data:image/jpeg;base64,' . base64_encode
     <?php endif; ?>
   </header>
 
-  <section class="botao-voltar">
-    <a href="saibamais.php"><i class="fa fa-arrow-left"></i></a>
-  </section>
+<section class="botao-voltar">
+    <a href="produtosVestimentas.php" class="voltar">
+        <i class="fa fa-arrow-left"></i>
+    </a>
+</section>
 
   <div class="form-container">
     <h2><span class="title"> <?= $tipoUsuario === 'funcionario' ? 'Funcionário' : 'Administrador' ?></span></h2>

@@ -19,36 +19,47 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1') {
     <link rel="stylesheet" href="./css/drawerAdmin.css" />
     <link rel="stylesheet" href="./css/footerr.css" />
     <link rel="stylesheet" href="./css/addFuncionario.css">
-<<<<<<< HEAD
     <link rel="icon" type="image/png" href="./img/icon-abepoli.png" class="icon" />
-=======
-     <script src="./js/drawer.js"></script>
->>>>>>> 4013c103b3d87c079fb1cb6964d19c967c71e9ba
 </head>
 <body>
-     <nav>
-    <div class="nav__header">
-      <div class="nav__logo">
-        <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
-      </div>
-      <div class="nav__menu__btn" id="menu-btn">
-        <i class="ri-menu-3-line"></i>
-      </div>
-
-      <?php if ($logado): ?>
-        <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
-          <img src="./img/iconn.png" alt="Usuário" />
-        </button>
-      <?php endif; ?>
+<nav>
+  <div class="nav__header">
+    <div class="nav__logo">
+      <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
+    </div>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-3-line"></i>
     </div>
 
-    <ul class="nav__links" id="nav-links">
+    <?php if ($logado): ?>
+      <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
+        <img src="./img/iconn.png" alt="Usuário" />
+      </button>
+    <?php endif; ?>
+  </div>
+
+  <ul class="nav__links" id="nav-links">
+    <?php if ($logado): ?>
+      <!-- Menu visível apenas para ADMIN -->
+        <li><a href="./new.php">Notícias</a></li>
+      <li><a href="./produtosVestimentas.php">Produtos</a></li>
+       <li><a href="./galeria.php">Galeria</a></li>
+      <li><a href="./doacoes.php">Doações</a></li>
+      <li> <a href="./contato.php">Contato</a></li>
+      <li class="contato-usuario">
+        <?php if ($logado): ?>
+          <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
+            <img src="./img/iconn.png" alt="Usuário" />
+          </button>
+        <?php endif; ?>
+      </li>
+    <?php else: ?>
+      <!-- Menu padrão para usuários comuns -->
       <li><a href="./index.php">Início</a></li>
       <li><a href="./produtoss.php">Produtos</a></li>
       <li><a href="./sobre.php">Ações</a></li>
       <li><a href="./doacoes.php">Doações</a></li>
       <li><a href="./saibamais.php">Saiba Mais</a></li>
-
       <li class="contato-usuario">
         <a href="./contato.php">Contato</a>
         <?php if ($logado): ?>
@@ -57,55 +68,63 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1') {
           </button>
         <?php endif; ?>
       </li>
-    </ul>
-  </nav>
-  <?php
-  if ($logado):
-    require_once 'conexao.php';
+    <?php endif; ?>
+  </ul>
+</nav>
+    <?php
+    if ($logado):
+      require_once 'conexao.php';
 
-    $id = $_SESSION['admin'] ?? 0;
-    $stmt = $conexao->prepare("SELECT nome_admin, foto_admin FROM administrador WHERE id_admin = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-    $adminData = $resultado->fetch_assoc();
+      $id = $_SESSION['admin'] ?? $_SESSION['usuario_id'] ?? 0;
+      $tipo = $_SESSION['usuario_tipo'] ?? 'admin';
 
-    $nome = htmlspecialchars($adminData['nome_admin'] ?? 'Administrador');
-    $foto = !empty($adminData['foto_admin'])
-      ? 'data:image/jpeg;base64,' . base64_encode($adminData['foto_admin'])
-      : './img/iconn.png';
-  ?>
-    <div id="user-drawer" class="user-drawer">
-      <div class="user-drawer-header">
-        <h3><?= $nome ?></h3>
-        <button id="close-drawer">&times;</button>
+      if ($tipo === 'funcionario') {
+        $stmt = $conexao->prepare("SELECT nome_funcionario AS nome, foto_funcionario AS foto FROM funcionarios WHERE id_funcionario = ?");
+      } else {
+        $stmt = $conexao->prepare("SELECT nome_admin AS nome, foto_admin AS foto FROM administrador WHERE id_admin = ?");
+      }
+
+      $stmt->bind_param("i", $id);
+      $stmt->execute();
+      $resultado = $stmt->get_result();
+      $usuario = $resultado->fetch_assoc();
+
+      $nome = htmlspecialchars($usuario['nome'] ?? 'Usuário');
+      $foto = !empty($usuario['foto'])
+        ? 'data:image/jpeg;base64,' . base64_encode($usuario['foto'])
+        : './img/iconn.png';
+    ?>
+      <div id="user-drawer" class="user-drawer">
+        <div class="user-drawer-header">
+          <h3><?= $nome ?></h3>
+          <button id="close-drawer">&times;</button>
+        </div>
+        <div class="user-drawer-content">
+          <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar"
+            style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
+          <ul class="user-drawer-links">
+            <li><a href="./perfil.php">Perfil</a></li>
+            <li><a href="./logout.php" class="logout-link">Sair</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="user-drawer-content">
-        <img src="<?= $foto ?>" alt="Foto de perfil" class="user-avatar" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #e4af00;">
-        <ul class="user-drawer-links">
-          <li><a href="./perfil.php">Perfil</a></li>
-          <li><a href="./logout.php" class="logout-link">Sair</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id="drawer-overlay" class="drawer-overlay"></div>
-  <?php endif; ?>
-
-    <section class="botao-voltar">
-        <a href="consultar_funcionarios.php" class="voltar">
-            <i class="fa fa-arrow-left"></i>
-        </a>
-    </section>
+      <div id="drawer-overlay" class="drawer-overlay"></div>
+    <?php endif; ?>
+  
    <h2>Cadastrar funcionário</h2>
     <hr>
+     <section class="botao-voltar">
+    <a href="./consultar_funcionarios.php" class="voltar">
+        <i class="fa fa-arrow-left"></i>
+    </a>
+</section>
 
     <form action="processa_cadastro.php" method="POST" enctype="multipart/form-data">
         <div class="container">
        
-            <div class="form-foto">
-                <img src="https://via.placeholder.com/100x100.png?text=Foto" class="avatar">
-                <input type="file" name="foto_funcionario" accept="image/*">
-            </div>
+           <img id="preview-foto" class="foto_perfil" src="./img/iconn.png" alt="Foto de perfil">
+     <input type="file" id="foto" name="foto_funcionario" accept="image/*" onchange="previewImagem(event)">
+
 
             <label>Nome completo</label>
             <input type="text" name="nome_funcionario" required>
@@ -119,10 +138,10 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1') {
             <label>Cargo</label>
             <select name="cargo_funcionario" required>
                 <option value="">Selecione o cargo</option>
-                <option value="Cargo 1">Cargo 1</option>
-                <option value="Cargo 2">Cargo 2</option>
-                <option value="Cargo 3">Cargo 3</option>
-                <option value="Cargo 4">Cargo 4</option>
+                <option value="Cargo 1">Gestor de Produtos</option>
+                <option value="Cargo 2">Responsável Financeiro</option>
+                <option value="Cargo 3">Auxiliar Técnico</option>
+                <option value="Cargo 4">Moderador de Comentários</option>
             </select>
 
             <label>Senha:</label>
@@ -199,6 +218,17 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1') {
             <p>© Todos os direitos reservados</p>
         </div>
     </footer>
+    <script>
+function previewImagem(event) {
+    const reader = new FileReader();
+    reader.onload = function(){
+        const output = document.getElementById('preview-foto');
+        output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+
     <script src="./js/nav.js"></script>
 </body>
 </html>
