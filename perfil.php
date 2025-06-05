@@ -184,8 +184,6 @@ $foto_src = !empty($usuario['foto']) ? 'data:image/jpeg;base64,' . base64_encode
     </div>
   </div>
 
-  <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
-
   <div class="wave-shape-divider">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
@@ -245,5 +243,54 @@ $foto_src = !empty($usuario['foto']) ? 'data:image/jpeg;base64,' . base64_encode
       });
     });
   </script>
+  <?php if ($logado): ?>
+<button id="btn-help" title="Manual de como adicionar notícia" aria-label="Manual de como adicionar notícia">
+  ?
+</button>
+
+<style>
+  #btn-help {
+    position: fixed;
+    bottom: 30px; 
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background:rgb(242, 22, 22); 
+    color: white;
+    font-size: 28px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background 0.3s ease;
+    z-index: 1000;
+  }
+  #btn-help:hover {
+    background:rgb(158, 20, 20);
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  const btnHelp = document.getElementById('btn-help');
+
+  btnHelp.addEventListener('click', () => {
+    Swal.fire({
+     title: 'Página de perfil',
+      html: `
+        <ol style="text-align:left; margin-left: 20px;">
+          <li>Nessa página será possivel <strong>visualizar</strong> sua foto de perfil, seu email, e nome.</li>
+          <li>Ao clicar em <strong>editar perfil</strong> será redirecionado para outra tela para a alteração de seus dados.</li>
+          <li>Ao clicar em <strong>consultar funcionários</strong> será possível ver todos os <strong>funcionários</strong> cadastrados por você.</li>
+          <li>Ao clicar em <strong>sair</strong> você irá sair da sua conta de administrador.</li>
+        </ol>
+      `,
+      icon: 'info',
+      confirmButtonText: 'Entendi'
+    });
+  });
+</script>
+<?php endif; ?>
 </body>
 </html>

@@ -155,24 +155,28 @@ if ($logado) {
   $sql = "SELECT * FROM comentarios ORDER BY id DESC";
   $resultado = $conexao->query($sql);
 
-  if ($resultado->num_rows > 0) {
-    while ($comentario = $resultado->fetch_assoc()) {
-      echo "<div class='comentario'>";
-      echo "<div class='comentario-header'>";
-      echo "<h3>" . htmlspecialchars($comentario['nome']) . "</h3>";
-      echo "<span class='email'>" . htmlspecialchars($comentario['email']) . "</span>";
-      echo "</div>";
-      echo "<p class='comentario-texto'>" . htmlspecialchars($comentario['comentario']) . "</p>";
+ if ($resultado->num_rows > 0) {
+  while ($comentario = $resultado->fetch_assoc()) {
+    echo "<div class='comentario'>";
+    echo "<div class='comentario-header'>";
+    echo "<h3>" . htmlspecialchars($comentario['nome']) . "</h3>";
+    echo "<span class='email'>" . htmlspecialchars($comentario['email']) . "</span>";
+    
+    $dataFormatada = date('d/m/Y H:i', strtotime($comentario['data_envio']));
+    echo "<span class='data-envio' style='margin-left:10px; color:#666; font-size:0.9em;'>$dataFormatada</span>";
+    
+    echo "</div>";
+    echo "<p class='comentario-texto'>" . htmlspecialchars($comentario['comentario']) . "</p>";
 
-      echo "<div class='comentario-acoes'>";
-      echo "<i class='fa-solid fa-trash delete-btn' data-id='" . $comentario['id'] . "' style='color:rgb(209, 4, 4); cursor:pointer;'></i>";
-      echo "</div>";
+    echo "<div class='comentario-acoes'>";
+    echo "<i class='fa-solid fa-trash delete-btn' data-id='" . $comentario['id'] . "' style='color:rgb(209, 4, 4); cursor:pointer;'></i>";
+    echo "</div>";
 
-      echo "</div>"; // fecha .comentario
-    }
-  } else {
-    echo "<p style='text-align:center;'>Nenhum comentário ainda.</p>";
+    echo "</div>"; // fecha .comentario
   }
+} else {
+  echo "<p style='text-align:center;'>Nenhum comentário ainda.</p>";
+}
 
   echo "</div>"; // fecha .comentarios-box
 }
@@ -198,6 +202,59 @@ if ($logado) {
 
     </div>
   </section>
+  <!-- BOTÃO AJUDA -->
+<?php if ($logado): ?>
+<button id="btn-help" title="Manual de como adicionar notícia" aria-label="Manual de como adicionar notícia">
+  ?
+</button>
+
+<style>
+  #btn-help {
+    position: fixed;
+    bottom: 80px; 
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background:rgb(242, 22, 22); /* verde */
+    color: white;
+    font-size: 28px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background 0.3s ease;
+    z-index: 1000;
+  }
+  #btn-help:hover {
+    background:rgb(158, 20, 20);
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  const btnHelp = document.getElementById('btn-help');
+
+  btnHelp.addEventListener('click', () => {
+    Swal.fire({
+     title: 'Página de contato',
+      html: `
+        <p>Manual para gerenciamento de comentários</p>
+        <ol style="text-align:left; margin-left: 20px;">
+          <li>Você poderá analisar os comentarios que os usuários irão enviar através do site.</li>
+          <li>Os comentários estão informando o <strong>email</strong> do usuário <strong>hora</strong> e <strong>data</strong> na qual o comentário foi enviado.</li>
+          <li>Poderá tirar a dúvida do cliente respondendo através do email.</li>
+          <li>Caso já tenha <strong>respondido</strong>, é possível <strong>apagá-lo.</strong></li>
+          <li><strong>Cuidado</strong> ao excluir, a ação <strong>não</strong> poderá ser <strong>revertida.</strong></li>
+        </ol>
+
+      `,
+      icon: 'info',
+      confirmButtonText: 'Entendi'
+    });
+  });
+</script>
+<?php endif; ?>
  <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
   <div class="wave-shape-divider">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

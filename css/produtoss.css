@@ -65,7 +65,7 @@ body {
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: bold;
   margin-bottom: 50px;
-  margin-top: -115px;
+  margin-top: 10px;
   text-align: left;
   color: #333;
 }

@@ -2,11 +2,13 @@
 session_start();
 require_once 'conexao.php';
 
+
 // Verifica se o usuário está logado
 if (!isset($_SESSION['usuario_id']) || !isset($_SESSION['usuario_tipo'])) {
     header('Location: login.php');
     exit;
 }
+$logado = true;
 
 $id = $_SESSION['usuario_id'];
 $tipo = $_SESSION['usuario_tipo'];
