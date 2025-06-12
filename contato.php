@@ -29,54 +29,54 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
 
   <header>
     <nav>
-  <div class="nav__header">
-    <div class="nav__logo">
-      <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
-    </div>
-    <div class="nav__menu__btn" id="menu-btn">
-      <i class="ri-menu-3-line"></i>
-    </div>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
 
-    <?php if ($logado): ?>
-      <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
-        <img src="./img/iconn.png" alt="Usuário" />
-      </button>
-    <?php endif; ?>
-  </div>
-
-  <ul class="nav__links" id="nav-links">
-    <?php if ($logado): ?>
-      <!-- Menu visível apenas para ADMIN -->
-        <li><a href="./new.php">Notícias</a></li>
-      <li><a href="./produtosVestimentas.php">Produtos</a></li>
-       <li><a href="./galeria.php">Galeria</a></li>
-      <li><a href="./doacoes.php">Doações</a></li>
-      <li> <a href="./contato.php">Contato</a></li>
-      <li class="contato-usuario">
         <?php if ($logado): ?>
-          <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
+          <button id="user-icon-mobile" class="user-icon-btn" aria-label="Abrir menu do usuário">
             <img src="./img/iconn.png" alt="Usuário" />
           </button>
         <?php endif; ?>
-      </li>
-    <?php else: ?>
-      <!-- Menu padrão para usuários comuns -->
-      <li><a href="./index.php">Início</a></li>
-      <li><a href="./produtoss.php">Produtos</a></li>
-      <li><a href="./sobre.php">Ações</a></li>
-      <li><a href="./doacoes.php">Doações</a></li>
-      <li><a href="./saibamais.php">Saiba Mais</a></li>
-      <li class="contato-usuario">
-        <a href="./contato.php">Contato</a>
+      </div>
+
+      <ul class="nav__links" id="nav-links">
         <?php if ($logado): ?>
-          <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
-            <img src="./img/iconn.png" alt="Usuário" />
-          </button>
+          <!-- Menu visível apenas para ADMIN -->
+          <li><a href="./new.php">Notícias</a></li>
+          <li><a href="./produtosVestimentas.php">Produtos</a></li>
+          <li><a href="./galeria.php">Galeria</a></li>
+          <li><a href="./doacoes.php">Doações</a></li>
+          <li> <a href="./contato.php">Contato</a></li>
+          <li class="contato-usuario">
+            <?php if ($logado): ?>
+              <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
+                <img src="./img/iconn.png" alt="Usuário" />
+              </button>
+            <?php endif; ?>
+          </li>
+        <?php else: ?>
+          <!-- Menu padrão para usuários comuns -->
+          <li><a href="./index.php">Início</a></li>
+          <li><a href="./produtoss.php">Produtos</a></li>
+          <li><a href="./sobre.php">Ações</a></li>
+          <li><a href="./doacoes.php">Doações</a></li>
+          <li><a href="./saibamais.php">Saiba Mais</a></li>
+          <li class="contato-usuario">
+            <a href="./contato.php">Contato</a>
+            <?php if ($logado): ?>
+              <button id="user-icon-desktop" class="user-icon-btn" aria-label="Abrir menu do usuário">
+                <img src="./img/iconn.png" alt="Usuário" />
+              </button>
+            <?php endif; ?>
+          </li>
         <?php endif; ?>
-      </li>
-    <?php endif; ?>
-  </ul>
-</nav>
+      </ul>
+    </nav>
     <?php
     if ($logado):
       require_once 'conexao.php';
@@ -119,69 +119,69 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
   </header>
   <section class="secao-contato">
     <div class="container-contato">
- <div class="formulario-contato">
-  <?php if (!$logado): ?>
-    <p class="subtitulo-contato">Está com alguma dúvida?</p>
-    <h2 class="titulo-contato">Abepoli está pronta para ajudar</h2>
-    <form action="enviar_comentario.php" method="POST">
-      <label>Nome:</label>
-      <input type="text" name="nome" placeholder="Digite seu nome" required>
+      <div class="formulario-contato">
+        <?php if (!$logado): ?>
+          <p class="subtitulo-contato">Está com alguma dúvida?</p>
+          <h2 class="titulo-contato">Abepoli está pronta para ajudar</h2>
+          <form action="enviar_comentario.php" method="POST">
+            <label>Nome:</label>
+            <input type="text" name="nome" placeholder="Digite seu nome" required>
 
-      <label>Email:</label>
-      <input type="email" name="email" placeholder="Digite seu email" required>
+            <label>Email:</label>
+            <input type="email" name="email" placeholder="Digite seu email" required>
 
-      <label>Comentário:</label>
-      <textarea name="comentario" rows="4" placeholder="Digite seu comentário" required></textarea>
+            <label>Comentário:</label>
+            <textarea name="comentario" rows="4" placeholder="Digite seu comentário" required></textarea>
 
-      <button type="submit">Enviar</button>
-    </form>
-  <?php endif; ?>
-</div>
+            <button type="submit">Enviar</button>
+          </form>
+        <?php endif; ?>
+      </div>
 
-<div class="imagem-contato">
-  <?php if (!$logado): ?>
-    <div class="borda-amarela">
-      <img src="./img/fundo_contato.jpg" alt="Foto crianças Abepoli">
+      <div class="imagem-contato">
+        <?php if (!$logado): ?>
+          <div class="borda-amarela">
+            <img src="./img/fundo_contato.jpg" alt="Foto crianças Abepoli">
+          </div>
+        <?php endif; ?>
+      </div>
+
+      <?php
+      if ($logado) {
+        echo "<div class='comentarios-box'>";
+        echo "<h2>Comentários</h2>";
+
+        require_once('conexao.php');
+        $sql = "SELECT * FROM comentarios ORDER BY id DESC";
+        $resultado = $conexao->query($sql);
+
+        if ($resultado->num_rows > 0) {
+          while ($comentario = $resultado->fetch_assoc()) {
+            echo "<div class='comentario'>";
+            echo "<div class='comentario-header'>";
+            echo "<h3>" . htmlspecialchars($comentario['nome']) . "</h3>";
+            echo "<span class='email'>" . htmlspecialchars($comentario['email']) . "</span>";
+
+            $dataFormatada = date('d/m/Y H:i', strtotime($comentario['data_envio']));
+            echo "<span class='data-envio' style='margin-left:10px; color:#666; font-size:0.9em;'>$dataFormatada</span>";
+
+            echo "</div>";
+            echo "<p class='comentario-texto'>" . htmlspecialchars($comentario['comentario']) . "</p>";
+
+            echo "<div class='comentario-acoes'>";
+            echo "<i class='fa-solid fa-trash delete-btn' data-id='" . $comentario['id'] . "' style='color:rgb(209, 4, 4); cursor:pointer;'></i>";
+            echo "</div>";
+
+            echo "</div>"; // fecha .comentario
+          }
+        } else {
+          echo "<p style='text-align:center;'>Nenhum comentário ainda.</p>";
+        }
+
+        echo "</div>"; // fecha .comentarios-box
+      }
+      ?>
     </div>
-  <?php endif; ?>
-</div>
-
-<?php
-if ($logado) {
-  echo "<div class='comentarios-box'>";
-  echo "<h2>Comentários</h2>";
-
-  require_once('conexao.php');
-  $sql = "SELECT * FROM comentarios ORDER BY id DESC";
-  $resultado = $conexao->query($sql);
-
- if ($resultado->num_rows > 0) {
-  while ($comentario = $resultado->fetch_assoc()) {
-    echo "<div class='comentario'>";
-    echo "<div class='comentario-header'>";
-    echo "<h3>" . htmlspecialchars($comentario['nome']) . "</h3>";
-    echo "<span class='email'>" . htmlspecialchars($comentario['email']) . "</span>";
-    
-    $dataFormatada = date('d/m/Y H:i', strtotime($comentario['data_envio']));
-    echo "<span class='data-envio' style='margin-left:10px; color:#666; font-size:0.9em;'>$dataFormatada</span>";
-    
-    echo "</div>";
-    echo "<p class='comentario-texto'>" . htmlspecialchars($comentario['comentario']) . "</p>";
-
-    echo "<div class='comentario-acoes'>";
-    echo "<i class='fa-solid fa-trash delete-btn' data-id='" . $comentario['id'] . "' style='color:rgb(209, 4, 4); cursor:pointer;'></i>";
-    echo "</div>";
-
-    echo "</div>"; // fecha .comentario
-  }
-} else {
-  echo "<p style='text-align:center;'>Nenhum comentário ainda.</p>";
-}
-
-  echo "</div>"; // fecha .comentarios-box
-}
-?>
-</div>
 
     <section class="contato-alternativo">
       <p class="preferencia">Se preferir entre em <span>contato</span> :</p>
@@ -203,42 +203,44 @@ if ($logado) {
     </div>
   </section>
   <!-- BOTÃO AJUDA -->
-<?php if ($logado): ?>
-<button id="btn-help" title="Manual de como adicionar notícia" aria-label="Manual de como adicionar notícia">
-  ?
-</button>
+  <?php if ($logado): ?>
+    <button id="btn-help" title="Manual de como adicionar notícia" aria-label="Manual de como adicionar notícia">
+      ?
+    </button>
 
-<style>
-  #btn-help {
-    position: fixed;
-    bottom: 80px; 
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    background:rgb(242, 22, 22); /* verde */
-    color: white;
-    font-size: 28px;
-    line-height: 50px;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    transition: background 0.3s ease;
-    z-index: 1000;
-  }
-  #btn-help:hover {
-    background:rgb(158, 20, 20);
-  }
-</style>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-  const btnHelp = document.getElementById('btn-help');
+    <style>
+      #btn-help {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background: rgb(242, 22, 22);
+        /* verde */
+        color: white;
+        font-size: 28px;
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: background 0.3s ease;
+        z-index: 1000;
+      }
 
-  btnHelp.addEventListener('click', () => {
-    Swal.fire({
-     title: 'Página de contato',
-      html: `
+      #btn-help:hover {
+        background: rgb(158, 20, 20);
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      const btnHelp = document.getElementById('btn-help');
+
+      btnHelp.addEventListener('click', () => {
+        Swal.fire({
+          title: 'Página de contato',
+          html: `
         <p>Manual para gerenciamento de comentários</p>
         <ol style="text-align:left; margin-left: 20px;">
           <li>Você poderá analisar os comentarios que os usuários irão enviar através do site.</li>
@@ -249,13 +251,13 @@ if ($logado) {
         </ol>
 
       `,
-      icon: 'info',
-      confirmButtonText: 'Entendi'
-    });
-  });
-</script>
-<?php endif; ?>
- <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+          icon: 'info',
+          confirmButtonText: 'Entendi'
+        });
+      });
+    </script>
+  <?php endif; ?>
+  <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
   <div class="wave-shape-divider">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
@@ -320,75 +322,75 @@ if ($logado) {
     </div>
   </footer>
   <script>
-  $(document).ready(function () {
-    const urlParams = new URLSearchParams(window.location.search); // <== declarado corretamente aqui
+    $(document).ready(function() {
+      const urlParams = new URLSearchParams(window.location.search); // <== declarado corretamente aqui
 
-    // 1. Alerta de exclusão
-    $('.delete-btn').click(function () {
-      const comentarioId = $(this).data('id');
+      // 1. Alerta de exclusão
+      $('.delete-btn').click(function() {
+        const comentarioId = $(this).data('id');
 
-      Swal.fire({
-        title: 'Tem certeza que deseja excluir?',
-        text: "Essa ação não poderá ser desfeita!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        cancelButtonColor: '#3085d6',
-        confirmButtonText: 'Sim, excluir',
-        cancelButtonText: 'Cancelar'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = 'excluir_comentario.php?id=' + comentarioId;
-        }
+        Swal.fire({
+          title: 'Tem certeza que deseja excluir?',
+          text: "Essa ação não poderá ser desfeita!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#d33',
+          cancelButtonColor: '#3085d6',
+          confirmButtonText: 'Sim, excluir',
+          cancelButtonText: 'Cancelar'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = 'excluir_comentario.php?id=' + comentarioId;
+          }
+        });
       });
+
+      // 2. Alerta de sucesso após exclusão
+      if (urlParams.get('msg') === 'ComentarioExcluido') {
+        Swal.fire({
+          icon: 'success',
+          title: 'Excluído!',
+          text: 'O comentário foi removido com sucesso.',
+          timer: 2000,
+          showConfirmButton: false
+        });
+
+        // Remove o parâmetro da URL depois de exibir
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
     });
-
-    // 2. Alerta de sucesso após exclusão
-    if (urlParams.get('msg') === 'ComentarioExcluido') {
-      Swal.fire({
-        icon: 'success',
-        title: 'Excluído!',
-        text: 'O comentário foi removido com sucesso.',
-        timer: 2000,
-        showConfirmButton: false
-      });
-
-      // Remove o parâmetro da URL depois de exibir
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
-  });
-</script>
+  </script>
 
 
-<script>
+  <script>
     // Verifica se a URL tem o parâmetro sucesso=1
     const urlParams = new URLSearchParams(window.location.search);
     const sucesso = urlParams.get('sucesso');
 
     if (sucesso === '1') {
-        Swal.fire({
-            title: 'Comentário enviado!',
-            text: 'Obrigado pelo seu feedback.',
-            icon: 'success',
-            confirmButtonText: 'OK'
-        }).then(() => {
-            // Remove o parâmetro da URL após exibir o alerta
-            window.history.replaceState({}, document.title, window.location.pathname);
-        });
+      Swal.fire({
+        title: 'Comentário enviado!',
+        text: 'Obrigado pelo seu feedback.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        // Remove o parâmetro da URL após exibir o alerta
+        window.history.replaceState({}, document.title, window.location.pathname);
+      });
     }
 
     const erro = urlParams.get('erro');
     if (erro === '1') {
-        Swal.fire({
-            title: 'Erro!',
-            text: 'Não foi possível enviar o comentário.',
-            icon: 'error',
-            confirmButtonText: 'Tentar novamente'
-        }).then(() => {
-            window.history.replaceState({}, document.title, window.location.pathname);
-        });
+      Swal.fire({
+        title: 'Erro!',
+        text: 'Não foi possível enviar o comentário.',
+        icon: 'error',
+        confirmButtonText: 'Tentar novamente'
+      }).then(() => {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      });
     }
-</script>
+  </script>
   <script src="./js/nav.js"></script>
 
 </body>
