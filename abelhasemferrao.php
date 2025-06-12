@@ -21,7 +21,8 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
     <script src="./js/drawer.js"></script>
 </head>
 
-<body>  <nav>
+<body> 
+   <nav>
   <div class="nav__header">
     <div class="nav__logo">
       <a href="#"><img src="./img/logo1.jpg" alt="logo" /></a>
