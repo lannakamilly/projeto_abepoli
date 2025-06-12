@@ -7,14 +7,14 @@ body {
 
 .secao-contato {
   flex-direction: column;
-    display: flex;
-    padding: 50px 20px;
-    align-items: center;
-    background-color: #ffffff;
+  display: flex;
+  padding: 50px 20px;
+  align-items: center;
+  background-color: #ffffff;
 }
 
 .container-contato {
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: flex-start;
   max-width: 1100px;
@@ -44,7 +44,7 @@ body {
 }
 
 .contato-item img {
-   margin-top: -40px;
+  margin-top: -40px;
   width: 28px;
   height: 28px;
 }
@@ -135,6 +135,7 @@ body {
   padding: 60px 20px 20px;
   background-color: #fff;
 }
+
 .contato-alternativo .preferencia {
   font-size: 18px;
   margin-bottom: 30px;
@@ -187,11 +188,11 @@ body {
 
 .comentarios-box {
   margin-top: 40px;
-    width: 900px;
-    background-color: #fff8dc;
-    border: 5px solid #e0a800;
-    border-radius: 15px;
-    padding: 30px;
+  width: 900px;
+  background-color: #fff8dc;
+  border: 5px solid #e0a800;
+  border-radius: 15px;
+  padding: 30px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -269,22 +270,23 @@ body {
 .btn-excluir:hover {
   background-color: #b02a37;
 }
+
 .scroll-top {
   position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    background: #f7be00;
-    color: white;
-    font-size: 24px;
-    line-height: 50px;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: #f7be00;
+  color: white;
+  font-size: 24px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
 }
 
 
@@ -329,7 +331,7 @@ body {
     font-size: 20px;
   }
 
-   .comentarios-box {
+  .comentarios-box {
     margin: 30px 15px;
     padding: 20px;
   }
@@ -346,5 +348,69 @@ body {
 
   .comentario-header .email {
     font-size: 12px;
+  }
+
+  .comentarios-box {
+    width: 100%;
+    margin-top: 30px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .comentarios-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    border-bottom: 2px solid #ffa500;
+    padding-bottom: 10px;
+  }
+
+  .comentario {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+  }
+
+  .comentario:last-child {
+    border-bottom: none;
+  }
+
+  .comentario-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .comentario-header h3 {
+    font-size: 18px;
+    color: #222;
+    margin: 0;
+  }
+
+  .comentario-header .email {
+    font-size: 14px;
+    color: #888;
+  }
+
+  .comentario-texto {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #444;
+  }
+
+  .comentario-acoes {
+    margin-top: 5px;
+  }
+
+  .delete-btn {
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+
+  .delete-btn:hover {
+    color: red;
+    cursor: pointer;
   }
 }
