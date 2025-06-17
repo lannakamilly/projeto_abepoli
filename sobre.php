@@ -58,6 +58,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
       <li><a href="./sobre.php">Ações</a></li>
       <li><a href="./doacoes.php">Doações</a></li>
       <li><a href="./saibamais.php">Saiba Mais</a></li>
+       <li><a href="./equipe.php">Equipe</a></li>
 
       <li class="contato-usuario">
         <a href="./contato.php">Contato</a>

@@ -104,6 +104,7 @@ if (isset($_SESSION['usuario_id'])) {
       <li><a href="./produtosVestimentas.php">Produtos</a></li>
        <li><a href="./galeria.php">Galeria</a></li>
       <li><a href="./doacoes.php">Doações</a></li>
+      
       <li> <a href="./contato.php">Contato</a></li>
       <li class="contato-usuario">
         <?php if ($logado): ?>

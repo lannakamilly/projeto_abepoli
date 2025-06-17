@@ -45,6 +45,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
       <li><a href="./produtosVestimentas.php">Produtos</a></li>
        <li><a href="./galeria.php">Galeria</a></li>
       <li><a href="./doacoes.php">Doações</a></li>
+       <li><a href="./equipe.php">Equipe</a></li>
       <li> <a href="./contato.php">Contato</a></li>
       <li class="contato-usuario">
         <?php if ($logado): ?>
@@ -60,6 +61,7 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
       <li><a href="./sobre.php">Ações</a></li>
       <li><a href="./doacoes.php">Doações</a></li>
       <li><a href="./saibamais.php">Saiba Mais</a></li>
+      <li><a href="./equipe.php">Equipe</a></li>
       <li class="contato-usuario">
         <a href="./contato.php">Contato</a>
         <?php if ($logado): ?>
@@ -248,6 +250,10 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
         </div>
       </div>
     </section>
+
+    
+
+    
     <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
    <div class="wave-shape-divider">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
