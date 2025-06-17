@@ -242,5 +242,4 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
   <script src="./js/index.js"></script>
   <script src="./js/nav.js"></script>
 </body>
-
 </html>
