@@ -236,7 +236,7 @@ $stmt->close();
                         if ($logado) {
                             echo "<td class='actions'>";
                             echo "<button class='edit-btn' style='background:none;border:none;cursor:pointer;' title='Editar'>";
-                            echo "<img style='width: 100px;' src='./img/Design_sem_nome__6_-removebg-preview.png' alt='Editar'/>";
+                            echo "<img style='width: 90px;' src='./img/Design_sem_nome__1_-removebg-preview.png' alt='Editar'/>";
                             echo "</button> ";
                             echo "<button class='delete-btn' style='background:none;border:none;cursor:pointer;' title='Excluir' data-id='{$linha['id_doacao']}'>";
                             echo "<img style='width: 100px;' src='./img/Design_sem_nome__3_-removebg-preview.png' alt='Excluir'/>";
