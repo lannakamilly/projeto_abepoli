@@ -187,7 +187,6 @@ body {
 
 .comentarios-box {
   margin-top: 40px;
-    width: 900px;
     background-color: #fff8dc;
     border: 5px solid #e0a800;
     border-radius: 15px;
@@ -303,6 +302,16 @@ body {
     align-self: stretch;
     text-align: center;
   }
+
+  .comentarios-box {
+    width: 100%;
+    margin-top: 40px;
+    background-color: #fff8dc;
+    border: 5px solid #e0a800;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
 }
 
 @media (max-width: 600px) {
@@ -329,9 +338,14 @@ body {
     font-size: 20px;
   }
 
-   .comentarios-box {
-    margin: 30px 15px;
-    padding: 20px;
+  .comentarios-box {
+    width: 100%;
+    margin-top: 40px;
+    background-color: #fff8dc;
+    border: 5px solid #e0a800;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   }
 
   .comentario-header {

@@ -188,7 +188,7 @@ $stmt->close();
                     <p id="subititulop">Sua doação ajuda a proteger abelhas,<br> polinizadores e a biodiversidade para um futuro
                         sustentável.</p>
                 </div>
-                <button class="botaodoacoes"><a id="afazer" class="i" href="#divcomo">Fazer doações</a></button>
+                <button class="botaodoacoes" onclick="window.scrollTo({ top: 2500, behavior: 'smooth'});"><a id="afazer" class="i">Fazer doações</a></button>
             </div>
             <div class="image-bees">
                 <img class="bees" src="./img/sobre1.png" alt="bees">
