@@ -190,7 +190,7 @@ $stmt->close();
                     <p id="subititulop">Sua doação ajuda a proteger abelhas,<br> polinizadores e a biodiversidade para um futuro
                         sustentável.</p>
                 </div>
-                <button class="botaodoacoes"><a id="afazer" class="i" href="#divcomo">Fazer doações</a></button>
+                <button class="botaodoacoes" onclick="window.scrollTo({ top: 2500, behavior: 'smooth'});"><a id="afazer" class="i">Fazer doações</a></button>
             </div>
             <div class="image-bees">
                 <img class="bees" src="./img/sobre1.png" alt="bees">
@@ -238,7 +238,7 @@ $stmt->close();
                         if ($logado) {
                             echo "<td class='actions'>";
                             echo "<button class='edit-btn' style='background:none;border:none;cursor:pointer;' title='Editar'>";
-                            echo "<img style='width: 100px;' src='./img/Design_sem_nome__6_-removebg-preview.png' alt='Editar'/>";
+                            echo "<img style='width: 90px;' src='./img/Design_sem_nome__1_-removebg-preview.png' alt='Editar'/>";
                             echo "</button> ";
                             echo "<button class='delete-btn' style='background:none;border:none;cursor:pointer;' title='Excluir' data-id='{$linha['id_doacao']}'>";
                             echo "<img style='width: 100px;' src='./img/Design_sem_nome__3_-removebg-preview.png' alt='Excluir'/>";
@@ -369,7 +369,7 @@ $stmt->close();
         </div>
         <div id="divisaoqr" style="  display: flex; justify-content: space-around; @media (max-width: 480px) { #divisaoqr{ flex-direction: column; align-items: center;}}">
             <div id="dividir" style="margin-top: 90px;">
-                <img src="./img/Capturar.JPG" alt=""
+                <img src="./img/pix qr code abepoli.PNG" alt=""
                     style="    width: 250px;
     border-radius: 20px;
     height: auto;margin-bottom: 20px;">
@@ -392,70 +392,7 @@ $stmt->close();
         </div>
 
     </section>
-
-    <!-- Onda de baixo -->
-    <div style="position: relative; height: 150px; overflow: hidden; background-color: #fabf11; margin-top: -5px;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"
-            style="height: 100%; width: 100%;">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
-        82.39-16.72,168.19-17.73,250.45-.39C823.78,31,
-        906.67,72,985.66,92.83c70.05,18.48,
-        146.53,26.09,214.34,3V0H0V27.35A600.21,
-        600.21,0,0,0,321.39,56.44Z" fill=" #ffe68a"></path>
-        </svg>
-    </div>
-
-    <footer class="abepoli-footer">
-        <div class="footer-content">
-            <div class="footer-col logo-col">
-                <img src="img/logo1.jpg" alt="Instituto Abepoli" class="footer-logo">
-            </div>
-
-            <div class="footer-col contact-col">
-                <h4>Contato</h4>
-                <p><i class="fa fa-envelope"></i> abepoli@gmail.com</p>
-                <div class="social-icons">
-                    <p>
-                        <a href="https://www.facebook.com/profile.php?id=100076095320985" target="_blank"
-                            style="text-decoration: none; color: inherit;">
-                            <i class="fa fa-facebook"></i> Instituto Abepoli
-                        </a>
-                    </p>
-                    <p>
-                        <a href="https://www.instagram.com/abepoli/" target="_blank"
-                            style="text-decoration: none; color: inherit;">
-                            <i class="fa fa-instagram"></i> @abepoli
-                        </a>
-                    </p>
-                    <p>
-                        <a href="https://wa.me/5512988176722" target="_blank"
-                            style="text-decoration: none; color: inherit;">
-                            <i class="fa fa-whatsapp"></i> (12) 98817-6722
-                        </a>
-                    <p>
-                        <a href="./login.php" class="realizarLogin" style="text-decoration: none; color: inherit;">
-                            Realizar login
-                        </a>
-                    </p>
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="footer-col dev-col">
-                <h4>Site desenvolvido por</h4>
-                <p>Flávia Glenda Guimarães Carvalho</p>
-                <p>Júlia da Silva Conconi</p>
-                <p>Kauã de Albuquerque Almeida</p>
-                <p>Lanna Kamilly Fres Motta</p>
-                <p>Miguel Borges da Silva</p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>© Todos os direitos reservados</p>
-        </div>
-    </footer>
+  <?php include('footer.php'); ?>
     <script src="./js/nav.js"></script>
     <script src="./js/doacoes.js"></script>
     <!-- editar doação -->
