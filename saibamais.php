@@ -227,7 +227,6 @@ $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SE
     <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
     <script src="./js/nav.js"></script>
     <?php include('footer.php'); ?>
-
 </body>
 
 </html>
