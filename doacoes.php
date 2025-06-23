@@ -1,5 +1,11 @@
 <?php
 include 'conexao.php';
+if (!$conexao) {
+    die("Erro na conexão: " . mysqli_connect_error());
+}
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 session_start();
 
 $logado = isset($_SESSION['admin']) || (isset($_SESSION['usuario_tipo']) && $_SESSION['usuario_tipo'] === 'funcionario'); 
@@ -52,6 +58,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acao'])) {
         }
         $conexao->close();
         exit;
+    }
+}
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['qrcode']['tmp_name'])) {
+    if (!is_uploaded_file($_FILES['qrcode']['tmp_name'])) {
+        die("Erro: Nenhum arquivo válido foi enviado.");
+    }
+
+    $imagem = file_get_contents($_FILES['qrcode']['tmp_name']);
+
+    // Verifica se a linha com id = 1 existe
+    $verifica = $conexao->query("SELECT id FROM qrcodes WHERE id = 1");
+
+    if ($verifica && $verifica->num_rows > 0) {
+        $stmt = $conexao->prepare("UPDATE qrcodes SET imagem_qrcode = ? WHERE id = 1");
+    } else {
+        $stmt = $conexao->prepare("INSERT INTO qrcodes (imagem_qrcode) VALUES (?)");
+    }
+
+    // bind_param precisa ser antes do send_long_data
+    $stmt->bind_param("b", $imagem);
+    $stmt->send_long_data(0, $imagem); // envia corretamente o blob
+
+    if ($stmt->execute()) {
+        header("Location: doacoes.php");
+        exit();
+    } else {
+        echo "Erro ao salvar QR Code: " . $stmt->error;
     }
 }
 
@@ -353,9 +386,9 @@ $stmt->close();
         </p>
     </div>
     <div style="position: relative; height: 150px; overflow: hidden; background-color: white; bottom: 0px">
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%; ">
             <path d="M0.00,49.98 C150.00,150.00 349.81,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-                style="stroke: none; fill: #ffe68a;"></path>
+                style="stroke: none; fill: #ffe68a; background-color: #ffe68a !important ;"></path>
         </svg>
     </div>
     </section>
@@ -369,10 +402,31 @@ $stmt->close();
         </div>
         <div id="divisaoqr" style="  display: flex; justify-content: space-around; @media (max-width: 480px) { #divisaoqr{ flex-direction: column; align-items: center;}}">
             <div id="dividir" style="margin-top: 90px;">
-                <img src="./img/Capturar.PNG" alt=""
-                    style="    width: 250px;
-    border-radius: 20px;
-    height: auto;margin-bottom: 20px;">
+          
+     <?php
+$sql = "SELECT imagem_qrcode FROM qrcodes WHERE id = 1";
+$result = $conexao->query($sql);
+
+if ($result && $row = $result->fetch_assoc()) {
+    if (!empty($row['imagem_qrcode'])) {
+        $imagem = base64_encode($row['imagem_qrcode']);
+        echo '<img src="data:image/png;base64,' . $imagem . '" alt="QR Code" style="width: 250px; border-radius: 20px; margin-bottom: 20px;">';
+    } else {
+        echo "<p style='margin-bottom: 20px;'>QR Code está vazio.</p>";
+    }
+} else {
+    echo "<p style='margin-bottom: 20px;'>QR Code não encontrado.</p>";
+}
+?>
+<?php if ($logado): ?>
+    <form method="POST" enctype="multipart/form-data" style="margin-top: 20px;">
+        <input type="file" id="inputQrCode" name="qrcode" accept="image/*" required>
+
+        <button type="submit" id="btnSalvarQr">
+            Salvar/Atualizar QR Code
+        </button>
+    </form>
+           <?php endif; ?>
                 <p id="pqr">QR code</p>
             </div>
             <ul id="ulzapp" style="list-style: none; margin-top: 140px; margin-left: 30px; margin-bottom: 0px;padding: 0;">
