@@ -455,7 +455,7 @@ if ($result && $row = $result->fetch_assoc()) {
             $('.edit-btn').click(function() {
                 var tr = $(this).closest('tr');
 
-                var id = tr.data('id');
+                var id = tr.attr('data-id');
                 var doador = tr.data('doador');
                 var valores = tr.data('valores');
                 var destinado = tr.data('destinado');
@@ -519,7 +519,7 @@ if ($result && $row = $result->fetch_assoc()) {
             $('.delete-btn').click(function() {
                 var btn = $(this);
                 var tr = btn.closest('tr');
-                var id = btn.data('id');
+                var id = $(this).attr('data-id');
 
                 Swal.fire({
                     title: 'Tem certeza que deseja excluir esta doação?',
